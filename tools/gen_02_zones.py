@@ -10,6 +10,9 @@
 Les entrées `operation` et les clés de chaînage sont écrites dans mission.yaml par ce lot (via
 create_combat_zone) ; l'opération elle-même est ajoutée à la main dans mission.yaml (aucune action
 MCP ne la crée — voir « Retours pour VMCT »).
+
+Noms d'avant le lot 07 : ce lot crée des groupes et des zones que tools/gen_07_noms.py renomme ensuite en
+anglais neutre. Les lots se rejouent dans l'ordre (01 → 08), pas isolément.
 """
 import sys
 from pathlib import Path

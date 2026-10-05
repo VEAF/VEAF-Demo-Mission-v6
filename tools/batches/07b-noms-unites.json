@@ -1,0 +1,416 @@
+[
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Sukhumi - MiG-29S",
+   "unit_name": "QRA Soukhoumi - MiG-29S-1",
+   "new_name": "QRA Sukhumi - MiG-29S-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Sukhumi - MiG-29S",
+   "unit_name": "QRA Soukhoumi - MiG-29S-2",
+   "new_name": "QRA Sukhumi - MiG-29S-2"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Sukhumi - Su-27",
+   "unit_name": "QRA Soukhoumi - Su-27-1",
+   "new_name": "QRA Sukhumi - Su-27-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Sukhumi - Su-27",
+   "unit_name": "QRA Soukhoumi - Su-27-2",
+   "new_name": "QRA Sukhumi - Su-27-2"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Sukhumi - Su-30",
+   "unit_name": "QRA Soukhoumi - Su-30-1",
+   "new_name": "QRA Sukhumi - Su-30-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Sukhumi - Su-30",
+   "unit_name": "QRA Soukhoumi - Su-30-2",
+   "new_name": "QRA Sukhumi - Su-30-2"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Sukhumi - MiG-31",
+   "unit_name": "QRA Soukhoumi - MiG-31-1",
+   "new_name": "QRA Sukhumi - MiG-31-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Sukhumi - MiG-31",
+   "unit_name": "QRA Soukhoumi - MiG-31-2",
+   "new_name": "QRA Sukhumi - MiG-31-2"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "OnDemand-CAP Su-27 sea FL300",
+   "unit_name": "OnDemand-CAP Su-27 mer FL300-1",
+   "new_name": "OnDemand-CAP Su-27 sea FL300-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "OnDemand-CAP Su-27 sea FL300",
+   "unit_name": "OnDemand-CAP Su-27 mer FL300-2",
+   "new_name": "OnDemand-CAP Su-27 sea FL300-2"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "OnDemand-CAP MiG-31 Sochi FL350",
+   "unit_name": "OnDemand-CAP MiG-31 Sotchi FL350-1",
+   "new_name": "OnDemand-CAP MiG-31 Sochi FL350-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "OnDemand-CAP MiG-31 Sochi FL350",
+   "unit_name": "OnDemand-CAP MiG-31 Sotchi FL350-2",
+   "new_name": "OnDemand-CAP MiG-31 Sochi FL350-2"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Wave MiG-29S",
+   "unit_name": "Vague MiG-29S-1",
+   "new_name": "Wave MiG-29S-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Wave Su-27",
+   "unit_name": "Vague Su-27-1",
+   "new_name": "Wave Su-27-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Wave Su-27",
+   "unit_name": "Vague Su-27-2",
+   "new_name": "Wave Su-27-2"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Wave Su-30",
+   "unit_name": "Vague Su-30-1",
+   "new_name": "Wave Su-30-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Wave Su-30",
+   "unit_name": "Vague Su-30-2",
+   "new_name": "Wave Su-30-2"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-target-01",
+   "unit_name": "combatZone_Khoni_Easy-cible-01 Unit #001",
+   "new_name": "combatZone_Khoni_Easy-target-01 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-target-02",
+   "unit_name": "combatZone_Khoni_Easy-cible-02 Unit #001",
+   "new_name": "combatZone_Khoni_Easy-target-02 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-target-03",
+   "unit_name": "combatZone_Khoni_Easy-cible-03 Unit #001",
+   "new_name": "combatZone_Khoni_Easy-target-03 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-target-04",
+   "unit_name": "combatZone_Khoni_Easy-cible-04 Unit #001",
+   "new_name": "combatZone_Khoni_Easy-target-04 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-target-05",
+   "unit_name": "combatZone_Khoni_Easy-cible-05 Unit #001",
+   "new_name": "combatZone_Khoni_Easy-target-05 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-target-06",
+   "unit_name": "combatZone_Khoni_Easy-cible-06 Unit #001",
+   "new_name": "combatZone_Khoni_Easy-target-06 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-target-07",
+   "unit_name": "combatZone_Khoni_Easy-cible-07 Unit #001",
+   "new_name": "combatZone_Khoni_Easy-target-07 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-target-08",
+   "unit_name": "combatZone_Khoni_Easy-cible-08 Unit #001",
+   "new_name": "combatZone_Khoni_Easy-target-08 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Port-trucks",
+   "unit_name": "combatZone_Ochamchire_Port-camions Unit #001",
+   "new_name": "combatZone_Ochamchire_Port-trucks Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Port-trucks",
+   "unit_name": "combatZone_Ochamchire_Port-camions Unit #002",
+   "new_name": "combatZone_Ochamchire_Port-trucks Unit #002"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Port-trucks",
+   "unit_name": "combatZone_Ochamchire_Port-camions Unit #003",
+   "new_name": "combatZone_Ochamchire_Port-trucks Unit #003"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Port-trucks",
+   "unit_name": "combatZone_Ochamchire_Port-camions Unit #004",
+   "new_name": "combatZone_Ochamchire_Port-trucks Unit #004"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Port-trucks",
+   "unit_name": "combatZone_Ochamchire_Port-camions Unit #005",
+   "new_name": "combatZone_Ochamchire_Port-trucks Unit #005"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_HQ-guard",
+   "unit_name": "combatZone_Tkvarcheli_PC-garde Unit #001",
+   "new_name": "combatZone_Tkvarcheli_HQ-guard Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_HQ-guard",
+   "unit_name": "combatZone_Tkvarcheli_PC-garde Unit #002",
+   "new_name": "combatZone_Tkvarcheli_HQ-guard Unit #002"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Convoy-column",
+   "unit_name": "combatZone_Convoi-colonne Unit #001",
+   "new_name": "combatZone_Convoy-column Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Convoy-column",
+   "unit_name": "combatZone_Convoi-colonne Unit #002",
+   "new_name": "combatZone_Convoy-column Unit #002"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Convoy-column",
+   "unit_name": "combatZone_Convoi-colonne Unit #003",
+   "new_name": "combatZone_Convoy-column Unit #003"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Convoy-column",
+   "unit_name": "combatZone_Convoi-colonne Unit #004",
+   "new_name": "combatZone_Convoy-column Unit #004"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Convoy-column",
+   "unit_name": "combatZone_Convoi-colonne Unit #005",
+   "new_name": "combatZone_Convoy-column Unit #005"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Convoy-column",
+   "unit_name": "combatZone_Convoi-colonne Unit #006",
+   "new_name": "combatZone_Convoy-column Unit #006"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Ships-escort",
+   "unit_name": "combatZone_Ochamchire_Navires-escorte Unit #001",
+   "new_name": "combatZone_Ochamchire_Ships-escort Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Ships-cargo-1",
+   "unit_name": "combatZone_Ochamchire_Navires-cargo-1 Unit #001",
+   "new_name": "combatZone_Ochamchire_Ships-cargo-1 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Ships-cargo-2",
+   "unit_name": "combatZone_Ochamchire_Navires-cargo-2 Unit #001",
+   "new_name": "combatZone_Ochamchire_Ships-cargo-2 Unit #001"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_Depot-ammo",
+   "unit_name": "combatZone_Tkvarcheli_Depot-munitions",
+   "new_name": "combatZone_Tkvarcheli_Depot-ammo"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_Depot-fuel-1",
+   "unit_name": "combatZone_Tkvarcheli_Depot-carburant-1",
+   "new_name": "combatZone_Tkvarcheli_Depot-fuel-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_Depot-fuel-2",
+   "unit_name": "combatZone_Tkvarcheli_Depot-carburant-2",
+   "new_name": "combatZone_Tkvarcheli_Depot-fuel-2"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_HQ-hq",
+   "unit_name": "combatZone_Tkvarcheli_PC-pc",
+   "new_name": "combatZone_Tkvarcheli_HQ-hq"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_HQ-bunker",
+   "unit_name": "combatZone_Tkvarcheli_PC-bunker",
+   "new_name": "combatZone_Tkvarcheli_HQ-bunker"
+  }
+ }
+]

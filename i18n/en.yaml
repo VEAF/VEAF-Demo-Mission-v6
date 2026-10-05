@@ -1,0 +1,107 @@
+# English texts of mission.yaml — source of the EN build (profile EN, written by tools/gen_i18n.py).
+#
+# mission.yaml holds the French texts (the FR build is the base configuration). Every text a player
+# can read that mission.yaml carries has its English version here, keyed by a stable identifier
+# (zone name, CAP group name, asset name…). tools/gen_i18n.py copies the French blocks, swaps these
+# texts in and writes the EN profile; it refuses to run if a French text has no English entry here.
+#
+# The texts that live in the DCS mission itself (briefing, F10 drawings, briefing maps) are localised
+# after the build by tools/localize_miz.py; the guided tour carries both languages and reads
+# veaf.config.language.
+
+# modules.RADIO.user_menus : le texte français -> l'anglais, pour chaque `menu`, `command` et `text`.
+# L'arbre anglais est construit à partir de l'arbre français (mêmes actions et mêmes cibles).
+user_menus:
+  "Démo : commandes": "Demo: commands"
+  "Démarrer la QRA de Soukhoumi": "Start the Sukhumi QRA"
+  "Arrêter la QRA de Soukhoumi": "Stop the Sukhumi QRA"
+  "Relancer l'arène BVR": "Reset the BVR arena"
+  "Créer un pilote abattu près de Khoni": "Create a downed pilot near Khoni"
+  "Message de bienvenue": "Welcome message"
+  "Bienvenue sur la mission de démo VEAF. La visite guidée est dans F10 > Autre > Visite guidée.": "Welcome to the VEAF demo mission. The guided tour is in F10 > Other > Guided tour."
+
+shortcuts:
+  -boum: "500 kg explosion at the marker"
+  -menage: "Destroys everything within 2 km of the marker"
+
+combat_zones:
+  combatZone_Khoni_Easy:
+    friendly_name: Khoni - easy
+    radio_group_name: Khoni training
+    briefing: "Inert targets: eight parked trucks, unarmed and undefended. BULLSEYE 107/21."
+  combatZone_Khoni_Medium:
+    friendly_name: Khoni - medium
+    radio_group_name: Khoni training
+    briefing: "The easy level's targets, plus an armour company (-armor, defense 1) and two AAA pieces drawn among four. BULLSEYE 107/21."
+  combatZone_Khoni_Hard:
+    friendly_name: Khoni - hard
+    radio_group_name: Khoni training
+    briefing: "The medium level, plus a better defended armour battalion (-armor, defense 3) and two short-range systems drawn among SA-13, SA-9, Igla and Shilka. BULLSEYE 107/21."
+  combatZone_Gali:
+    friendly_name: Gali front
+    briefing: "An armoured brigade holds the north bank of the Inguri, south-east of Gali. Destroy the armour and the Msta artillery battery. Defences: a short-range SAM battery drawn at random, and MANPADS. The Reaper 1 drone (JTAC, code 1511, 35.55 FM) orbits above. BULLSEYE 312/8."
+  combatZone_Ochamchire_SAM:
+    friendly_name: Ochamchire SAM
+    briefing: "An SA-6 battery north of Ochamchire, active from the start of the mission and linked to the red Skynet network: it lights its radar only when the network tells it to. BULLSEYE 309/24."
+  combatZone_Ochamchire_Port:
+    friendly_name: "Ochamchire port - 1: depot"
+    briefing: "First step of a chained mission: destroy the port depot's trucks. One minute after it is destroyed, the ships at anchor appear (step 2). BULLSEYE 301/21."
+  combatZone_Ochamchire_Ships:
+    friendly_name: "Ochamchire port - 2: ships"
+    briefing: "Second step: cargo ships and their escort corvette (short-range SA-N-4) at anchor off Ochamchire. BULLSEYE 289/26."
+  combatZone_Tkvarcheli_Radar:
+    friendly_name: Tkvarcheli - radar
+    briefing: "Task 1: a 1L13 early-warning radar and its AAA. BULLSEYE 326/23."
+  combatZone_Tkvarcheli_Depot:
+    friendly_name: Tkvarcheli - depot
+    briefing: "Task 2: an ammunition depot and two fuel tanks (statics). BULLSEYE 329/21."
+  combatZone_Tkvarcheli_HQ:
+    friendly_name: Tkvarcheli - HQ
+    briefing: "Task 3: the command post and its guard. It is given as an objective only after the radar and the depot, but its units are there as soon as the operation is activated. BULLSEYE 332/21."
+  Op_Tkvarcheli:
+    friendly_name: Operation Tkvarcheli
+    briefing: "Neutralise the Tkvarcheli sector: the radar and the depot first, then the command post."
+  combatZone_Convoy:
+    friendly_name: Ochamchire convoy
+    briefing: "A logistics convoy (five trucks and their Shilka) shuttles between Ochamchire and Gali. Start: BULLSEYE 303/20."
+
+# `name` est un identifiant (cité par user_menus), on ne traduit que `description`, que le joueur voit.
+airwaves:
+  Arene BVR:
+    description: "BVR arena off Poti"
+
+assets:
+  Texaco 1:
+    description: "Texaco 1 (KC-135, boom)"
+    information: "TACAN 52Y, 292.0 AM\\nFL200, 420 kt, race-track east of Kutaisi"
+  Arco 1:
+    description: "Arco 1 (KC-135 MPRS, drogue)"
+    information: "TACAN 51Y, 291.0 AM\\nFL180, 420 kt, south of the carriers"
+  Overlord 1:
+    description: "Overlord 1 (E-3A)"
+    information: "286.0 AM\\nFL300, south of Kutaisi\\nEscorted by two F-15C (Overlord 1 escort)"
+  Reaper 1:
+    description: "Reaper 1 (MQ-9, JTAC)"
+    information: "JTAC laser 1511, 35.55 FM\\nAbove the Gali front"
+
+sanctuary:
+  Sanctuaire de Gudauta: Gudauta sanctuary
+
+cap_missions:
+  CAP MiG-29S Gudauta FL250:
+    menu_name: CAP MiG-29S Gudauta FL250
+    briefing: "A pair of MiG-29S armed with Fox 3 (R-77) over Gudauta. Race-track at FL250, centred on BULLSEYE 303/55."
+  CAP Su-27 sea FL300:
+    menu_name: CAP Su-27 sea FL300
+    briefing: "A pair of Su-27 armed with Fox 1 (R-27ER, semi-active radar homing), over the sea off Sukhumi. Race-track at FL300, centred on BULLSEYE 260/49."
+  CAP MiG-31 Sochi FL350:
+    menu_name: CAP MiG-31 Sochi FL350
+    briefing: "A pair of MiG-31: a high and fast interceptor, long-range R-33. Race-track at FL350, centred on BULLSEYE 302/85."
+
+combat_missions:
+  Raid-Senaki:
+    friendly_name: Senaki raid
+    briefing: "Two Su-24M escorted by two MiG-29S take off from the Gudauta area to bomb Senaki. Intercept them before they reach the base."
+    elements:
+      Bombardiers: Bombers
+      Escorte: Escort

@@ -157,11 +157,11 @@ channels_collection: # Lists all the radio channels available on the map
         freqs:
           uhf: 286
       Texaco-1:
-        title: Texaco-1 / perche / 52Y
+        title: Texaco-1 / boom / 52Y
         freqs:
           uhf: 292
       Arco-1:
-        title: Arco-1 / panier / 51Y
+        title: Arco-1 / drogue / 51Y
         freqs:
           uhf: 291
       FARP-Khoni:

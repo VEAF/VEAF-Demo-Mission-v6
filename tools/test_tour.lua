@@ -1,6 +1,8 @@
 -- Essai hors DCS de la visite guidée : bouchons minimaux de l'API DCS, puis chaque commande de chaque
 -- menu, et le contrôle que le menu français parle français et l'anglais anglais.
--- lua tools/test_tour.lua (Lua 5.1, comme DCS).
+-- lua tools/test_tour.lua fr|en (Lua 5.1, comme DCS) : la visite et les actions suivent veaf.config.language.
+local LANG = arg[1] or "fr"
+veaf = { config = { language = LANG } }
 local shown, marks = {}, {}
 local function pt(x, z) return { x = x, y = 0, z = z } end
 
@@ -36,18 +38,18 @@ Group = { Category = { AIRPLANE = 0, HELICOPTER = 1 }, getByName = function() re
 coalition.getGroups = function(side, cat) return (side == 2 and cat == 0) and { group } or {} end
 StaticObject = { getByName = function() return nil end }
 Airbase = { getByName = function() return { getPoint = function() return pt(-195650, 515898) end } end }
-local called = {}
-demo = { spawnCsar = function() called.csar = true end, activateOperation = function() called.on = true end,
-         desactivateOperation = function() called.off = true end }
+demo = { spawnCsar = function() end }
 
 dofile("src/scripts/guided-tour.lua")
 
 -- le joueur reprend un slot : les menus sont reposés, pas empilés
 handlers[1]:onEvent({ id = world.event.S_EVENT_BIRTH, initiator = unit })
-assert(#menus.group[42] == 2, "deux menus de visite attendus pour le groupe, trouvé " .. #menus.group[42])
-assert(#menus.common == 1 and menus.common[1].title == "Démo : actions", "menu « Démo : actions » attendu au premier niveau")
+assert(#menus.group[42] == 1, "un menu de visite attendu pour le groupe, trouvé " .. #menus.group[42])
+local ROOT = { fr = "Visite guidée", en = "Guided tour" }
+assert(menus.group[42][1].title == ROOT[LANG], "menu de visite : " .. menus.group[42][1].title)
+assert(#menus.common == 0, "aucun menu commun attendu (les actions de démo sont dans le menu YAML)")
 
-local FR, EN = "Où :", "Where:"
+local EXPECT = { fr = "Où :", en = "Where:" }
 local n = 0
 local function walk(m, expect)
   for _, it in ipairs(m.items) do
@@ -66,10 +68,7 @@ local function walk(m, expect)
     end
   end
 end
-walk(menus.group[42][1], FR)
-walk(menus.group[42][2], EN)
-walk(menus.common[1])
+walk(menus.group[42][1], EXPECT[LANG])
 local live = 0
 for _ in pairs(marks) do live = live + 1 end
-assert(called.csar and called.on and called.off, "actions de la démo non appelées")
-print(string.format("%d commandes essayées, %d messages, chaque menu dans sa langue, %d repère vivant", n, #shown, live))
+print(string.format("[%s] %d commandes essayées, %d messages dans la langue du build, %d repère vivant", LANG, n, #shown, live))

@@ -4,6 +4,9 @@ Portées vérifiées (list_unit_types, threat_range_m) :
 - SA-11 de l'IADS de Gudauta, 50 km : à 4,5 km au nord-est de l'aérodrome, à plus de 80 km des zones
   d'Ochamchire et de l'arène AIRWAVES.
 - QRA de Soukhoumi, cercle de 40 km : couvre Ochamchire (35 km), pas Gali (55 km) ni Tkvarcheli (44 km).
+
+Noms d'avant le lot 07 : ce lot crée des groupes et des zones que tools/gen_07_noms.py renomme ensuite en
+anglais neutre. Les lots se rejouent dans l'ordre (01 → 08), pas isolément.
 """
 import sys
 from pathlib import Path

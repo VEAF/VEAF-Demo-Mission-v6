@@ -8,15 +8,22 @@ Elle a deux usages : faire découvrir chaque fonctionnalité aux joueurs (visite
 **Chaque nouvelle fonctionnalité VMCT ajoute son exemple à la démo**, dans la même PR que la fonctionnalité ou juste après :
 
 1. poser l'exemple dans la mission — actions du serveur MCP `veaf-mission-mcp` sur le dossier (monde durable : `src/mission/` + `mission.yaml`), via un lot `tools/gen_0N_*.py` exécuté par `tools/mcp.py batch` ;
-2. ajouter son étape dans `tour/steps.yaml`, avec son contrôle de recette (`check`) — c'est la **source unique** de la visite, du README et de la recette ;
-3. `python tools/gen_tour.py`, puis `python tools/gen_map.py` si un lieu a bougé, puis `python tools/gen_05_dessins.py` + `python tools/mcp.py batch tools/batches/05-dessins.json` pour les dessins F10 ;
-4. `.\veaf-tools.exe mission validate`, `.\veaf-tools.exe build`, `python tools/verify.py` (tout au vert).
+2. ajouter son étape dans `tour/steps.yaml`, **en français et en anglais**, avec son contrôle de recette (`check`) — c'est la **source unique** de la visite, du README et de la recette ; le texte anglais cite les libellés du build anglais (`COMBAT ZONES`, `ASSETS`…) ;
+3. traduire tout nouveau texte de `mission.yaml` dans `i18n/en.yaml`, puis `python tools/gen_i18n.py` ; un nouveau texte de la mission DCS (briefing, étiquette F10, carte) va dans `tools/i18n_texts.py` ;
+4. `python tools/gen_tour.py`, puis `python tools/gen_map.py` si un lieu a bougé, puis `python tools/gen_05_dessins.py` + `python tools/mcp.py batch tools/batches/05-dessins.json` pour les dessins F10 ;
+5. `.\veaf-tools.exe mission validate`, `.\veaf-tools.exe build`, `python tools/localize_miz.py`, `python tools/verify.py` (tout au vert) ; `lua tools/test_tour.lua fr` et `en`.
 
-Ne jamais modifier à la main `README.md`, `README.en.md`, `docs/recette.md`, `src/scripts/guided-tour.lua` : ils sont générés.
+Ne jamais modifier à la main `README.md`, `README.en.md`, `docs/recette.md`, `src/scripts/guided-tour.lua`, ni la fin de `mission.yaml` (profils et `build_variants`) : ils sont générés.
+
+## Deux langues, deux missions complètes
+
+Un build produit une mission `_FR` et une `_EN` par variante météo (`build_variants` de `mission.yaml`, profils `FR` et `EN`).
+`mission.yaml` et `src/mission/` portent le français ; le profil `EN` (généré depuis `i18n/en.yaml`) traduit la configuration VEAF, et `tools/localize_miz.py` traduit après le build ce qui vit dans la mission DCS (briefing, étiquettes F10, cartes).
+Les noms de groupes et de zones de combat visibles sur la carte F10 sont des identifiants anglais neutres, communs aux deux.
 
 ## Avant chaque release des outils
 
-Construire la démo avec la version candidate, puis dérouler `docs/recette.md` en jeu (mission de test : `.\veaf-tools.exe mission build --profile LOCAL_TEST` puis `python tools/make_test_mission.py`).
+Construire la démo avec la version candidate, puis dérouler `docs/recette.md` en jeu sur les missions de test (`python tools/make_test_mission.py` : `missions-test/VEAF_Demo_TEST_FR.miz` et `_EN.miz`, game masters et pont dcs-bridge).
 
 ## Outils
 
@@ -27,7 +34,7 @@ Construire la démo avec la version candidate, puis dérouler `docs/recette.md` 
 
 ## Conventions
 
-- Mission en français (`mission.language: fr`), visite et README en français **et** en anglais.
+- Deux missions complètes, `_FR` et `_EN` ; README en français et en anglais.
 - Sécurité VEAF désactivée (décision du 2026-10-05) : la démo ouvre toutes les commandes à tous.
 - Rouge non jouable : pas de slots rouges, pas de QRA bleue.
 - Fréquences VEAF hors de la bande des tours du Caucase (250.0 à 270.0).

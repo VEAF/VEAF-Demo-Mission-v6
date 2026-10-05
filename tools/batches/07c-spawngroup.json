@@ -1,0 +1,20 @@
+[
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Gali-armor-a",
+   "unit_name": "#command=\"-armor, defense 0, size 8\" #spawngroup=\"blindes\" #spawncount=1 Gali-1",
+   "new_name": "#command=\"-armor, defense 0, size 8\" #spawngroup=\"armor\" #spawncount=1 Gali-1"
+  }
+ },
+ {
+  "name": "set_unit_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Gali-armor-b",
+   "unit_name": "#command=\"-armor, defense 0, size 8, armor 4\" #spawngroup=\"blindes\" #spawncount=1 Gali-2",
+   "new_name": "#command=\"-armor, defense 0, size 8, armor 4\" #spawngroup=\"armor\" #spawncount=1 Gali-2"
+  }
+ }
+]

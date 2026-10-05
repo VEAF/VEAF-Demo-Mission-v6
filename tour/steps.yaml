@@ -39,11 +39,11 @@ steps:
       en: "This mission shows every feature of the VEAF tools, one per step. Each step gives the place, what to do and what you should see. A mark is placed on your F10 map when you open a step."
     how:
       fr:
-        - "Les menus VEAF sont dans F10 > Autre > VEAF ; ce menu a plusieurs pages (« Page suivante » en bas). La visite guidée et les menus « Démo : actions » et « Démo : commandes » sont à part, directement dans F10 > Autre. La mission est en français : les menus aussi."
+        - "Les menus VEAF sont dans F10 > Autre > VEAF ; ce menu a plusieurs pages (« Page suivante » en bas). La visite guidée et le menu « Démo : commandes » sont à part, directement dans F10 > Autre."
         - "Beaucoup de commandes se tapent dans un marqueur de la carte F10 : bouton « Ajouter un repère » de la barre du haut, clic sur la carte, tapez le texte, puis cliquez ailleurs pour valider."
         - "Slots : à Kutaisi, des slots classiques moteur chaud (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), et des slots dynamiques sur les quatre bases bleues en multijoueur ; sur les porte-avions, F/A-18C et F-14B."
       en:
-        - "VEAF menus are under F10 > Other > VEAF; that menu has several pages (\"Page suivante\" = next page, at the bottom). The guided tour and the \"Démo : actions\" and \"Démo : commandes\" menus are separate, directly under F10 > Other. The mission runs in French, so the menus are in French too (translations are given here)."
+        - "VEAF menus are under F10 > Other > VEAF; that menu has several pages (\"Next page\" at the bottom). The guided tour and the \"Demo: commands\" menu are separate, directly under F10 > Other."
         - "Many commands are typed into an F10 map marker: \"Add mark\" button in the top bar, click on the map, type the text, then click elsewhere to validate."
         - "Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers."
     see:
@@ -66,21 +66,21 @@ steps:
         - "`-armor` : un groupe blindé tiré au sort ; `-armor, size 4, defense 0` pour le régler."
         - "`_spawn unit, name T-80UD, hdg 270` : un char isolé, cap 270."
         - "`-convoy, dest ALPHA` : un convoi qui rejoint le point nommé ALPHA par la route (posez le marqueur à quelques km)."
-        - "`_name point BRAVO` : crée votre propre point nommé, réutilisable dans `-convoy, dest BRAVO`."
-        - "`_spawn smoke, color red` : une fumée rouge ; `-farp` : un FARP complet avec son décor."
+        - "`-point BRAVO` : crée votre propre point nommé (alias de `_name point BRAVO`), réutilisable dans `-convoy, dest BRAVO`."
+        - "`-smoke` : une fumée blanche (`-smoke, color red` pour du rouge) ; `-farp` : un FARP complet avec son décor."
         - "`-boum` : une explosion de 500 kg ; `-menage` : détruit tout dans un rayon de 2 km (deux raccourcis propres à cette mission)."
       en:
         - "`-sa8`: an SA-8 battery (shipped alias; full list in the shortcuts documentation)."
         - "`-armor`: a random armour group; `-armor, size 4, defense 0` to tune it."
         - "`_spawn unit, name T-80UD, hdg 270`: a single tank, heading 270."
         - "`-convoy, dest ALPHA`: a convoy that drives by road to the named point ALPHA (place the marker a few km away)."
-        - "`_name point BRAVO`: creates your own named point, usable in `-convoy, dest BRAVO`."
-        - "`_spawn smoke, color red`: red smoke; `-farp`: a complete FARP with its props."
+        - "`-point BRAVO`: creates your own named point (alias of `_name point BRAVO`), usable in `-convoy, dest BRAVO`."
+        - "`-smoke`: white smoke (`-smoke, color red` for red); `-farp`: a complete FARP with its props."
         - "`-boum`: a 500 kg explosion; `-menage`: destroys everything within 2 km (two shortcuts defined by this mission)."
     see:
       fr: "Chaque commande répond par un message et fait apparaître ce qu'elle annonce à l'emplacement du marqueur ; le marqueur disparaît une fois la commande exécutée."
       en: "Each command answers with a message and spawns what it announces at the marker; the marker disappears once the command has run."
-    check: "`-sa8`, `-armor`, `-convoy, dest ALPHA`, `_name point`, `_spawn smoke`, `-farp`, `-boum`, `-menage` : chacune produit son effet au marqueur, sans erreur dans dcs.log."
+    check: "`-sa8`, `-armor`, `-convoy, dest ALPHA`, `-point`, `-smoke`, `-farp`, `-boum`, `-menage` : chacune produit son effet au marqueur, sans erreur dans dcs.log."
     doc: "mission-maker/scripts/veafSpawn/"
 
   - id: generated
@@ -99,9 +99,9 @@ steps:
         - "Menu F10 > Autre > VEAF > MISSION DE TRANSPORT : position de la zone de livraison, fumée."
       en:
         - "`_cas` (or `_cas, size 3, defense 2`) in a sandbox marker: an enemy group appears in the area, to find and destroy."
-        - "F10 > Other > VEAF > MISSION CAS (CAS mission): target information, smoke, illumination, skip the target."
+        - "F10 > Other > VEAF > CAS MISSION: target information, smoke, illumination, skip the target."
         - "`_transport, from ALPHA` in a marker near FARP Khoni (more than 15 km from ALPHA): cargo to pick up at ALPHA and deliver at the marker."
-        - "F10 > Other > VEAF > MISSION DE TRANSPORT (transport mission): drop zone position, smoke."
+        - "F10 > Other > VEAF > TRANSPORT MISSION: drop zone position, smoke."
     see:
       fr: "Un menu propre à la mission générée, et un message quand l'objectif est atteint."
       en: "A menu specific to the generated mission, and a message when the objective is met."
@@ -123,8 +123,8 @@ steps:
         - "Détruisez les camions, puis désactivez et passez au niveau moyen, puis au difficile."
         - "Infos de la zone, fumée et fusée éclairante dans le même menu."
       en:
-        - "F10 > Other > VEAF > ZONES DE COMBAT (combat zones) > Entraînement Khoni > Khoni - facile (easy) > Activer la zone (activate)."
-        - "Destroy the trucks, then deactivate and move on to medium (moyen), then hard (difficile)."
+        - "F10 > Other > VEAF > COMBAT ZONES > Khoni training > Khoni - easy > Activate zone."
+        - "Destroy the trucks, then deactivate and move on to medium, then hard."
         - "Zone info, smoke and illumination flare are in the same menu."
     see:
       fr: "Facile : huit camions. Moyen : les camions, une compagnie blindée et deux pièces de DCA tirées parmi quatre (jamais les mêmes d'une fois sur l'autre). Difficile : en plus, un bataillon blindé et deux systèmes courte portée tirés au sort."
@@ -142,13 +142,13 @@ steps:
       en: "A real combat zone on the Inguri front. Its content is described by carrier units holding a command (#command): the zone spawns in their place one armour group drawn among two, an artillery battery, air defence and MANPADS. The Reaper 1 drone orbits above and lases the armour."
     how:
       fr:
-        - "Menu F10 > Autre > VEAF > ZONES DE COMBAT > Front de Gali > Activer la zone."
+        - "Menu F10 > Autre > VEAF > ZONES DE COMBAT > Front de Gali > +Activer la zone."
         - "Le JTAC : code laser 1511, radio 35.55 FM ; menu F10 > Autre > CTLD > JTAC pour la cible en cours."
         - "Le drone est relançable depuis F10 > Autre > VEAF > MOYENS > Reaper 1 (MQ-9, JTAC)."
       en:
-        - "F10 > Other > VEAF > ZONES DE COMBAT > Front de Gali > Activer la zone."
+        - "F10 > Other > VEAF > COMBAT ZONES > Gali front > +Activate zone."
         - "The JTAC: laser code 1511, radio 35.55 FM; F10 > Other > CTLD > JTAC for the current target."
-        - "The drone can be respawned from F10 > Other > VEAF > MOYENS (assets) > Reaper 1 (MQ-9, JTAC)."
+        - "The drone can be respawned from F10 > Other > VEAF > ASSETS > Reaper 1 (MQ-9, JTAC)."
     see:
       fr: "Un seul des deux groupes blindés apparaît ; le drone annonce sa cible et la désigne au code 1511."
       en: "Only one of the two armour groups appears; the drone announces its target and lases it on code 1511."
@@ -171,7 +171,7 @@ steps:
       en:
         - "Approach Ochamchire from the south-east, low then climbing: watch when your RWR lights up."
         - "Red IADS status (sites, radars on): F10 > Other > SKYNET IADS COALITION: RED."
-        - "The spotter view belongs to each side: F10 > Other > VEAF > RÉSEAU DE GUETTEURS (spotter network) > Afficher la vue des guetteurs shows YOUR side's spotters. To see the red network, take the red game master slot of the test mission (reopen the F10 map after clicking)."
+        - "The spotter view belongs to each side: F10 > Other > VEAF > SPOTTER NETWORK > Show the spotter view shows YOUR side's spotters. To see the red network, take the red game master slot of the test mission (reopen the F10 map after clicking)."
     see:
       fr: "Le SA-6 n'émet pas tant que le réseau ne vous a pas détecté, puis s'allume ; le menu SKYNET IADS COALITION: RED montre quel site émet."
       en: "The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS COALITION: RED menu shows which site is emitting."
@@ -188,10 +188,10 @@ steps:
       en: "Two chained zones: the second does not exist until the first is complete. First the port depot, then, one minute after it is destroyed, the cargo ships and their corvette at anchor (anti-ship)."
     how:
       fr:
-        - "Menu F10 > Autre > VEAF > ZONES DE COMBAT > Port d'Ochamchire - 1 : dépôt > Activer la zone."
+        - "Menu F10 > Autre > VEAF > ZONES DE COMBAT > Port d'Ochamchire - 1 : dépôt > +Activer la zone."
         - "Détruisez les camions et la ZU-23, puis attendez une minute."
       en:
-        - "F10 > Other > VEAF > ZONES DE COMBAT > Port d'Ochamchire - 1 : dépôt > Activer la zone."
+        - "F10 > Other > VEAF > COMBAT ZONES > Ochamchire port - 1: depot > +Activate zone."
         - "Destroy the trucks and the ZU-23, then wait one minute."
     see:
       fr: "La zone 1 se termine, et les navires apparaissent au large sans qu'aucun menu ne les ait activés. Attention : le cercle de la QRA de Soukhoumi couvre Ochamchire."
@@ -209,11 +209,11 @@ steps:
       en: "An operation groups several zones as tasks: the radar and the depot first, then the command post, given as an objective only once the first two are destroyed. All units spawn on activation: the dependency orders the objectives, not the spawning."
     how:
       fr:
-        - "Menu F10 > Autre > Démo : actions > Activer l'opération Tkvarcheli (VEAF ne pose pas de commande d'activation dans le menu d'une opération : la démo la fournit)."
-        - "Menu F10 > Autre > VEAF > ZONES DE COMBAT > Opération Tkvarcheli : la tâche en cours ; détruisez le radar 1L13 et le dépôt (statiques), puis le PC."
+        - "Menu F10 > Autre > VEAF > ZONES DE COMBAT > Opération Tkvarcheli > +Activer la zone : les trois tâches apparaissent ensemble."
+        - "Le même menu donne la tâche en cours ; détruisez le radar 1L13 et le dépôt (statiques), puis le PC."
       en:
-        - "F10 > Other > Démo : actions > Activer l'opération Tkvarcheli (activate; VEAF puts no activation command in an operation's menu, so the demo provides one)."
-        - "F10 > Other > VEAF > ZONES DE COMBAT > Opération Tkvarcheli: the current task; destroy the 1L13 radar and the depot (statics), then the command post."
+        - "F10 > Other > VEAF > COMBAT ZONES > Operation Tkvarcheli > +Activate zone: the three tasks appear together."
+        - "The same menu gives the current task; destroy the 1L13 radar and the depot (statics), then the command post."
     see:
       fr: "Les tâches passent de « en cours » à « terminée » ; quand les trois sont faites, le message « L'opération … est terminée »."
       en: "Tasks move from \"in progress\" to \"done\"; when all three are done, the message \"Operation … is over\"."
@@ -223,17 +223,17 @@ steps:
   - id: convoy
     chapter: ground
     title: { fr: "Convoi en mouvement", en: "Moving convoy" }
-    anchor: { zone: "combatZone_Convoi" }
+    anchor: { zone: "combatZone_Convoy" }
     modules: [COMBATZONE]
     what:
       fr: "Un convoi logistique, cinq camions et sa Shilka, qui fait la navette entre Ochamchire et Gali : une cible qui bouge."
       en: "A logistics convoy, five trucks and their Shilka, shuttling between Ochamchire and Gali: a moving target."
     how:
       fr:
-        - "Menu F10 > Autre > VEAF > ZONES DE COMBAT > Convoi d'Ochamchire > Activer la zone."
+        - "Menu F10 > Autre > VEAF > ZONES DE COMBAT > Convoi d'Ochamchire > +Activer la zone."
         - "Infos de la zone : la position du convoi au moment de la demande."
       en:
-        - "F10 > Other > VEAF > ZONES DE COMBAT > Convoi d'Ochamchire > Activer la zone."
+        - "F10 > Other > VEAF > COMBAT ZONES > Ochamchire convoy > +Activate zone."
         - "Zone info: the convoy position when you ask."
     see:
       fr: "Le convoi roule vers Gali, puis revient, en boucle."
@@ -256,7 +256,7 @@ steps:
         - "Menu F10 > Autre > Démo : commandes > Arrêter / Démarrer la QRA de Soukhoumi (menu déclaré en YAML)."
       en:
         - "Enter the circle (drawn on the F10 map) in an aircraft: the QRA scrambles 60 s later."
-        - "F10 > Other > Démo : commandes > Arrêter / Démarrer la QRA de Soukhoumi (stop / start; a menu declared in YAML)."
+        - "F10 > Other > Demo: commands > Stop / Start the Sukhumi QRA (a menu declared in YAML)."
     see:
       fr: "Un message annonce le décollage ; les chasseurs viennent vers vous. Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est vidé d'intrus."
       en: "A message announces the scramble; the fighters come at you. Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders."
@@ -277,8 +277,8 @@ steps:
         - "Menu F10 > Autre > VEAF > MISSIONS > Raid sur Senaki > Good > scale 1 > Activer la mission, puis interceptez les bombardiers."
         - "Ou par marqueur : `-airstart Raid-Senaki/Good/1`, `-airstop Raid-Senaki/Good/1` (nom, niveau, taille)."
       en:
-        - "F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > level (Good, Excellent) > size (scale 1, 2) > Activer la mission (activate)."
-        - "F10 > Other > VEAF > MISSIONS > Raid sur Senaki > Good > scale 1 > Activer la mission, then intercept the bombers."
+        - "F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > level (Good, Excellent) > size (scale 1, 2) > Activate mission."
+        - "F10 > Other > VEAF > MISSIONS > Senaki raid > Good > scale 1 > Activate mission, then intercept the bombers."
         - "Or by marker: `-airstart Raid-Senaki/Good/1`, `-airstop Raid-Senaki/Good/1` (name, level, size)."
     see:
       fr: "La patrouille apparaît en vol sur son hippodrome et engage ce qui entre à portée ; le raid vole vers Senaki et bombarde la base s'il n'est pas intercepté."
@@ -300,7 +300,7 @@ steps:
         - "Pour recommencer : F10 > Autre > Démo : commandes > Relancer l'arène BVR."
       en:
         - "Enter the arena circle (drawn on the F10 map), between 1,000 and 40,000 ft."
-        - "To start over: F10 > Other > Démo : commandes > Relancer l'arène BVR (reset)."
+        - "To start over: F10 > Other > Demo: commands > Reset the BVR arena."
     see:
       fr: "Message de début, puis une vague ; la suivante arrive une minute après la destruction de la précédente. Si vous mourez, l'arène se réinitialise."
       en: "A start message, then a wave; the next comes one minute after the previous is destroyed. If you die, the arena resets."
@@ -334,7 +334,7 @@ steps:
     modules: [ASSETS, MOVE]
     what:
       fr: "Deux ravitailleurs (Texaco 1 à perche, Arco 1 à panier) et un AWACS (Overlord 1) escorté par deux F-15C. Le menu MOYENS les relance et donne leurs informations ; une commande de marqueur déplace un ravitailleur."
-      en: "Two tankers (Texaco 1 boom, Arco 1 drogue) and an AWACS (Overlord 1) escorted by two F-15C. The MOYENS (assets) menu respawns them and gives their details; a marker command moves a tanker."
+      en: "Two tankers (Texaco 1 boom, Arco 1 drogue) and an AWACS (Overlord 1) escorted by two F-15C. The ASSETS menu respawns them and gives their details; a marker command moves a tanker."
     how:
       fr:
         - "Texaco 1 : TACAN 52Y, 292.0 AM, FL200 ; Arco 1 : TACAN 51Y, 291.0 AM, FL180 ; Overlord 1 : 286.0 AM."
@@ -342,7 +342,7 @@ steps:
         - "Marqueur `_move tanker, name Texaco 1, alt 22000` posé où vous voulez l'hippodrome."
       en:
         - "Texaco 1: TACAN 52Y, 292.0 AM, FL200; Arco 1: TACAN 51Y, 291.0 AM, FL180; Overlord 1: 286.0 AM."
-        - "F10 > Other > VEAF > MOYENS > Overlord 1 (E-3A) > Réapparition de Overlord 1 (E-3A) (respawn): the AWACS and its escort respawn together."
+        - "F10 > Other > VEAF > ASSETS > Overlord 1 (E-3A) > Respawn Overlord 1 (E-3A): the AWACS and its escort respawn together."
         - "Marker `_move tanker, name Texaco 1, alt 22000` where you want the race-track."
     see:
       fr: "Les ravitailleurs répondent sur leur fréquence et leur TACAN ; après un _move tanker, Texaco 1 rejoint sa nouvelle orbite."
@@ -362,11 +362,11 @@ steps:
       fr:
         - "Décollez de Kutaisi en UH-1H ou Mi-8 et posez-vous au FARP Khoni (127.5 AM)."
         - "Menu F10 > Autre > CTLD : charger des troupes, demander une caisse, puis les déposer ailleurs."
-        - "Menu F10 > Autre > Démo : actions > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position."
+        - "Menu F10 > Autre > Démo : commandes > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position."
       en:
         - "Take off from Kutaisi in a UH-1H or Mi-8 and land at FARP Khoni (127.5 AM)."
         - "F10 > Other > CTLD: load troops, request a crate, then drop them elsewhere."
-        - "F10 > Other > Démo : actions > Créer un pilote abattu près de Khoni (create a downed pilot), then the CSAR menu for its beacon and position."
+        - "F10 > Other > Demo: commands > Create a downed pilot near Khoni, then the CSAR menu for its beacon and position."
     see:
       fr: "Le FARP ravitaille et réarme ; CTLD charge les troupes ; le pilote abattu émet une balise et se laisse embarquer."
       en: "The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards."
@@ -380,15 +380,15 @@ steps:
     modules: [CARRIER]
     what:
       fr: "Deux porte-avions au large de Batumi, chacun avec son ravitailleur S-3B et son hélicoptère de sauvetage. Le menu OPS PORTE-AVIONS met le navire face au vent pour les opérations aériennes."
-      en: "Two carriers off Batumi, each with its S-3B tanker and rescue helicopter. The OPS PORTE-AVIONS (carrier ops) menu turns the ship into the wind for air operations."
+      en: "Two carriers off Batumi, each with its S-3B tanker and rescue helicopter. The CARRIER OPS menu turns the ship into the wind for air operations."
     how:
       fr:
         - "Stennis : TACAN 74X STN, ICLS 4, Link 4 336.0, tour 274.0 AM. Roosevelt : TACAN 71X TDR, ICLS 1, Link 4 337.0, tour 271.0 AM."
-        - "Menu F10 > Autre > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > Start carrier air operations for 45 minutes."
+        - "Menu F10 > Autre > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > Démarrer les opérations aériennes pour 45 minutes."
         - "Slots de pont : Stennis F/A-18C, Roosevelt F-14B."
       en:
         - "Stennis: TACAN 74X STN, ICLS 4, Link 4 336.0, tower 274.0 AM. Roosevelt: TACAN 71X TDR, ICLS 1, Link 4 337.0, tower 271.0 AM."
-        - "F10 > Other > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > Start carrier air operations for 45 minutes."
+        - "F10 > Other > VEAF > CARRIER OPS > CARRIER OPS - BLUE > CSG-74 Stennis > Start carrier air operations for 45 minutes."
         - "Deck slots: Stennis F/A-18C, Roosevelt F-14B."
     see:
       fr: "Le porte-avions vire face au vent, accélère, et le menu donne le cap de récupération ; le S-3B ravitaille."
@@ -411,8 +411,8 @@ steps:
         - "En F-16C à Kutaisi : F10 > Autre > VEAF > Assistance > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE."
       en:
         - "Take a slot at Kutaisi: read the welcome message."
-        - "F10 > Other > VEAF > MÉTÉO ET ATC (weather and ATC) > weather at closest point / ATC of closest airbase."
-        - "In the F-16C at Kutaisi: F10 > Other > VEAF > Assistance > Démarrage à froid (cold start); then, at the root of the VEAF menu: ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE (confirm / skip)."
+        - "F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point / ATC on closest airbase."
+        - "In the F-16C at Kutaisi: F10 > Other > VEAF > Assistance > Cold start; then, at the root of the VEAF menu: Assistance: confirm the step / Assistance: skip the step."
     see:
       fr: "Le message d'accueil donne la piste en service ; la checklist coche les étapes déjà faites."
       en: "The welcome message gives the runway in use; the checklist ticks the steps already done."

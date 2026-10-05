@@ -2475,7 +2475,7 @@ mission =
             group = {
               [1] = {
                 groupId = 60,
-                name = "QRA Soukhoumi - MiG-29S",
+                name = "QRA Sukhumi - MiG-29S",
                 task = "Intercept",
                 communication = true,
                 dynSpawnTemplate = false,
@@ -2514,7 +2514,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 80,
-                    name = "QRA Soukhoumi - MiG-29S-1",
+                    name = "QRA Sukhumi - MiG-29S-1",
                     type = "MiG-29S",
                     skill = "High",
                     alt = 4572.0,
@@ -2554,7 +2554,7 @@ mission =
                   },
                   [2] = {
                     unitId = 81,
-                    name = "QRA Soukhoumi - MiG-29S-2",
+                    name = "QRA Sukhumi - MiG-29S-2",
                     type = "MiG-29S",
                     skill = "High",
                     alt = 4572.0,
@@ -2598,7 +2598,7 @@ mission =
               },
               [2] = {
                 groupId = 61,
-                name = "QRA Soukhoumi - Su-27",
+                name = "QRA Sukhumi - Su-27",
                 task = "Intercept",
                 communication = true,
                 dynSpawnTemplate = false,
@@ -2637,7 +2637,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 82,
-                    name = "QRA Soukhoumi - Su-27-1",
+                    name = "QRA Sukhumi - Su-27-1",
                     type = "Su-27",
                     skill = "High",
                     alt = 4572.0,
@@ -2689,7 +2689,7 @@ mission =
                   },
                   [2] = {
                     unitId = 83,
-                    name = "QRA Soukhoumi - Su-27-2",
+                    name = "QRA Sukhumi - Su-27-2",
                     type = "Su-27",
                     skill = "High",
                     alt = 4572.0,
@@ -2745,7 +2745,7 @@ mission =
               },
               [3] = {
                 groupId = 62,
-                name = "QRA Soukhoumi - Su-30",
+                name = "QRA Sukhumi - Su-30",
                 task = "Intercept",
                 communication = true,
                 dynSpawnTemplate = false,
@@ -2784,7 +2784,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 84,
-                    name = "QRA Soukhoumi - Su-30-1",
+                    name = "QRA Sukhumi - Su-30-1",
                     type = "Su-30",
                     skill = "High",
                     alt = 4572.0,
@@ -2836,7 +2836,7 @@ mission =
                   },
                   [2] = {
                     unitId = 85,
-                    name = "QRA Soukhoumi - Su-30-2",
+                    name = "QRA Sukhumi - Su-30-2",
                     type = "Su-30",
                     skill = "High",
                     alt = 4572.0,
@@ -2892,7 +2892,7 @@ mission =
               },
               [4] = {
                 groupId = 63,
-                name = "QRA Soukhoumi - MiG-31",
+                name = "QRA Sukhumi - MiG-31",
                 task = "Intercept",
                 communication = true,
                 dynSpawnTemplate = false,
@@ -2931,7 +2931,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 86,
-                    name = "QRA Soukhoumi - MiG-31-1",
+                    name = "QRA Sukhumi - MiG-31-1",
                     type = "MiG-31",
                     skill = "High",
                     alt = 4572.0,
@@ -2971,7 +2971,7 @@ mission =
                   },
                   [2] = {
                     unitId = 87,
-                    name = "QRA Soukhoumi - MiG-31-2",
+                    name = "QRA Sukhumi - MiG-31-2",
                     type = "MiG-31",
                     skill = "High",
                     alt = 4572.0,
@@ -3184,7 +3184,7 @@ mission =
               },
               [6] = {
                 groupId = 65,
-                name = "OnDemand-CAP Su-27 mer FL300",
+                name = "OnDemand-CAP Su-27 sea FL300",
                 task = "CAP",
                 communication = true,
                 dynSpawnTemplate = false,
@@ -3269,7 +3269,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 90,
-                    name = "OnDemand-CAP Su-27 mer FL300-1",
+                    name = "OnDemand-CAP Su-27 sea FL300-1",
                     type = "Su-27",
                     skill = "High",
                     alt = 9144.0,
@@ -3321,7 +3321,7 @@ mission =
                   },
                   [2] = {
                     unitId = 91,
-                    name = "OnDemand-CAP Su-27 mer FL300-2",
+                    name = "OnDemand-CAP Su-27 sea FL300-2",
                     type = "Su-27",
                     skill = "High",
                     alt = 9144.0,
@@ -3377,7 +3377,7 @@ mission =
               },
               [7] = {
                 groupId = 66,
-                name = "OnDemand-CAP MiG-31 Sotchi FL350",
+                name = "OnDemand-CAP MiG-31 Sochi FL350",
                 task = "CAP",
                 communication = true,
                 dynSpawnTemplate = false,
@@ -3462,7 +3462,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 92,
-                    name = "OnDemand-CAP MiG-31 Sotchi FL350-1",
+                    name = "OnDemand-CAP MiG-31 Sochi FL350-1",
                     type = "MiG-31",
                     skill = "High",
                     alt = 10668.0,
@@ -3502,7 +3502,7 @@ mission =
                   },
                   [2] = {
                     unitId = 93,
-                    name = "OnDemand-CAP MiG-31 Sotchi FL350-2",
+                    name = "OnDemand-CAP MiG-31 Sochi FL350-2",
                     type = "MiG-31",
                     skill = "High",
                     alt = 10668.0,
@@ -3895,7 +3895,7 @@ mission =
               },
               [10] = {
                 groupId = 69,
-                name = "Vague MiG-29S",
+                name = "Wave MiG-29S",
                 task = "CAP",
                 communication = true,
                 dynSpawnTemplate = false,
@@ -3934,7 +3934,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 98,
-                    name = "Vague MiG-29S-1",
+                    name = "Wave MiG-29S-1",
                     type = "MiG-29S",
                     skill = "High",
                     alt = 7620.0,
@@ -3978,7 +3978,7 @@ mission =
               },
               [11] = {
                 groupId = 70,
-                name = "Vague Su-27",
+                name = "Wave Su-27",
                 task = "CAP",
                 communication = true,
                 dynSpawnTemplate = false,
@@ -4017,7 +4017,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 99,
-                    name = "Vague Su-27-1",
+                    name = "Wave Su-27-1",
                     type = "Su-27",
                     skill = "High",
                     alt = 7620.0,
@@ -4069,7 +4069,7 @@ mission =
                   },
                   [2] = {
                     unitId = 100,
-                    name = "Vague Su-27-2",
+                    name = "Wave Su-27-2",
                     type = "Su-27",
                     skill = "High",
                     alt = 7620.0,
@@ -4125,7 +4125,7 @@ mission =
               },
               [12] = {
                 groupId = 71,
-                name = "Vague Su-30",
+                name = "Wave Su-30",
                 task = "CAP",
                 communication = true,
                 dynSpawnTemplate = false,
@@ -4164,7 +4164,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 101,
-                    name = "Vague Su-30-1",
+                    name = "Wave Su-30-1",
                     type = "Su-30",
                     skill = "High",
                     alt = 7620.0,
@@ -4216,7 +4216,7 @@ mission =
                   },
                   [2] = {
                     unitId = 102,
-                    name = "Vague Su-30-2",
+                    name = "Wave Su-30-2",
                     type = "Su-30",
                     skill = "High",
                     alt = 7620.0,
@@ -4276,7 +4276,7 @@ mission =
             group = {
               [1] = {
                 groupId = 50,
-                name = "combatZone_Ochamchire_Navires-escorte",
+                name = "combatZone_Ochamchire_Ships-escort",
                 hidden = false,
                 lateActivation = false,
                 route = {
@@ -4309,7 +4309,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 64,
-                    name = "combatZone_Ochamchire_Navires-escorte Unit #001",
+                    name = "combatZone_Ochamchire_Ships-escort Unit #001",
                     type = "ALBATROS",
                     skill = "Average",
                     frequency = 127500000,
@@ -4325,7 +4325,7 @@ mission =
               },
               [2] = {
                 groupId = 80,
-                name = "combatZone_Ochamchire_Navires-cargo-1",
+                name = "combatZone_Ochamchire_Ships-cargoships",
                 hidden = false,
                 lateActivation = false,
                 route = {
@@ -4347,8 +4347,8 @@ mission =
                       formation_template = "",
                       speed = 5.5555555555556,
                       speed_locked = true,
-                      x = -238000.0,
-                      y = 584600.0,
+                      x = -238000,
+                      y = 585000,
                     },
                   },
                 },
@@ -4358,68 +4358,19 @@ mission =
                 units = {
                   [1] = {
                     unitId = 111,
-                    name = "combatZone_Ochamchire_Navires-cargo-1 Unit #001",
+                    name = "#command=\"-cargoships\" OchN-1",
                     type = "Dry-cargo ship-1",
                     skill = "Average",
                     frequency = 127500000,
                     heading = 0,
                     modulation = 0,
-                    x = -238000.0,
-                    y = 584600.0,
+                    x = -238000,
+                    y = 585000,
                   },
                 },
                 visible = false,
-                x = -238000.0,
-                y = 584600.0,
-              },
-              [3] = {
-                groupId = 81,
-                name = "combatZone_Ochamchire_Navires-cargo-2",
-                hidden = false,
-                lateActivation = false,
-                route = {
-                  points = {
-                    [1] = {
-                      name = "",
-                      type = "Turning Point",
-                      task = {
-                        id = "ComboTask",
-                        params = {
-                          tasks = {},
-                        },
-                      },
-                      action = "Turning Point",
-                      alt = 0,
-                      alt_type = "BARO",
-                      ETA = 0,
-                      ETA_locked = true,
-                      formation_template = "",
-                      speed = 5.5555555555556,
-                      speed_locked = true,
-                      x = -237600.0,
-                      y = 585000.0,
-                    },
-                  },
-                },
-                start_time = 0,
-                tasks = {},
-                uncontrollable = false,
-                units = {
-                  [1] = {
-                    unitId = 112,
-                    name = "combatZone_Ochamchire_Navires-cargo-2 Unit #001",
-                    type = "Dry-cargo ship-2",
-                    skill = "Average",
-                    frequency = 127500000,
-                    heading = 0,
-                    modulation = 0,
-                    x = -237600.0,
-                    y = 585000.0,
-                  },
-                },
-                visible = false,
-                x = -237600.0,
-                y = 585000.0,
+                x = -238000,
+                y = 585000,
               },
             },
           },
@@ -4427,7 +4378,7 @@ mission =
             group = {
               [1] = {
                 groupId = 53,
-                name = "combatZone_Tkvarcheli_Depot-munitions",
+                name = "combatZone_Tkvarcheli_Depot-ammo",
                 dead = false,
                 heading = 0,
                 hidden = false,
@@ -4448,7 +4399,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 67,
-                    name = "combatZone_Tkvarcheli_Depot-munitions",
+                    name = "combatZone_Tkvarcheli_Depot-ammo",
                     type = ".Ammunition depot",
                     category = "Warehouses",
                     heading = 0,
@@ -4462,7 +4413,7 @@ mission =
               },
               [2] = {
                 groupId = 54,
-                name = "combatZone_Tkvarcheli_Depot-carburant-1",
+                name = "combatZone_Tkvarcheli_Depot-fuel-1",
                 dead = false,
                 heading = 0,
                 hidden = false,
@@ -4483,7 +4434,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 68,
-                    name = "combatZone_Tkvarcheli_Depot-carburant-1",
+                    name = "combatZone_Tkvarcheli_Depot-fuel-1",
                     type = "Fuel tank",
                     category = "Fortifications",
                     heading = 0,
@@ -4497,7 +4448,7 @@ mission =
               },
               [3] = {
                 groupId = 55,
-                name = "combatZone_Tkvarcheli_Depot-carburant-2",
+                name = "combatZone_Tkvarcheli_Depot-fuel-2",
                 dead = false,
                 heading = 0,
                 hidden = false,
@@ -4518,7 +4469,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 69,
-                    name = "combatZone_Tkvarcheli_Depot-carburant-2",
+                    name = "combatZone_Tkvarcheli_Depot-fuel-2",
                     type = "Fuel tank",
                     category = "Fortifications",
                     heading = 0,
@@ -4532,7 +4483,7 @@ mission =
               },
               [4] = {
                 groupId = 56,
-                name = "combatZone_Tkvarcheli_PC-pc",
+                name = "combatZone_Tkvarcheli_HQ-hq",
                 dead = false,
                 heading = 0,
                 hidden = false,
@@ -4553,7 +4504,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 70,
-                    name = "combatZone_Tkvarcheli_PC-pc",
+                    name = "combatZone_Tkvarcheli_HQ-hq",
                     type = ".Command Center",
                     category = "Fortifications",
                     heading = 0,
@@ -4567,7 +4518,7 @@ mission =
               },
               [5] = {
                 groupId = 57,
-                name = "combatZone_Tkvarcheli_PC-bunker",
+                name = "combatZone_Tkvarcheli_HQ-bunker",
                 dead = false,
                 heading = 0,
                 hidden = false,
@@ -4588,7 +4539,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 71,
-                    name = "combatZone_Tkvarcheli_PC-bunker",
+                    name = "combatZone_Tkvarcheli_HQ-bunker",
                     type = "Bunker",
                     category = "Fortifications",
                     heading = 0,
@@ -4605,7 +4556,7 @@ mission =
             group = {
               [1] = {
                 groupId = 22,
-                name = "combatZone_Khoni_Easy-cible-01",
+                name = "combatZone_Khoni_Easy-target-01",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -4639,7 +4590,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 32,
-                    name = "combatZone_Khoni_Easy-cible-01 Unit #001",
+                    name = "combatZone_Khoni_Easy-target-01 Unit #001",
                     type = "Ural-375",
                     skill = "Average",
                     coldAtStart = false,
@@ -4655,7 +4606,7 @@ mission =
               },
               [2] = {
                 groupId = 23,
-                name = "combatZone_Khoni_Easy-cible-02",
+                name = "combatZone_Khoni_Easy-target-02",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -4689,7 +4640,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 33,
-                    name = "combatZone_Khoni_Easy-cible-02 Unit #001",
+                    name = "combatZone_Khoni_Easy-target-02 Unit #001",
                     type = "Ural-375",
                     skill = "Average",
                     coldAtStart = false,
@@ -4705,7 +4656,7 @@ mission =
               },
               [3] = {
                 groupId = 24,
-                name = "combatZone_Khoni_Easy-cible-03",
+                name = "combatZone_Khoni_Easy-target-03",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -4739,7 +4690,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 34,
-                    name = "combatZone_Khoni_Easy-cible-03 Unit #001",
+                    name = "combatZone_Khoni_Easy-target-03 Unit #001",
                     type = "KAMAZ Truck",
                     skill = "Average",
                     coldAtStart = false,
@@ -4755,7 +4706,7 @@ mission =
               },
               [4] = {
                 groupId = 25,
-                name = "combatZone_Khoni_Easy-cible-04",
+                name = "combatZone_Khoni_Easy-target-04",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -4789,7 +4740,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 35,
-                    name = "combatZone_Khoni_Easy-cible-04 Unit #001",
+                    name = "combatZone_Khoni_Easy-target-04 Unit #001",
                     type = "KAMAZ Truck",
                     skill = "Average",
                     coldAtStart = false,
@@ -4805,7 +4756,7 @@ mission =
               },
               [5] = {
                 groupId = 26,
-                name = "combatZone_Khoni_Easy-cible-05",
+                name = "combatZone_Khoni_Easy-target-05",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -4839,7 +4790,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 36,
-                    name = "combatZone_Khoni_Easy-cible-05 Unit #001",
+                    name = "combatZone_Khoni_Easy-target-05 Unit #001",
                     type = "GAZ-66",
                     skill = "Average",
                     coldAtStart = false,
@@ -4855,7 +4806,7 @@ mission =
               },
               [6] = {
                 groupId = 27,
-                name = "combatZone_Khoni_Easy-cible-06",
+                name = "combatZone_Khoni_Easy-target-06",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -4889,7 +4840,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 37,
-                    name = "combatZone_Khoni_Easy-cible-06 Unit #001",
+                    name = "combatZone_Khoni_Easy-target-06 Unit #001",
                     type = "ZIL-131 KUNG",
                     skill = "Average",
                     coldAtStart = false,
@@ -4905,7 +4856,7 @@ mission =
               },
               [7] = {
                 groupId = 28,
-                name = "combatZone_Khoni_Easy-cible-07",
+                name = "combatZone_Khoni_Easy-target-07",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -4939,7 +4890,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 38,
-                    name = "combatZone_Khoni_Easy-cible-07 Unit #001",
+                    name = "combatZone_Khoni_Easy-target-07 Unit #001",
                     type = "Ural-375 PBU",
                     skill = "Average",
                     coldAtStart = false,
@@ -4955,7 +4906,7 @@ mission =
               },
               [8] = {
                 groupId = 29,
-                name = "combatZone_Khoni_Easy-cible-08",
+                name = "combatZone_Khoni_Easy-target-08",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -4989,7 +4940,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 39,
-                    name = "combatZone_Khoni_Easy-cible-08 Unit #001",
+                    name = "combatZone_Khoni_Easy-target-08 Unit #001",
                     type = "ATZ-5",
                     skill = "Average",
                     coldAtStart = false,
@@ -5005,7 +4956,7 @@ mission =
               },
               [9] = {
                 groupId = 30,
-                name = "combatZone_Khoni_Medium-blindes",
+                name = "combatZone_Khoni_Medium-armor",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -5255,7 +5206,7 @@ mission =
               },
               [14] = {
                 groupId = 35,
-                name = "combatZone_Khoni_Hard-bataillon",
+                name = "combatZone_Khoni_Hard-battalion",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -5505,7 +5456,7 @@ mission =
               },
               [19] = {
                 groupId = 40,
-                name = "combatZone_Gali-blindes-a",
+                name = "combatZone_Gali-armor-a",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -5539,7 +5490,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 50,
-                    name = "#command=\"-armor, defense 0, size 8\" #spawngroup=\"blindes\" #spawncount=1 Gali-1",
+                    name = "#command=\"-armor, defense 0, size 8\" #spawngroup=\"armor\" #spawncount=1 Gali-1",
                     type = "T-72B",
                     skill = "Average",
                     coldAtStart = false,
@@ -5555,7 +5506,7 @@ mission =
               },
               [20] = {
                 groupId = 41,
-                name = "combatZone_Gali-blindes-b",
+                name = "combatZone_Gali-armor-b",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -5589,7 +5540,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 51,
-                    name = "#command=\"-armor, defense 0, size 8, armor 4\" #spawngroup=\"blindes\" #spawncount=1 Gali-2",
+                    name = "#command=\"-armor, defense 0, size 8, armor 4\" #spawngroup=\"armor\" #spawncount=1 Gali-2",
                     type = "T-72B",
                     skill = "Average",
                     coldAtStart = false,
@@ -5605,7 +5556,7 @@ mission =
               },
               [21] = {
                 groupId = 42,
-                name = "combatZone_Gali-artillerie",
+                name = "combatZone_Gali-artillery",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -5655,7 +5606,7 @@ mission =
               },
               [22] = {
                 groupId = 43,
-                name = "combatZone_Gali-dca",
+                name = "combatZone_Gali-sam",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -5705,7 +5656,7 @@ mission =
               },
               [23] = {
                 groupId = 44,
-                name = "combatZone_Gali-guetteurs",
+                name = "combatZone_Gali-spotters",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -5855,7 +5806,7 @@ mission =
               },
               [26] = {
                 groupId = 47,
-                name = "combatZone_Ochamchire_Port-camions",
+                name = "combatZone_Ochamchire_Port-trucks",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -5889,7 +5840,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 57,
-                    name = "combatZone_Ochamchire_Port-camions Unit #001",
+                    name = "combatZone_Ochamchire_Port-trucks Unit #001",
                     type = "Ural-375",
                     skill = "Average",
                     coldAtStart = false,
@@ -5900,7 +5851,7 @@ mission =
                   },
                   [2] = {
                     unitId = 58,
-                    name = "combatZone_Ochamchire_Port-camions Unit #002",
+                    name = "combatZone_Ochamchire_Port-trucks Unit #002",
                     type = "Ural-375",
                     skill = "Average",
                     coldAtStart = false,
@@ -5911,7 +5862,7 @@ mission =
                   },
                   [3] = {
                     unitId = 59,
-                    name = "combatZone_Ochamchire_Port-camions Unit #003",
+                    name = "combatZone_Ochamchire_Port-trucks Unit #003",
                     type = "Ural-375",
                     skill = "Average",
                     coldAtStart = false,
@@ -5922,7 +5873,7 @@ mission =
                   },
                   [4] = {
                     unitId = 60,
-                    name = "combatZone_Ochamchire_Port-camions Unit #004",
+                    name = "combatZone_Ochamchire_Port-trucks Unit #004",
                     type = "KAMAZ Truck",
                     skill = "Average",
                     coldAtStart = false,
@@ -5933,7 +5884,7 @@ mission =
                   },
                   [5] = {
                     unitId = 61,
-                    name = "combatZone_Ochamchire_Port-camions Unit #005",
+                    name = "combatZone_Ochamchire_Port-trucks Unit #005",
                     type = "KAMAZ Truck",
                     skill = "Average",
                     coldAtStart = false,
@@ -5949,7 +5900,7 @@ mission =
               },
               [27] = {
                 groupId = 48,
-                name = "combatZone_Ochamchire_Port-dca",
+                name = "combatZone_Ochamchire_Port-aaa",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -6099,7 +6050,7 @@ mission =
               },
               [30] = {
                 groupId = 58,
-                name = "combatZone_Tkvarcheli_PC-garde",
+                name = "combatZone_Tkvarcheli_HQ-guard",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -6133,7 +6084,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 72,
-                    name = "combatZone_Tkvarcheli_PC-garde Unit #001",
+                    name = "combatZone_Tkvarcheli_HQ-guard Unit #001",
                     type = "BTR-80",
                     skill = "Average",
                     coldAtStart = false,
@@ -6144,7 +6095,7 @@ mission =
                   },
                   [2] = {
                     unitId = 73,
-                    name = "combatZone_Tkvarcheli_PC-garde Unit #002",
+                    name = "combatZone_Tkvarcheli_HQ-guard Unit #002",
                     type = "BTR-80",
                     skill = "Average",
                     coldAtStart = false,
@@ -6160,7 +6111,7 @@ mission =
               },
               [31] = {
                 groupId = 59,
-                name = "combatZone_Convoi-colonne",
+                name = "combatZone_Convoy-column",
                 task = "Ground Nothing",
                 hidden = false,
                 lateActivation = false,
@@ -6225,7 +6176,7 @@ mission =
                 units = {
                   [1] = {
                     unitId = 74,
-                    name = "combatZone_Convoi-colonne Unit #001",
+                    name = "combatZone_Convoy-column Unit #001",
                     type = "Ural-375",
                     skill = "Average",
                     coldAtStart = false,
@@ -6236,7 +6187,7 @@ mission =
                   },
                   [2] = {
                     unitId = 75,
-                    name = "combatZone_Convoi-colonne Unit #002",
+                    name = "combatZone_Convoy-column Unit #002",
                     type = "Ural-375",
                     skill = "Average",
                     coldAtStart = false,
@@ -6247,7 +6198,7 @@ mission =
                   },
                   [3] = {
                     unitId = 76,
-                    name = "combatZone_Convoi-colonne Unit #003",
+                    name = "combatZone_Convoy-column Unit #003",
                     type = "Ural-375",
                     skill = "Average",
                     coldAtStart = false,
@@ -6258,7 +6209,7 @@ mission =
                   },
                   [4] = {
                     unitId = 77,
-                    name = "combatZone_Convoi-colonne Unit #004",
+                    name = "combatZone_Convoy-column Unit #004",
                     type = "KAMAZ Truck",
                     skill = "Average",
                     coldAtStart = false,
@@ -6269,7 +6220,7 @@ mission =
                   },
                   [5] = {
                     unitId = 78,
-                    name = "combatZone_Convoi-colonne Unit #005",
+                    name = "combatZone_Convoy-column Unit #005",
                     type = "KAMAZ Truck",
                     skill = "Average",
                     coldAtStart = false,
@@ -6280,7 +6231,7 @@ mission =
                   },
                   [6] = {
                     unitId = 79,
-                    name = "combatZone_Convoi-colonne Unit #006",
+                    name = "combatZone_Convoy-column Unit #006",
                     type = "ZSU-23-4 Shilka",
                     skill = "Average",
                     coldAtStart = false,
@@ -6469,16 +6420,9 @@ mission =
   descriptionBlueTask = "Suivre la visite guidée (F10 > Autre > Visite guidée), dans l'ordre ou non.\
 \
 Soutien : Texaco 1 (KC-135 perche) 292.0 AM, TACAN 52Y, FL200 — Arco 1 (KC-135 MPRS panier) 291.0 AM, TACAN 51Y, FL180 — Overlord 1 (E-3A) 286.0 AM — Reaper 1 (JTAC laser 1511) 35.55 FM.\
-Porte-avions : Stennis 274.0 AM, TACAN 74X, ICLS 4 — Roosevelt 271.0 AM, TACAN 71X, ICLS 1. FARP Khoni 127.5 AM.\
-\
-— — —\
-\
-Follow the guided tour (F10 > Other > Guided tour), in order or not.\
-\
-Support: Texaco 1 (KC-135 boom) 292.0 AM, TACAN 52Y, FL200 — Arco 1 (KC-135 MPRS drogue) 291.0 AM, TACAN 51Y, FL180 — Overlord 1 (E-3A) 286.0 AM — Reaper 1 (JTAC laser 1511) 35.55 FM.\
-Carriers: Stennis 274.0 AM, TACAN 74X, ICLS 4 — Roosevelt 271.0 AM, TACAN 71X, ICLS 1. FARP Khoni 127.5 AM.",
+Porte-avions : Stennis 274.0 AM, TACAN 74X, ICLS 4 — Roosevelt 271.0 AM, TACAN 71X, ICLS 1. FARP Khoni 127.5 AM.",
   descriptionNeutralsTask = "",
-  descriptionRedTask = "Le camp rouge n'est pas jouable dans cette mission. / The red side is not playable in this mission.",
+  descriptionRedTask = "Le camp rouge n'est pas jouable dans cette mission.",
   descriptionText = "MISSION DE DÉMO VEAF — VISITE GUIDÉE\
 \
 Cette mission montre chaque fonctionnalité des outils VEAF (VEAF Mission Creation Tools v6), avec un exemple par fonctionnalité.\
@@ -6488,20 +6432,7 @@ Le front suit l'Inguri, entre la Géorgie (bleue) et l'Abkhazie (rouge). Bullsey
 Base mère : Kutaisi (slots classiques moteur chaud). Slots dynamiques sur Kutaisi, Senaki, Kobuleti et Batumi en multijoueur. Porte-avions Stennis et Roosevelt au large de Batumi.\
 La sécurité VEAF est désactivée : toutes les commandes sont ouvertes à tous.\
 \
-Guide détaillé : https://github.com/VEAF/VEAF-Demo-Mission-v6\
-\
-— — —\
-\
-VEAF DEMO MISSION — GUIDED TOUR\
-\
-This mission shows every feature of the VEAF tools (VEAF Mission Creation Tools v6), one example per feature.\
-Open F10 > Other > Guided tour: a chapter, then a step; each step tells where to go, what to do and what you should see, and places a mark on your F10 map.\
-\
-The front follows the Inguri river, between Georgia (blue) and Abkhazia (red). Shared bullseye: Zugdidi.\
-Home base: Kutaisi (classic hot-start slots). Dynamic slots on Kutaisi, Senaki, Kobuleti and Batumi in multiplayer. Stennis and Roosevelt carriers off Batumi.\
-VEAF security is disabled: every command is open to everyone.\
-\
-Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
+Guide détaillé : https://github.com/VEAF/VEAF-Demo-Mission-v6",
   drawings = {
     layers = {
       [1] = {
@@ -6629,7 +6560,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
             visible = true,
           },
           [9] = {
-            name = "Cercle combatZone_Ochamchire_Navires",
+            name = "Cercle combatZone_Ochamchire_Ships",
             colorString = "0xc2362bff",
             fillColorString = "0xc2362b20",
             layerName = "Blue",
@@ -6643,7 +6574,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
             visible = true,
           },
           [10] = {
-            name = "Étiquette combatZone_Ochamchire_Navires",
+            name = "Étiquette combatZone_Ochamchire_Ships",
             angle = 0,
             borderThickness = 1,
             colorString = "0xc2362bff",
@@ -6658,7 +6589,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
             visible = true,
           },
           [11] = {
-            name = "Cercle combatZone_Convoi",
+            name = "Cercle combatZone_Convoy",
             colorString = "0xc2362bff",
             fillColorString = "0xc2362b20",
             layerName = "Blue",
@@ -6672,7 +6603,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
             visible = true,
           },
           [12] = {
-            name = "Étiquette combatZone_Convoi",
+            name = "Étiquette combatZone_Convoy",
             angle = 0,
             borderThickness = 1,
             colorString = "0xc2362bff",
@@ -6741,7 +6672,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
             mapX = -181381.7,
             mapY = 565908.8,
             primitiveType = "TextBox",
-            text = "10. QRA Soukhoumi",
+            text = "10. QRA Sukhumi",
             visible = true,
           },
           [17] = {
@@ -6799,7 +6730,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
             mapX = -295000.0,
             mapY = 688000.0,
             primitiveType = "TextBox",
-            text = "3. Bac à sable (point ALPHA)",
+            text = "2. Bac à sable (point ALPHA)",
             visible = true,
           },
           [21] = {
@@ -6828,7 +6759,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
             mapX = -259141.7,
             mapY = 680225.3,
             primitiveType = "TextBox",
-            text = "Pilote abattu (CSAR, menu Démo)",
+            text = "Pilote abattu (CSAR, menu Démo : commandes)",
             visible = true,
           },
           [23] = {
@@ -7086,7 +7017,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
     },
     total = 0,
   },
-  sortie = "VEAF - Mission de démo / Demo mission",
+  sortie = "VEAF - Mission de démo",
   start_time = 32400,
   theatre = "Caucasus",
   trig = {
@@ -7199,7 +7130,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
       },
       [7] = {
         zoneId = 7,
-        name = "combatZone_Ochamchire_Navires",
+        name = "combatZone_Ochamchire_Ships",
         type = 0,
         color = {
           [1] = 1,
@@ -7247,7 +7178,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
       },
       [10] = {
         zoneId = 10,
-        name = "combatZone_Tkvarcheli_PC",
+        name = "combatZone_Tkvarcheli_HQ",
         type = 0,
         color = {
           [1] = 1,
@@ -7279,7 +7210,7 @@ Detailed guide: https://github.com/VEAF/VEAF-Demo-Mission-v6",
       },
       [12] = {
         zoneId = 12,
-        name = "combatZone_Convoi",
+        name = "combatZone_Convoy",
         type = 0,
         color = {
           [1] = 1,

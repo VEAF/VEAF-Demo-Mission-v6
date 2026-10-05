@@ -14,6 +14,10 @@ local TXT = {
          summaryText = "GUIDED TOUR\n\nPick a chapter, then a step: its text shows for one minute and a mark is placed on your F10 map.\n\n" },
 }
 
+--- La langue du build : mission.language de mission.yaml (profils FR / EN), écrite par le build dans
+--- veaf.config.language. Une mission = une langue, menus et messages compris.
+demoTour.lang = (veaf and veaf.config and veaf.config.language == "en") and "en" or "fr"
+
 --- Position (vec3) du lieu d'une étape, lue au moment du clic : les navires et les avions bougent.
 function demoTour.anchorPoint(step)
   local kind, name = step.anchorKind, step.anchorName
@@ -118,15 +122,6 @@ function demoTour.showSummary(args)
   trigger.action.outTextForGroup(args.groupId, table.concat(lines, "\n"), demoTour.MESSAGE_DURATION)
 end
 
---- Les actions de la démo, appelées au clic (les fonctions vivent dans mission-script.lua).
-local function call(name)
-  return function()
-    if demo and demo[name] then
-      demo[name]()
-    end
-  end
-end
-
 demoTour.groupMenus = {}   -- groupId -> { chemins de premier niveau posés pour ce groupe }
 
 --- Pose (ou repose) les deux menus de la visite pour un groupe de joueurs.
@@ -136,7 +131,7 @@ function demoTour.addMenusForGroup(group)
     missionCommands.removeItemForGroup(groupId, path)
   end
   local paths = {}
-  for _, lang in ipairs({ "fr", "en" }) do
+  for _, lang in ipairs({ demoTour.lang }) do
     local root = missionCommands.addSubMenuForGroup(groupId, TXT[lang].root)
     table.insert(paths, root)
     missionCommands.addCommandForGroup(groupId, TXT[lang].summary, root, demoTour.showSummary,
@@ -170,11 +165,6 @@ function demoTour.eventHandler:onEvent(event)
 end
 
 function demoTour.buildMenus()
-  -- Actions de la démo : un seul menu pour tous, au premier niveau.
-  local actions = missionCommands.addSubMenu("Démo : actions")
-  missionCommands.addCommand("Créer un pilote abattu près de Khoni", actions, call("spawnCsar"))
-  missionCommands.addCommand("Activer l'opération Tkvarcheli", actions, call("activateOperation"))
-  missionCommands.addCommand("Désactiver l'opération Tkvarcheli", actions, call("desactivateOperation"))
   -- Visite : par groupe de joueurs, à chaque arrivée dans un appareil (slots classiques et dynamiques).
   world.addEventHandler(demoTour.eventHandler)
   for _, side in ipairs({ coalition.side.BLUE, coalition.side.RED }) do
@@ -187,7 +177,7 @@ function demoTour.buildMenus()
       end
     end
   end
-  env.info(string.format("demoTour: %d étapes, menus fr et en au premier niveau", #demoTour.steps))
+  env.info(string.format("demoTour: %d étapes, langue %s, menus au premier niveau", #demoTour.steps, demoTour.lang))
 end
 
 demoTour.buildMenus()

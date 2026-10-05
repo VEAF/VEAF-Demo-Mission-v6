@@ -5,7 +5,13 @@ This document is also available [in French](README.md).
 The demonstration mission of the [VEAF Mission Creation Tools](https://github.com/VEAF/VEAF-Mission-Creation-Tools) v6: **every feature has its example here**, and an in-game **guided tour** leads from one to the next.
 It is updated with every new feature, and checked before every release of the tools: if a feature works here, it works.
 
-![Demo map](docs/carte.jpg)
+### What are the VMCT?
+
+The **VEAF Mission Creation Tools** (VMCT) are the toolkit the [VEAF](https://www.veaf.org) uses to build its DCS World missions.
+They bring the in-game scripts (spawning units from F10 map markers, combat zones, QRA, CAP on demand, tankers and AWACS, carrier operations, Skynet air defence, CTLD and CSAR…) and the `veaf-tools` command line that builds a mission from a folder: the DCS mission, a `mission.yaml` that configures every module, radio presets, waypoints, weather variants.
+[Documentation](https://veaf.github.io/documentation/latest/en/) · [Repository](https://github.com/VEAF/VEAF-Mission-Creation-Tools)
+
+![Demo map](docs/carte.en.jpg)
 
 ## Getting started
 
@@ -14,7 +20,8 @@ It is updated with every new feature, and checked before every release of the to
 3. Open **F10 > Other > Guided tour**: one submenu per chapter, one entry per step. Each entry shows what to do, where the step is relative to you, and places a mark on your F10 map.
 
 VEAF security is **disabled** in this mission: every command is open to everyone, including those a server keeps for qualified pilots.
-The mission runs in French (VEAF menus included); this guide gives the French menu names with their translation.
+The mission comes in **two complete versions**, English (`_EN`) and French (`_FR`): VEAF and CTLD menus, guided tour, demo menus, briefing, F10 map and briefing maps are all in the version's language.
+This guide follows the English version.
 
 ### Typing a command into a marker
 
@@ -80,13 +87,13 @@ A mark is placed on your F10 map when you open a step.
 
 **What to do**:
 
-- VEAF menus are under F10 > Other > VEAF; that menu has several pages ("Page suivante" = next page, at the bottom). The guided tour and the "Démo : actions" and "Démo : commandes" menus are separate, directly under F10 > Other. The mission runs in French, so the menus are in French too (translations are given here).
+- VEAF menus are under F10 > Other > VEAF; that menu has several pages ("Next page" at the bottom). The guided tour and the "Demo: commands" menu are separate, directly under F10 > Other.
 - Many commands are typed into an F10 map marker: "Add mark" button in the top bar, click on the map, type the text, then click elsewhere to validate.
 - Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers.
 
 **What you should see**: The VEAF menu and its submenus, and in every aircraft the radio presets and waypoints injected by the build.
 
-**Features**: `RADIO`, `build:dynamic_slots`, `build:presets`, `build:waypoints`, `build:weather` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/GUIDE/)
+**Features**: `RADIO`, `build:dynamic_slots`, `build:presets`, `build:waypoints`, `build:weather` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/GUIDE/)
 
 #### 02 Sandbox: marker commands
 
@@ -100,13 +107,13 @@ The sandbox, south of Kutaisi (named point ALPHA), is where you try the commands
 - `-armor`: a random armour group; `-armor, size 4, defense 0` to tune it.
 - `_spawn unit, name T-80UD, hdg 270`: a single tank, heading 270.
 - `-convoy, dest ALPHA`: a convoy that drives by road to the named point ALPHA (place the marker a few km away).
-- `_name point BRAVO`: creates your own named point, usable in `-convoy, dest BRAVO`.
-- `_spawn smoke, color red`: red smoke; `-farp`: a complete FARP with its props.
+- `-point BRAVO`: creates your own named point (alias of `_name point BRAVO`), usable in `-convoy, dest BRAVO`.
+- `-smoke`: white smoke (`-smoke, color red` for red); `-farp`: a complete FARP with its props.
 - `-boum`: a 500 kg explosion; `-menage`: destroys everything within 2 km (two shortcuts defined by this mission).
 
 **What you should see**: Each command answers with a message and spawns what it announces at the marker; the marker disappears once the command has run.
 
-**Features**: `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafSpawn/)
+**Features**: `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafSpawn/)
 
 #### 03 Generated missions: CAS and transport
 
@@ -117,13 +124,13 @@ Two commands build a complete mission where you place the marker: a close air su
 **What to do**:
 
 - `_cas` (or `_cas, size 3, defense 2`) in a sandbox marker: an enemy group appears in the area, to find and destroy.
-- F10 > Other > VEAF > MISSION CAS (CAS mission): target information, smoke, illumination, skip the target.
+- F10 > Other > VEAF > CAS MISSION: target information, smoke, illumination, skip the target.
 - `_transport, from ALPHA` in a marker near FARP Khoni (more than 15 km from ALPHA): cargo to pick up at ALPHA and deliver at the marker.
-- F10 > Other > VEAF > MISSION DE TRANSPORT (transport mission): drop zone position, smoke.
+- F10 > Other > VEAF > TRANSPORT MISSION: drop zone position, smoke.
 
 **What you should see**: A menu specific to the generated mission, and a message when the objective is met.
 
-**Features**: `CASMISSION`, `TRANSPORTMISSION`, `GROUNDAI` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCasMission/)
+**Features**: `CASMISSION`, `TRANSPORTMISSION`, `GROUNDAI` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafCasMission/)
 
 ### 2. Combat zones
 
@@ -136,15 +143,15 @@ Each level includes the one below: medium also spawns the easy targets, hard als
 
 **What to do**:
 
-- F10 > Other > VEAF > ZONES DE COMBAT (combat zones) > Entraînement Khoni > Khoni - facile (easy) > Activer la zone (activate).
-- Destroy the trucks, then deactivate and move on to medium (moyen), then hard (difficile).
+- F10 > Other > VEAF > COMBAT ZONES > Khoni training > Khoni - easy > Activate zone.
+- Destroy the trucks, then deactivate and move on to medium, then hard.
 - Zone info, smoke and illumination flare are in the same menu.
 
 **What you should see**: Easy: eight trucks.
 Medium: the trucks, an armour company and two AAA pieces drawn among four (never the same twice).
 Hard: on top, an armour battalion and two short-range systems drawn at random.
 
-**Features**: `COMBATZONE`, `AIEN` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatZone/)
+**Features**: `COMBATZONE`, `AIEN` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafCombatZone/)
 
 #### 05 Gali front, and the JTAC drone
 
@@ -156,13 +163,13 @@ The Reaper 1 drone orbits above and lases the armour.
 
 **What to do**:
 
-- F10 > Other > VEAF > ZONES DE COMBAT > Front de Gali > Activer la zone.
+- F10 > Other > VEAF > COMBAT ZONES > Gali front > +Activate zone.
 - The JTAC: laser code 1511, radio 35.55 FM; F10 > Other > CTLD > JTAC for the current target.
-- The drone can be respawned from F10 > Other > VEAF > MOYENS (assets) > Reaper 1 (MQ-9, JTAC).
+- The drone can be respawned from F10 > Other > VEAF > ASSETS > Reaper 1 (MQ-9, JTAC).
 
 **What you should see**: Only one of the two armour groups appears; the drone announces its target and lases it on code 1511.
 
-**Features**: `COMBATZONE`, `ASSETS`, `CTLD` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/concepts/combat-zones/)
+**Features**: `COMBATZONE`, `ASSETS`, `CTLD` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/concepts/combat-zones/)
 
 #### 06 Integrated air defence (Skynet)
 
@@ -176,11 +183,11 @@ Red ground units act as spotters: they see aircraft and relay the alert.
 
 - Approach Ochamchire from the south-east, low then climbing: watch when your RWR lights up.
 - Red IADS status (sites, radars on): F10 > Other > SKYNET IADS COALITION: RED.
-- The spotter view belongs to each side: F10 > Other > VEAF > RÉSEAU DE GUETTEURS (spotter network) > Afficher la vue des guetteurs shows YOUR side's spotters. To see the red network, take the red game master slot of the test mission (reopen the F10 map after clicking).
+- The spotter view belongs to each side: F10 > Other > VEAF > SPOTTER NETWORK > Show the spotter view shows YOUR side's spotters. To see the red network, take the red game master slot of the test mission (reopen the F10 map after clicking).
 
 **What you should see**: The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS COALITION: RED menu shows which site is emitting.
 
-**Features**: `SKYNET`, `INTERPRETER`, `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafSkynetIadsHelper/)
+**Features**: `SKYNET`, `INTERPRETER`, `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafSkynetIadsHelper/)
 
 #### 07 Chained mission: Ochamchire port
 
@@ -191,13 +198,13 @@ First the port depot, then, one minute after it is destroyed, the cargo ships an
 
 **What to do**:
 
-- F10 > Other > VEAF > ZONES DE COMBAT > Port d'Ochamchire - 1 : dépôt > Activer la zone.
+- F10 > Other > VEAF > COMBAT ZONES > Ochamchire port - 1: depot > +Activate zone.
 - Destroy the trucks and the ZU-23, then wait one minute.
 
 **What you should see**: Zone 1 completes, and the ships appear offshore without any menu activating them.
 Beware: the Sukhumi QRA circle covers Ochamchire.
 
-**Features**: `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatZone/)
+**Features**: `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafCombatZone/)
 
 #### 08 Operation Tkvarcheli: tasks and dependencies
 
@@ -208,12 +215,12 @@ All units spawn on activation: the dependency orders the objectives, not the spa
 
 **What to do**:
 
-- F10 > Other > Démo : actions > Activer l'opération Tkvarcheli (activate; VEAF puts no activation command in an operation's menu, so the demo provides one).
-- F10 > Other > VEAF > ZONES DE COMBAT > Opération Tkvarcheli: the current task; destroy the 1L13 radar and the depot (statics), then the command post.
+- F10 > Other > VEAF > COMBAT ZONES > Operation Tkvarcheli > +Activate zone: the three tasks appear together.
+- The same menu gives the current task; destroy the 1L13 radar and the depot (statics), then the command post.
 
 **What you should see**: Tasks move from "in progress" to "done"; when all three are done, the message "Operation … is over".
 
-**Features**: `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatZone/)
+**Features**: `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafCombatZone/)
 
 #### 09 Moving convoy
 
@@ -223,12 +230,12 @@ A logistics convoy, five trucks and their Shilka, shuttling between Ochamchire a
 
 **What to do**:
 
-- F10 > Other > VEAF > ZONES DE COMBAT > Convoi d'Ochamchire > Activer la zone.
+- F10 > Other > VEAF > COMBAT ZONES > Ochamchire convoy > +Activate zone.
 - Zone info: the convoy position when you ask.
 
 **What you should see**: The convoy drives to Gali, then comes back, in a loop.
 
-**Features**: `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatZone/)
+**Features**: `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafCombatZone/)
 
 ### 3. Air threats
 
@@ -243,12 +250,12 @@ It ignores helicopters.
 **What to do**:
 
 - Enter the circle (drawn on the F10 map) in an aircraft: the QRA scrambles 60 s later.
-- F10 > Other > Démo : commandes > Arrêter / Démarrer la QRA de Soukhoumi (stop / start; a menu declared in YAML).
+- F10 > Other > Demo: commands > Stop / Start the Sukhumi QRA (a menu declared in YAML).
 
 **What you should see**: A message announces the scramble; the fighters come at you.
 Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.
 
-**Features**: `QRA`, `RADIO` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafQraManager/)
+**Features**: `QRA`, `RADIO` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafQraManager/)
 
 #### 11 On-demand CAP and the Senaki raid
 
@@ -258,13 +265,13 @@ Red patrols you spawn from the menu, each a different threat (MiG-29S Fox 3, Su-
 
 **What to do**:
 
-- F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > level (Good, Excellent) > size (scale 1, 2) > Activer la mission (activate).
-- F10 > Other > VEAF > MISSIONS > Raid sur Senaki > Good > scale 1 > Activer la mission, then intercept the bombers.
+- F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > level (Good, Excellent) > size (scale 1, 2) > Activate mission.
+- F10 > Other > VEAF > MISSIONS > Senaki raid > Good > scale 1 > Activate mission, then intercept the bombers.
 - Or by marker: `-airstart Raid-Senaki/Good/1`, `-airstop Raid-Senaki/Good/1` (name, level, size).
 
 **What you should see**: The patrol spawns airborne on its race-track and engages what comes in range; the raid flies to Senaki and bombs the base unless intercepted.
 
-**Features**: `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatMission/)
+**Features**: `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafCombatMission/)
 
 #### 12 BVR arena (air waves)
 
@@ -275,12 +282,12 @@ An arena off Poti: as soon as a blue aircraft enters, waves of red fighters come
 **What to do**:
 
 - Enter the arena circle (drawn on the F10 map), between 1,000 and 40,000 ft.
-- To start over: F10 > Other > Démo : commandes > Relancer l'arène BVR (reset).
+- To start over: F10 > Other > Demo: commands > Reset the BVR arena.
 
 **What you should see**: A start message, then a wave; the next comes one minute after the previous is destroyed.
 If you die, the arena resets.
 
-**Features**: `AIRWAVES`, `RADIO` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafAirWaves/)
+**Features**: `AIRWAVES`, `RADIO` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafAirWaves/)
 
 #### 13 Gudauta red sanctuary
 
@@ -295,26 +302,26 @@ This one protects Gudauta (15 km) for red; it also destroys missiles fired at un
 
 **What you should see**: Warning after 10 s, defences deployed at 60 s, aircraft shot down at 120 s.
 
-**Features**: `SANCTUARY` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafSanctuary/)
+**Features**: `SANCTUARY` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafSanctuary/)
 
 ### 4. Support and logistics
 
 #### 14 Tankers, AWACS and escort
 
 Two tankers (Texaco 1 boom, Arco 1 drogue) and an AWACS (Overlord 1) escorted by two F-15C.
-The MOYENS (assets) menu respawns them and gives their details; a marker command moves a tanker.
+The ASSETS menu respawns them and gives their details; a marker command moves a tanker.
 
 **Where**: BULLSEYE 122/48 — 14 nm from Kutaisi (at mission start)
 
 **What to do**:
 
 - Texaco 1: TACAN 52Y, 292.0 AM, FL200; Arco 1: TACAN 51Y, 291.0 AM, FL180; Overlord 1: 286.0 AM.
-- F10 > Other > VEAF > MOYENS > Overlord 1 (E-3A) > Réapparition de Overlord 1 (E-3A) (respawn): the AWACS and its escort respawn together.
+- F10 > Other > VEAF > ASSETS > Overlord 1 (E-3A) > Respawn Overlord 1 (E-3A): the AWACS and its escort respawn together.
 - Marker `_move tanker, name Texaco 1, alt 22000` where you want the race-track.
 
 **What you should see**: Tankers answer on their frequency and TACAN; after a _move tanker, Texaco 1 flies to its new orbit.
 
-**Features**: `ASSETS`, `MOVE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafAssets/)
+**Features**: `ASSETS`, `MOVE` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafAssets/)
 
 #### 15 Helicopters: FARP, CTLD, CSAR
 
@@ -327,28 +334,28 @@ A downed pilot can be created on demand, to be rescued by helicopter (CSAR).
 
 - Take off from Kutaisi in a UH-1H or Mi-8 and land at FARP Khoni (127.5 AM).
 - F10 > Other > CTLD: load troops, request a crate, then drop them elsewhere.
-- F10 > Other > Démo : actions > Créer un pilote abattu près de Khoni (create a downed pilot), then the CSAR menu for its beacon and position.
+- F10 > Other > Demo: commands > Create a downed pilot near Khoni, then the CSAR menu for its beacon and position.
 
 **What you should see**: The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.
 
-**Features**: `CTLD`, `CSAR`, `GRASS` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/GUIDE/)
+**Features**: `CTLD`, `CSAR`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/GUIDE/)
 
 #### 16 Stennis and Roosevelt carriers
 
 Two carriers off Batumi, each with its S-3B tanker and rescue helicopter.
-The OPS PORTE-AVIONS (carrier ops) menu turns the ship into the wind for air operations.
+The CARRIER OPS menu turns the ship into the wind for air operations.
 
 **Where**: BULLSEYE 203/48 — 17 nm from Batumi (at mission start)
 
 **What to do**:
 
 - Stennis: TACAN 74X STN, ICLS 4, Link 4 336.0, tower 274.0 AM. Roosevelt: TACAN 71X TDR, ICLS 1, Link 4 337.0, tower 271.0 AM.
-- F10 > Other > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > Start carrier air operations for 45 minutes.
+- F10 > Other > VEAF > CARRIER OPS > CARRIER OPS - BLUE > CSG-74 Stennis > Start carrier air operations for 45 minutes.
 - Deck slots: Stennis F/A-18C, Roosevelt F-14B.
 
 **What you should see**: The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels.
 
-**Features**: `CARRIER` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCarrierOperations/)
+**Features**: `CARRIER` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafCarrierOperations/)
 
 #### 17 Weather, ATC and cockpit assistance
 
@@ -360,37 +367,41 @@ On a VEAF server, the weather follows Kutaisi's real METAR (UGKO).
 **What to do**:
 
 - Take a slot at Kutaisi: read the welcome message.
-- F10 > Other > VEAF > MÉTÉO ET ATC (weather and ATC) > weather at closest point / ATC of closest airbase.
-- In the F-16C at Kutaisi: F10 > Other > VEAF > Assistance > Démarrage à froid (cold start); then, at the root of the VEAF menu: ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE (confirm / skip).
+- F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point / ATC on closest airbase.
+- In the F-16C at Kutaisi: F10 > Other > VEAF > Assistance > Cold start; then, at the root of the VEAF menu: Assistance: confirm the step / Assistance: skip the step.
 
 **What you should see**: The welcome message gives the runway in use; the checklist ticks the steps already done.
 
-**Features**: `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafWeather/)
+**Features**: `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafWeather/)
 
 ## For mission makers
 
 ### Building
 
-From this folder, with `veaf-tools.exe` (installed by `veaf-tools-updater.exe`, see the [documentation](https://veaf.github.io/documentation/)):
+From this folder, with `veaf-tools.exe` (installed by `veaf-tools-updater.exe`, see the [documentation](https://veaf.github.io/documentation/latest/en/)):
 
 ```
 .\veaf-tools.exe mission validate
 .\veaf-tools.exe build
+python tools/localize_miz.py
+python tools/verify.py
 ```
 
-Built missions land in `missions/`, one per weather variant of `src/versions.yaml`.
-For a local test (verbose logs, a single weather): `.\veaf-tools.exe mission build --profile LOCAL_TEST`.
+`build` builds both languages (`build_variants` in `mission.yaml`): in `missions/`, one `_FR` and one `_EN` mission per weather variant of `src/versions.yaml`.
+`localize_miz.py` then puts into English what lives in the DCS mission of the `_EN` versions (briefing, F10 labels, briefing maps): without it, `verify.py` rejects the English `.miz`.
+For a local test (verbose logs, a single weather, game masters, dcs-bridge): `python tools/make_test_mission.py`, which writes `missions-test/VEAF_Demo_TEST_FR.miz` and `_EN.miz`.
 
 ### Files
 
 | File | Role |
 |---|---|
-| `mission.yaml` | the configuration of every VEAF module |
-| `src/mission/` | the DCS mission itself, exploded |
-| `src/scripts/mission-script.lua` | the mission's own Lua (function behind the "Démo : commandes" menu) |
-| `src/scripts/guided-tour.lua` | the guided tour, **generated** |
-| `tour/steps.yaml` | **the source** of the tour, this README and the release checklist |
-| `tools/` | generators: MCP action batches (`gen_0*.py`), tour and docs (`gen_tour.py`), map (`gen_map.py`), `.miz` check (`verify.py`) |
+| `mission.yaml` | the configuration of every VEAF module, French texts; its end (FR and EN profiles, `build_variants`) is **generated** |
+| `i18n/en.yaml` | the English version of every text in `mission.yaml` |
+| `src/mission/` | the DCS mission itself, exploded, in French |
+| `src/scripts/mission-script.lua` | the mission's own Lua (function behind the "Demo: commands" menu) |
+| `src/scripts/guided-tour.lua` | the guided tour, **generated**; it follows the build's language |
+| `tour/steps.yaml` | **the source** of the tour, this README and the release checklist, in French and English |
+| `tools/` | generators: MCP action batches (`gen_0*.py`), tour and docs (`gen_tour.py`), English profile (`gen_i18n.py`), maps (`gen_map.py`), DCS mission texts in both languages (`i18n_texts.py`), English `.miz` localisation (`localize_miz.py`), checks (`verify.py`) |
 | `docs/recette.md` | the pre-release checklist (French), **generated** |
 
 ### Adding a feature
@@ -398,9 +409,10 @@ For a local test (verbose logs, a single weather): `.\veaf-tools.exe mission bui
 Every new VEAF tools feature adds its example to the demo, in the same PR as the feature or right after:
 
 1. place the example in the mission (MCP actions on the folder, or `mission.yaml`);
-2. add its step in `tour/steps.yaml`, with its release check (`check`);
-3. `python tools/gen_tour.py` (tour, README, checklist) and `python tools/gen_map.py` (map);
-4. build, then `python tools/verify.py`.
+2. add its step in `tour/steps.yaml`, in French and English, with its release check (`check`);
+3. translate every new `mission.yaml` text in `i18n/en.yaml`, then `python tools/gen_i18n.py` (it refuses to run if a translation is missing);
+4. `python tools/gen_tour.py` (tour, README, checklist) and `python tools/gen_map.py` (maps);
+5. build, `python tools/localize_miz.py`, then `python tools/verify.py`.
 
 ### Before every tools release
 

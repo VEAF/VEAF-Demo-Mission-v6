@@ -32,7 +32,7 @@ waypoints:
     x: -233272.4
     y: 595507.5
     name: "OCHAMCHIRE"
-  ARENE:
+  ARENA:
     type: "Turning Point"
     action: "Turning Point"
     alt: 7620
@@ -41,7 +41,7 @@ waypoints:
     speed_type: "TAS"
     x: -295000
     y: 560000
-    name: "ARENE"
+    name: "ARENA"
   FARP-KHONI:
     type: "Turning Point"
     action: "Turning Point"
@@ -82,7 +82,7 @@ settings:
       KHONI: "KHONI"
       GALI: "GALI"
       OCHAMCHIRE: "OCHAMCHIRE"
-      ARENE: "ARENE"
+      ARENA: "ARENA"
 
   # Hélicoptères bleus : FARP, zone d'entraînement, zone du pilote abattu.
   blue_helicopters:

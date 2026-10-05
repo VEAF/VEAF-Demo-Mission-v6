@@ -2,7 +2,7 @@
 
     python tools/gen_map.py
 
-Sorties : docs/carte.jpg (en tête du README), docs/cartes/*.jpg (zooms), et les mêmes images dans
+Sorties : docs/carte.jpg (en tête du README), docs/cartes/*.jpg (zooms), leurs versions anglaises *.en.jpg, et les mêmes images dans
 src/mission/l10n/DEFAULT/ pour le briefing DCS : déclarées dans mapResource, listées dans
 pictureFileNameB et pictureFileNameN, pictureFileNameR vide (limite connue
 briefing-pictures-red-then-blue ; le rouge n'est pas jouable ici). Le script réécrit ces listes : la
@@ -26,6 +26,7 @@ from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0, str(Path(__file__).parent))
 from paths import VMCT  # noqa: E402,F401  (met le code VMCT sur sys.path)
 import dcslua  # noqa: E402
+from i18n_texts import MAP, zone_names  # noqa: E402
 from veaf_libs.coordinates import xy_to_latlon  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -48,8 +49,8 @@ BASES = {"Kutaisi": (-284582.8, 685029.7), "Senaki": (-281903.1, 648379.2), "Kob
 RED_BASES = {"Sukhumi": (-221381.7, 565908.8), "Gudauta": (-195650.6, 515898.8)}
 # Côté où écrire le nom d'une zone sur les zooms (à droite par défaut) : relu sur les images, pour
 # qu'aucune étiquette n'en chevauche une autre (port et convoi d'Ochamchire sont à 2 km l'un de l'autre).
-LABEL_SIDE = {"combatZone_Ochamchire_Port": "above", "combatZone_Convoi": "below",
-              "combatZone_Ochamchire_Navires": "below"}
+LABEL_SIDE = {"combatZone_Ochamchire_Port": "above", "combatZone_Convoy": "below",
+              "combatZone_Ochamchire_Ships": "below"}
 
 
 def ll(x, y):
@@ -153,7 +154,8 @@ def badge(d, v, p, n, color):
     d.text((x, y), f"{n}", fill="white", font=font(16, True), anchor="mm")
 
 
-def draw(v, legend=True):
+def draw(v, legend=True, lang="fr"):
+    T, names = MAP[lang], zone_names(lang)
     img = basemap(v)
     d = ImageDraw.Draw(img, "RGBA")
     # zones de combat (rouge) et d'entraînement (vert), au rayon réel
@@ -167,13 +169,13 @@ def draw(v, legend=True):
         if not legend and not z["zone_name"].endswith(("_Medium", "_Hard")) and "_Tkvarcheli_" not in z["zone_name"]:
             x, y = v.px(tz[:2])
             r = tz[2] * v.m_to_px(tz[:2])
-            name = z["friendly_name"].replace(" - facile", " (3 niveaux)")
+            name = names[z["zone_name"]].replace(T["easy"], T["levels"])
             side = LABEL_SIDE.get(z["zone_name"], "right")
             xy_, anch = {"right": ((x + r + 6, y), "lm"), "left": ((x - r - 6, y), "rm"),
                          "below": ((x, y + r + 4), "mt"), "above": ((x, y - r - 4), "mb")}[side]
             text(d, xy_, name, col, 16, anchor=anch)
     # zones de service : bac à sable (point nommé ALPHA) et pilote abattu à la demande
-    for zn, label_ in (("Bac a sable", "Bac à sable (ALPHA)"), ("Demo CSAR", "Pilote abattu (CSAR)")):
+    for zn, label_ in (("Bac a sable", T["sandbox"]), ("Demo CSAR", T["csar"])):
         tz = ZONES[zn]
         circle(d, v, tz[:2], tz[2], "#6a3d9a", 3, dash=6)
         if not legend:
@@ -181,7 +183,7 @@ def draw(v, legend=True):
             text(d, (x + tz[2] * v.m_to_px(tz[:2]) + 6, y), label_, "#6a3d9a", 16, anchor="lm")
     if not legend:
         x, y = v.px(ZONES["Op_Tkvarcheli"][:2])
-        text(d, (x + 30, y - 40), "Opération Tkvarcheli (3 tâches)", RED, 16, anchor="lm")
+        text(d, (x + 30, y - 40), T["operation"], RED, 16, anchor="lm")
     # QRA, sanctuaire : cercles en tirets ; arène : orange
     for q in CFG["modules"]["QRA"]["definitions"]:
         tz = ZONES[q["trigger_zone"]]
@@ -192,12 +194,12 @@ def draw(v, legend=True):
         tz = ZONES[s["trigger_zone"]]
         circle(d, v, tz[:2], tz[2], RED, 3, dash=6)
         x, y = v.px((tz[0] - tz[2], tz[1]))
-        text(d, (x, y - 4), "Sanctuaire", RED, 16, anchor="mb")
+        text(d, (x, y - 4), T["sanctuary"], RED, 16, anchor="mb")
     for a in CFG["modules"]["AIRWAVES"]["airwave_zones"]:
         tz = ZONES[a["trigger_zone_name"]]
         circle(d, v, tz[:2], tz[2], ORANGE, 4, dash=12)
         x, y = v.px((tz[0] + tz[2], tz[1]))
-        text(d, (x, y + 4), "Arène BVR", ORANGE, 16, anchor="mt")
+        text(d, (x, y + 4), T["arena"], ORANGE, 16, anchor="mt")
     # portée du SA-11 permanent (50 km, list_unit_types)
     sa11 = next(p for n, p in GROUPS.items() if n.startswith('#veafInterpreter["-sa11'))
     circle(d, v, sa11, 50000, "#c2362b80", 2, dash=5)
@@ -209,7 +211,7 @@ def draw(v, legend=True):
         d.line([v.px(r[0]), v.px(r[1])], fill=TEAL, width=6)
         text(d, (v.px(r[1])[0] + 8, v.px(r[1])[1]), n, TEAL, 16)
     # convoi
-    r = route("combatZone_Convoi-colonne")
+    r = route("combatZone_Convoy-column")
     d.line([v.px(p) for p in r], fill=RED, width=3)
     # bases, FARP, porte-avions, bullseye
     for n, p in BASES.items():
@@ -246,8 +248,7 @@ def draw(v, legend=True):
     text(d, (14, y0 - 4), f"{nm_} nm", INK, 15, anchor="lb")
     text(d, (v.out_w - 10, v.out_h - 8), "© OpenStreetMap contributors", INK, 13, bold=False, anchor="rb")
     if legend:
-        items = [(GREEN, "zone d'entraînement"), (RED, "zone de combat"), (TEAL, "ravitailleur / AWACS"),
-                 (ORANGE, "arène BVR"), ("#6a3d9a", "étape de la visite (n°)")]
+        items = list(zip((GREEN, RED, TEAL, ORANGE, "#6a3d9a"), T["legend"]))
         lx, ly = v.out_w - 260, 56
         d.rectangle([lx - 10, ly - 8, v.out_w - 10, ly + 24 * len(items) + 4], fill=(255, 255, 255, 220))
         for i, (c, t) in enumerate(items):
@@ -274,27 +275,31 @@ def main():
               [GROUPS["CSG-71 Roosevelt"]] + route("Arco 1") + route("Texaco 1") + \
               pts_of("QRA-Soukhoumi", "Sanctuaire Gudauta", "Arene BVR")
     views = [
-        ("carte", "Mission de démo VEAF — Caucase", all_pts, 10000),
-        ("01-kutaisi-khoni", "Kutaisi et Khoni : bac à sable, entraînement, FARP, CSAR",
+        ("carte", all_pts, 10000),
+        ("01-kutaisi-khoni",
          pts_of("Bac a sable", "combatZone_Khoni_Easy", "FARP Khoni", "Demo CSAR", "Kutaisi", "Senaki"), 6000),
-        ("02-front", "Front : Gali, Ochamchire, Tkvarcheli, convoi",
-         pts_of("combatZone_Gali", "combatZone_Ochamchire_SAM", "combatZone_Ochamchire_Navires", "Op_Tkvarcheli",
-                "combatZone_Convoi"), 6000),
-        ("03-mer", "Mer : arène BVR, porte-avions, Arco 1",
+        ("02-front",
+         pts_of("combatZone_Gali", "combatZone_Ochamchire_SAM", "combatZone_Ochamchire_Ships", "Op_Tkvarcheli",
+                "combatZone_Convoy"), 6000),
+        ("03-mer",
          pts_of("Arene BVR", "CSG-74 Stennis", "CSG-71 Roosevelt", "Batumi") + route("Arco 1"), 8000),
-        ("04-abkhazie", "Soukhoumi et Gudauta : IADS, QRA, sanctuaire",
+        ("04-abkhazie",
          pts_of("QRA-Soukhoumi", "Sanctuaire Gudauta"), 6000),
     ]
     (ROOT / "docs/cartes").mkdir(parents=True, exist_ok=True)
     written = []
-    for key, title, pts, margin in views:
-        v = View(title, pts, margin_m=margin)
-        img = draw(v, legend=(key == "carte"))
-        out = ROOT / ("docs/carte.jpg" if key == "carte" else f"docs/cartes/{key}.jpg")
-        img.save(out, quality=85)
-        shutil.copyfile(out, L10N / f"demo-{key}.jpg")
-        written.append(f"demo-{key}.jpg")
-        print(f"{out.relative_to(ROOT)} ({v.out_w}x{v.out_h}, tuiles z{v.zoom})")
+    for lang in ("fr", "en"):
+        ext = "jpg" if lang == "fr" else "en.jpg"
+        for key, pts, margin in views:
+            v = View(MAP[lang]["titles"][key], pts, margin_m=margin)
+            img = draw(v, legend=(key == "carte"), lang=lang)
+            out = ROOT / (f"docs/carte.{ext}" if key == "carte" else f"docs/cartes/{key}.{ext}")
+            img.save(out, quality=85)
+            # la mission de src/mission/ est la base FR ; localize_miz.py met les cartes .en.jpg dans les .miz EN
+            if lang == "fr":
+                shutil.copyfile(out, L10N / f"demo-{key}.jpg")
+                written.append(f"demo-{key}.jpg")
+            print(f"{out.relative_to(ROOT)} ({v.out_w}x{v.out_h}, tuiles z{v.zoom})")
     declare(written)
 
 

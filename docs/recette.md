@@ -8,8 +8,9 @@ Chaque ligne est un observable : on coche quand on l'a vu, on note ce qu'on a vu
 ## Avant DCS
 
 - [ ] `veaf-tools mission validate` sans erreur.
-- [ ] `veaf-tools build` sans erreur ; journal relu : presets injectés, waypoints injectés, liens des entrepôts, nombre de variantes météo, aucun avertissement nouveau.
-- [ ] `python tools/verify.py` : tous les contrôles du `.miz` au vert.
+- [ ] `veaf-tools build` sans erreur, missions `_FR` et `_EN` ; journal relu : presets injectés, waypoints injectés, liens des entrepôts, nombre de variantes météo, aucun avertissement nouveau.
+- [ ] `python tools/localize_miz.py` : chaque `.miz` `_EN` localisé (briefing, étiquettes F10, cartes).
+- [ ] `python tools/verify.py` : tous les contrôles des `.miz` au vert, dans les deux langues.
 
 ## En jeu
 
@@ -18,7 +19,7 @@ Version des outils : `______`  —  Date : `______`  —  Testeur : `______`
 | # | Étape | Contrôle | OK | Constat |
 |---|---|---|---|---|
 | 01 | Bienvenue | Menu F10 > Autre > VEAF présent ; canal 1 de la radio d'un F-16C = un canal du plan VEAF ; points de navigation présents dans l'avion ; slots dynamiques sur Kutaisi, Senaki, Kobuleti, Batumi (multijoueur). | ☐ | |
-| 02 | Bac à sable : les commandes de marqueur | `-sa8`, `-armor`, `-convoy, dest ALPHA`, `_name point`, `_spawn smoke`, `-farp`, `-boum`, `-menage` : chacune produit son effet au marqueur, sans erreur dans dcs.log. | ☐ | |
+| 02 | Bac à sable : les commandes de marqueur | `-sa8`, `-armor`, `-convoy, dest ALPHA`, `-point`, `-smoke`, `-farp`, `-boum`, `-menage` : chacune produit son effet au marqueur, sans erreur dans dcs.log. | ☐ | |
 | 03 | Missions générées : CAS et transport | `_cas` : groupe ennemi créé, menu MISSION CAS peuplé, fumée sur cible. `_transport, from ALPHA` : menu MISSION DE TRANSPORT peuplé, zone de livraison fumée. | ☐ | |
 | 04 | Entraînement de Khoni : trois niveaux | Chaque niveau fait apparaître plus que celui qu'il inclut ; le tirage #spawngroup donne 2 pièces de DCA sur 4 au moyen, différentes d'une activation à l'autre ; la zone se termine quand tout est détruit. | ☐ | |
 | 05 | Front de Gali, et le drone JTAC | Un seul groupe blindé sur deux ; artillerie Msta présente ; Reaper 1 déclaré JTAC par CTLD sur le code 1511 et 35.55 FM, et il désigne un véhicule. | ☐ | |
@@ -39,5 +40,6 @@ Version des outils : `______`  —  Date : `______`  —  Testeur : `______`
 
 - [ ] Aucune erreur Lua VEAF dans `dcs.log` sur une heure de mission.
 - [ ] Les dessins F10 (cercles et étiquettes des étapes) sont visibles et lisibles sur la carte du camp bleu.
-- [ ] La visite guidée existe en français et en anglais, et chaque entrée pose son repère F10.
+- [ ] Version anglaise (`_EN`) : menus VEAF, CTLD, visite, « Demo: commands », briefing, carte F10 et cartes du briefing en anglais ; dérouler au moins les étapes 01, 02, 04 et 10 en anglais.
+- [ ] La visite guidée existe dans la langue du build, et chaque entrée pose son repère F10.
 - [ ] Les chemins de menu cités par la visite correspondent aux menus réels.

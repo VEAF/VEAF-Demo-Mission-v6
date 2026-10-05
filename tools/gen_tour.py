@@ -22,7 +22,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 import dcslua  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-DOC = "https://veaf.github.io/documentation/dev/"
+# Documentation de la dernière version publiée (« latest »), dans la langue du README
+DOC = {"fr": "https://veaf.github.io/documentation/latest/", "en": "https://veaf.github.io/documentation/latest/en/"}
+VMCT = "https://github.com/VEAF/VEAF-Mission-Creation-Tools"
 REPO = "https://github.com/VEAF/VEAF-Demo-Mission-v6"
 
 data = yaml.safe_load((ROOT / "tour/steps.yaml").read_text(encoding="utf-8"))
@@ -128,6 +130,12 @@ INTRO = {
 La mission de démonstration des [VEAF Mission Creation Tools](https://github.com/VEAF/VEAF-Mission-Creation-Tools) v6 : **chaque fonctionnalité y a son exemple**, et une **visite guidée** en jeu mène de l'une à l'autre.
 Elle est mise à jour à chaque nouvelle fonctionnalité, et vérifiée avant chaque release des outils : si une fonctionnalité marche ici, elle marche.
 
+### Les VMCT, c'est quoi ?
+
+Les **VEAF Mission Creation Tools** (VMCT) sont la boîte à outils avec laquelle la [VEAF](https://www.veaf.org) construit ses missions DCS World.
+Elles apportent les scripts qui tournent en jeu (unités créées depuis un marqueur de la carte F10, zones de combat, QRA, CAP à la demande, ravitailleurs et AWACS, opérations porte-avions, défense aérienne Skynet, CTLD et CSAR…) et l'outil en ligne de commande `veaf-tools`, qui construit une mission à partir d'un dossier : la mission DCS, un `mission.yaml` qui règle chaque module, les préréglages radio, les points de navigation, les variantes météo.
+[Documentation]({DOC['fr']}) · [Dépôt]({VMCT})
+
 ![Carte de la démo](docs/carte.jpg)
 
 ## Démarrer
@@ -137,7 +145,8 @@ Elle est mise à jour à chaque nouvelle fonctionnalité, et vérifiée avant ch
 3. Ouvrez le menu **F10 > Autre > Visite guidée** : un sous-menu par chapitre, une entrée par étape. Chaque entrée affiche ce qu'il faut faire, la position de l'étape par rapport à vous, et pose un repère sur votre carte F10.
 
 La sécurité VEAF est **désactivée** dans cette mission : toutes les commandes sont ouvertes à tous, y compris celles qu'un serveur réserve aux pilotes habilités.
-La mission est en français (menus VEAF compris) ; la visite existe en anglais (**Guided tour**, au même niveau).
+La mission existe en **deux versions complètes**, française (`_FR`) et anglaise (`_EN`) : menus VEAF et CTLD, visite guidée, menus de la démo, briefing, carte F10 et cartes du briefing sont dans la langue de la version.
+Seuls CSAR et Skynet, qui n'ont pas de traduction, gardent des messages en anglais dans la version française, ainsi que quelques libellés VEAF pas encore traduits.
 
 ### Taper une commande dans un marqueur
 
@@ -176,7 +185,13 @@ Tous les aérodromes russes et abkhazes sont rouges, sans slot. Les dynamiques n
 The demonstration mission of the [VEAF Mission Creation Tools](https://github.com/VEAF/VEAF-Mission-Creation-Tools) v6: **every feature has its example here**, and an in-game **guided tour** leads from one to the next.
 It is updated with every new feature, and checked before every release of the tools: if a feature works here, it works.
 
-![Demo map](docs/carte.jpg)
+### What are the VMCT?
+
+The **VEAF Mission Creation Tools** (VMCT) are the toolkit the [VEAF](https://www.veaf.org) uses to build its DCS World missions.
+They bring the in-game scripts (spawning units from F10 map markers, combat zones, QRA, CAP on demand, tankers and AWACS, carrier operations, Skynet air defence, CTLD and CSAR…) and the `veaf-tools` command line that builds a mission from a folder: the DCS mission, a `mission.yaml` that configures every module, radio presets, waypoints, weather variants.
+[Documentation]({DOC['en']}) · [Repository]({VMCT})
+
+![Demo map](docs/carte.en.jpg)
 
 ## Getting started
 
@@ -185,7 +200,8 @@ It is updated with every new feature, and checked before every release of the to
 3. Open **F10 > Other > Guided tour**: one submenu per chapter, one entry per step. Each entry shows what to do, where the step is relative to you, and places a mark on your F10 map.
 
 VEAF security is **disabled** in this mission: every command is open to everyone, including those a server keeps for qualified pilots.
-The mission runs in French (VEAF menus included); this guide gives the French menu names with their translation.
+The mission comes in **two complete versions**, English (`_EN`) and French (`_FR`): VEAF and CTLD menus, guided tour, demo menus, briefing, F10 map and briefing maps are all in the version's language.
+This guide follows the English version.
 
 ### Typing a command into a marker
 
@@ -224,26 +240,30 @@ MAKERS = {
 
 ### Construire
 
-Depuis ce dossier, avec `veaf-tools.exe` (installé par `veaf-tools-updater.exe`, voir la [documentation](https://veaf.github.io/documentation/)) :
+Depuis ce dossier, avec `veaf-tools.exe` (installé par `veaf-tools-updater.exe`, voir la [documentation](https://veaf.github.io/documentation/latest/)) :
 
 ```
 .\\veaf-tools.exe mission validate
 .\\veaf-tools.exe build
+python tools/localize_miz.py
+python tools/verify.py
 ```
 
-Les missions construites arrivent dans `missions/`, une par variante météo de `src/versions.yaml`.
-Pour un test local (logs détaillés, une seule météo) : `.\\veaf-tools.exe mission build --profile LOCAL_TEST`.
+`build` construit les deux langues (`build_variants` de `mission.yaml`) : dans `missions/`, une mission `_FR` et une `_EN` par variante météo de `src/versions.yaml`.
+`localize_miz.py` met ensuite en anglais ce qui vit dans la mission DCS des versions `_EN` (briefing, étiquettes F10, cartes du briefing) : sans lui, `verify.py` refuse les `.miz` anglais.
+Pour un test local (logs détaillés, une seule météo, game masters, pont dcs-bridge) : `python tools/make_test_mission.py`, qui produit `missions-test/VEAF_Demo_TEST_FR.miz` et `_EN.miz`.
 
 ### Les fichiers
 
 | Fichier | Rôle |
 |---|---|
-| `mission.yaml` | la configuration de tous les modules VEAF |
-| `src/mission/` | la mission DCS elle-même, éclatée |
+| `mission.yaml` | la configuration de tous les modules VEAF, textes en français ; sa fin (profils FR et EN, `build_variants`) est **générée** |
+| `i18n/en.yaml` | la version anglaise de chaque texte de `mission.yaml` |
+| `src/mission/` | la mission DCS elle-même, éclatée, en français |
 | `src/scripts/mission-script.lua` | le Lua propre à la mission (fonction du menu « Démo : commandes ») |
-| `src/scripts/guided-tour.lua` | la visite guidée, **générée** |
-| `tour/steps.yaml` | **la source** de la visite, de ce README et de la recette |
-| `tools/` | les générateurs : lots d'actions MCP (`gen_0*.py`), visite et docs (`gen_tour.py`), carte (`gen_map.py`), vérification du `.miz` (`verify.py`) |
+| `src/scripts/guided-tour.lua` | la visite guidée, **générée** ; elle suit la langue du build |
+| `tour/steps.yaml` | **la source** de la visite, de ce README et de la recette, en français et en anglais |
+| `tools/` | les générateurs : lots d'actions MCP (`gen_0*.py`), visite et docs (`gen_tour.py`), profil anglais (`gen_i18n.py`), cartes (`gen_map.py`), textes de la mission DCS dans les deux langues (`i18n_texts.py`), localisation des `.miz` anglais (`localize_miz.py`), vérification (`verify.py`) |
 | `docs/recette.md` | la liste de contrôle avant release, **générée** |
 
 ### Ajouter une fonctionnalité
@@ -251,9 +271,10 @@ Pour un test local (logs détaillés, une seule météo) : `.\\veaf-tools.exe mi
 Chaque nouvelle fonctionnalité des outils VEAF ajoute son exemple à la démo, dans la même PR que la fonctionnalité ou juste après :
 
 1. poser l'exemple dans la mission (actions MCP sur le dossier, ou `mission.yaml`) ;
-2. ajouter son étape dans `tour/steps.yaml`, avec son contrôle de recette (`check`) ;
-3. `python tools/gen_tour.py` (visite, README, recette) et `python tools/gen_map.py` (carte) ;
-4. construire, puis `python tools/verify.py`.
+2. ajouter son étape dans `tour/steps.yaml`, en français et en anglais, avec son contrôle de recette (`check`) ;
+3. traduire tout nouveau texte de `mission.yaml` dans `i18n/en.yaml`, puis `python tools/gen_i18n.py` (il refuse de tourner s'il manque une traduction) ;
+4. `python tools/gen_tour.py` (visite, README, recette) et `python tools/gen_map.py` (cartes) ;
+5. construire, `python tools/localize_miz.py`, puis `python tools/verify.py`.
 
 ### Avant chaque release des outils
 
@@ -263,26 +284,30 @@ Construire la démo avec la version candidate et dérouler [la recette](docs/rec
 
 ### Building
 
-From this folder, with `veaf-tools.exe` (installed by `veaf-tools-updater.exe`, see the [documentation](https://veaf.github.io/documentation/)):
+From this folder, with `veaf-tools.exe` (installed by `veaf-tools-updater.exe`, see the [documentation](https://veaf.github.io/documentation/latest/en/)):
 
 ```
 .\\veaf-tools.exe mission validate
 .\\veaf-tools.exe build
+python tools/localize_miz.py
+python tools/verify.py
 ```
 
-Built missions land in `missions/`, one per weather variant of `src/versions.yaml`.
-For a local test (verbose logs, a single weather): `.\\veaf-tools.exe mission build --profile LOCAL_TEST`.
+`build` builds both languages (`build_variants` in `mission.yaml`): in `missions/`, one `_FR` and one `_EN` mission per weather variant of `src/versions.yaml`.
+`localize_miz.py` then puts into English what lives in the DCS mission of the `_EN` versions (briefing, F10 labels, briefing maps): without it, `verify.py` rejects the English `.miz`.
+For a local test (verbose logs, a single weather, game masters, dcs-bridge): `python tools/make_test_mission.py`, which writes `missions-test/VEAF_Demo_TEST_FR.miz` and `_EN.miz`.
 
 ### Files
 
 | File | Role |
 |---|---|
-| `mission.yaml` | the configuration of every VEAF module |
-| `src/mission/` | the DCS mission itself, exploded |
-| `src/scripts/mission-script.lua` | the mission's own Lua (function behind the "Démo : commandes" menu) |
-| `src/scripts/guided-tour.lua` | the guided tour, **generated** |
-| `tour/steps.yaml` | **the source** of the tour, this README and the release checklist |
-| `tools/` | generators: MCP action batches (`gen_0*.py`), tour and docs (`gen_tour.py`), map (`gen_map.py`), `.miz` check (`verify.py`) |
+| `mission.yaml` | the configuration of every VEAF module, French texts; its end (FR and EN profiles, `build_variants`) is **generated** |
+| `i18n/en.yaml` | the English version of every text in `mission.yaml` |
+| `src/mission/` | the DCS mission itself, exploded, in French |
+| `src/scripts/mission-script.lua` | the mission's own Lua (function behind the "Demo: commands" menu) |
+| `src/scripts/guided-tour.lua` | the guided tour, **generated**; it follows the build's language |
+| `tour/steps.yaml` | **the source** of the tour, this README and the release checklist, in French and English |
+| `tools/` | generators: MCP action batches (`gen_0*.py`), tour and docs (`gen_tour.py`), English profile (`gen_i18n.py`), maps (`gen_map.py`), DCS mission texts in both languages (`i18n_texts.py`), English `.miz` localisation (`localize_miz.py`), checks (`verify.py`) |
 | `docs/recette.md` | the pre-release checklist (French), **generated** |
 
 ### Adding a feature
@@ -290,9 +315,10 @@ For a local test (verbose logs, a single weather): `.\\veaf-tools.exe mission bu
 Every new VEAF tools feature adds its example to the demo, in the same PR as the feature or right after:
 
 1. place the example in the mission (MCP actions on the folder, or `mission.yaml`);
-2. add its step in `tour/steps.yaml`, with its release check (`check`);
-3. `python tools/gen_tour.py` (tour, README, checklist) and `python tools/gen_map.py` (map);
-4. build, then `python tools/verify.py`.
+2. add its step in `tour/steps.yaml`, in French and English, with its release check (`check`);
+3. translate every new `mission.yaml` text in `i18n/en.yaml`, then `python tools/gen_i18n.py` (it refuses to run if a translation is missing);
+4. `python tools/gen_tour.py` (tour, README, checklist) and `python tools/gen_map.py` (maps);
+5. build, `python tools/localize_miz.py`, then `python tools/verify.py`.
 
 ### Before every tools release
 
@@ -339,7 +365,7 @@ def gen_readme(lang):
             out.append("")
             mods = ", ".join(f"`{m}`" for m in s["modules"])
             out.append((f"**{t['modules']}** : " if lang == "fr" else f"**{t['modules']}**: ") + mods
-                       + f" — [{t['doc']}]({DOC}{s['doc']})")
+                       + f" — [{t['doc']}]({DOC[lang]}{s['doc']})")
             out.append("")
     out.append(MAKERS[lang])
     name = "README.md" if lang == "fr" else "README.en.md"
@@ -357,8 +383,9 @@ def gen_recette():
            "## Avant DCS",
            "",
            "- [ ] `veaf-tools mission validate` sans erreur.",
-           "- [ ] `veaf-tools build` sans erreur ; journal relu : presets injectés, waypoints injectés, liens des entrepôts, nombre de variantes météo, aucun avertissement nouveau.",
-           "- [ ] `python tools/verify.py` : tous les contrôles du `.miz` au vert.",
+           "- [ ] `veaf-tools build` sans erreur, missions `_FR` et `_EN` ; journal relu : presets injectés, waypoints injectés, liens des entrepôts, nombre de variantes météo, aucun avertissement nouveau.",
+           "- [ ] `python tools/localize_miz.py` : chaque `.miz` `_EN` localisé (briefing, étiquettes F10, cartes).",
+           "- [ ] `python tools/verify.py` : tous les contrôles des `.miz` au vert, dans les deux langues.",
            "",
            "## En jeu",
            "",
@@ -371,7 +398,8 @@ def gen_recette():
     out += ["", "## Hors étapes", "",
             "- [ ] Aucune erreur Lua VEAF dans `dcs.log` sur une heure de mission.",
             "- [ ] Les dessins F10 (cercles et étiquettes des étapes) sont visibles et lisibles sur la carte du camp bleu.",
-            "- [ ] La visite guidée existe en français et en anglais, et chaque entrée pose son repère F10.",
+            "- [ ] Version anglaise (`_EN`) : menus VEAF, CTLD, visite, « Demo: commands », briefing, carte F10 et cartes du briefing en anglais ; dérouler au moins les étapes 01, 02, 04 et 10 en anglais.",
+            "- [ ] La visite guidée existe dans la langue du build, et chaque entrée pose son repère F10.",
             "- [ ] Les chemins de menu cités par la visite correspondent aux menus réels.", ""]
     (ROOT / "docs").mkdir(exist_ok=True)
     (ROOT / "docs/recette.md").write_text("\n".join(out), encoding="utf-8")

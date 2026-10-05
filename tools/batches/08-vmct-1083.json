@@ -1,0 +1,39 @@
+[
+ {
+  "name": "remove_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Ships-cargo-1"
+  }
+ },
+ {
+  "name": "remove_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Ships-cargo-2"
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "ship",
+   "name": "cargoships",
+   "for_combat_zone": "combatZone_Ochamchire_Ships",
+   "position": {
+    "x": -238000,
+    "y": 585000
+   },
+   "units": [
+    {
+     "type": "Dry-cargo ship-1",
+     "name": "#command=\"-cargoships\" OchN-1"
+    }
+   ],
+   "keep_position": true
+  }
+ }
+]

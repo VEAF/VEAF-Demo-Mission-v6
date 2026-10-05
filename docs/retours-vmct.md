@@ -3,6 +3,26 @@
 Ce que la construction de la démo (2026-10-05, veaf-tools 6.27.0, serveur MCP de `develop` à `3c257c96`) a trouvé de manquant ou de faux dans les outils.
 Chaque ligne dit quoi, où, comment on l'a vu, et ce que la démo fait à la place.
 
+## État après VMCT #1083
+
+Les n° 1 à 15 sont corrigés dans VMCT par le lot `FIX-DEMO-MISSION-FINDINGS` ([VEAF/VEAF-Mission-Creation-Tools#1083](https://github.com/VEAF/VEAF-Mission-Creation-Tools/pull/1083), mergé dans `develop` le 2026-10-05), à paraître dans la version qui suit la 6.27.0.
+La démo a été reconstruite avec `develop` et vérifiée en jeu par le pont dcs-bridge le 2026-10-05.
+
+| n° | Ticket VMCT | État dans la démo |
+|---|---|---|
+| 8 | 01 | Contournement retiré : « Créer un pilote abattu près de Khoni » est une action `lua` de `user_menus` ; `tools/verify.py` vérifie que chaque fonction appelée est définie dans `mission-script.lua`. Vérifié en jeu. |
+| 13 | 02 | Rien à retirer ; la config démarre en entier, mais aucune erreur de module n'a été provoquée en jeu. |
+| 12, 14 | 03 | Le commentaire reste sur sa propre ligne et `tools/verify.py` garde son contrôle ; CTLD démarre en jeu, le cas du commentaire en fin de ligne n'y a pas été rejoué. |
+| 1 | 04 | Les scripts redirigent toujours la sortie vers un fichier, tant que la 6.27.0 publiée a le défaut. |
+| 15 | 05 | Contournement retiré : le porteur `#command="-cargoships"` de `tools/gen_08_vmct_1083.py` remplace les deux cargos natifs ; 7 navires vus en jeu. |
+| 9 | 06 | Contournement retiré : l'opération s'active depuis son menu (« +Activer la zone ») ; vérifié en jeu. |
+| 2, 3, 4, 5, 7 | 07 | Les scripts de la démo restent en place : ils ont déjà produit la mission. |
+| 6, 10, 11 | 08 | La visite cite le libellé porte-avions traduit. |
+
+Les n° 16 et 17 restent ouverts.
+
+## Constats
+
 | # | Quoi | Où | Constat | Contournement dans la démo |
 |---|---|---|---|---|
 | 1 | Le build sort en **code 1 après avoir réussi** quand la sortie va vers `/dev/null` | `veaf_tools/app.py:87`, auto-pause `input(t("help.pause_msg"))` | Mesuré le 2026-10-05 sur le même dossier : sortie redirigée vers un fichier, code 0 (trois builds) ; sortie vers `/dev/null` (deux builds), le `.miz` est écrit puis « Appuyez sur Entrée pour quitter... » et `EOFError` sur l'`input()` final, code 1. Une CI ou un script qui teste le code de sortie conclut à un échec. | Rediriger la sortie vers un fichier. À corriger dans l'outil : pas d'auto-pause quand stdin n'est pas un terminal, ou `EOFError` ignorée. |
@@ -20,3 +40,5 @@ Chaque ligne dit quoi, où, comment on l'a vu, et ce que la démo fait à la pla
 | 13 | Une erreur dans l'init d'un module **arrête toute la config VEAF** | `veaf-config.lua` : `veaf.ctld_initialize()` sans protection | Suite du n° 12 : l'erreur CTLD a arrêté `veaf-config.lua` ; 0 zone de combat enregistrée, porteurs `#veafInterpreter` jamais remplacés, QRA, moyens, Skynet non configurés, sans autre message. Chaque init de module dans un `pcall`, avec une ligne d'erreur nommant le module, limiterait la casse à ce module. | — |
 | 14 | La config CTLD embarquée a **un build de retard** (à confirmer) | build : `src/scripts/CTLD_userConfig.lua` | Après une modification de `ctld-config.yaml`, le premier build a embarqué l'ancienne valeur alors que `src/scripts/CTLD_userConfig.lua` portait la nouvelle ; le build suivant était juste. Hypothèse : le fichier est embarqué avant d'être régénéré. Observé une fois. | Construire deux fois après une modification de `ctld-config.yaml`, et contrôler la valeur dans le `.miz`. |
 | 15 | `-cargoships` **ne crée rien**, en silence | alias `-cargoships` (`_spawn group, name cargoships-nodef, …, offroad`) | Mesuré par le pont : depuis le porteur `#command` d'une zone de combat comme exécuté seul en mer, aucun groupe n'apparaît et le journal ne dit rien après `doSpawnGroup`. | Deux cargos natifs dans la zone (`tools/gen_06_corrections.py`). |
+| 16 | Rien ne traduit, selon le profil, ce qui vit dans la mission DCS | `profiles:` / `build_variants:` ne touchent que la configuration VEAF | Pour une mission en deux langues, le briefing, les étiquettes des dessins F10 et les images du briefing restent ceux de `src/mission/` dans les deux builds. Un profil qui remplace aussi ses listes en entier oblige à recopier toute liste qui porte du texte. | `tools/localize_miz.py` réécrit les `.miz` anglais après le build ; `tools/gen_i18n.py` génère le profil EN depuis `i18n/en.yaml`. |
+| 17 | `rewrite_miz_members` avale une erreur d'écriture | `mission_tools/miz_tools.py:583-587` | Relevé à la revue de code de la démo : l'exception est journalisée puis ignorée, l'appelant croit l'écriture faite. | `tools/localize_miz.py` relit le `.miz` après écriture. |

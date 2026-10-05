@@ -5,6 +5,9 @@
   des autres cibles.
 - Navires d'Ochamchire : le porteur `#command="-cargoships"` ne crée rien — l'alias seul, hors zone, ne crée
   rien non plus et ne dit rien (docs/retours-vmct.md). Remplacé par deux cargos natifs, espacés de 400 m.
+
+Noms d'avant le lot 07 : ce lot crée des groupes et des zones que tools/gen_07_noms.py renomme ensuite en
+anglais neutre. Les lots se rejouent dans l'ordre (01 → 08), pas isolément.
 """
 import sys
 from pathlib import Path

@@ -1,0 +1,350 @@
+[
+ {
+  "name": "edit_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Convoi",
+   "new_name": "combatZone_Convoy"
+  }
+ },
+ {
+  "name": "edit_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Ochamchire_Navires",
+   "new_name": "combatZone_Ochamchire_Ships"
+  }
+ },
+ {
+  "name": "edit_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Tkvarcheli_PC",
+   "new_name": "combatZone_Tkvarcheli_HQ"
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-01",
+   "new_name": "combatZone_Khoni_Easy-target-01",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-02",
+   "new_name": "combatZone_Khoni_Easy-target-02",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-03",
+   "new_name": "combatZone_Khoni_Easy-target-03",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-04",
+   "new_name": "combatZone_Khoni_Easy-target-04",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-05",
+   "new_name": "combatZone_Khoni_Easy-target-05",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-06",
+   "new_name": "combatZone_Khoni_Easy-target-06",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-07",
+   "new_name": "combatZone_Khoni_Easy-target-07",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-08",
+   "new_name": "combatZone_Khoni_Easy-target-08",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Medium-blindes",
+   "new_name": "combatZone_Khoni_Medium-armor",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Hard-bataillon",
+   "new_name": "combatZone_Khoni_Hard-battalion",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Gali-blindes-a",
+   "new_name": "combatZone_Gali-armor-a",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Gali-blindes-b",
+   "new_name": "combatZone_Gali-armor-b",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Gali-artillerie",
+   "new_name": "combatZone_Gali-artillery",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Gali-dca",
+   "new_name": "combatZone_Gali-sam",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Gali-guetteurs",
+   "new_name": "combatZone_Gali-spotters",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Port-camions",
+   "new_name": "combatZone_Ochamchire_Port-trucks",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Port-dca",
+   "new_name": "combatZone_Ochamchire_Port-aaa",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_PC-garde",
+   "new_name": "combatZone_Tkvarcheli_HQ-guard",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_PC-pc",
+   "new_name": "combatZone_Tkvarcheli_HQ-hq",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_PC-bunker",
+   "new_name": "combatZone_Tkvarcheli_HQ-bunker",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_Depot-munitions",
+   "new_name": "combatZone_Tkvarcheli_Depot-ammo",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_Depot-carburant-1",
+   "new_name": "combatZone_Tkvarcheli_Depot-fuel-1",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Tkvarcheli_Depot-carburant-2",
+   "new_name": "combatZone_Tkvarcheli_Depot-fuel-2",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Convoi-colonne",
+   "new_name": "combatZone_Convoy-column",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Navires-escorte",
+   "new_name": "combatZone_Ochamchire_Ships-escort",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Navires-cargo-1",
+   "new_name": "combatZone_Ochamchire_Ships-cargo-1",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Navires-cargo-2",
+   "new_name": "combatZone_Ochamchire_Ships-cargo-2",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Soukhoumi - MiG-29S",
+   "new_name": "QRA Sukhumi - MiG-29S",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Soukhoumi - Su-27",
+   "new_name": "QRA Sukhumi - Su-27",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Soukhoumi - Su-30",
+   "new_name": "QRA Sukhumi - Su-30",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "QRA Soukhoumi - MiG-31",
+   "new_name": "QRA Sukhumi - MiG-31",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "OnDemand-CAP Su-27 mer FL300",
+   "new_name": "OnDemand-CAP Su-27 sea FL300",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "OnDemand-CAP MiG-31 Sotchi FL350",
+   "new_name": "OnDemand-CAP MiG-31 Sochi FL350",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Vague MiG-29S",
+   "new_name": "Wave MiG-29S",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Vague Su-27",
+   "new_name": "Wave Su-27",
+   "acknowledge_conventions": true
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Vague Su-30",
+   "new_name": "Wave Su-30",
+   "acknowledge_conventions": true
+  }
+ }
+]

@@ -10,7 +10,7 @@ import paths  # noqa: F401
 from veaf_mission_mcp.mission_folder import load_folder_mission, save_folder_mission  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
-NAME = "combatZone_Convoi-colonne"
+NAME = "combatZone_Convoy-column"
 mis = load_folder_mission(ROOT)
 found = 0
 for side in mis.mission_content["coalition"].values():
