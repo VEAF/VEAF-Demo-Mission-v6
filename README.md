@@ -11,10 +11,10 @@ Elle est mise à jour à chaque nouvelle fonctionnalité, et vérifiée avant ch
 
 1. Construisez la mission (voir [Pour les créateurs de mission](#pour-les-créateurs-de-mission)), ou prenez-la dans les [releases](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases) du dépôt quand elles sont publiées.
 2. Lancez-la en solo ou sur un serveur, et prenez un slot à **Kutaisi** (slots classiques, moteur chaud) ou sur un porte-avions.
-3. Ouvrez le menu **F10 > Autre > VEAF > VISITE GUIDÉE** : un sous-menu par chapitre, une entrée par étape. Chaque entrée affiche ce qu'il faut faire, la position de l'étape par rapport à vous, et pose un repère sur votre carte F10.
+3. Ouvrez le menu **F10 > Autre > Visite guidée** : un sous-menu par chapitre, une entrée par étape. Chaque entrée affiche ce qu'il faut faire, la position de l'étape par rapport à vous, et pose un repère sur votre carte F10.
 
 La sécurité VEAF est **désactivée** dans cette mission : toutes les commandes sont ouvertes à tous, y compris celles qu'un serveur réserve aux pilotes habilités.
-La mission est en français (menus VEAF compris) ; la visite existe en anglais (**GUIDED TOUR**).
+La mission est en français (menus VEAF compris) ; la visite existe en anglais (**Guided tour**, au même niveau).
 
 ### Taper une commande dans un marqueur
 
@@ -80,7 +80,7 @@ Un repère est posé sur votre carte F10 quand vous ouvrez une étape.
 
 **À faire** :
 
-- Les menus VEAF sont dans F10 > Autre > VEAF : VISITE GUIDÉE et DÉMO : ACTIONS en tête ; le menu a plusieurs pages (« Page suivante » en bas). Le menu « Démo : commandes » est à part, directement dans F10 > Autre. La mission est en français : les menus aussi.
+- Les menus VEAF sont dans F10 > Autre > VEAF ; ce menu a plusieurs pages (« Page suivante » en bas). La visite guidée et les menus « Démo : actions » et « Démo : commandes » sont à part, directement dans F10 > Autre. La mission est en français : les menus aussi.
 - Beaucoup de commandes se tapent dans un marqueur de la carte F10 : bouton « Ajouter un repère » de la barre du haut, clic sur la carte, tapez le texte, puis cliquez ailleurs pour valider.
 - Slots : à Kutaisi, des slots classiques moteur chaud (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), et des slots dynamiques sur les quatre bases bleues en multijoueur ; sur les porte-avions, F/A-18C et F-14B.
 
@@ -175,10 +175,10 @@ Les unités au sol rouges servent de guetteurs : elles voient les avions et rela
 **À faire** :
 
 - Approchez Ochamchire par le sud-est, à basse altitude puis en montant : regardez quand votre RWR s'allume.
-- L'état de l'IADS rouge (sites, radars allumés) : F10 > Autre > SKYNET IADS RED.
+- L'état de l'IADS rouge (sites, radars allumés) : F10 > Autre > SKYNET IADS COALITION: RED.
 - La vue des guetteurs est propre à chaque camp : F10 > Autre > VEAF > RÉSEAU DE GUETTEURS > Afficher la vue des guetteurs montre les guetteurs de VOTRE camp. Pour voir le réseau rouge, prenez le slot game master rouge de la mission de test (rouvrez la carte F10 après le clic).
 
-**Ce qu'on doit voir** : Le SA-6 n'émet pas tant que le réseau ne vous a pas détecté, puis s'allume ; le menu SKYNET IADS RED montre quel site émet.
+**Ce qu'on doit voir** : Le SA-6 n'émet pas tant que le réseau ne vous a pas détecté, puis s'allume ; le menu SKYNET IADS COALITION: RED montre quel site émet.
 
 **Fonctionnalités** : `SKYNET`, `INTERPRETER`, `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafSkynetIadsHelper/)
 
@@ -208,7 +208,7 @@ Toutes les unités apparaissent à l'activation : la dépendance ordonne les obj
 
 **À faire** :
 
-- Menu F10 > Autre > VEAF > DÉMO : ACTIONS > Activer l'opération Tkvarcheli (VEAF ne pose pas de commande d'activation dans le menu d'une opération : la démo la fournit).
+- Menu F10 > Autre > Démo : actions > Activer l'opération Tkvarcheli (VEAF ne pose pas de commande d'activation dans le menu d'une opération : la démo la fournit).
 - Menu F10 > Autre > VEAF > ZONES DE COMBAT > Opération Tkvarcheli : la tâche en cours ; détruisez le radar 1L13 et le dépôt (statiques), puis le PC.
 
 **Ce qu'on doit voir** : Les tâches passent de « en cours » à « terminée » ; quand les trois sont faites, le message « L'opération … est terminée ».
@@ -327,7 +327,7 @@ Un pilote abattu peut être créé à la demande, à aller chercher en hélicopt
 
 - Décollez de Kutaisi en UH-1H ou Mi-8 et posez-vous au FARP Khoni (127.5 AM).
 - Menu F10 > Autre > CTLD : charger des troupes, demander une caisse, puis les déposer ailleurs.
-- Menu F10 > Autre > VEAF > DÉMO : ACTIONS > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position.
+- Menu F10 > Autre > Démo : actions > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position.
 
 **Ce qu'on doit voir** : Le FARP ravitaille et réarme ; CTLD charge les troupes ; le pilote abattu émet une balise et se laisse embarquer.
 

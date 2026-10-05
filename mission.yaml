@@ -40,7 +40,7 @@ modules:
     # Menu radio déclaré en YAML (ADR 0011) : F10 > Autre > « Démo : commandes », au premier niveau.
     # Pas d'action `lua` ici : le build l'écrit comme une référence évaluée dans veaf-config.lua,
     # avant que mission-script.lua ne définisse la fonction (docs/retours-vmct.md, n° 8). Les actions
-    # Lua de la démo sont dans le menu VEAF > DÉMO : ACTIONS (src/scripts/guided-tour.lua).
+    # Lua de la démo sont dans le menu F10 > Autre > « Démo : actions » (src/scripts/guided-tour.lua).
     user_menus:
       tree:
         - menu: "Démo : commandes"
@@ -48,7 +48,7 @@ modules:
             - { command: "Démarrer la QRA de Soukhoumi", action: qra.start, qra: "QRA Soukhoumi" }
             - { command: "Arrêter la QRA de Soukhoumi", action: qra.stop, qra: "QRA Soukhoumi" }
             - { command: "Relancer l'arène BVR", action: airwave.reset, airwave: "Arene BVR" }
-            - { command: "Message de bienvenue", action: message, text: "Bienvenue sur la mission de démo VEAF. La visite guidée est dans F10 > Autre > VEAF > VISITE GUIDÉE." }
+            - { command: "Message de bienvenue", action: message, text: "Bienvenue sur la mission de démo VEAF. La visite guidée est dans F10 > Autre > Visite guidée." }
   SPAWN: true
   SHORTCUTS:
     enabled: true

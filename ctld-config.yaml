@@ -942,7 +942,9 @@ advanced:
   CIV_WEIGHT: 2
   JTAC_WEIGHT: 15
   JTAC_droneAltitude: 3000
-  jtacLaserCodeMax: 1686   # sous le 1688 du drone du catalogue : voir describe_known_limitations ctld-jtac-imposed-code-and-radio
+  # 1686 et non 1688 : le drone du catalogue prend 1688 (describe_known_limitations ctld-jtac-imposed-code-and-radio).
+  # Commentaire sur sa propre ligne : le lecteur YAML de CTLD lit un commentaire en fin de ligne comme une partie de la valeur.
+  jtacLaserCodeMax: 1686
   jtacLaserCodeMin: 1111
   JTAC_droneRadiusNoLase: 2000
   JTAC_droneRadiusOnLase: 1000

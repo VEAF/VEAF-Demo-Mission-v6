@@ -1,7 +1,7 @@
 # Visite guidée de la mission de démo — SOURCE UNIQUE.
 #
 # Ce fichier produit, par `python tools/gen_tour.py` :
-#   - src/scripts/guided-tour.lua : le menu F10 « VISITE GUIDÉE » / « GUIDED TOUR » ;
+#   - src/scripts/guided-tour.lua : les menus F10 « Visite guidée » / « Guided tour » ;
 #   - README.md et README.en.md : le guide détaillé, une section par étape ;
 #   - docs/recette.md : la liste de contrôle avant release.
 # Ne modifiez pas ces fichiers à la main : modifiez celui-ci, puis relancez le générateur.
@@ -39,11 +39,11 @@ steps:
       en: "This mission shows every feature of the VEAF tools, one per step. Each step gives the place, what to do and what you should see. A mark is placed on your F10 map when you open a step."
     how:
       fr:
-        - "Les menus VEAF sont dans F10 > Autre > VEAF : VISITE GUIDÉE et DÉMO : ACTIONS en tête ; le menu a plusieurs pages (« Page suivante » en bas). Le menu « Démo : commandes » est à part, directement dans F10 > Autre. La mission est en français : les menus aussi."
+        - "Les menus VEAF sont dans F10 > Autre > VEAF ; ce menu a plusieurs pages (« Page suivante » en bas). La visite guidée et les menus « Démo : actions » et « Démo : commandes » sont à part, directement dans F10 > Autre. La mission est en français : les menus aussi."
         - "Beaucoup de commandes se tapent dans un marqueur de la carte F10 : bouton « Ajouter un repère » de la barre du haut, clic sur la carte, tapez le texte, puis cliquez ailleurs pour valider."
         - "Slots : à Kutaisi, des slots classiques moteur chaud (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), et des slots dynamiques sur les quatre bases bleues en multijoueur ; sur les porte-avions, F/A-18C et F-14B."
       en:
-        - "VEAF menus are under F10 > Other > VEAF: GUIDED TOUR and DÉMO : ACTIONS come first; the menu has several pages (\"Page suivante\" = next page, at the bottom). The \"Démo : commandes\" menu is separate, directly under F10 > Other. The mission runs in French, so the menus are in French too (translations are given here)."
+        - "VEAF menus are under F10 > Other > VEAF; that menu has several pages (\"Page suivante\" = next page, at the bottom). The guided tour and the \"Démo : actions\" and \"Démo : commandes\" menus are separate, directly under F10 > Other. The mission runs in French, so the menus are in French too (translations are given here)."
         - "Many commands are typed into an F10 map marker: \"Add mark\" button in the top bar, click on the map, type the text, then click elsewhere to validate."
         - "Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers."
     see:
@@ -166,16 +166,16 @@ steps:
     how:
       fr:
         - "Approchez Ochamchire par le sud-est, à basse altitude puis en montant : regardez quand votre RWR s'allume."
-        - "L'état de l'IADS rouge (sites, radars allumés) : F10 > Autre > SKYNET IADS RED."
+        - "L'état de l'IADS rouge (sites, radars allumés) : F10 > Autre > SKYNET IADS COALITION: RED."
         - "La vue des guetteurs est propre à chaque camp : F10 > Autre > VEAF > RÉSEAU DE GUETTEURS > Afficher la vue des guetteurs montre les guetteurs de VOTRE camp. Pour voir le réseau rouge, prenez le slot game master rouge de la mission de test (rouvrez la carte F10 après le clic)."
       en:
         - "Approach Ochamchire from the south-east, low then climbing: watch when your RWR lights up."
-        - "Red IADS status (sites, radars on): F10 > Other > SKYNET IADS RED."
+        - "Red IADS status (sites, radars on): F10 > Other > SKYNET IADS COALITION: RED."
         - "The spotter view belongs to each side: F10 > Other > VEAF > RÉSEAU DE GUETTEURS (spotter network) > Afficher la vue des guetteurs shows YOUR side's spotters. To see the red network, take the red game master slot of the test mission (reopen the F10 map after clicking)."
     see:
-      fr: "Le SA-6 n'émet pas tant que le réseau ne vous a pas détecté, puis s'allume ; le menu SKYNET IADS RED montre quel site émet."
-      en: "The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS RED menu shows which site is emitting."
-    check: "SA-11, SA-15 et EWR présents dès le départ (interpréteur) ; SA-6 d'Ochamchire actif au démarrage et inscrit dans le réseau Skynet ; radar éteint tant qu'aucun avion bleu n'est détecté ; menu SKYNET IADS RED présent ; vue des guetteurs rouge affichable depuis le slot game master rouge."
+      fr: "Le SA-6 n'émet pas tant que le réseau ne vous a pas détecté, puis s'allume ; le menu SKYNET IADS COALITION: RED montre quel site émet."
+      en: "The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS COALITION: RED menu shows which site is emitting."
+    check: "SA-11, SA-15 et EWR présents dès le départ (interpréteur) ; SA-6 d'Ochamchire actif au démarrage et inscrit dans le réseau Skynet ; radar éteint tant qu'aucun avion bleu n'est détecté ; menu SKYNET IADS COALITION: RED présent ; vue des guetteurs rouge affichable depuis le slot game master rouge."
     doc: "mission-maker/scripts/veafSkynetIadsHelper/"
 
   - id: chained
@@ -209,10 +209,10 @@ steps:
       en: "An operation groups several zones as tasks: the radar and the depot first, then the command post, given as an objective only once the first two are destroyed. All units spawn on activation: the dependency orders the objectives, not the spawning."
     how:
       fr:
-        - "Menu F10 > Autre > VEAF > DÉMO : ACTIONS > Activer l'opération Tkvarcheli (VEAF ne pose pas de commande d'activation dans le menu d'une opération : la démo la fournit)."
+        - "Menu F10 > Autre > Démo : actions > Activer l'opération Tkvarcheli (VEAF ne pose pas de commande d'activation dans le menu d'une opération : la démo la fournit)."
         - "Menu F10 > Autre > VEAF > ZONES DE COMBAT > Opération Tkvarcheli : la tâche en cours ; détruisez le radar 1L13 et le dépôt (statiques), puis le PC."
       en:
-        - "F10 > Other > VEAF > DÉMO : ACTIONS > Activer l'opération Tkvarcheli (activate; VEAF puts no activation command in an operation's menu, so the demo provides one)."
+        - "F10 > Other > Démo : actions > Activer l'opération Tkvarcheli (activate; VEAF puts no activation command in an operation's menu, so the demo provides one)."
         - "F10 > Other > VEAF > ZONES DE COMBAT > Opération Tkvarcheli: the current task; destroy the 1L13 radar and the depot (statics), then the command post."
     see:
       fr: "Les tâches passent de « en cours » à « terminée » ; quand les trois sont faites, le message « L'opération … est terminée »."
@@ -362,11 +362,11 @@ steps:
       fr:
         - "Décollez de Kutaisi en UH-1H ou Mi-8 et posez-vous au FARP Khoni (127.5 AM)."
         - "Menu F10 > Autre > CTLD : charger des troupes, demander une caisse, puis les déposer ailleurs."
-        - "Menu F10 > Autre > VEAF > DÉMO : ACTIONS > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position."
+        - "Menu F10 > Autre > Démo : actions > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position."
       en:
         - "Take off from Kutaisi in a UH-1H or Mi-8 and land at FARP Khoni (127.5 AM)."
         - "F10 > Other > CTLD: load troops, request a crate, then drop them elsewhere."
-        - "F10 > Other > VEAF > DÉMO : ACTIONS > Créer un pilote abattu près de Khoni (create a downed pilot), then the CSAR menu for its beacon and position."
+        - "F10 > Other > Démo : actions > Créer un pilote abattu près de Khoni (create a downed pilot), then the CSAR menu for its beacon and position."
     see:
       fr: "Le FARP ravitaille et réarme ; CTLD charge les troupes ; le pilote abattu émet une balise et se laisse embarquer."
       en: "The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards."

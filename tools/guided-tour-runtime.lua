@@ -69,35 +69,43 @@ function demoTour.whereText(step, lang, unit)
   return string.format(t.whereNoPlayer, bullseyeText(point))
 end
 
---- Commande d'une étape. veafRadio (USAGE_ForGroup) passe { { n, lang }, unitName }.
-function demoTour.show(parameters)
-  local args, unitName = parameters[1], parameters[2]
-  local step, lang = demoTour.steps[args[1]], args[2]
-  local unit = unitName and Unit.getByName(unitName)
-  if not (unit and unit:isExist()) then
-    return
+-- ── Menus : posés directement avec missionCommands, au premier niveau de F10 > Autre ─────────────
+-- Hors de veafRadio, pour deux raisons : la visite doit se voir au premier niveau (à côté de VEAF et
+-- CTLD), et chaque commande porte elle-même son groupe et sa langue — aucun paramètre n'est ajouté
+-- ou réécrit entre le menu et la fonction.
+
+local function firstAliveUnit(groupName)
+  local group = Group.getByName(groupName)
+  if group and group:isExist() then
+    for _, unit in ipairs(group:getUnits()) do
+      if unit:isExist() then
+        return unit
+      end
+    end
   end
-  local groupId = unit:getGroup():getID()
+  return nil
+end
+
+--- Commande d'une étape : args = { group = <nom du groupe>, groupId = <id>, n = <étape>, lang = "fr" | "en" }.
+function demoTour.show(args)
+  local step, lang = demoTour.steps[args.n], args.lang
+  local unit = firstAliveUnit(args.group)
   local text = step.text[lang] .. "\n\n" .. demoTour.whereText(step, lang, unit)
-  trigger.action.outTextForGroup(groupId, text, demoTour.MESSAGE_DURATION)
-  local point = demoTour.anchorPoint(step)
-  if demoTour.marks[groupId] then
-    trigger.action.removeMark(demoTour.marks[groupId])
-    demoTour.marks[groupId] = nil
+  trigger.action.outTextForGroup(args.groupId, text, demoTour.MESSAGE_DURATION)
+  if demoTour.marks[args.groupId] then
+    trigger.action.removeMark(demoTour.marks[args.groupId])
+    demoTour.marks[args.groupId] = nil
   end
+  local point = demoTour.anchorPoint(step)
   if point then
     demoTour.nextMarkId = demoTour.nextMarkId + 1
-    trigger.action.markToGroup(demoTour.nextMarkId, string.format("%02d. %s", step.n, step.title[lang]), point, groupId, true)
-    demoTour.marks[groupId] = demoTour.nextMarkId
+    trigger.action.markToGroup(demoTour.nextMarkId, string.format("%02d. %s", step.n, step.title[lang]), point, args.groupId, true)
+    demoTour.marks[args.groupId] = demoTour.nextMarkId
   end
 end
 
-function demoTour.showSummary(parameters)
-  local lang, unitName = parameters[1], parameters[2]
-  local unit = unitName and Unit.getByName(unitName)
-  if not (unit and unit:isExist()) then
-    return
-  end
+function demoTour.showSummary(args)
+  local lang = args.lang
   local lines = { TXT[lang].summaryText }
   for _, chapter in ipairs(demoTour.chapters) do
     table.insert(lines, chapter[lang])
@@ -107,7 +115,7 @@ function demoTour.showSummary(parameters)
       end
     end
   end
-  trigger.action.outTextForGroup(unit:getGroup():getID(), table.concat(lines, "\n"), demoTour.MESSAGE_DURATION)
+  trigger.action.outTextForGroup(args.groupId, table.concat(lines, "\n"), demoTour.MESSAGE_DURATION)
 end
 
 --- Les actions de la démo, appelées au clic (les fonctions vivent dans mission-script.lua).
@@ -119,30 +127,67 @@ local function call(name)
   end
 end
 
-function demoTour.buildMenus()
-  -- La racine VEAF dépasse MENU_PAGE_SIZE (10) entrées et se pagine : `sortKey` place la visite et
-  -- les actions de la démo en tête de la première page, devant les menus des modules.
-  local actions = veafRadio.addMenu("Démo : actions")
-  actions.sortKey = "!3"
-  veafRadio.addCommandToSubmenu("Créer un pilote abattu près de Khoni", actions, call("spawnCsar"), nil, veafRadio.USAGE_ForAll)
-  veafRadio.addCommandToSubmenu("Activer l'opération Tkvarcheli", actions, call("activateOperation"), nil, veafRadio.USAGE_ForAll)
-  veafRadio.addCommandToSubmenu("Désactiver l'opération Tkvarcheli", actions, call("desactivateOperation"), nil, veafRadio.USAGE_ForAll)
-  for i, lang in ipairs({ "fr", "en" }) do
-    local root = veafRadio.addMenu(TXT[lang].root)
-    root.sortKey = "!" .. i
-    veafRadio.addCommandToSubmenu(TXT[lang].summary, root, demoTour.showSummary, lang, veafRadio.USAGE_ForGroup)
+demoTour.groupMenus = {}   -- groupId -> { chemins de premier niveau posés pour ce groupe }
+
+--- Pose (ou repose) les deux menus de la visite pour un groupe de joueurs.
+function demoTour.addMenusForGroup(group)
+  local groupId, groupName = group:getID(), group:getName()
+  for _, path in ipairs(demoTour.groupMenus[groupId] or {}) do
+    missionCommands.removeItemForGroup(groupId, path)
+  end
+  local paths = {}
+  for _, lang in ipairs({ "fr", "en" }) do
+    local root = missionCommands.addSubMenuForGroup(groupId, TXT[lang].root)
+    table.insert(paths, root)
+    missionCommands.addCommandForGroup(groupId, TXT[lang].summary, root, demoTour.showSummary,
+      { group = groupName, groupId = groupId, lang = lang })
     for _, chapter in ipairs(demoTour.chapters) do
-      local menu = veafRadio.addSubMenu(chapter[lang], root)
+      local menu = missionCommands.addSubMenuForGroup(groupId, chapter[lang], root)
       for _, step in ipairs(demoTour.steps) do
         if step.chapter == chapter.key then
-          local title = string.format("%02d. %s", step.n, step.title[lang])
-          veafRadio.addCommandToSubmenu(title, menu, demoTour.show, { step.n, lang }, veafRadio.USAGE_ForGroup)
+          missionCommands.addCommandForGroup(groupId, string.format("%02d. %s", step.n, step.title[lang]), menu,
+            demoTour.show, { group = groupName, groupId = groupId, n = step.n, lang = lang })
         end
       end
     end
   end
-  veafRadio.refreshRadioMenu()
-  veaf.loggers.get(veaf.Id):info("demoTour: %d étapes, menus fr et en", #demoTour.steps)
+  demoTour.groupMenus[groupId] = paths
+end
+
+local function isPlayerUnit(unit)
+  return unit and unit.getPlayerName and unit:getPlayerName() ~= nil
+end
+
+demoTour.eventHandler = {}
+function demoTour.eventHandler:onEvent(event)
+  if (event.id == world.event.S_EVENT_BIRTH or event.id == world.event.S_EVENT_PLAYER_ENTER_UNIT)
+    and isPlayerUnit(event.initiator) and event.initiator.getGroup then
+    local ok, err = pcall(demoTour.addMenusForGroup, event.initiator:getGroup())
+    if not ok then
+      env.error("demoTour: " .. tostring(err))
+    end
+  end
+end
+
+function demoTour.buildMenus()
+  -- Actions de la démo : un seul menu pour tous, au premier niveau.
+  local actions = missionCommands.addSubMenu("Démo : actions")
+  missionCommands.addCommand("Créer un pilote abattu près de Khoni", actions, call("spawnCsar"))
+  missionCommands.addCommand("Activer l'opération Tkvarcheli", actions, call("activateOperation"))
+  missionCommands.addCommand("Désactiver l'opération Tkvarcheli", actions, call("desactivateOperation"))
+  -- Visite : par groupe de joueurs, à chaque arrivée dans un appareil (slots classiques et dynamiques).
+  world.addEventHandler(demoTour.eventHandler)
+  for _, side in ipairs({ coalition.side.BLUE, coalition.side.RED }) do
+    for _, category in ipairs({ Group.Category.AIRPLANE, Group.Category.HELICOPTER }) do
+      for _, group in ipairs(coalition.getGroups(side, category)) do
+        local unit = group:getUnit(1)
+        if isPlayerUnit(unit) then
+          demoTour.addMenusForGroup(group)
+        end
+      end
+    end
+  end
+  env.info(string.format("demoTour: %d étapes, menus fr et en au premier niveau", #demoTour.steps))
 end
 
 demoTour.buildMenus()

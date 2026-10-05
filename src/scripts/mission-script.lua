@@ -2,7 +2,7 @@
 --
 -- Chargé APRÈS veaf-config.lua (généré depuis mission.yaml), et avant les custom_scripts
 -- (src/scripts/guided-tour.lua, la visite guidée, générée par tools/gen_tour.py, qui pose aussi le
--- menu « DÉMO : ACTIONS » appelant les fonctions ci-dessous).
+-- menu « Démo : actions » appelant les fonctions ci-dessous).
 --
 -- Ces fonctions ne sont PAS branchées sur une action `lua` de modules.RADIO.user_menus : le build
 -- y écrit une référence nue (`demo.spawnCsar`) évaluée dans veaf-config.lua, avant que ce fichier

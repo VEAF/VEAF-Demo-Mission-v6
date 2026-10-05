@@ -3,7 +3,7 @@
     python tools/gen_tour.py
 
 Écrit :
-  - src/scripts/guided-tour.lua  le menu F10 « VISITE GUIDÉE » (fr) et « GUIDED TOUR » (en) ;
+  - src/scripts/guided-tour.lua  les menus F10 « Visite guidée » (fr) et « Guided tour » (en) ;
   - README.md, README.en.md     le guide détaillé, une section par étape ;
   - docs/recette.md             la liste de contrôle avant release.
 
@@ -93,7 +93,7 @@ def step_text(step, lang):
 
 def gen_lua():
     out = ["-- guided-tour.lua — GÉNÉRÉ par tools/gen_tour.py depuis tour/steps.yaml : ne pas modifier à la main.",
-           "-- Menu F10 « VISITE GUIDÉE » (fr) et « GUIDED TOUR » (en) : un sous-menu par chapitre, une commande",
+           "-- Menus F10 « Visite guidée » (fr) et « Guided tour » (en), au premier niveau : un sous-menu par chapitre, une commande",
            "-- par étape. Une commande affiche le texte de l'étape au seul groupe qui la demande, avec la position",
            "-- recalculée au moment du clic, et pose un repère F10 sur le lieu de l'étape.",
            "", "demoTour = demoTour or {}", "demoTour.chapters = {"]
@@ -134,10 +134,10 @@ Elle est mise à jour à chaque nouvelle fonctionnalité, et vérifiée avant ch
 
 1. Construisez la mission (voir [Pour les créateurs de mission](#pour-les-créateurs-de-mission)), ou prenez-la dans les [releases]({REPO}/releases) du dépôt quand elles sont publiées.
 2. Lancez-la en solo ou sur un serveur, et prenez un slot à **Kutaisi** (slots classiques, moteur chaud) ou sur un porte-avions.
-3. Ouvrez le menu **F10 > Autre > VEAF > VISITE GUIDÉE** : un sous-menu par chapitre, une entrée par étape. Chaque entrée affiche ce qu'il faut faire, la position de l'étape par rapport à vous, et pose un repère sur votre carte F10.
+3. Ouvrez le menu **F10 > Autre > Visite guidée** : un sous-menu par chapitre, une entrée par étape. Chaque entrée affiche ce qu'il faut faire, la position de l'étape par rapport à vous, et pose un repère sur votre carte F10.
 
 La sécurité VEAF est **désactivée** dans cette mission : toutes les commandes sont ouvertes à tous, y compris celles qu'un serveur réserve aux pilotes habilités.
-La mission est en français (menus VEAF compris) ; la visite existe en anglais (**GUIDED TOUR**).
+La mission est en français (menus VEAF compris) ; la visite existe en anglais (**Guided tour**, au même niveau).
 
 ### Taper une commande dans un marqueur
 
@@ -182,7 +182,7 @@ It is updated with every new feature, and checked before every release of the to
 
 1. Build the mission (see [For mission makers](#for-mission-makers)), or take it from the repository [releases]({REPO}/releases) once they are published.
 2. Run it solo or on a server, and take a slot at **Kutaisi** (classic slots, hot start) or on a carrier.
-3. Open **F10 > Other > VEAF > GUIDED TOUR**: one submenu per chapter, one entry per step. Each entry shows what to do, where the step is relative to you, and places a mark on your F10 map.
+3. Open **F10 > Other > Guided tour**: one submenu per chapter, one entry per step. Each entry shows what to do, where the step is relative to you, and places a mark on your F10 map.
 
 VEAF security is **disabled** in this mission: every command is open to everyone, including those a server keeps for qualified pilots.
 The mission runs in French (VEAF menus included); this guide gives the French menu names with their translation.

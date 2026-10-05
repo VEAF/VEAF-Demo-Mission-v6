@@ -165,6 +165,12 @@ def check_sources():
     tree = ((CFG["modules"].get("RADIO") or {}).get("user_menus") or {}).get("tree")
     found = list(lua_actions(tree))
     verdict(not found, "aucune action `lua` dans modules.RADIO.user_menus", str(found))
+    # Le lecteur YAML de CTLD lit `clé: valeur  # commentaire` comme la valeur « valeur  # commentaire » :
+    # sur jtacLaserCodeMax, l'init de CTLD plante et veaf-config.lua s'arrête avec elle (retours-vmct n° 12).
+    import re
+    inline = [f"{i}: {ln.strip()}" for i, ln in enumerate((ROOT / "ctld-config.yaml").read_text(encoding="utf-8").splitlines(), 1)
+              if re.match(r"^\s*[\w.-]+:\s+[^\s#'\"][^#]*\s#", ln)]
+    verdict(not inline, "ctld-config.yaml sans commentaire en fin de ligne", "; ".join(inline[:3]))
 
 
 if __name__ == "__main__":

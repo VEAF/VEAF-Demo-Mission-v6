@@ -1,0 +1,75 @@
+[
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-03",
+   "move_to": {
+    "x": -265294.7,
+    "y": 665351.2
+   }
+  }
+ },
+ {
+  "name": "set_group_properties",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Khoni_Easy-cible-04",
+   "move_to": {
+    "x": -265600.9,
+    "y": 665520.8
+   }
+  }
+ },
+ {
+  "name": "remove_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "combatZone_Ochamchire_Navires-cargos"
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "ship",
+   "name": "cargo-1",
+   "for_combat_zone": "combatZone_Ochamchire_Navires",
+   "position": {
+    "x": -238000.0,
+    "y": 584600.0
+   },
+   "units": [
+    {
+     "type": "Dry-cargo ship-1"
+    }
+   ],
+   "keep_position": true
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "ship",
+   "name": "cargo-2",
+   "for_combat_zone": "combatZone_Ochamchire_Navires",
+   "position": {
+    "x": -237600.0,
+    "y": 585000.0
+   },
+   "units": [
+    {
+     "type": "Dry-cargo ship-2"
+    }
+   ],
+   "keep_position": true
+  }
+ }
+]

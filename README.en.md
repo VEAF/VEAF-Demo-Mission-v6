@@ -11,7 +11,7 @@ It is updated with every new feature, and checked before every release of the to
 
 1. Build the mission (see [For mission makers](#for-mission-makers)), or take it from the repository [releases](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases) once they are published.
 2. Run it solo or on a server, and take a slot at **Kutaisi** (classic slots, hot start) or on a carrier.
-3. Open **F10 > Other > VEAF > GUIDED TOUR**: one submenu per chapter, one entry per step. Each entry shows what to do, where the step is relative to you, and places a mark on your F10 map.
+3. Open **F10 > Other > Guided tour**: one submenu per chapter, one entry per step. Each entry shows what to do, where the step is relative to you, and places a mark on your F10 map.
 
 VEAF security is **disabled** in this mission: every command is open to everyone, including those a server keeps for qualified pilots.
 The mission runs in French (VEAF menus included); this guide gives the French menu names with their translation.
@@ -80,7 +80,7 @@ A mark is placed on your F10 map when you open a step.
 
 **What to do**:
 
-- VEAF menus are under F10 > Other > VEAF: GUIDED TOUR and DÉMO : ACTIONS come first; the menu has several pages ("Page suivante" = next page, at the bottom). The "Démo : commandes" menu is separate, directly under F10 > Other. The mission runs in French, so the menus are in French too (translations are given here).
+- VEAF menus are under F10 > Other > VEAF; that menu has several pages ("Page suivante" = next page, at the bottom). The guided tour and the "Démo : actions" and "Démo : commandes" menus are separate, directly under F10 > Other. The mission runs in French, so the menus are in French too (translations are given here).
 - Many commands are typed into an F10 map marker: "Add mark" button in the top bar, click on the map, type the text, then click elsewhere to validate.
 - Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers.
 
@@ -175,10 +175,10 @@ Red ground units act as spotters: they see aircraft and relay the alert.
 **What to do**:
 
 - Approach Ochamchire from the south-east, low then climbing: watch when your RWR lights up.
-- Red IADS status (sites, radars on): F10 > Other > SKYNET IADS RED.
+- Red IADS status (sites, radars on): F10 > Other > SKYNET IADS COALITION: RED.
 - The spotter view belongs to each side: F10 > Other > VEAF > RÉSEAU DE GUETTEURS (spotter network) > Afficher la vue des guetteurs shows YOUR side's spotters. To see the red network, take the red game master slot of the test mission (reopen the F10 map after clicking).
 
-**What you should see**: The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS RED menu shows which site is emitting.
+**What you should see**: The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS COALITION: RED menu shows which site is emitting.
 
 **Features**: `SKYNET`, `INTERPRETER`, `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafSkynetIadsHelper/)
 
@@ -208,7 +208,7 @@ All units spawn on activation: the dependency orders the objectives, not the spa
 
 **What to do**:
 
-- F10 > Other > VEAF > DÉMO : ACTIONS > Activer l'opération Tkvarcheli (activate; VEAF puts no activation command in an operation's menu, so the demo provides one).
+- F10 > Other > Démo : actions > Activer l'opération Tkvarcheli (activate; VEAF puts no activation command in an operation's menu, so the demo provides one).
 - F10 > Other > VEAF > ZONES DE COMBAT > Opération Tkvarcheli: the current task; destroy the 1L13 radar and the depot (statics), then the command post.
 
 **What you should see**: Tasks move from "in progress" to "done"; when all three are done, the message "Operation … is over".
@@ -327,7 +327,7 @@ A downed pilot can be created on demand, to be rescued by helicopter (CSAR).
 
 - Take off from Kutaisi in a UH-1H or Mi-8 and land at FARP Khoni (127.5 AM).
 - F10 > Other > CTLD: load troops, request a crate, then drop them elsewhere.
-- F10 > Other > VEAF > DÉMO : ACTIONS > Créer un pilote abattu près de Khoni (create a downed pilot), then the CSAR menu for its beacon and position.
+- F10 > Other > Démo : actions > Créer un pilote abattu près de Khoni (create a downed pilot), then the CSAR menu for its beacon and position.
 
 **What you should see**: The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.
 

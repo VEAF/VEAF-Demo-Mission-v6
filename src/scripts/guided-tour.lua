@@ -1,5 +1,5 @@
 -- guided-tour.lua — GÉNÉRÉ par tools/gen_tour.py depuis tour/steps.yaml : ne pas modifier à la main.
--- Menu F10 « VISITE GUIDÉE » (fr) et « GUIDED TOUR » (en) : un sous-menu par chapitre, une commande
+-- Menus F10 « Visite guidée » (fr) et « Guided tour » (en), au premier niveau : un sous-menu par chapitre, une commande
 -- par étape. Une commande affiche le texte de l'étape au seul groupe qui la demande, avec la position
 -- recalculée au moment du clic, et pose un repère F10 sur le lieu de l'étape.
 
@@ -18,7 +18,7 @@ demoTour.steps = {
 Cette mission montre chaque fonctionnalité des outils VEAF, une par étape. Chaque étape donne le lieu, ce qu'il faut faire et ce qu'on doit voir. Un repère est posé sur votre carte F10 quand vous ouvrez une étape.
 
 À faire :
-- Les menus VEAF sont dans F10 > Autre > VEAF : VISITE GUIDÉE et DÉMO : ACTIONS en tête ; le menu a plusieurs pages (« Page suivante » en bas). Le menu « Démo : commandes » est à part, directement dans F10 > Autre. La mission est en français : les menus aussi.
+- Les menus VEAF sont dans F10 > Autre > VEAF ; ce menu a plusieurs pages (« Page suivante » en bas). La visite guidée et les menus « Démo : actions » et « Démo : commandes » sont à part, directement dans F10 > Autre. La mission est en français : les menus aussi.
 - Beaucoup de commandes se tapent dans un marqueur de la carte F10 : bouton « Ajouter un repère » de la barre du haut, clic sur la carte, tapez le texte, puis cliquez ailleurs pour valider.
 - Slots : à Kutaisi, des slots classiques moteur chaud (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), et des slots dynamiques sur les quatre bases bleues en multijoueur ; sur les porte-avions, F/A-18C et F-14B.
 
@@ -28,7 +28,7 @@ Ce qu'on doit voir : Le menu VEAF, ses sous-menus, et dans chaque avion les pré
 This mission shows every feature of the VEAF tools, one per step. Each step gives the place, what to do and what you should see. A mark is placed on your F10 map when you open a step.
 
 What to do :
-- VEAF menus are under F10 > Other > VEAF: GUIDED TOUR and DÉMO : ACTIONS come first; the menu has several pages ("Page suivante" = next page, at the bottom). The "Démo : commandes" menu is separate, directly under F10 > Other. The mission runs in French, so the menus are in French too (translations are given here).
+- VEAF menus are under F10 > Other > VEAF; that menu has several pages ("Page suivante" = next page, at the bottom). The guided tour and the "Démo : actions" and "Démo : commandes" menus are separate, directly under F10 > Other. The mission runs in French, so the menus are in French too (translations are given here).
 - Many commands are typed into an F10 map marker: "Add mark" button in the top bar, click on the map, type the text, then click elsewhere to validate.
 - Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers.
 
@@ -139,20 +139,20 @@ Le réseau de défense aérienne rouge : un radar d'alerte, un SA-11 et un SA-15
 
 À faire :
 - Approchez Ochamchire par le sud-est, à basse altitude puis en montant : regardez quand votre RWR s'allume.
-- L'état de l'IADS rouge (sites, radars allumés) : F10 > Autre > SKYNET IADS RED.
+- L'état de l'IADS rouge (sites, radars allumés) : F10 > Autre > SKYNET IADS COALITION: RED.
 - La vue des guetteurs est propre à chaque camp : F10 > Autre > VEAF > RÉSEAU DE GUETTEURS > Afficher la vue des guetteurs montre les guetteurs de VOTRE camp. Pour voir le réseau rouge, prenez le slot game master rouge de la mission de test (rouvrez la carte F10 après le clic).
 
-Ce qu'on doit voir : Le SA-6 n'émet pas tant que le réseau ne vous a pas détecté, puis s'allume ; le menu SKYNET IADS RED montre quel site émet.]=],
+Ce qu'on doit voir : Le SA-6 n'émet pas tant que le réseau ne vous a pas détecté, puis s'allume ; le menu SKYNET IADS COALITION: RED montre quel site émet.]=],
              en = [=[INTEGRATED AIR DEFENCE (SKYNET)
 
 The red air defence network: an early-warning radar, a permanent SA-11 and SA-15 near Gudauta (placed by #veafInterpreter), plus the Ochamchire SA-6, a combat zone active from the start that joins the network. Batteries keep their radar off until the network tells them to light up. Red ground units act as spotters: they see aircraft and relay the alert.
 
 What to do :
 - Approach Ochamchire from the south-east, low then climbing: watch when your RWR lights up.
-- Red IADS status (sites, radars on): F10 > Other > SKYNET IADS RED.
+- Red IADS status (sites, radars on): F10 > Other > SKYNET IADS COALITION: RED.
 - The spotter view belongs to each side: F10 > Other > VEAF > RÉSEAU DE GUETTEURS (spotter network) > Afficher la vue des guetteurs shows YOUR side's spotters. To see the red network, take the red game master slot of the test mission (reopen the F10 map after clicking).
 
-What you should see : The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS RED menu shows which site is emitting.]=] } },
+What you should see : The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS COALITION: RED menu shows which site is emitting.]=] } },
   { n = 7, id = "chained", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Ochamchire_Port]=],
     title = { fr = [=[Mission chaînée : le port d'Ochamchire]=], en = [=[Chained mission: Ochamchire port]=] },
     text = { fr = [=[MISSION CHAÎNÉE : LE PORT D'OCHAMCHIRE
@@ -180,7 +180,7 @@ What you should see : Zone 1 completes, and the ships appear offshore without an
 Une opération regroupe plusieurs zones en tâches : le radar et le dépôt d'abord, puis le poste de commandement, qui n'est donné comme objectif qu'une fois les deux premiers détruits. Toutes les unités apparaissent à l'activation : la dépendance ordonne les objectifs, pas l'apparition.
 
 À faire :
-- Menu F10 > Autre > VEAF > DÉMO : ACTIONS > Activer l'opération Tkvarcheli (VEAF ne pose pas de commande d'activation dans le menu d'une opération : la démo la fournit).
+- Menu F10 > Autre > Démo : actions > Activer l'opération Tkvarcheli (VEAF ne pose pas de commande d'activation dans le menu d'une opération : la démo la fournit).
 - Menu F10 > Autre > VEAF > ZONES DE COMBAT > Opération Tkvarcheli : la tâche en cours ; détruisez le radar 1L13 et le dépôt (statiques), puis le PC.
 
 Ce qu'on doit voir : Les tâches passent de « en cours » à « terminée » ; quand les trois sont faites, le message « L'opération … est terminée ».]=],
@@ -189,7 +189,7 @@ Ce qu'on doit voir : Les tâches passent de « en cours » à « terminée » ; 
 An operation groups several zones as tasks: the radar and the depot first, then the command post, given as an objective only once the first two are destroyed. All units spawn on activation: the dependency orders the objectives, not the spawning.
 
 What to do :
-- F10 > Other > VEAF > DÉMO : ACTIONS > Activer l'opération Tkvarcheli (activate; VEAF puts no activation command in an operation's menu, so the demo provides one).
+- F10 > Other > Démo : actions > Activer l'opération Tkvarcheli (activate; VEAF puts no activation command in an operation's menu, so the demo provides one).
 - F10 > Other > VEAF > ZONES DE COMBAT > Opération Tkvarcheli: the current task; destroy the 1L13 radar and the depot (statics), then the command post.
 
 What you should see : Tasks move from "in progress" to "done"; when all three are done, the message "Operation … is over".]=] } },
@@ -324,7 +324,7 @@ Le FARP Khoni réarme et ravitaille les hélicoptères ; son dépôt de munition
 À faire :
 - Décollez de Kutaisi en UH-1H ou Mi-8 et posez-vous au FARP Khoni (127.5 AM).
 - Menu F10 > Autre > CTLD : charger des troupes, demander une caisse, puis les déposer ailleurs.
-- Menu F10 > Autre > VEAF > DÉMO : ACTIONS > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position.
+- Menu F10 > Autre > Démo : actions > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position.
 
 Ce qu'on doit voir : Le FARP ravitaille et réarme ; CTLD charge les troupes ; le pilote abattu émet une balise et se laisse embarquer.]=],
              en = [=[HELICOPTERS: FARP, CTLD, CSAR
@@ -334,7 +334,7 @@ FARP Khoni rearms and refuels helicopters; its ammo dump is a CTLD loading point
 What to do :
 - Take off from Kutaisi in a UH-1H or Mi-8 and land at FARP Khoni (127.5 AM).
 - F10 > Other > CTLD: load troops, request a crate, then drop them elsewhere.
-- F10 > Other > VEAF > DÉMO : ACTIONS > Créer un pilote abattu près de Khoni (create a downed pilot), then the CSAR menu for its beacon and position.
+- F10 > Other > Démo : actions > Créer un pilote abattu près de Khoni (create a downed pilot), then the CSAR menu for its beacon and position.
 
 What you should see : The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.]=] } },
   { n = 16, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
@@ -453,35 +453,43 @@ function demoTour.whereText(step, lang, unit)
   return string.format(t.whereNoPlayer, bullseyeText(point))
 end
 
---- Commande d'une étape. veafRadio (USAGE_ForGroup) passe { { n, lang }, unitName }.
-function demoTour.show(parameters)
-  local args, unitName = parameters[1], parameters[2]
-  local step, lang = demoTour.steps[args[1]], args[2]
-  local unit = unitName and Unit.getByName(unitName)
-  if not (unit and unit:isExist()) then
-    return
+-- ── Menus : posés directement avec missionCommands, au premier niveau de F10 > Autre ─────────────
+-- Hors de veafRadio, pour deux raisons : la visite doit se voir au premier niveau (à côté de VEAF et
+-- CTLD), et chaque commande porte elle-même son groupe et sa langue — aucun paramètre n'est ajouté
+-- ou réécrit entre le menu et la fonction.
+
+local function firstAliveUnit(groupName)
+  local group = Group.getByName(groupName)
+  if group and group:isExist() then
+    for _, unit in ipairs(group:getUnits()) do
+      if unit:isExist() then
+        return unit
+      end
+    end
   end
-  local groupId = unit:getGroup():getID()
+  return nil
+end
+
+--- Commande d'une étape : args = { group = <nom du groupe>, groupId = <id>, n = <étape>, lang = "fr" | "en" }.
+function demoTour.show(args)
+  local step, lang = demoTour.steps[args.n], args.lang
+  local unit = firstAliveUnit(args.group)
   local text = step.text[lang] .. "\n\n" .. demoTour.whereText(step, lang, unit)
-  trigger.action.outTextForGroup(groupId, text, demoTour.MESSAGE_DURATION)
-  local point = demoTour.anchorPoint(step)
-  if demoTour.marks[groupId] then
-    trigger.action.removeMark(demoTour.marks[groupId])
-    demoTour.marks[groupId] = nil
+  trigger.action.outTextForGroup(args.groupId, text, demoTour.MESSAGE_DURATION)
+  if demoTour.marks[args.groupId] then
+    trigger.action.removeMark(demoTour.marks[args.groupId])
+    demoTour.marks[args.groupId] = nil
   end
+  local point = demoTour.anchorPoint(step)
   if point then
     demoTour.nextMarkId = demoTour.nextMarkId + 1
-    trigger.action.markToGroup(demoTour.nextMarkId, string.format("%02d. %s", step.n, step.title[lang]), point, groupId, true)
-    demoTour.marks[groupId] = demoTour.nextMarkId
+    trigger.action.markToGroup(demoTour.nextMarkId, string.format("%02d. %s", step.n, step.title[lang]), point, args.groupId, true)
+    demoTour.marks[args.groupId] = demoTour.nextMarkId
   end
 end
 
-function demoTour.showSummary(parameters)
-  local lang, unitName = parameters[1], parameters[2]
-  local unit = unitName and Unit.getByName(unitName)
-  if not (unit and unit:isExist()) then
-    return
-  end
+function demoTour.showSummary(args)
+  local lang = args.lang
   local lines = { TXT[lang].summaryText }
   for _, chapter in ipairs(demoTour.chapters) do
     table.insert(lines, chapter[lang])
@@ -491,7 +499,7 @@ function demoTour.showSummary(parameters)
       end
     end
   end
-  trigger.action.outTextForGroup(unit:getGroup():getID(), table.concat(lines, "\n"), demoTour.MESSAGE_DURATION)
+  trigger.action.outTextForGroup(args.groupId, table.concat(lines, "\n"), demoTour.MESSAGE_DURATION)
 end
 
 --- Les actions de la démo, appelées au clic (les fonctions vivent dans mission-script.lua).
@@ -503,30 +511,67 @@ local function call(name)
   end
 end
 
-function demoTour.buildMenus()
-  -- La racine VEAF dépasse MENU_PAGE_SIZE (10) entrées et se pagine : `sortKey` place la visite et
-  -- les actions de la démo en tête de la première page, devant les menus des modules.
-  local actions = veafRadio.addMenu("Démo : actions")
-  actions.sortKey = "!3"
-  veafRadio.addCommandToSubmenu("Créer un pilote abattu près de Khoni", actions, call("spawnCsar"), nil, veafRadio.USAGE_ForAll)
-  veafRadio.addCommandToSubmenu("Activer l'opération Tkvarcheli", actions, call("activateOperation"), nil, veafRadio.USAGE_ForAll)
-  veafRadio.addCommandToSubmenu("Désactiver l'opération Tkvarcheli", actions, call("desactivateOperation"), nil, veafRadio.USAGE_ForAll)
-  for i, lang in ipairs({ "fr", "en" }) do
-    local root = veafRadio.addMenu(TXT[lang].root)
-    root.sortKey = "!" .. i
-    veafRadio.addCommandToSubmenu(TXT[lang].summary, root, demoTour.showSummary, lang, veafRadio.USAGE_ForGroup)
+demoTour.groupMenus = {}   -- groupId -> { chemins de premier niveau posés pour ce groupe }
+
+--- Pose (ou repose) les deux menus de la visite pour un groupe de joueurs.
+function demoTour.addMenusForGroup(group)
+  local groupId, groupName = group:getID(), group:getName()
+  for _, path in ipairs(demoTour.groupMenus[groupId] or {}) do
+    missionCommands.removeItemForGroup(groupId, path)
+  end
+  local paths = {}
+  for _, lang in ipairs({ "fr", "en" }) do
+    local root = missionCommands.addSubMenuForGroup(groupId, TXT[lang].root)
+    table.insert(paths, root)
+    missionCommands.addCommandForGroup(groupId, TXT[lang].summary, root, demoTour.showSummary,
+      { group = groupName, groupId = groupId, lang = lang })
     for _, chapter in ipairs(demoTour.chapters) do
-      local menu = veafRadio.addSubMenu(chapter[lang], root)
+      local menu = missionCommands.addSubMenuForGroup(groupId, chapter[lang], root)
       for _, step in ipairs(demoTour.steps) do
         if step.chapter == chapter.key then
-          local title = string.format("%02d. %s", step.n, step.title[lang])
-          veafRadio.addCommandToSubmenu(title, menu, demoTour.show, { step.n, lang }, veafRadio.USAGE_ForGroup)
+          missionCommands.addCommandForGroup(groupId, string.format("%02d. %s", step.n, step.title[lang]), menu,
+            demoTour.show, { group = groupName, groupId = groupId, n = step.n, lang = lang })
         end
       end
     end
   end
-  veafRadio.refreshRadioMenu()
-  veaf.loggers.get(veaf.Id):info("demoTour: %d étapes, menus fr et en", #demoTour.steps)
+  demoTour.groupMenus[groupId] = paths
+end
+
+local function isPlayerUnit(unit)
+  return unit and unit.getPlayerName and unit:getPlayerName() ~= nil
+end
+
+demoTour.eventHandler = {}
+function demoTour.eventHandler:onEvent(event)
+  if (event.id == world.event.S_EVENT_BIRTH or event.id == world.event.S_EVENT_PLAYER_ENTER_UNIT)
+    and isPlayerUnit(event.initiator) and event.initiator.getGroup then
+    local ok, err = pcall(demoTour.addMenusForGroup, event.initiator:getGroup())
+    if not ok then
+      env.error("demoTour: " .. tostring(err))
+    end
+  end
+end
+
+function demoTour.buildMenus()
+  -- Actions de la démo : un seul menu pour tous, au premier niveau.
+  local actions = missionCommands.addSubMenu("Démo : actions")
+  missionCommands.addCommand("Créer un pilote abattu près de Khoni", actions, call("spawnCsar"))
+  missionCommands.addCommand("Activer l'opération Tkvarcheli", actions, call("activateOperation"))
+  missionCommands.addCommand("Désactiver l'opération Tkvarcheli", actions, call("desactivateOperation"))
+  -- Visite : par groupe de joueurs, à chaque arrivée dans un appareil (slots classiques et dynamiques).
+  world.addEventHandler(demoTour.eventHandler)
+  for _, side in ipairs({ coalition.side.BLUE, coalition.side.RED }) do
+    for _, category in ipairs({ Group.Category.AIRPLANE, Group.Category.HELICOPTER }) do
+      for _, group in ipairs(coalition.getGroups(side, category)) do
+        local unit = group:getUnit(1)
+        if isPlayerUnit(unit) then
+          demoTour.addMenusForGroup(group)
+        end
+      end
+    end
+  end
+  env.info(string.format("demoTour: %d étapes, menus fr et en au premier niveau", #demoTour.steps))
 end
 
 demoTour.buildMenus()

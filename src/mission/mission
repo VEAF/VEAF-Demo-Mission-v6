@@ -4275,55 +4275,6 @@ mission =
           ship = {
             group = {
               [1] = {
-                groupId = 49,
-                name = "combatZone_Ochamchire_Navires-cargos",
-                hidden = false,
-                lateActivation = false,
-                route = {
-                  points = {
-                    [1] = {
-                      name = "",
-                      type = "Turning Point",
-                      task = {
-                        id = "ComboTask",
-                        params = {
-                          tasks = {},
-                        },
-                      },
-                      action = "Turning Point",
-                      alt = 0,
-                      alt_type = "BARO",
-                      ETA = 0,
-                      ETA_locked = true,
-                      formation_template = "",
-                      speed = 5.5555555555556,
-                      speed_locked = true,
-                      x = -238000,
-                      y = 585000,
-                    },
-                  },
-                },
-                start_time = 0,
-                tasks = {},
-                uncontrollable = false,
-                units = {
-                  [1] = {
-                    unitId = 63,
-                    name = "#command=\"-cargoships\" OchN-1",
-                    type = "Dry-cargo ship-1",
-                    skill = "Average",
-                    frequency = 127500000,
-                    heading = 0,
-                    modulation = 0,
-                    x = -238000,
-                    y = 585000,
-                  },
-                },
-                visible = false,
-                x = -238000,
-                y = 585000,
-              },
-              [2] = {
                 groupId = 50,
                 name = "combatZone_Ochamchire_Navires-escorte",
                 hidden = false,
@@ -4371,6 +4322,104 @@ mission =
                 visible = false,
                 x = -238000.0,
                 y = 585800.0,
+              },
+              [2] = {
+                groupId = 80,
+                name = "combatZone_Ochamchire_Navires-cargo-1",
+                hidden = false,
+                lateActivation = false,
+                route = {
+                  points = {
+                    [1] = {
+                      name = "",
+                      type = "Turning Point",
+                      task = {
+                        id = "ComboTask",
+                        params = {
+                          tasks = {},
+                        },
+                      },
+                      action = "Turning Point",
+                      alt = 0,
+                      alt_type = "BARO",
+                      ETA = 0,
+                      ETA_locked = true,
+                      formation_template = "",
+                      speed = 5.5555555555556,
+                      speed_locked = true,
+                      x = -238000.0,
+                      y = 584600.0,
+                    },
+                  },
+                },
+                start_time = 0,
+                tasks = {},
+                uncontrollable = false,
+                units = {
+                  [1] = {
+                    unitId = 111,
+                    name = "combatZone_Ochamchire_Navires-cargo-1 Unit #001",
+                    type = "Dry-cargo ship-1",
+                    skill = "Average",
+                    frequency = 127500000,
+                    heading = 0,
+                    modulation = 0,
+                    x = -238000.0,
+                    y = 584600.0,
+                  },
+                },
+                visible = false,
+                x = -238000.0,
+                y = 584600.0,
+              },
+              [3] = {
+                groupId = 81,
+                name = "combatZone_Ochamchire_Navires-cargo-2",
+                hidden = false,
+                lateActivation = false,
+                route = {
+                  points = {
+                    [1] = {
+                      name = "",
+                      type = "Turning Point",
+                      task = {
+                        id = "ComboTask",
+                        params = {
+                          tasks = {},
+                        },
+                      },
+                      action = "Turning Point",
+                      alt = 0,
+                      alt_type = "BARO",
+                      ETA = 0,
+                      ETA_locked = true,
+                      formation_template = "",
+                      speed = 5.5555555555556,
+                      speed_locked = true,
+                      x = -237600.0,
+                      y = 585000.0,
+                    },
+                  },
+                },
+                start_time = 0,
+                tasks = {},
+                uncontrollable = false,
+                units = {
+                  [1] = {
+                    unitId = 112,
+                    name = "combatZone_Ochamchire_Navires-cargo-2 Unit #001",
+                    type = "Dry-cargo ship-2",
+                    skill = "Average",
+                    frequency = 127500000,
+                    heading = 0,
+                    modulation = 0,
+                    x = -237600.0,
+                    y = 585000.0,
+                  },
+                },
+                visible = false,
+                x = -237600.0,
+                y = 585000.0,
               },
             },
           },
@@ -4679,8 +4728,8 @@ mission =
                       formation_template = "",
                       speed = 5.5555555555556,
                       speed_locked = true,
-                      x = -264994.7,
-                      y = 666370.8,
+                      x = -265294.7,
+                      y = 665351.2,
                     },
                   },
                 },
@@ -4696,13 +4745,13 @@ mission =
                     coldAtStart = false,
                     heading = 0,
                     playerCanDrive = true,
-                    x = -264994.7,
-                    y = 666370.8,
+                    x = -265294.7,
+                    y = 665351.2,
                   },
                 },
                 visible = false,
-                x = -264994.7,
-                y = 666370.8,
+                x = -265294.7,
+                y = 665351.2,
               },
               [4] = {
                 groupId = 25,
@@ -4729,8 +4778,8 @@ mission =
                       formation_template = "",
                       speed = 5.5555555555556,
                       speed_locked = true,
-                      x = -265383.6,
-                      y = 666259.7,
+                      x = -265600.9,
+                      y = 665520.8,
                     },
                   },
                 },
@@ -4746,13 +4795,13 @@ mission =
                     coldAtStart = false,
                     heading = 0,
                     playerCanDrive = true,
-                    x = -265383.6,
-                    y = 666259.7,
+                    x = -265600.9,
+                    y = 665520.8,
                   },
                 },
                 visible = false,
-                x = -265383.6,
-                y = 666259.7,
+                x = -265600.9,
+                y = 665520.8,
               },
               [5] = {
                 groupId = 26,
@@ -6417,14 +6466,14 @@ mission =
     Month = 6,
     Year = 2024,
   },
-  descriptionBlueTask = "Suivre la visite guidée (F10 > Autre > VEAF > VISITE GUIDÉE), dans l'ordre ou non.\
+  descriptionBlueTask = "Suivre la visite guidée (F10 > Autre > Visite guidée), dans l'ordre ou non.\
 \
 Soutien : Texaco 1 (KC-135 perche) 292.0 AM, TACAN 52Y, FL200 — Arco 1 (KC-135 MPRS panier) 291.0 AM, TACAN 51Y, FL180 — Overlord 1 (E-3A) 286.0 AM — Reaper 1 (JTAC laser 1511) 35.55 FM.\
 Porte-avions : Stennis 274.0 AM, TACAN 74X, ICLS 4 — Roosevelt 271.0 AM, TACAN 71X, ICLS 1. FARP Khoni 127.5 AM.\
 \
 — — —\
 \
-Follow the guided tour (F10 > Other > VEAF > GUIDED TOUR), in order or not.\
+Follow the guided tour (F10 > Other > Guided tour), in order or not.\
 \
 Support: Texaco 1 (KC-135 boom) 292.0 AM, TACAN 52Y, FL200 — Arco 1 (KC-135 MPRS drogue) 291.0 AM, TACAN 51Y, FL180 — Overlord 1 (E-3A) 286.0 AM — Reaper 1 (JTAC laser 1511) 35.55 FM.\
 Carriers: Stennis 274.0 AM, TACAN 74X, ICLS 4 — Roosevelt 271.0 AM, TACAN 71X, ICLS 1. FARP Khoni 127.5 AM.",
@@ -6433,7 +6482,7 @@ Carriers: Stennis 274.0 AM, TACAN 74X, ICLS 4 — Roosevelt 271.0 AM, TACAN 71X,
   descriptionText = "MISSION DE DÉMO VEAF — VISITE GUIDÉE\
 \
 Cette mission montre chaque fonctionnalité des outils VEAF (VEAF Mission Creation Tools v6), avec un exemple par fonctionnalité.\
-Ouvrez le menu F10 > Autre > VEAF > VISITE GUIDÉE : un chapitre, puis une étape ; chaque étape dit où aller, quoi faire et ce qu'on doit voir, et pose un repère sur votre carte F10.\
+Ouvrez le menu F10 > Autre > Visite guidée : un chapitre, puis une étape ; chaque étape dit où aller, quoi faire et ce qu'on doit voir, et pose un repère sur votre carte F10.\
 \
 Le front suit l'Inguri, entre la Géorgie (bleue) et l'Abkhazie (rouge). Bullseye commun : Zugdidi.\
 Base mère : Kutaisi (slots classiques moteur chaud). Slots dynamiques sur Kutaisi, Senaki, Kobuleti et Batumi en multijoueur. Porte-avions Stennis et Roosevelt au large de Batumi.\
@@ -6446,7 +6495,7 @@ Guide détaillé : https://github.com/VEAF/VEAF-Demo-Mission-v6\
 VEAF DEMO MISSION — GUIDED TOUR\
 \
 This mission shows every feature of the VEAF tools (VEAF Mission Creation Tools v6), one example per feature.\
-Open F10 > Other > VEAF > GUIDED TOUR: a chapter, then a step; each step tells where to go, what to do and what you should see, and places a mark on your F10 map.\
+Open F10 > Other > Guided tour: a chapter, then a step; each step tells where to go, what to do and what you should see, and places a mark on your F10 map.\
 \
 The front follows the Inguri river, between Georgia (blue) and Abkhazia (red). Shared bullseye: Zugdidi.\
 Home base: Kutaisi (classic hot-start slots). Dynamic slots on Kutaisi, Senaki, Kobuleti and Batumi in multiplayer. Stennis and Roosevelt carriers off Batumi.\
