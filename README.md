@@ -15,13 +15,21 @@ Elles apportent les scripts qui tournent en jeu (unités créées depuis un marq
 
 ## Démarrer
 
-1. Construisez la mission (voir [Pour les créateurs de mission](#pour-les-créateurs-de-mission)), ou prenez-la dans les [releases](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases) du dépôt quand elles sont publiées.
+1. Téléchargez la mission dans la langue et la météo de votre choix (dernière [release](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest)), et copiez-la dans `Saved Games\DCS\Missions` ; ou construisez-la (voir [Pour les créateurs de mission](#pour-les-créateurs-de-mission)).
 2. Lancez-la en solo ou sur un serveur, et prenez un slot à **Kutaisi** (slots classiques, moteur chaud) ou sur un porte-avions.
 3. Ouvrez le menu **F10 > Autre > Visite guidée** : un sous-menu par chapitre, une entrée par étape. Chaque entrée affiche ce qu'il faut faire, la position de l'étape par rapport à vous, et pose un repère sur votre carte F10.
 
 La sécurité VEAF est **désactivée** dans cette mission : toutes les commandes sont ouvertes à tous, y compris celles qu'un serveur réserve aux pilotes habilités.
 La mission existe en **deux versions complètes**, française (`_FR`) et anglaise (`_EN`) : menus VEAF et CTLD, visite guidée, menus de la démo, briefing, carte F10 et cartes du briefing sont dans la langue de la version.
 Seuls CSAR et Skynet, qui n'ont pas de traduction, gardent des messages en anglais dans la version française, ainsi que quelques libellés VEAF pas encore traduits.
+
+| Météo | Français | Anglais |
+|---|---|---|
+| matin, météo réelle de Kutaisi | [matin-reel_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_matin-reel.miz) | [matin-reel_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_matin-reel.miz) |
+| matin, ciel clair | [matin-degage_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_matin-degage.miz) | [matin-degage_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_matin-degage.miz) |
+| aube, nuages épars | [aube-epars_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_aube-epars.miz) | [aube-epars_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_aube-epars.miz) |
+| soir, pluie | [soir-pluie_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_soir-pluie.miz) | [soir-pluie_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_soir-pluie.miz) |
+| nuit, ciel clair | [nuit-degage_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_nuit-degage.miz) | [nuit-degage_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_nuit-degage.miz) |
 
 ### Taper une commande dans un marqueur
 
@@ -417,3 +425,4 @@ Chaque nouvelle fonctionnalité des outils VEAF ajoute son exemple à la démo, 
 ### Avant chaque release des outils
 
 Construire la démo avec la version candidate et dérouler [la recette](docs/recette.md) : chaque ligne est un observable en jeu.
+Une fois les outils publiés, `python tools/release.py published-v<version>` installe cette version, construit, localise, vérifie, et publie les dix `.miz` dans une release du dépôt.

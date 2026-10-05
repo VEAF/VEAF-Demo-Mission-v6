@@ -26,6 +26,24 @@ ROOT = Path(__file__).resolve().parent.parent
 DOC = {"fr": "https://veaf.github.io/documentation/latest/", "en": "https://veaf.github.io/documentation/latest/en/"}
 VMCT = "https://github.com/VEAF/VEAF-Mission-Creation-Tools"
 REPO = "https://github.com/VEAF/VEAF-Demo-Mission-v6"
+# .miz publiés en assets de release par tools/release.py ; ce lien suit toujours la dernière release
+MIZ = REPO + "/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_{lang}_{variant}.miz"
+WEATHER = {
+    "fr": [("matin-reel", "matin, météo réelle de Kutaisi"), ("matin-degage", "matin, ciel clair"),
+           ("aube-epars", "aube, nuages épars"), ("soir-pluie", "soir, pluie"), ("nuit-degage", "nuit, ciel clair")],
+    "en": [("matin-reel", "morning, real Kutaisi weather"), ("matin-degage", "morning, clear sky"),
+           ("aube-epars", "dawn, scattered clouds"), ("soir-pluie", "evening, rain"), ("nuit-degage", "night, clear sky")],
+}
+
+
+def downloads(lang):
+    """Tableau des .miz à télécharger : une ligne par météo, une colonne par langue."""
+    head = "| Météo | Français | Anglais |" if lang == "fr" else "| Weather | French | English |"
+    rows = [head, "|---|---|---|"]
+    for variant, label in WEATHER[lang]:
+        rows.append(f"| {label} | [{variant}_FR.miz]({MIZ.format(lang='FR', variant=variant)}) "
+                    f"| [{variant}_EN.miz]({MIZ.format(lang='EN', variant=variant)}) |")
+    return chr(10).join(rows)
 
 data = yaml.safe_load((ROOT / "tour/steps.yaml").read_text(encoding="utf-8"))
 CHAPTERS, STEPS = data["chapters"], data["steps"]
@@ -140,13 +158,15 @@ Elles apportent les scripts qui tournent en jeu (unités créées depuis un marq
 
 ## Démarrer
 
-1. Construisez la mission (voir [Pour les créateurs de mission](#pour-les-créateurs-de-mission)), ou prenez-la dans les [releases]({REPO}/releases) du dépôt quand elles sont publiées.
+1. Téléchargez la mission dans la langue et la météo de votre choix (dernière [release]({REPO}/releases/latest)), et copiez-la dans `Saved Games\\DCS\\Missions` ; ou construisez-la (voir [Pour les créateurs de mission](#pour-les-créateurs-de-mission)).
 2. Lancez-la en solo ou sur un serveur, et prenez un slot à **Kutaisi** (slots classiques, moteur chaud) ou sur un porte-avions.
 3. Ouvrez le menu **F10 > Autre > Visite guidée** : un sous-menu par chapitre, une entrée par étape. Chaque entrée affiche ce qu'il faut faire, la position de l'étape par rapport à vous, et pose un repère sur votre carte F10.
 
 La sécurité VEAF est **désactivée** dans cette mission : toutes les commandes sont ouvertes à tous, y compris celles qu'un serveur réserve aux pilotes habilités.
 La mission existe en **deux versions complètes**, française (`_FR`) et anglaise (`_EN`) : menus VEAF et CTLD, visite guidée, menus de la démo, briefing, carte F10 et cartes du briefing sont dans la langue de la version.
 Seuls CSAR et Skynet, qui n'ont pas de traduction, gardent des messages en anglais dans la version française, ainsi que quelques libellés VEAF pas encore traduits.
+
+{downloads('fr')}
 
 ### Taper une commande dans un marqueur
 
@@ -195,13 +215,15 @@ They bring the in-game scripts (spawning units from F10 map markers, combat zone
 
 ## Getting started
 
-1. Build the mission (see [For mission makers](#for-mission-makers)), or take it from the repository [releases]({REPO}/releases) once they are published.
+1. Download the mission in the language and weather of your choice (latest [release]({REPO}/releases/latest)), and copy it into `Saved Games\\DCS\\Missions`; or build it (see [For mission makers](#for-mission-makers)).
 2. Run it solo or on a server, and take a slot at **Kutaisi** (classic slots, hot start) or on a carrier.
 3. Open **F10 > Other > Guided tour**: one submenu per chapter, one entry per step. Each entry shows what to do, where the step is relative to you, and places a mark on your F10 map.
 
 VEAF security is **disabled** in this mission: every command is open to everyone, including those a server keeps for qualified pilots.
 The mission comes in **two complete versions**, English (`_EN`) and French (`_FR`): VEAF and CTLD menus, guided tour, demo menus, briefing, F10 map and briefing maps are all in the version's language.
 This guide follows the English version.
+
+{downloads('en')}
 
 ### Typing a command into a marker
 
@@ -279,6 +301,7 @@ Chaque nouvelle fonctionnalité des outils VEAF ajoute son exemple à la démo, 
 ### Avant chaque release des outils
 
 Construire la démo avec la version candidate et dérouler [la recette](docs/recette.md) : chaque ligne est un observable en jeu.
+Une fois les outils publiés, `python tools/release.py published-v<version>` installe cette version, construit, localise, vérifie, et publie les dix `.miz` dans une release du dépôt.
 """,
     "en": """## For mission makers
 
@@ -323,6 +346,7 @@ Every new VEAF tools feature adds its example to the demo, in the same PR as the
 ### Before every tools release
 
 Build the demo with the release candidate and run [the checklist](docs/recette.md): each line is an in-game observable.
+Once the tools are published, `python tools/release.py published-v<version>` installs that version, builds, localises, checks, and publishes the ten `.miz` in a release of this repository.
 """,
 }
 

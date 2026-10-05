@@ -8,6 +8,7 @@ Se termine en erreur si un contrôle échoue. Adapté de l'outil de l'Open Train
 """
 import collections
 import math
+import re
 import sys
 import zipfile
 from pathlib import Path
@@ -171,6 +172,10 @@ def check(path):
         level = next((ln.strip() for ln in txt.splitlines() if "veaf.ForcedLogLevel" in ln), "")
         verdict("debug" not in level and "trace" not in level, "niveau de log de serveur (pas debug)", level)
     verdict("veaf.SecurityDisabled = true" in txt, "sécurité désactivée dans veaf-config.lua")
+    # une action `lua` écrite en référence nue est lue au chargement, avant mission-script.lua : toute la
+    # config s'arrête (retours-vmct n° 8, VMCT jusqu'à 6.27.0) ; depuis #1083, une fonction résolue au clic
+    bare = re.findall(r'veafRadio\.command\("[^"]*",\s*[A-Za-z_][\w.]*\s*\)', txt)
+    verdict(not bare, "actions `lua` du menu résolues au clic (VMCT > 6.27.0)", "; ".join(bare)[:240])
     counts = {"AddZone": txt.count("veafCombatZone.AddZone"), "operations": txt.count("VeafCombatOperation:new"),
               "VeafQRA": txt.count("VeafQRA:new"), "CAP": txt.count("addCapMission("),
               "sanctuaires": txt.count("veafSanctuary.addZoneFromTriggerZone(")}
@@ -201,7 +206,6 @@ def check_sources():
     verdict(not undefined, "chaque action `lua` du menu YAML est définie dans mission-script.lua", str(undefined))
     # Le lecteur YAML de CTLD lit `clé: valeur  # commentaire` comme la valeur « valeur  # commentaire » :
     # sur jtacLaserCodeMax, l'init de CTLD plante et veaf-config.lua s'arrête avec elle (retours-vmct n° 12).
-    import re
     inline = [f"{i}: {ln.strip()}" for i, ln in enumerate((ROOT / "ctld-config.yaml").read_text(encoding="utf-8").splitlines(), 1)
               if re.match(r"^\s*[\w.-]+:\s+[^\s#'\"][^#]*\s#", ln)]
     verdict(not inline, "ctld-config.yaml sans commentaire en fin de ligne", "; ".join(inline[:3]))

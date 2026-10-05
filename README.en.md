@@ -15,13 +15,21 @@ They bring the in-game scripts (spawning units from F10 map markers, combat zone
 
 ## Getting started
 
-1. Build the mission (see [For mission makers](#for-mission-makers)), or take it from the repository [releases](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases) once they are published.
+1. Download the mission in the language and weather of your choice (latest [release](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest)), and copy it into `Saved Games\DCS\Missions`; or build it (see [For mission makers](#for-mission-makers)).
 2. Run it solo or on a server, and take a slot at **Kutaisi** (classic slots, hot start) or on a carrier.
 3. Open **F10 > Other > Guided tour**: one submenu per chapter, one entry per step. Each entry shows what to do, where the step is relative to you, and places a mark on your F10 map.
 
 VEAF security is **disabled** in this mission: every command is open to everyone, including those a server keeps for qualified pilots.
 The mission comes in **two complete versions**, English (`_EN`) and French (`_FR`): VEAF and CTLD menus, guided tour, demo menus, briefing, F10 map and briefing maps are all in the version's language.
 This guide follows the English version.
+
+| Weather | French | English |
+|---|---|---|
+| morning, real Kutaisi weather | [matin-reel_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_matin-reel.miz) | [matin-reel_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_matin-reel.miz) |
+| morning, clear sky | [matin-degage_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_matin-degage.miz) | [matin-degage_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_matin-degage.miz) |
+| dawn, scattered clouds | [aube-epars_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_aube-epars.miz) | [aube-epars_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_aube-epars.miz) |
+| evening, rain | [soir-pluie_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_soir-pluie.miz) | [soir-pluie_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_soir-pluie.miz) |
+| night, clear sky | [nuit-degage_FR.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_FR_nuit-degage.miz) | [nuit-degage_EN.miz](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases/latest/download/VEAF_Demo_Mission_Caucasus_ICAO_UGKO_EN_nuit-degage.miz) |
 
 ### Typing a command into a marker
 
@@ -417,3 +425,4 @@ Every new VEAF tools feature adds its example to the demo, in the same PR as the
 ### Before every tools release
 
 Build the demo with the release candidate and run [the checklist](docs/recette.md): each line is an in-game observable.
+Once the tools are published, `python tools/release.py published-v<version>` installs that version, builds, localises, checks, and publishes the ten `.miz` in a release of this repository.
