@@ -1,0 +1,507 @@
+[
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle combatZone_Khoni_Easy",
+   "position": {
+    "x": -264994.7,
+    "y": 665870.8
+   },
+   "radius": 2500,
+   "color": "0x2e7f38ff",
+   "fill_color": "0x2e7f3820",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette combatZone_Khoni_Easy",
+   "position": {
+    "x": -262494.7,
+    "y": 665870.8
+   },
+   "text": "4. Khoni (entraînement, 3 niveaux)",
+   "color": "0x2e7f38ff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle combatZone_Gali",
+   "position": {
+    "x": -243944.1,
+    "y": 618636.8
+   },
+   "radius": 3000,
+   "color": "0xc2362bff",
+   "fill_color": "0xc2362b20",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette combatZone_Gali",
+   "position": {
+    "x": -240944.1,
+    "y": 618636.8
+   },
+   "text": "5. Front de Gali",
+   "color": "0xc2362bff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle combatZone_Ochamchire_SAM",
+   "position": {
+    "x": -225333.1,
+    "y": 594446.8
+   },
+   "radius": 1500,
+   "color": "0xc2362bff",
+   "fill_color": "0xc2362b20",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette combatZone_Ochamchire_SAM",
+   "position": {
+    "x": -223833.1,
+    "y": 594446.8
+   },
+   "text": "6. SAM d'Ochamchire",
+   "color": "0xc2362bff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle combatZone_Ochamchire_Port",
+   "position": {
+    "x": -233272.4,
+    "y": 595507.5
+   },
+   "radius": 1200,
+   "color": "0xc2362bff",
+   "fill_color": "0xc2362b20",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette combatZone_Ochamchire_Port",
+   "position": {
+    "x": -232072.4,
+    "y": 595507.5
+   },
+   "text": "7. Port d'Ochamchire - 1 : dépôt",
+   "color": "0xc2362bff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle combatZone_Ochamchire_Navires",
+   "position": {
+    "x": -238000,
+    "y": 585000
+   },
+   "radius": 2500,
+   "color": "0xc2362bff",
+   "fill_color": "0xc2362b20",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette combatZone_Ochamchire_Navires",
+   "position": {
+    "x": -235500,
+    "y": 585000
+   },
+   "text": "Port d'Ochamchire - 2 : navires",
+   "color": "0xc2362bff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle combatZone_Convoi",
+   "position": {
+    "x": -233638.5,
+    "y": 598386.0
+   },
+   "radius": 2000,
+   "color": "0xc2362bff",
+   "fill_color": "0xc2362b20",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette combatZone_Convoi",
+   "position": {
+    "x": -231638.5,
+    "y": 598386.0
+   },
+   "text": "9. Convoi d'Ochamchire",
+   "color": "0xc2362bff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle Op_Tkvarcheli",
+   "position": {
+    "x": -217565.1,
+    "y": 610142.3
+   },
+   "radius": 6000,
+   "color": "0xc2362bff",
+   "fill_color": "0x00000000",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette Op_Tkvarcheli",
+   "position": {
+    "x": -211565.1,
+    "y": 610142.3
+   },
+   "text": "8. Opération Tkvarcheli (3 tâches)",
+   "color": "0xc2362bff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle QRA-Soukhoumi",
+   "position": {
+    "x": -221381.7,
+    "y": 565908.8
+   },
+   "radius": 40000,
+   "color": "0xc2362bff",
+   "fill_color": "0x00000000",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette QRA-Soukhoumi",
+   "position": {
+    "x": -181381.7,
+    "y": 565908.8
+   },
+   "text": "10. QRA Soukhoumi",
+   "color": "0xc2362bff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle Sanctuaire Gudauta",
+   "position": {
+    "x": -195650.6,
+    "y": 515898.8
+   },
+   "radius": 15000,
+   "color": "0xc2362bff",
+   "fill_color": "0xc2362b20",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette Sanctuaire Gudauta",
+   "position": {
+    "x": -180650.6,
+    "y": 515898.8
+   },
+   "text": "13. Sanctuaire rouge de Gudauta",
+   "color": "0xc2362bff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle Bac a sable",
+   "position": {
+    "x": -298000,
+    "y": 688000
+   },
+   "radius": 3000,
+   "color": "0x6a3d9aff",
+   "fill_color": "0x6a3d9a20",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette Bac a sable",
+   "position": {
+    "x": -295000,
+    "y": 688000
+   },
+   "text": "3. Bac à sable (point ALPHA)",
+   "color": "0x6a3d9aff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle Demo CSAR",
+   "position": {
+    "x": -260641.7,
+    "y": 680225.3
+   },
+   "radius": 1500,
+   "color": "0x6a3d9aff",
+   "fill_color": "0x6a3d9a20",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette Demo CSAR",
+   "position": {
+    "x": -259141.7,
+    "y": 680225.3
+   },
+   "text": "Pilote abattu (CSAR, menu Démo)",
+   "color": "0x6a3d9aff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette Arene BVR",
+   "position": {
+    "x": -270000,
+    "y": 560000
+   },
+   "text": "12. Arène BVR (vagues aériennes)",
+   "color": "0xd9822bff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "line",
+   "name": "Hippodrome Texaco 1",
+   "points": [
+    {
+     "x": -300000,
+     "y": 705000
+    },
+    {
+     "x": -300000.0,
+     "y": 750000.0
+    }
+   ],
+   "color": "0x0b86a8ff",
+   "thickness": 6
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette Texaco 1",
+   "position": {
+    "x": -300000.0,
+    "y": 750000.0
+   },
+   "text": "Texaco 1",
+   "color": "0x0b86a8ff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "line",
+   "name": "Hippodrome Arco 1",
+   "points": [
+    {
+     "x": -345000,
+     "y": 575000
+    },
+    {
+     "x": -370000.0,
+     "y": 575000.0
+    }
+   ],
+   "color": "0x0b86a8ff",
+   "thickness": 6
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette Arco 1",
+   "position": {
+    "x": -370000.0,
+    "y": 575000.0
+   },
+   "text": "Arco 1",
+   "color": "0x0b86a8ff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "line",
+   "name": "Hippodrome Overlord 1",
+   "points": [
+    {
+     "x": -320000,
+     "y": 680000
+    },
+    {
+     "x": -320000.0,
+     "y": 725000.0
+    }
+   ],
+   "color": "0x0b86a8ff",
+   "thickness": 6
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette Overlord 1",
+   "position": {
+    "x": -320000.0,
+    "y": 725000.0
+   },
+   "text": "Overlord 1",
+   "color": "0x0b86a8ff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ }
+]

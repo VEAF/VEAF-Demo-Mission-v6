@@ -1,0 +1,555 @@
+[
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Texaco 1",
+   "unit_type": "KC-135",
+   "count": 1,
+   "start": "air",
+   "position": {
+    "x": -300000,
+    "y": 705000
+   },
+   "altitude_ft": 20000,
+   "speed_kt": 420,
+   "frequency_mhz": 292.0,
+   "task": "Refueling",
+   "skill": "High"
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Texaco 1",
+   "operation": "add",
+   "position": {
+    "x": -300000,
+    "y": 750000
+   },
+   "altitude_ft": 20000,
+   "speed_kt": 420
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Texaco 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "set_unlimited_fuel",
+   "task_params": {
+    "value": true
+   }
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Texaco 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "activate_beacon",
+   "task_params": {
+    "channel": 52,
+    "mode": "Y",
+    "callsign": "TX1",
+    "bearing": true,
+    "aa": true
+   }
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Texaco 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "tanker",
+   "task_params": {}
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Texaco 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "orbit",
+   "task_params": {
+    "pattern": "Race-Track",
+    "altitude_ft": 20000,
+    "speed_kt": 420
+   }
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Arco 1",
+   "unit_type": "KC135MPRS",
+   "count": 1,
+   "start": "air",
+   "position": {
+    "x": -345000,
+    "y": 575000
+   },
+   "altitude_ft": 18000,
+   "speed_kt": 420,
+   "frequency_mhz": 291.0,
+   "task": "Refueling",
+   "skill": "High"
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Arco 1",
+   "operation": "add",
+   "position": {
+    "x": -370000,
+    "y": 575000
+   },
+   "altitude_ft": 18000,
+   "speed_kt": 420
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Arco 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "set_unlimited_fuel",
+   "task_params": {
+    "value": true
+   }
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Arco 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "activate_beacon",
+   "task_params": {
+    "channel": 51,
+    "mode": "Y",
+    "callsign": "AR1",
+    "bearing": true,
+    "aa": true
+   }
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Arco 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "tanker",
+   "task_params": {}
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Arco 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "orbit",
+   "task_params": {
+    "pattern": "Race-Track",
+    "altitude_ft": 18000,
+    "speed_kt": 420
+   }
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Overlord 1",
+   "unit_type": "E-3A",
+   "count": 1,
+   "start": "air",
+   "position": {
+    "x": -320000,
+    "y": 680000
+   },
+   "altitude_ft": 30000,
+   "speed_kt": 360,
+   "frequency_mhz": 286.0,
+   "task": "AWACS",
+   "skill": "High"
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Overlord 1",
+   "operation": "add",
+   "position": {
+    "x": -320000,
+    "y": 725000
+   },
+   "altitude_ft": 30000,
+   "speed_kt": 360
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Overlord 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "set_unlimited_fuel",
+   "task_params": {
+    "value": true
+   }
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Overlord 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "awacs",
+   "task_params": {}
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Overlord 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "eplrs",
+   "task_params": {
+    "value": true
+   }
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Overlord 1",
+   "operation": "add_task",
+   "index": 1,
+   "task": "orbit",
+   "task_params": {
+    "pattern": "Race-Track",
+    "altitude_ft": 30000,
+    "speed_kt": 360
+   }
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Overlord 1 escort",
+   "unit_type": "F-15C",
+   "count": 2,
+   "start": "air",
+   "position": {
+    "x": -322000,
+    "y": 678000
+   },
+   "altitude_ft": 30000,
+   "speed_kt": 360,
+   "frequency_mhz": 286.0,
+   "task": "Escort",
+   "skill": "High",
+   "payload": "AIM-9*2,AIM-120*6,Fuel"
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Overlord 1 escort",
+   "operation": "add_task",
+   "index": 1,
+   "task": "set_unlimited_fuel",
+   "task_params": {
+    "value": true
+   }
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Overlord 1 escort",
+   "operation": "add_task",
+   "index": 1,
+   "task": "escort",
+   "task_params": {
+    "group_name": "Overlord 1",
+    "engagement_distance_nm": 30
+   }
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Reaper 1",
+   "unit_type": "MQ-9 Reaper",
+   "count": 1,
+   "start": "air",
+   "position": {
+    "x": -244174.4,
+    "y": 619965.2
+   },
+   "altitude_ft": 15000,
+   "speed_kt": 160,
+   "frequency_mhz": 118.8,
+   "task": "AFAC",
+   "skill": "High"
+  }
+ },
+ {
+  "name": "add_carrier_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "CSG-74 Stennis",
+   "carrier_name": "CVN-74 Stennis",
+   "carrier_type": "Stennis",
+   "position": {
+    "x": -335000,
+    "y": 595000
+   },
+   "heading_deg": 270,
+   "speed_kt": 15,
+   "escorts": [
+    "TICONDEROG"
+   ],
+   "tower_mhz": 274.0,
+   "tacan_channel": 74,
+   "tacan_callsign": "STN",
+   "icls_channel": 4,
+   "link4_mhz": 336.0,
+   "recovery_tanker": true,
+   "tanker_tacan_channel": 75,
+   "tanker_tacan_callsign": "T74",
+   "tanker_frequency_mhz": 290.9,
+   "rescue_helicopter": true
+  }
+ },
+ {
+  "name": "add_carrier_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "CSG-71 Roosevelt",
+   "carrier_name": "CVN-71 Roosevelt",
+   "carrier_type": "CVN_71",
+   "position": {
+    "x": -352000,
+    "y": 586000
+   },
+   "heading_deg": 270,
+   "speed_kt": 15,
+   "escorts": [
+    "TICONDEROG"
+   ],
+   "tower_mhz": 271.0,
+   "tacan_channel": 71,
+   "tacan_callsign": "TDR",
+   "icls_channel": 1,
+   "link4_mhz": 337.0,
+   "recovery_tanker": true,
+   "tanker_tacan_channel": 72,
+   "tanker_tacan_callsign": "T71",
+   "tanker_frequency_mhz": 290.8,
+   "rescue_helicopter": true
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Stennis F/A-18C",
+   "unit_type": "FA-18C_hornet",
+   "count": 2,
+   "start": "deck-hot",
+   "carrier": "CVN-74 Stennis",
+   "skill": "Client",
+   "frequency_mhz": 274.0,
+   "task": "CAP"
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Roosevelt F-14B",
+   "unit_type": "F-14B",
+   "count": 2,
+   "start": "deck-hot",
+   "carrier": "CVN-71 Roosevelt",
+   "skill": "Client",
+   "frequency_mhz": 271.0,
+   "task": "CAP"
+  }
+ },
+ {
+  "name": "add_farp",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "FARP Khoni",
+   "position": {
+    "x": -271573.8,
+    "y": 674672.2
+   },
+   "farp_type": "FARP",
+   "frequency_mhz": 127.5,
+   "modulation": "AM"
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Kutaisi A-10C II",
+   "unit_type": "A-10C_2",
+   "count": 2,
+   "start": "parking-hot",
+   "airfield": "Kutaisi",
+   "skill": "Client",
+   "task": "CAS"
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Kutaisi F-16C",
+   "unit_type": "F-16C_50",
+   "count": 2,
+   "start": "parking-hot",
+   "airfield": "Kutaisi",
+   "skill": "Client",
+   "task": "CAP"
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Kutaisi F/A-18C",
+   "unit_type": "FA-18C_hornet",
+   "count": 2,
+   "start": "parking-hot",
+   "airfield": "Kutaisi",
+   "skill": "Client",
+   "task": "CAP"
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Kutaisi UH-1H",
+   "unit_type": "UH-1H",
+   "count": 2,
+   "start": "parking-hot",
+   "airfield": "Kutaisi",
+   "skill": "Client",
+   "task": "Transport"
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Kutaisi Mi-8MTV2",
+   "unit_type": "Mi-8MT",
+   "count": 2,
+   "start": "parking-hot",
+   "airfield": "Kutaisi",
+   "skill": "Client",
+   "task": "Transport"
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Kutaisi AH-64D",
+   "unit_type": "AH-64D_BLK_II",
+   "count": 1,
+   "start": "parking-hot",
+   "airfield": "Kutaisi",
+   "skill": "Client",
+   "task": "CAS"
+  }
+ }
+]

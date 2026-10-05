@@ -1,0 +1,47 @@
+# Variantes météo et heure de la mission de démo : une variante = un .miz construit.
+#
+# Cinq variantes seulement, qui montrent chacune une façon de décrire la météo :
+# - matin-reel   : `airport_icao` — la METAR réelle de Kutaisi (UGKO) récupérée au build ; sur un
+#                  serveur VEAF, RealWeather la remet à jour au lancement grâce au _ICAO_UGKO du nom ;
+# - matin-degage : bloc `weather` manuel, ciel clair ;
+# - aube-epars   : heure solaire (`sunrise`) et METAR fixe ;
+# - soir-pluie   : heure solaire décalée (`sunset-45*60`) et METAR de pluie ;
+# - nuit-degage  : nuit, ciel clair (vision nocturne, éclairage des zones).
+# Les températures des variantes manuelles sont une estimation d'un mois de juin en Iméréthie,
+# non sourcée. Le profil LOCAL_TEST (mission.yaml) ne construit que la mission de base.
+
+position:
+  latitude: 42.179154      # Kutaisi, base mère
+  longitude: 42.495684
+  timezone: "Asia/Tbilisi"
+
+base_date: "2024-06-15"
+
+versions:
+  - name: matin-reel
+    time: "09:00"
+    airport_icao: UGKO
+  - name: matin-degage
+    time: "09:00"
+    weather:
+      temperature: 22.0
+      wind_speed: 3.0
+      wind_direction: 270.0
+      visibility: 40000
+      cloud_type: "clear"
+      fog_enabled: false
+  - name: aube-epars
+    time: "sunrise"
+    metar: "METAR UGKO 150300Z 09006KT 9999 SCT040 16/12 Q1015"
+  - name: soir-pluie
+    time: "sunset-45*60"
+    metar: "METAR UGKO 151700Z 27014G24KT 5000 RA OVC015 17/16 Q1008"
+  - name: nuit-degage
+    time: "23:00"
+    weather:
+      temperature: 16.0
+      wind_speed: 2.0
+      wind_direction: 90.0
+      visibility: 40000
+      cloud_type: "clear"
+      fog_enabled: false

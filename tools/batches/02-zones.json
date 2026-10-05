@@ -1,0 +1,787 @@
+[
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Khoni_Easy",
+   "position": {
+    "x": -264994.7,
+    "y": 665870.8
+   },
+   "radius": 2500,
+   "groups": [
+    {
+     "name": "cible-01",
+     "units": [
+      {
+       "type": "Ural-375"
+      }
+     ],
+     "position": {
+      "x": -264594.7,
+      "y": 665870.8
+     }
+    },
+    {
+     "name": "cible-02",
+     "units": [
+      {
+       "type": "Ural-375"
+      }
+     ],
+     "position": {
+      "x": -264676.5,
+      "y": 666189.0
+     }
+    },
+    {
+     "name": "cible-03",
+     "units": [
+      {
+       "type": "KAMAZ Truck"
+      }
+     ],
+     "position": {
+      "x": -264994.7,
+      "y": 666370.8
+     }
+    },
+    {
+     "name": "cible-04",
+     "units": [
+      {
+       "type": "KAMAZ Truck"
+      }
+     ],
+     "position": {
+      "x": -265383.6,
+      "y": 666259.7
+     }
+    },
+    {
+     "name": "cible-05",
+     "units": [
+      {
+       "type": "GAZ-66"
+      }
+     ],
+     "position": {
+      "x": -265594.7,
+      "y": 665870.8
+     }
+    },
+    {
+     "name": "cible-06",
+     "units": [
+      {
+       "type": "ZIL-131 KUNG"
+      }
+     ],
+     "position": {
+      "x": -265454.3,
+      "y": 665411.2
+     }
+    },
+    {
+     "name": "cible-07",
+     "units": [
+      {
+       "type": "Ural-375 PBU"
+      }
+     ],
+     "position": {
+      "x": -264994.7,
+      "y": 665170.8
+     }
+    },
+    {
+     "name": "cible-08",
+     "units": [
+      {
+       "type": "ATZ-5"
+      }
+     ],
+     "position": {
+      "x": -264464.3,
+      "y": 665340.5
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "combat_zone": {
+    "friendly_name": "Khoni - facile",
+    "briefing": "Cibles inertes : huit camions à l'arrêt, sans arme ni défense. BULLSEYE 107/21.",
+    "training": true,
+    "radio_group_name": "Entraînement Khoni"
+   }
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Khoni_Medium",
+   "position": {
+    "x": -264994.7,
+    "y": 665870.8
+   },
+   "radius": 2500,
+   "groups": [
+    {
+     "name": "blindes",
+     "units": [
+      {
+       "type": "T-72B",
+       "name": "#command=\"-armor, defense 1, size 4\" KhoM-1"
+      }
+     ],
+     "position": {
+      "x": -266122.3,
+      "y": 665460.4
+     }
+    },
+    {
+     "name": "aaa-1",
+     "units": [
+      {
+       "type": "Ural-375 ZU-23",
+       "name": "#command=\"-zu23\" #spawngroup=\"aaa\" #spawncount=2 KhoM-a1"
+      }
+     ],
+     "position": {
+      "x": -264287.6,
+      "y": 666577.9
+     }
+    },
+    {
+     "name": "aaa-2",
+     "units": [
+      {
+       "type": "Ural-375 ZU-23",
+       "name": "#command=\"-zu23\" #spawngroup=\"aaa\" #spawncount=2 KhoM-a2"
+      }
+     ],
+     "position": {
+      "x": -265701.8,
+      "y": 666577.9
+     }
+    },
+    {
+     "name": "aaa-3",
+     "units": [
+      {
+       "type": "ZSU-23-4 Shilka",
+       "name": "#command=\"-shilka\" #spawngroup=\"aaa\" #spawncount=2 KhoM-a3"
+      }
+     ],
+     "position": {
+      "x": -265701.8,
+      "y": 665163.7
+     }
+    },
+    {
+     "name": "aaa-4",
+     "units": [
+      {
+       "type": "ZSU-23-4 Shilka",
+       "name": "#command=\"-shilka\" #spawngroup=\"aaa\" #spawncount=2 KhoM-a4"
+      }
+     ],
+     "position": {
+      "x": -264287.6,
+      "y": 665163.7
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "combat_zone": {
+    "friendly_name": "Khoni - moyen",
+    "briefing": "Les cibles du niveau facile, plus une compagnie blindée (`-armor, defense 1`) et deux pièces de DCA tirées au sort parmi quatre. BULLSEYE 107/21.",
+    "training": true,
+    "radio_group_name": "Entraînement Khoni",
+    "includes": [
+     "combatZone_Khoni_Easy"
+    ]
+   }
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Khoni_Hard",
+   "position": {
+    "x": -264994.7,
+    "y": 665870.8
+   },
+   "radius": 2500,
+   "groups": [
+    {
+     "name": "bataillon",
+     "units": [
+      {
+       "type": "T-72B",
+       "name": "#command=\"-armor, defense 3, size 6\" KhoH-1"
+      }
+     ],
+     "position": {
+      "x": -263585.1,
+      "y": 666383.8
+     }
+    },
+    {
+     "name": "sr-1",
+     "units": [
+      {
+       "type": "Strela-10M3",
+       "name": "#command=\"-sa13_squad\" #spawngroup=\"sr\" #spawncount=2 KhoH-s1"
+      }
+     ],
+     "position": {
+      "x": -263194.7,
+      "y": 665870.8
+     }
+    },
+    {
+     "name": "sr-2",
+     "units": [
+      {
+       "type": "Strela-1 9P31",
+       "name": "#command=\"-sa9_squad\" #spawngroup=\"sr\" #spawncount=2 KhoH-s2"
+      }
+     ],
+     "position": {
+      "x": -264994.7,
+      "y": 667670.8
+     }
+    },
+    {
+     "name": "sr-3",
+     "units": [
+      {
+       "type": "SA-18 Igla-S manpad",
+       "name": "#command=\"-sa18s\" #spawngroup=\"sr\" #spawncount=2 KhoH-s3"
+      }
+     ],
+     "position": {
+      "x": -266794.7,
+      "y": 665870.8
+     }
+    },
+    {
+     "name": "sr-4",
+     "units": [
+      {
+       "type": "ZSU-23-4 Shilka",
+       "name": "#command=\"-shilka\" #spawngroup=\"sr\" #spawncount=2 KhoH-s4"
+      }
+     ],
+     "position": {
+      "x": -264994.7,
+      "y": 664070.8
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "combat_zone": {
+    "friendly_name": "Khoni - difficile",
+    "briefing": "Le niveau moyen, plus un bataillon blindé mieux défendu (`-armor, defense 3`) et deux systèmes courte portée tirés au sort parmi SA-13, SA-9, Igla et Shilka. BULLSEYE 107/21.",
+    "training": true,
+    "radio_group_name": "Entraînement Khoni",
+    "includes": [
+     "combatZone_Khoni_Medium"
+    ]
+   }
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Gali",
+   "position": {
+    "x": -243944.1,
+    "y": 618636.8
+   },
+   "radius": 3000,
+   "groups": [
+    {
+     "name": "blindes-a",
+     "units": [
+      {
+       "type": "T-72B",
+       "name": "#command=\"-armor, defense 0, size 8\" #spawngroup=\"blindes\" #spawncount=1 Gali-1"
+      }
+     ],
+     "position": {
+      "x": -242744.1,
+      "y": 618636.8
+     }
+    },
+    {
+     "name": "blindes-b",
+     "units": [
+      {
+       "type": "T-72B",
+       "name": "#command=\"-armor, defense 0, size 8, armor 4\" #spawngroup=\"blindes\" #spawncount=1 Gali-2"
+      }
+     ],
+     "position": {
+      "x": -245144.1,
+      "y": 618636.8
+     }
+    },
+    {
+     "name": "artillerie",
+     "units": [
+      {
+       "type": "SAU Msta",
+       "name": "#command=\"-msta\" Gali-3"
+      }
+     ],
+     "position": {
+      "x": -243944.1,
+      "y": 616636.8
+     }
+    },
+    {
+     "name": "dca",
+     "units": [
+      {
+       "type": "Strela-10M3",
+       "name": "#command=\"-samSR\" Gali-4"
+      }
+     ],
+     "position": {
+      "x": -243944.1,
+      "y": 619436.8
+     }
+    },
+    {
+     "name": "guetteurs",
+     "units": [
+      {
+       "type": "SA-18 Igla-S manpad",
+       "name": "#command=\"-sa18s\" Gali-5"
+      }
+     ],
+     "position": {
+      "x": -242388.4,
+      "y": 617081.2
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "combat_zone": {
+    "friendly_name": "Front de Gali",
+    "briefing": "Une brigade blindée tient la rive nord de l'Inguri, au sud-est de Gali. Détruire les blindés et la batterie d'artillerie Msta. Défense : une batterie sol-air courte portée tirée au sort et des MANPADS. Un drone Reaper 1 (JTAC) orbite au-dessus. BULLSEYE 312/8."
+   }
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Ochamchire_SAM",
+   "position": {
+    "x": -225333.1,
+    "y": 594446.8
+   },
+   "radius": 1500,
+   "groups": [
+    {
+     "name": "sa6",
+     "units": [
+      {
+       "type": "Kub 2P25 ln",
+       "name": "#command=\"-sa6\" OchS-1"
+      }
+     ],
+     "position": {
+      "x": -225333.1,
+      "y": 594446.8
+     }
+    },
+    {
+     "name": "aaa",
+     "units": [
+      {
+       "type": "ZSU-23-4 Shilka",
+       "name": "#command=\"-shilka\" OchS-2"
+      }
+     ],
+     "position": {
+      "x": -225633.1,
+      "y": 594966.4
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "combat_zone": {
+    "friendly_name": "SAM d'Ochamchire",
+    "briefing": "Une batterie SA-6 au nord d'Ochamchire, active dès le début de la mission et reliée au réseau Skynet de Soukhoumi : elle n'allume son radar que quand le réseau le lui demande. BULLSEYE 309/24.",
+    "active_at_start": true
+   }
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Ochamchire_Port",
+   "position": {
+    "x": -233272.4,
+    "y": 595507.5
+   },
+   "radius": 1200,
+   "groups": [
+    {
+     "name": "camions",
+     "units": [
+      {
+       "type": "Ural-375",
+       "count": 3
+      },
+      {
+       "type": "KAMAZ Truck",
+       "count": 2
+      }
+     ],
+     "position": {
+      "x": -233072.4,
+      "y": 595507.5
+     }
+    },
+    {
+     "name": "dca",
+     "units": [
+      {
+       "type": "Ural-375 ZU-23",
+       "name": "#command=\"-zu23\" OchP-1"
+      }
+     ],
+     "position": {
+      "x": -233672.4,
+      "y": 595507.5
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "combat_zone": {
+    "friendly_name": "Port d'Ochamchire - 1 : dépôt",
+    "briefing": "Première étape d'une mission chaînée : détruire les camions du dépôt portuaire. Une fois le dépôt détruit, les navires en rade apparaissent (étape 2). BULLSEYE 301/21.",
+    "chained_zones": [
+     "combatZone_Ochamchire_Navires"
+    ],
+    "chained_delay": 60
+   }
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Ochamchire_Navires",
+   "position": {
+    "x": -238000,
+    "y": 585000
+   },
+   "radius": 2500,
+   "groups": [
+    {
+     "name": "cargos",
+     "units": [
+      {
+       "type": "Dry-cargo ship-1",
+       "name": "#command=\"-cargoships\" OchN-1"
+      }
+     ],
+     "position": {
+      "x": -238000,
+      "y": 585000
+     }
+    },
+    {
+     "name": "escorte",
+     "units": [
+      {
+       "type": "ALBATROS"
+      }
+     ],
+     "position": {
+      "x": -238000.0,
+      "y": 585800.0
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "ship",
+   "combat_zone": {
+    "friendly_name": "Port d'Ochamchire - 2 : navires",
+    "briefing": "Deuxième étape : des cargos et leur corvette d'escorte (SA-N-4 courte portée) en rade d'Ochamchire. BULLSEYE 289/26.",
+    "radio_menu_disabled": true
+   }
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Tkvarcheli_Radar",
+   "position": {
+    "x": -218933.2,
+    "y": 606383.5
+   },
+   "radius": 800,
+   "groups": [
+    {
+     "name": "ewr",
+     "units": [
+      {
+       "type": "1L13 EWR"
+      }
+     ],
+     "position": {
+      "x": -218933.2,
+      "y": 606383.5
+     }
+    },
+    {
+     "name": "aaa",
+     "units": [
+      {
+       "type": "ZSU-23-4 Shilka",
+       "name": "#command=\"-shilka\" TkvR-1"
+      }
+     ],
+     "position": {
+      "x": -218933.2,
+      "y": 606683.5
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "combat_zone": {
+    "friendly_name": "Tkvarcheli - radar",
+    "briefing": "Tâche 1 : un radar d'alerte 1L13 et sa DCA. BULLSEYE 326/23.",
+    "radio_menu_disabled": true
+   }
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Tkvarcheli_Depot",
+   "position": {
+    "x": -219914.3,
+    "y": 609287.2
+   },
+   "radius": 800,
+   "groups": [
+    {
+     "name": "munitions",
+     "units": [
+      {
+       "type": ".Ammunition depot"
+      }
+     ],
+     "position": {
+      "x": -219914.3,
+      "y": 609287.2
+     }
+    },
+    {
+     "name": "carburant-1",
+     "units": [
+      {
+       "type": "Fuel tank"
+      }
+     ],
+     "position": {
+      "x": -219914.3,
+      "y": 609407.2
+     }
+    },
+    {
+     "name": "carburant-2",
+     "units": [
+      {
+       "type": "Fuel tank"
+      }
+     ],
+     "position": {
+      "x": -219914.3,
+      "y": 609167.2
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "static",
+   "combat_zone": {
+    "friendly_name": "Tkvarcheli - dépôt",
+    "briefing": "Tâche 2 : un dépôt de munitions et deux réservoirs (statiques). BULLSEYE 329/21.",
+    "radio_menu_disabled": true
+   }
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Tkvarcheli_PC",
+   "position": {
+    "x": -218864.1,
+    "y": 610892.3
+   },
+   "radius": 800,
+   "groups": [
+    {
+     "name": "pc",
+     "units": [
+      {
+       "type": ".Command Center"
+      }
+     ],
+     "position": {
+      "x": -218864.1,
+      "y": 610892.3
+     }
+    },
+    {
+     "name": "bunker",
+     "units": [
+      {
+       "type": "Bunker"
+      }
+     ],
+     "position": {
+      "x": -218714.1,
+      "y": 610892.3
+     }
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "static",
+   "combat_zone": {
+    "friendly_name": "Tkvarcheli - PC",
+    "briefing": "Tâche 3, ouverte quand le radar et le dépôt sont détruits : le poste de commandement. BULLSEYE 332/21.",
+    "radio_menu_disabled": true
+   }
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "name": "garde",
+   "for_combat_zone": "combatZone_Tkvarcheli_PC",
+   "position": {
+    "x": -219064.1,
+    "y": 610892.3
+   },
+   "units": [
+    {
+     "type": "BTR-80",
+     "count": 2
+    }
+   ]
+  }
+ },
+ {
+  "name": "add_trigger_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "name": "Op_Tkvarcheli",
+   "position": {
+    "x": -217565.1,
+    "y": 610142.3
+   },
+   "radius": 6000
+  }
+ },
+ {
+  "name": "create_combat_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "zone_name": "combatZone_Convoi",
+   "position": {
+    "x": -233638.5,
+    "y": 598386.0
+   },
+   "radius": 2000,
+   "groups": [
+    {
+     "name": "colonne",
+     "units": [
+      {
+       "type": "Ural-375",
+       "count": 3
+      },
+      {
+       "type": "KAMAZ Truck",
+       "count": 2
+      },
+      {
+       "type": "ZSU-23-4 Shilka"
+      }
+     ],
+     "position": {
+      "x": -233638.5,
+      "y": 598386.0
+     },
+     "route": [
+      {
+       "x": -233638.5,
+       "y": 598386.0
+      },
+      {
+       "x": -241346.0,
+       "y": 616636.8
+      }
+     ],
+     "patrol": true
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "combat_zone": {
+    "friendly_name": "Convoi d'Ochamchire",
+    "briefing": "Un convoi logistique (cinq camions et sa Shilka) fait la navette par la route entre Ochamchire et Gali. Départ : BULLSEYE 303/20."
+   }
+  }
+ }
+]

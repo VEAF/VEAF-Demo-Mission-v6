@@ -1,0 +1,8 @@
+mapResource = 
+{
+  ["ResKey_ImageBriefing_demo-01-kutaisi-khoni"] = "demo-01-kutaisi-khoni.jpg",
+  ["ResKey_ImageBriefing_demo-02-front"] = "demo-02-front.jpg",
+  ["ResKey_ImageBriefing_demo-03-mer"] = "demo-03-mer.jpg",
+  ["ResKey_ImageBriefing_demo-04-abkhazie"] = "demo-04-abkhazie.jpg",
+  ["ResKey_ImageBriefing_demo-carte"] = "demo-carte.jpg",
+}

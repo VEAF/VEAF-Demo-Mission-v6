@@ -1,0 +1,322 @@
+# mission.yaml — mission de démonstration VEAF v6 (Caucase).
+# Chaque fonctionnalité VEAF y a son exemple et son étape de visite guidée (tour/steps.yaml).
+# Vérifier : `veaf-tools mission validate` ; construire : `veaf-tools build`
+# (test local : `veaf-tools mission build --profile LOCAL_TEST`).
+#
+# Doc : https://veaf.github.io/documentation/dev/mission-maker/GUIDE/
+# Référence de ce fichier : https://veaf.github.io/documentation/dev/MISSION_YAML_REFERENCE/
+
+global_log_level: info
+
+# ── Mission ──────────────────────────────────────────────────────────────────
+mission:
+  # _ICAO_UGKO : l'extension RealWeather de DCSServerBot y lit la METAR réelle de Kutaisi
+  # (station vivante, vérifiée le 2026-10-05).
+  name: VEAF_Demo_Mission_Caucasus_ICAO_UGKO
+  era: MODERN
+  language: fr
+  silence_atc_on_all_airbases: true
+  # Une démo montre ce qui apparaît : les groupes générés gardent un nom lisible sur la carte F10.
+  hide_names_from_spawned_groups: false
+
+# ── Sécurité ─────────────────────────────────────────────────────────────────
+# Désactivée : la démo est faite pour que chacun essaie toutes les commandes, y compris
+# celles qu'une mission de serveur réserve aux pilotes habilités (décision du 2026-10-05).
+security:
+  disabled: true
+
+modules:
+  # ── Infrastructure ──
+  UNITS:
+  TIME:
+  CACHE:
+  EVENTS:
+  MARKERS:
+  COMMANDS:
+
+  # ── Cœur ──
+  RADIO:
+    enabled: true
+    # Menu radio déclaré en YAML (ADR 0011) : F10 > Autre > « Démo : commandes », au premier niveau.
+    # Pas d'action `lua` ici : le build l'écrit comme une référence évaluée dans veaf-config.lua,
+    # avant que mission-script.lua ne définisse la fonction (docs/retours-vmct.md, n° 8). Les actions
+    # Lua de la démo sont dans le menu VEAF > DÉMO : ACTIONS (src/scripts/guided-tour.lua).
+    user_menus:
+      tree:
+        - menu: "Démo : commandes"
+          items:
+            - { command: "Démarrer la QRA de Soukhoumi", action: qra.start, qra: "QRA Soukhoumi" }
+            - { command: "Arrêter la QRA de Soukhoumi", action: qra.stop, qra: "QRA Soukhoumi" }
+            - { command: "Relancer l'arène BVR", action: airwave.reset, airwave: "Arene BVR" }
+            - { command: "Message de bienvenue", action: message, text: "Bienvenue sur la mission de démo VEAF. La visite guidée est dans F10 > Autre > VEAF > VISITE GUIDÉE." }
+  SPAWN: true
+  SHORTCUTS:
+    enabled: true
+    # Raccourcis propres à la mission, en plus des alias livrés (-sa8, -armor, -convoy…).
+    shortcuts:
+      - name: -boum
+        description: "Explosion de 500 kg à l'emplacement du marqueur"
+        command: "_spawn bomb, power 500"
+        bypass_security: true
+      - name: -menage
+        description: "Détruit tout dans un rayon de 2 km autour du marqueur"
+        command: "_destroy, radius 2000"
+        bypass_security: true
+  INTERPRETER: true
+
+  # ── Fonctionnalités ──
+  NAMEDPOINTS:
+    enabled: true
+    custom_points:
+      - name: ALPHA
+        lat: "42.05701"
+        lon: "42.51315"
+  MOVE: true
+  GRASS: true
+  WEATHER: true
+  REMOTE: true
+  AIRBASES: true
+  ASSIST:
+    enabled: true
+    checklists: [f16c-cold-start]
+
+  # ── Combat ──
+  GROUNDAI: true
+  CASMISSION: true
+  TRANSPORTMISSION: true
+  COMBATMISSION: true
+  CARRIER:
+    enabled: true
+    init:
+      include_carrier_operations_radio: true
+  COMBATZONE:
+    enabled: true
+    combat_zones:
+      # Entraînement de Khoni : trois niveaux imbriqués, chacun inclut le précédent.
+      - type: zone
+        zone_name: combatZone_Khoni_Easy
+        friendly_name: Khoni - facile
+        briefing: "Cibles inertes : huit camions à l'arrêt, sans arme ni défense. BULLSEYE 107/21."
+        training: true
+        radio_group_name: Entraînement Khoni
+      - type: zone
+        zone_name: combatZone_Khoni_Medium
+        friendly_name: Khoni - moyen
+        briefing: "Les cibles du niveau facile, plus une compagnie blindée (-armor, defense 1) et deux pièces de DCA tirées au sort parmi quatre. BULLSEYE 107/21."
+        training: true
+        radio_group_name: Entraînement Khoni
+        includes:
+          - combatZone_Khoni_Easy
+      - type: zone
+        zone_name: combatZone_Khoni_Hard
+        friendly_name: Khoni - difficile
+        briefing: "Le niveau moyen, plus un bataillon blindé mieux défendu (-armor, defense 3) et deux systèmes courte portée tirés au sort parmi SA-13, SA-9, Igla et Shilka. BULLSEYE 107/21."
+        training: true
+        radio_group_name: Entraînement Khoni
+        includes:
+          - combatZone_Khoni_Medium
+      # Front de Gali : faux porteurs #command, un groupe blindé tiré au sort parmi deux.
+      - type: zone
+        zone_name: combatZone_Gali
+        friendly_name: Front de Gali
+        briefing: "Une brigade blindée tient la rive nord de l'Inguri, au sud-est de Gali. Détruire les blindés et la batterie d'artillerie Msta. Défense : une batterie sol-air courte portée tirée au sort et des MANPADS. Le drone Reaper 1 (JTAC, code 1511, 35.55 FM) orbite au-dessus. BULLSEYE 312/8."
+      # Active dès le démarrage, et dans le réseau Skynet.
+      - type: zone
+        zone_name: combatZone_Ochamchire_SAM
+        friendly_name: SAM d'Ochamchire
+        briefing: "Une batterie SA-6 au nord d'Ochamchire, active dès le début de la mission et reliée au réseau Skynet rouge : elle n'allume son radar que quand le réseau le lui demande. BULLSEYE 309/24."
+        active_at_start: true
+      # Mission chaînée : les navires n'apparaissent qu'une fois le dépôt détruit.
+      - type: zone
+        zone_name: combatZone_Ochamchire_Port
+        friendly_name: "Port d'Ochamchire - 1 : dépôt"
+        briefing: "Première étape d'une mission chaînée : détruire les camions du dépôt portuaire. Une minute après sa destruction, les navires en rade apparaissent (étape 2). BULLSEYE 301/21."
+        chained_zones:
+          - combatZone_Ochamchire_Navires
+        chained_delay: 60
+      - type: zone
+        zone_name: combatZone_Ochamchire_Navires
+        friendly_name: "Port d'Ochamchire - 2 : navires"
+        briefing: "Deuxième étape : des cargos et leur corvette d'escorte (SA-N-4 courte portée) en rade d'Ochamchire. BULLSEYE 289/26."
+        radio_menu_disabled: true
+      # Les trois tâches de l'opération Tkvarcheli (pas de menu propre : on les active par l'opération).
+      - type: zone
+        zone_name: combatZone_Tkvarcheli_Radar
+        friendly_name: Tkvarcheli - radar
+        briefing: "Tâche 1 : un radar d'alerte 1L13 et sa DCA. BULLSEYE 326/23."
+        radio_menu_disabled: true
+      - type: zone
+        zone_name: combatZone_Tkvarcheli_Depot
+        friendly_name: Tkvarcheli - dépôt
+        briefing: "Tâche 2 : un dépôt de munitions et deux réservoirs (statiques). BULLSEYE 329/21."
+        radio_menu_disabled: true
+      - type: zone
+        zone_name: combatZone_Tkvarcheli_PC
+        friendly_name: Tkvarcheli - PC
+        briefing: "Tâche 3 : le poste de commandement et sa garde. Elle n'est donnée comme objectif qu'après le radar et le dépôt, mais ses unités sont là dès l'activation de l'opération. BULLSEYE 332/21."
+        radio_menu_disabled: true
+      - type: operation
+        zone_name: Op_Tkvarcheli
+        friendly_name: Opération Tkvarcheli
+        briefing: "Neutraliser le secteur de Tkvarcheli : le radar et le dépôt d'abord, puis le poste de commandement."
+        tasking_orders:
+          - zone_name: combatZone_Tkvarcheli_Radar
+          - zone_name: combatZone_Tkvarcheli_Depot
+          - zone_name: combatZone_Tkvarcheli_PC
+            dependencies:
+              - combatZone_Tkvarcheli_Radar
+              - combatZone_Tkvarcheli_Depot
+      # Convoi qui roule en boucle.
+      - type: zone
+        zone_name: combatZone_Convoi
+        friendly_name: Convoi d'Ochamchire
+        briefing: "Un convoi logistique (cinq camions et sa Shilka) fait la navette entre Ochamchire et Gali. Départ : BULLSEYE 303/20."
+  QRA:
+    enabled: true
+    definitions:
+      - name: QRA Soukhoumi
+        coalition: RED
+        trigger_zone: QRA-Soukhoumi
+        enemy_coalitions:
+          - BLUE
+        # Un intrus : une paire tirée au sort entre MiG-29S et Su-27 ; trois ou plus : deux paires parmi trois.
+        groups_by_enemy_count:
+          - enemy_count: 1
+            groups:
+              - QRA Soukhoumi - MiG-29S
+              - QRA Soukhoumi - Su-27
+            random_pick: 1
+          - enemy_count: 3
+            groups:
+              - QRA Soukhoumi - Su-30
+              - QRA Soukhoumi - MiG-31
+              - QRA Soukhoumi - MiG-29S
+            random_pick: 2
+        airport_link: Sukhumi-Babushara
+        delay_before_rearming: 300
+        delay_before_activating: 60
+        react_on_helicopters: false
+  AIRWAVES:
+    enabled: true
+    airwave_zones:
+      - name: Arene BVR
+        description: "Arène BVR au large de Poti"
+        start: true
+        player_coalitions: [BLUE]
+        trigger_zone_name: Arene BVR
+        draw_zone: true
+        respawn_radius: 3000
+        delay_before_activation: 30
+        delay_between_waves: 60
+        max_altitude_ft: 40000
+        min_altitude_ft: 1000
+        max_seconds_outside_ia: 60
+        minimum_life_percent: 50
+        reset_when_dying: true
+        waves:
+          - groups: Vague MiG-29S
+          - groups: Vague Su-27
+          - groups: Vague Su-30
+  ASSETS:
+    enabled: true
+    assets:
+      - sort: 1
+        name: Texaco 1
+        description: "Texaco 1 (KC-135, perche)"
+        information: 'TACAN 52Y, 292.0 AM\nFL200, 420 kt, hippodrome à l''est de Kutaisi'
+        coalition: BLUE
+      - sort: 2
+        name: Arco 1
+        description: "Arco 1 (KC-135 MPRS, panier)"
+        information: 'TACAN 51Y, 291.0 AM\nFL180, 420 kt, au sud des porte-avions'
+        coalition: BLUE
+      - sort: 3
+        name: Overlord 1
+        description: "Overlord 1 (E-3A)"
+        information: '286.0 AM\nFL300, au sud de Kutaisi\nEscorté par deux F-15C (Overlord 1 escort)'
+        coalition: BLUE
+      - sort: 4
+        name: Reaper 1
+        description: "Reaper 1 (MQ-9, JTAC)"
+        information: 'JTAC laser 1511, 35.55 FM\nAu-dessus du front de Gali'
+        jtac: 1511
+        freq: 35.55
+        mod: FM
+        coalition: BLUE
+  SANCTUARY:
+    enabled: true
+    sanctuary_zones:
+      # Sanctuaire ROUGE : un pilote bleu qui y entre est averti, puis la défense apparaît, puis il est abattu.
+      - name: Sanctuaire de Gudauta
+        trigger_zone: Sanctuaire Gudauta
+        coalition: RED
+        delay_warning: 10
+        delay_spawn: 60
+        delay_instant: 120
+        protect_from_missiles: true
+
+  # ── Scripts communautaires ──
+  STTS: true
+  CTLD:                      # réglages dans ctld-config.yaml (édité avec ctld-tools)
+    enabled: true
+    manage_logistics: true
+    manage_airbase_logistics: true
+    airbase_logistics_radius: 250    # défaut ; à mesurer en jeu sur Kutaisi (voir docs/recette.md)
+    airbase_occupation_radius: 2000
+    airbase_logistics_tick: 30
+  CSAR:
+    enabled: true
+    settings:
+      enableAllslots: true
+      useprefix: false
+  AIEN: true
+  SKYNET:
+    enabled: true
+    include_red_in_radio: true       # l'état de l'IADS rouge dans le menu F10 : la démo le montre
+    spotter_network: true
+    spotter_view: "radio"            # interrupteur F10 « Afficher / Masquer la vue des guetteurs »
+  # TUM prend toute la carte à son compte : il ne se démontre pas dans la même mission que le reste.
+
+# ── Missions CAP à la demande ────────────────────────────────────────────────
+cap_missions:
+  - group_name: CAP MiG-29S Gudauta FL250
+    menu_name: CAP MiG-29S Gudauta FL250
+    briefing: "Paire de MiG-29S armés Fox 3 (R-77) au-dessus de Gudauta. Hippodrome au FL250, centré sur BULLSEYE 303/55."
+    default: false
+    activated: true
+  - group_name: CAP Su-27 mer FL300
+    menu_name: CAP Su-27 mer FL300
+    briefing: "Paire de Su-27 armés Fox 1 (R-27ER, guidage radar semi-actif), sur la mer au large de Soukhoumi. Hippodrome au FL300, centré sur BULLSEYE 260/49."
+    default: false
+    activated: true
+  - group_name: CAP MiG-31 Sotchi FL350
+    menu_name: CAP MiG-31 Sotchi FL350
+    briefing: "Paire de MiG-31 : intercepteur haut et rapide, R-33 longue portée. Hippodrome au FL350, centré sur BULLSEYE 302/85."
+    default: false
+    activated: true
+
+# ── Missions scénarisées ─────────────────────────────────────────────────────
+combat_missions:
+  - name: Raid-Senaki
+    friendly_name: Raid sur Senaki
+    briefing: "Deux Su-24M escortés par deux MiG-29S décollent de la région de Gudauta pour bombarder Senaki. Interceptez-les avant qu'ils n'atteignent la base."
+    elements:
+      - name: Bombardiers
+        groups:
+          - Raid Senaki - Su-24M
+      - name: Escorte
+        groups:
+          - Raid Senaki - MiG-29S
+
+# ── Scripts propres à la mission ─────────────────────────────────────────────
+custom_scripts:
+  scripts:
+    - path: src/scripts/guided-tour.lua
+
+# ── Profils de build ─────────────────────────────────────────────────────────
+profiles:
+  # Test local : logs détaillés, une seule météo (pas de variantes), build plus rapide.
+  LOCAL_TEST:
+    global_log_level: debug
+    pipeline:
+      weather: false

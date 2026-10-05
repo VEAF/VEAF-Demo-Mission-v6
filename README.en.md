@@ -1,0 +1,407 @@
+This document is also available [in French](README.md).
+
+# VEAF demo mission (Caucasus)
+
+The demonstration mission of the [VEAF Mission Creation Tools](https://github.com/VEAF/VEAF-Mission-Creation-Tools) v6: **every feature has its example here**, and an in-game **guided tour** leads from one to the next.
+It is updated with every new feature, and checked before every release of the tools: if a feature works here, it works.
+
+![Demo map](docs/carte.jpg)
+
+## Getting started
+
+1. Build the mission (see [For mission makers](#for-mission-makers)), or take it from the repository [releases](https://github.com/VEAF/VEAF-Demo-Mission-v6/releases) once they are published.
+2. Run it solo or on a server, and take a slot at **Kutaisi** (classic slots, hot start) or on a carrier.
+3. Open **F10 > Other > VEAF > GUIDED TOUR**: one submenu per chapter, one entry per step. Each entry shows what to do, where the step is relative to you, and places a mark on your F10 map.
+
+VEAF security is **disabled** in this mission: every command is open to everyone, including those a server keeps for qualified pilots.
+The mission runs in French (VEAF menus included); this guide gives the French menu names with their translation.
+
+### Typing a command into a marker
+
+Many features are driven from the F10 map: "Add mark" button in the top bar, click on the map, type the command text (for example `-sa8`), then click elsewhere to validate.
+The command runs at the marker's position, and the marker disappears.
+
+## The theatre
+
+The front follows the Inguri river, between Georgia (blue) and Abkhazia (red). The bullseye, shared by both sides, is on **Zugdidi**.
+
+| Blue base | Slots | Note |
+|---|---|---|
+| Kutaisi | classic (hot start) + dynamic | home base, defended by a NASAMS |
+| Senaki-Kolkhi | dynamic | defended by a Hawk; target of the scripted raid |
+| Kobuleti | dynamic | |
+| Batumi | dynamic | |
+| Carriers Stennis, Roosevelt | F/A-18C, F-14B (deck, hot start) | off Batumi |
+| FARP Khoni | — | helicopters, CTLD, CSAR |
+
+Every Russian and Abkhazian airfield is red, without slots. Dynamic slots only work in multiplayer.
+
+| Asset | Frequency | TACAN | Altitude | Where |
+|---|---|---|---|---|
+| Texaco 1 (KC-135, boom) | 292.0 AM | 52Y | FL200 | east of Kutaisi |
+| Arco 1 (KC-135 MPRS, drogue) | 291.0 AM | 51Y | FL180 | south of the carriers |
+| Overlord 1 (E-3A) + F-15C escort | 286.0 AM | — | FL300 | south of Kutaisi |
+| Reaper 1 (MQ-9, JTAC laser 1511) | 35.55 FM | — | 3,000 m AGL | Gali front |
+| CVN-74 Stennis | 274.0 AM | 74X STN, ICLS 4, Link 4 336.0 | — | off Batumi |
+| CVN-71 Roosevelt | 271.0 AM | 71X TDR, ICLS 1, Link 4 337.0 | — | off Batumi |
+| FARP Khoni | 127.5 AM | — | — | south-west of Khoni |
+
+## The guided tour
+
+| # | Steps | Where | Features |
+|---|---|---|---|
+| 01 | [Welcome](#01-welcome) | Anywhere (no particular place) | `RADIO`, `build:dynamic_slots`, `build:presets`, `build:waypoints`, `build:weather` |
+| 02 | [Sandbox: marker commands](#02-sandbox-marker-commands) | BULLSEYE 127/40 — 7 nm from Kutaisi | `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` |
+| 03 | [Generated missions: CAS and transport](#03-generated-missions-cas-and-transport) | BULLSEYE 127/40 — 7 nm from Kutaisi | `CASMISSION`, `TRANSPORTMISSION`, `GROUNDAI` |
+| 04 | [Khoni training range: three levels](#04-khoni-training-range-three-levels) | BULLSEYE 107/21 — 13 nm from Senaki-Kolkhi | `COMBATZONE`, `AIEN` |
+| 05 | [Gali front, and the JTAC drone](#05-gali-front-and-the-jtac-drone) | BULLSEYE 312/8 — 26 nm from Senaki-Kolkhi | `COMBATZONE`, `ASSETS`, `CTLD` |
+| 06 | [Integrated air defence (Skynet)](#06-integrated-air-defence-skynet) | BULLSEYE 309/24 — 42 nm from Senaki-Kolkhi | `SKYNET`, `INTERPRETER`, `COMBATZONE` |
+| 07 | [Chained mission: Ochamchire port](#07-chained-mission-ochamchire-port) | BULLSEYE 301/21 — 39 nm from Senaki-Kolkhi | `COMBATZONE` |
+| 08 | [Operation Tkvarcheli: tasks and dependencies](#08-operation-tkvarcheli-tasks-and-dependencies) | BULLSEYE 332/22 — 40 nm from Senaki-Kolkhi | `COMBATZONE` |
+| 09 | [Moving convoy](#09-moving-convoy) | BULLSEYE 303/20 — 38 nm from Senaki-Kolkhi | `COMBATZONE` |
+| 10 | [Sukhumi QRA](#10-sukhumi-qra) | BULLSEYE 297/39 — 55 nm from Senaki-Kolkhi | `QRA`, `RADIO` |
+| 11 | [On-demand CAP and the Senaki raid](#11-on-demand-cap-and-the-senaki-raid) | BULLSEYE 297/69 — 85 nm from Senaki-Kolkhi | `COMBATMISSION` |
+| 12 | [BVR arena (air waves)](#12-bvr-arena-air-waves) | BULLSEYE 239/44 — 43 nm from Kobuleti | `AIRWAVES`, `RADIO` |
+| 13 | [Gudauta red sanctuary](#13-gudauta-red-sanctuary) | BULLSEYE 297/69 — 85 nm from Senaki-Kolkhi | `SANCTUARY` |
+| 14 | [Tankers, AWACS and escort](#14-tankers-awacs-and-escort) | BULLSEYE 122/48 — 14 nm from Kutaisi (at mission start) | `ASSETS`, `MOVE` |
+| 15 | [Helicopters: FARP, CTLD, CSAR](#15-helicopters-farp-ctld-csar) | BULLSEYE 112/26 — 9 nm from Kutaisi | `CTLD`, `CSAR`, `GRASS` |
+| 16 | [Stennis and Roosevelt carriers](#16-stennis-and-roosevelt-carriers) | BULLSEYE 203/48 — 17 nm from Batumi (at mission start) | `CARRIER` |
+| 17 | [Weather, ATC and cockpit assistance](#17-weather-atc-and-cockpit-assistance) | BULLSEYE 119/34 — 0 nm from Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
+
+### 1. Getting started
+
+#### 01 Welcome
+
+This mission shows every feature of the VEAF tools, one per step.
+Each step gives the place, what to do and what you should see.
+A mark is placed on your F10 map when you open a step.
+
+**Where**: Anywhere (no particular place)
+
+**What to do**:
+
+- VEAF menus are under F10 > Other > VEAF: GUIDED TOUR and DÉMO : ACTIONS come first; the menu has several pages ("Page suivante" = next page, at the bottom). The "Démo : commandes" menu is separate, directly under F10 > Other. The mission runs in French, so the menus are in French too (translations are given here).
+- Many commands are typed into an F10 map marker: "Add mark" button in the top bar, click on the map, type the text, then click elsewhere to validate.
+- Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers.
+
+**What you should see**: The VEAF menu and its submenus, and in every aircraft the radio presets and waypoints injected by the build.
+
+**Features**: `RADIO`, `build:dynamic_slots`, `build:presets`, `build:waypoints`, `build:weather` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/GUIDE/)
+
+#### 02 Sandbox: marker commands
+
+The sandbox, south of Kutaisi (named point ALPHA), is where you try the commands typed into an F10 marker: spawn units, a convoy, smoke, a FARP, and wipe it all.
+
+**Where**: BULLSEYE 127/40 — 7 nm from Kutaisi
+
+**What to do**:
+
+- `-sa8`: an SA-8 battery (shipped alias; full list in the shortcuts documentation).
+- `-armor`: a random armour group; `-armor, size 4, defense 0` to tune it.
+- `_spawn unit, name T-80UD, hdg 270`: a single tank, heading 270.
+- `-convoy, dest ALPHA`: a convoy that drives by road to the named point ALPHA (place the marker a few km away).
+- `_name point BRAVO`: creates your own named point, usable in `-convoy, dest BRAVO`.
+- `_spawn smoke, color red`: red smoke; `-farp`: a complete FARP with its props.
+- `-boum`: a 500 kg explosion; `-menage`: destroys everything within 2 km (two shortcuts defined by this mission).
+
+**What you should see**: Each command answers with a message and spawns what it announces at the marker; the marker disappears once the command has run.
+
+**Features**: `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafSpawn/)
+
+#### 03 Generated missions: CAS and transport
+
+Two commands build a complete mission where you place the marker: a close air support (CAS) task or a helicopter transport task.
+
+**Where**: BULLSEYE 127/40 — 7 nm from Kutaisi
+
+**What to do**:
+
+- `_cas` (or `_cas, size 3, defense 2`) in a sandbox marker: an enemy group appears in the area, to find and destroy.
+- F10 > Other > VEAF > MISSION CAS (CAS mission): target information, smoke, illumination, skip the target.
+- `_transport, from ALPHA` in a marker near FARP Khoni (more than 15 km from ALPHA): cargo to pick up at ALPHA and deliver at the marker.
+- F10 > Other > VEAF > MISSION DE TRANSPORT (transport mission): drop zone position, smoke.
+
+**What you should see**: A menu specific to the generated mission, and a message when the objective is met.
+
+**Features**: `CASMISSION`, `TRANSPORTMISSION`, `GROUNDAI` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCasMission/)
+
+### 2. Combat zones
+
+#### 04 Khoni training range: three levels
+
+A training range in three levels on the same circle.
+Each level includes the one below: medium also spawns the easy targets, hard also spawns the medium ones.
+
+**Where**: BULLSEYE 107/21 — 13 nm from Senaki-Kolkhi
+
+**What to do**:
+
+- F10 > Other > VEAF > ZONES DE COMBAT (combat zones) > Entraînement Khoni > Khoni - facile (easy) > Activer la zone (activate).
+- Destroy the trucks, then deactivate and move on to medium (moyen), then hard (difficile).
+- Zone info, smoke and illumination flare are in the same menu.
+
+**What you should see**: Easy: eight trucks.
+Medium: the trucks, an armour company and two AAA pieces drawn among four (never the same twice).
+Hard: on top, an armour battalion and two short-range systems drawn at random.
+
+**Features**: `COMBATZONE`, `AIEN` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatZone/)
+
+#### 05 Gali front, and the JTAC drone
+
+A real combat zone on the Inguri front.
+Its content is described by carrier units holding a command (#command): the zone spawns in their place one armour group drawn among two, an artillery battery, air defence and MANPADS.
+The Reaper 1 drone orbits above and lases the armour.
+
+**Where**: BULLSEYE 312/8 — 26 nm from Senaki-Kolkhi
+
+**What to do**:
+
+- F10 > Other > VEAF > ZONES DE COMBAT > Front de Gali > Activer la zone.
+- The JTAC: laser code 1511, radio 35.55 FM; F10 > Other > CTLD > JTAC for the current target.
+- The drone can be respawned from F10 > Other > VEAF > MOYENS (assets) > Reaper 1 (MQ-9, JTAC).
+
+**What you should see**: Only one of the two armour groups appears; the drone announces its target and lases it on code 1511.
+
+**Features**: `COMBATZONE`, `ASSETS`, `CTLD` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/concepts/combat-zones/)
+
+#### 06 Integrated air defence (Skynet)
+
+The red air defence network: an early-warning radar, a permanent SA-11 and SA-15 near Gudauta (placed by #veafInterpreter), plus the Ochamchire SA-6, a combat zone active from the start that joins the network.
+Batteries keep their radar off until the network tells them to light up.
+Red ground units act as spotters: they see aircraft and relay the alert.
+
+**Where**: BULLSEYE 309/24 — 42 nm from Senaki-Kolkhi
+
+**What to do**:
+
+- Approach Ochamchire from the south-east, low then climbing: watch when your RWR lights up.
+- Red IADS status (sites, radars on): F10 > Other > SKYNET IADS RED.
+- The spotter view belongs to each side: F10 > Other > VEAF > RÉSEAU DE GUETTEURS (spotter network) > Afficher la vue des guetteurs shows YOUR side's spotters. To see the red network, take the red game master slot of the test mission (reopen the F10 map after clicking).
+
+**What you should see**: The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS RED menu shows which site is emitting.
+
+**Features**: `SKYNET`, `INTERPRETER`, `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafSkynetIadsHelper/)
+
+#### 07 Chained mission: Ochamchire port
+
+Two chained zones: the second does not exist until the first is complete.
+First the port depot, then, one minute after it is destroyed, the cargo ships and their corvette at anchor (anti-ship).
+
+**Where**: BULLSEYE 301/21 — 39 nm from Senaki-Kolkhi
+
+**What to do**:
+
+- F10 > Other > VEAF > ZONES DE COMBAT > Port d'Ochamchire - 1 : dépôt > Activer la zone.
+- Destroy the trucks and the ZU-23, then wait one minute.
+
+**What you should see**: Zone 1 completes, and the ships appear offshore without any menu activating them.
+Beware: the Sukhumi QRA circle covers Ochamchire.
+
+**Features**: `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatZone/)
+
+#### 08 Operation Tkvarcheli: tasks and dependencies
+
+An operation groups several zones as tasks: the radar and the depot first, then the command post, given as an objective only once the first two are destroyed.
+All units spawn on activation: the dependency orders the objectives, not the spawning.
+
+**Where**: BULLSEYE 332/22 — 40 nm from Senaki-Kolkhi
+
+**What to do**:
+
+- F10 > Other > VEAF > DÉMO : ACTIONS > Activer l'opération Tkvarcheli (activate; VEAF puts no activation command in an operation's menu, so the demo provides one).
+- F10 > Other > VEAF > ZONES DE COMBAT > Opération Tkvarcheli: the current task; destroy the 1L13 radar and the depot (statics), then the command post.
+
+**What you should see**: Tasks move from "in progress" to "done"; when all three are done, the message "Operation … is over".
+
+**Features**: `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatZone/)
+
+#### 09 Moving convoy
+
+A logistics convoy, five trucks and their Shilka, shuttling between Ochamchire and Gali: a moving target.
+
+**Where**: BULLSEYE 303/20 — 38 nm from Senaki-Kolkhi
+
+**What to do**:
+
+- F10 > Other > VEAF > ZONES DE COMBAT > Convoi d'Ochamchire > Activer la zone.
+- Zone info: the convoy position when you ask.
+
+**What you should see**: The convoy drives to Gali, then comes back, in a loop.
+
+**Features**: `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatZone/)
+
+### 3. Air threats
+
+#### 10 Sukhumi QRA
+
+A quick reaction alert (QRA) defends Sukhumi within a 40 km circle that covers Ochamchire.
+It answers the threat: one intruder scrambles a pair drawn between MiG-29S and Su-27; three or more, two pairs among Su-30, MiG-31 and MiG-29S.
+It ignores helicopters.
+
+**Where**: BULLSEYE 297/39 — 55 nm from Senaki-Kolkhi
+
+**What to do**:
+
+- Enter the circle (drawn on the F10 map) in an aircraft: the QRA scrambles 60 s later.
+- F10 > Other > Démo : commandes > Arrêter / Démarrer la QRA de Soukhoumi (stop / start; a menu declared in YAML).
+
+**What you should see**: A message announces the scramble; the fighters come at you.
+Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.
+
+**Features**: `QRA`, `RADIO` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafQraManager/)
+
+#### 11 On-demand CAP and the Senaki raid
+
+Red patrols you spawn from the menu, each a different threat (MiG-29S Fox 3, Su-27 Fox 1, MiG-31), and a scripted mission: two Su-24M escorted by two MiG-29S head out to bomb Senaki.
+
+**Where**: BULLSEYE 297/69 — 85 nm from Senaki-Kolkhi
+
+**What to do**:
+
+- F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > level (Good, Excellent) > size (scale 1, 2) > Activer la mission (activate).
+- F10 > Other > VEAF > MISSIONS > Raid sur Senaki > Good > scale 1 > Activer la mission, then intercept the bombers.
+- Or by marker: `-airstart Raid-Senaki/Good/1`, `-airstop Raid-Senaki/Good/1` (name, level, size).
+
+**What you should see**: The patrol spawns airborne on its race-track and engages what comes in range; the raid flies to Senaki and bombs the base unless intercepted.
+
+**Features**: `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCombatMission/)
+
+#### 12 BVR arena (air waves)
+
+An arena off Poti: as soon as a blue aircraft enters, waves of red fighters come one after another, harder each time (a single MiG-29S, two Su-27, two Su-30).
+
+**Where**: BULLSEYE 239/44 — 43 nm from Kobuleti
+
+**What to do**:
+
+- Enter the arena circle (drawn on the F10 map), between 1,000 and 40,000 ft.
+- To start over: F10 > Other > Démo : commandes > Relancer l'arène BVR (reset).
+
+**What you should see**: A start message, then a wave; the next comes one minute after the previous is destroyed.
+If you die, the arena resets.
+
+**Features**: `AIRWAVES`, `RADIO` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafAirWaves/)
+
+#### 13 Gudauta red sanctuary
+
+A sanctuary protects an area for one side: an enemy pilot who enters is warned, then defences spawn, then the aircraft is shot down.
+This one protects Gudauta (15 km) for red; it also destroys missiles fired at units inside it.
+
+**Where**: BULLSEYE 297/69 — 85 nm from Senaki-Kolkhi
+
+**What to do**:
+
+- Fly into the Gudauta circle in a blue aircraft and stay.
+
+**What you should see**: Warning after 10 s, defences deployed at 60 s, aircraft shot down at 120 s.
+
+**Features**: `SANCTUARY` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafSanctuary/)
+
+### 4. Support and logistics
+
+#### 14 Tankers, AWACS and escort
+
+Two tankers (Texaco 1 boom, Arco 1 drogue) and an AWACS (Overlord 1) escorted by two F-15C.
+The MOYENS (assets) menu respawns them and gives their details; a marker command moves a tanker.
+
+**Where**: BULLSEYE 122/48 — 14 nm from Kutaisi (at mission start)
+
+**What to do**:
+
+- Texaco 1: TACAN 52Y, 292.0 AM, FL200; Arco 1: TACAN 51Y, 291.0 AM, FL180; Overlord 1: 286.0 AM.
+- F10 > Other > VEAF > MOYENS > Overlord 1 (E-3A) > Réapparition de Overlord 1 (E-3A) (respawn): the AWACS and its escort respawn together.
+- Marker `_move tanker, name Texaco 1, alt 22000` where you want the race-track.
+
+**What you should see**: Tankers answer on their frequency and TACAN; after a _move tanker, Texaco 1 flies to its new orbit.
+
+**Features**: `ASSETS`, `MOVE` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafAssets/)
+
+#### 15 Helicopters: FARP, CTLD, CSAR
+
+FARP Khoni rearms and refuels helicopters; its ammo dump is a CTLD loading point (troops and crates).
+A downed pilot can be created on demand, to be rescued by helicopter (CSAR).
+
+**Where**: BULLSEYE 112/26 — 9 nm from Kutaisi
+
+**What to do**:
+
+- Take off from Kutaisi in a UH-1H or Mi-8 and land at FARP Khoni (127.5 AM).
+- F10 > Other > CTLD: load troops, request a crate, then drop them elsewhere.
+- F10 > Other > VEAF > DÉMO : ACTIONS > Créer un pilote abattu près de Khoni (create a downed pilot), then the CSAR menu for its beacon and position.
+
+**What you should see**: The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.
+
+**Features**: `CTLD`, `CSAR`, `GRASS` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/GUIDE/)
+
+#### 16 Stennis and Roosevelt carriers
+
+Two carriers off Batumi, each with its S-3B tanker and rescue helicopter.
+The OPS PORTE-AVIONS (carrier ops) menu turns the ship into the wind for air operations.
+
+**Where**: BULLSEYE 203/48 — 17 nm from Batumi (at mission start)
+
+**What to do**:
+
+- Stennis: TACAN 74X STN, ICLS 4, Link 4 336.0, tower 274.0 AM. Roosevelt: TACAN 71X TDR, ICLS 1, Link 4 337.0, tower 271.0 AM.
+- F10 > Other > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > Start carrier air operations for 45 minutes.
+- Deck slots: Stennis F/A-18C, Roosevelt F-14B.
+
+**What you should see**: The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels.
+
+**Features**: `CARRIER` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafCarrierOperations/)
+
+#### 17 Weather, ATC and cockpit assistance
+
+A welcome message when you take a slot (base, runway in use, weather), a weather and ATC menu, and for the F-16C a step-by-step start-up checklist.
+On a VEAF server, the weather follows Kutaisi's real METAR (UGKO).
+
+**Where**: BULLSEYE 119/34 — 0 nm from Kutaisi
+
+**What to do**:
+
+- Take a slot at Kutaisi: read the welcome message.
+- F10 > Other > VEAF > MÉTÉO ET ATC (weather and ATC) > weather at closest point / ATC of closest airbase.
+- In the F-16C at Kutaisi: F10 > Other > VEAF > Assistance > Démarrage à froid (cold start); then, at the root of the VEAF menu: ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE (confirm / skip).
+
+**What you should see**: The welcome message gives the runway in use; the checklist ticks the steps already done.
+
+**Features**: `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` — [Documentation](https://veaf.github.io/documentation/dev/mission-maker/scripts/veafWeather/)
+
+## For mission makers
+
+### Building
+
+From this folder, with `veaf-tools.exe` (installed by `veaf-tools-updater.exe`, see the [documentation](https://veaf.github.io/documentation/)):
+
+```
+.\veaf-tools.exe mission validate
+.\veaf-tools.exe build
+```
+
+Built missions land in `missions/`, one per weather variant of `src/versions.yaml`.
+For a local test (verbose logs, a single weather): `.\veaf-tools.exe mission build --profile LOCAL_TEST`.
+
+### Files
+
+| File | Role |
+|---|---|
+| `mission.yaml` | the configuration of every VEAF module |
+| `src/mission/` | the DCS mission itself, exploded |
+| `src/scripts/mission-script.lua` | the mission's own Lua (function behind the "Démo : commandes" menu) |
+| `src/scripts/guided-tour.lua` | the guided tour, **generated** |
+| `tour/steps.yaml` | **the source** of the tour, this README and the release checklist |
+| `tools/` | generators: MCP action batches (`gen_0*.py`), tour and docs (`gen_tour.py`), map (`gen_map.py`), `.miz` check (`verify.py`) |
+| `docs/recette.md` | the pre-release checklist (French), **generated** |
+
+### Adding a feature
+
+Every new VEAF tools feature adds its example to the demo, in the same PR as the feature or right after:
+
+1. place the example in the mission (MCP actions on the folder, or `mission.yaml`);
+2. add its step in `tour/steps.yaml`, with its release check (`check`);
+3. `python tools/gen_tour.py` (tour, README, checklist) and `python tools/gen_map.py` (map);
+4. build, then `python tools/verify.py`.
+
+### Before every tools release
+
+Build the demo with the release candidate and run [the checklist](docs/recette.md): each line is an in-game observable.

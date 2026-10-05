@@ -1,0 +1,94 @@
+# Points de navigation injectés dans les avions des joueurs à chaque build.
+# Générés depuis la mission (positions des zones de la démo). Le build ajoute lui-même le BULLSEYE de la mission.
+
+waypoints:
+  KHONI:
+    type: "Turning Point"
+    action: "Turning Point"
+    alt: 4572
+    alt_type: "BARO"
+    speed: 230
+    speed_type: "TAS"
+    x: -264994.7
+    y: 665870.8
+    name: "KHONI"
+  GALI:
+    type: "Turning Point"
+    action: "Turning Point"
+    alt: 4572
+    alt_type: "BARO"
+    speed: 230
+    speed_type: "TAS"
+    x: -243944.1
+    y: 618636.8
+    name: "GALI"
+  OCHAMCHIRE:
+    type: "Turning Point"
+    action: "Turning Point"
+    alt: 4572
+    alt_type: "BARO"
+    speed: 230
+    speed_type: "TAS"
+    x: -233272.4
+    y: 595507.5
+    name: "OCHAMCHIRE"
+  ARENE:
+    type: "Turning Point"
+    action: "Turning Point"
+    alt: 7620
+    alt_type: "BARO"
+    speed: 230
+    speed_type: "TAS"
+    x: -295000
+    y: 560000
+    name: "ARENE"
+  FARP-KHONI:
+    type: "Turning Point"
+    action: "Turning Point"
+    alt: 150
+    alt_type: "RADIO"
+    speed: 140
+    speed_type: "TAS"
+    x: -271573.8
+    y: 674672.2
+    name: "FARP-KHONI"
+  KHONI-H:
+    type: "Turning Point"
+    action: "Turning Point"
+    alt: 150
+    alt_type: "RADIO"
+    speed: 140
+    speed_type: "TAS"
+    x: -264994.7
+    y: 665870.8
+    name: "KHONI-H"
+  CSAR:
+    type: "Turning Point"
+    action: "Turning Point"
+    alt: 150
+    alt_type: "RADIO"
+    speed: 140
+    speed_type: "TAS"
+    x: -260641.7
+    y: 680225.3
+    name: "CSAR"
+
+settings:
+  # Avions bleus : entraînement, front, port, arène.
+  blue_planes:
+    category: "plane"
+    coalition: "blue"
+    waypoints:
+      KHONI: "KHONI"
+      GALI: "GALI"
+      OCHAMCHIRE: "OCHAMCHIRE"
+      ARENE: "ARENE"
+
+  # Hélicoptères bleus : FARP, zone d'entraînement, zone du pilote abattu.
+  blue_helicopters:
+    category: "helicopter"
+    coalition: "blue"
+    waypoints:
+      FARP-KHONI: "FARP-KHONI"
+      KHONI-H: "KHONI-H"
+      CSAR: "CSAR"

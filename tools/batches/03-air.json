@@ -1,0 +1,565 @@
+[
+ {
+  "name": "create_qra",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "name": "QRA Soukhoumi",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "trigger_zone": "QRA-Soukhoumi",
+   "position": {
+    "x": -221381.7,
+    "y": 565908.8
+   },
+   "radius": 40000,
+   "groups": [
+    {
+     "name": "QRA Soukhoumi - MiG-29S",
+     "units": [
+      {
+       "type": "MiG-29S",
+       "count": 2
+      }
+     ],
+     "position": {
+      "x": -221381.7,
+      "y": 565908.8
+     },
+     "altitude_ft": 15000,
+     "speed_kt": 350,
+     "payload": "R-77*4,R-73*2"
+    },
+    {
+     "name": "QRA Soukhoumi - Su-27",
+     "units": [
+      {
+       "type": "Su-27",
+       "count": 2
+      }
+     ],
+     "position": {
+      "x": -221381.7,
+      "y": 565908.8
+     },
+     "altitude_ft": 15000,
+     "speed_kt": 350,
+     "payload": "R-73*4,R-27ER*6"
+    },
+    {
+     "name": "QRA Soukhoumi - Su-30",
+     "units": [
+      {
+       "type": "Su-30",
+       "count": 2
+      }
+     ],
+     "position": {
+      "x": -221381.7,
+      "y": 565908.8
+     },
+     "altitude_ft": 15000,
+     "speed_kt": 350,
+     "payload": "R-73*2,R-77*6,ECM"
+    },
+    {
+     "name": "QRA Soukhoumi - MiG-31",
+     "units": [
+      {
+       "type": "MiG-31",
+       "count": 2
+      }
+     ],
+     "position": {
+      "x": -221381.7,
+      "y": 565908.8
+     },
+     "altitude_ft": 15000,
+     "speed_kt": 350,
+     "payload": "R-40R*2,R-33*4"
+    }
+   ],
+   "enemy_coalitions": [
+    "BLUE"
+   ],
+   "qra": {
+    "groups_by_enemy_count": [
+     {
+      "enemy_count": 1,
+      "groups": [
+       "QRA Soukhoumi - MiG-29S",
+       "QRA Soukhoumi - Su-27"
+      ],
+      "random_pick": 1
+     },
+     {
+      "enemy_count": 3,
+      "groups": [
+       "QRA Soukhoumi - Su-30",
+       "QRA Soukhoumi - MiG-31",
+       "QRA Soukhoumi - MiG-29S"
+      ],
+      "random_pick": 2
+     }
+    ],
+    "airport_link": "Sukhumi-Babushara",
+    "delay_before_rearming": 300,
+    "delay_before_activating": 60,
+    "react_on_helicopters": false
+   }
+  }
+ },
+ {
+  "name": "create_cap_mission",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "mission_name": "CAP MiG-29S Gudauta FL250",
+   "units": [
+    {
+     "type": "MiG-29S",
+     "count": 2
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "position": {
+    "x": -185000,
+    "y": 520000
+   },
+   "route": [
+    {
+     "x": -212780.0,
+     "y": 568116.3714342634,
+     "altitude_ft": 25000
+    }
+   ],
+   "altitude_ft": 25000,
+   "speed_kt": 420,
+   "payload": "R-77*4,R-73*2",
+   "cap": {
+    "menu_name": "CAP MiG-29S Gudauta FL250",
+    "briefing": "Paire de MiG-29S armés Fox 3 (R-77) au-dessus de Gudauta. Hippodrome au FL250, centré sur BULLSEYE 303/55.",
+    "default": false,
+    "activated": true
+   }
+  }
+ },
+ {
+  "name": "create_cap_mission",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "mission_name": "CAP Su-27 mer FL300",
+   "units": [
+    {
+     "type": "Su-27",
+     "count": 2
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "position": {
+    "x": -250000,
+    "y": 520000
+   },
+   "route": [
+    {
+     "x": -289286.85276272456,
+     "y": 559286.8527627246,
+     "altitude_ft": 30000
+    }
+   ],
+   "altitude_ft": 30000,
+   "speed_kt": 420,
+   "payload": "R-73*4,R-27ER*6",
+   "cap": {
+    "menu_name": "CAP Su-27 mer FL300",
+    "briefing": "Paire de Su-27 armés Fox 1 (R-27ER, guidage radar semi-actif), sur la mer au large de Soukhoumi. Hippodrome au FL300, centré sur BULLSEYE 260/49.",
+    "default": false,
+    "activated": true
+   }
+  }
+ },
+ {
+  "name": "create_cap_mission",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "mission_name": "CAP MiG-31 Sotchi FL350",
+   "units": [
+    {
+     "type": "MiG-31",
+     "count": 2
+    }
+   ],
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "position": {
+    "x": -160000,
+    "y": 470000
+   },
+   "route": [
+    {
+     "x": -179002.63916317414,
+     "y": 522209.3220108651,
+     "altitude_ft": 35000
+    }
+   ],
+   "altitude_ft": 35000,
+   "speed_kt": 480,
+   "payload": "R-40R*2,R-33*4",
+   "cap": {
+    "menu_name": "CAP MiG-31 Sotchi FL350",
+    "briefing": "Paire de MiG-31 : intercepteur haut et rapide, R-33 longue portée. Hippodrome au FL350, centré sur BULLSEYE 302/85.",
+    "default": false,
+    "activated": true
+   }
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "name": "Raid Senaki - Su-24M",
+   "unit_type": "Su-24M",
+   "count": 2,
+   "start": "air",
+   "position": {
+    "x": -200000,
+    "y": 530000
+   },
+   "altitude_ft": 15000,
+   "speed_kt": 420,
+   "task": "Ground Attack",
+   "skill": "High",
+   "payload": "FAB-500*4,R-60M*2",
+   "late_activation": true
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Raid Senaki - Su-24M",
+   "operation": "add",
+   "position": {
+    "x": -266903.1,
+    "y": 622398.4
+   },
+   "altitude_ft": 8000,
+   "speed_kt": 450
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Raid Senaki - Su-24M",
+   "operation": "add",
+   "position": {
+    "x": -281903.1,
+    "y": 648379.2
+   },
+   "altitude_ft": 3000,
+   "speed_kt": 480
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Raid Senaki - Su-24M",
+   "operation": "add_task",
+   "index": 3,
+   "task": "bombing",
+   "task_params": {
+    "position": {
+     "x": -281903.1,
+     "y": 648379.2
+    },
+    "expend": "All",
+    "attack_qty": 1
+   }
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Raid Senaki - Su-24M",
+   "operation": "add",
+   "position": {
+    "x": -200000,
+    "y": 530000
+   },
+   "altitude_ft": 15000,
+   "speed_kt": 450
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "name": "Raid Senaki - MiG-29S",
+   "unit_type": "MiG-29S",
+   "count": 2,
+   "start": "air",
+   "position": {
+    "x": -202000.0,
+    "y": 530000.0
+   },
+   "altitude_ft": 18000,
+   "speed_kt": 420,
+   "task": "Escort",
+   "skill": "High",
+   "payload": "R-77*4,R-73*2",
+   "late_activation": true
+  }
+ },
+ {
+  "name": "edit_route",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "group_name": "Raid Senaki - MiG-29S",
+   "operation": "add_task",
+   "index": 1,
+   "task": "escort",
+   "task_params": {
+    "group_name": "Raid Senaki - Su-24M",
+    "engagement_distance_nm": 20
+   }
+  }
+ },
+ {
+  "name": "add_trigger_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "name": "Arene BVR",
+   "position": {
+    "x": -295000,
+    "y": 560000
+   },
+   "radius": 25000
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "name": "Vague MiG-29S",
+   "unit_type": "MiG-29S",
+   "count": 1,
+   "start": "air",
+   "position": {
+    "x": -275000.0,
+    "y": 560000.0
+   },
+   "altitude_ft": 25000,
+   "speed_kt": 420,
+   "heading_deg": 180,
+   "task": "CAP",
+   "skill": "High",
+   "payload": "R-77*4,R-73*2",
+   "late_activation": true
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "name": "Vague Su-27",
+   "unit_type": "Su-27",
+   "count": 2,
+   "start": "air",
+   "position": {
+    "x": -275000.0,
+    "y": 560000.0
+   },
+   "altitude_ft": 25000,
+   "speed_kt": 420,
+   "heading_deg": 180,
+   "task": "CAP",
+   "skill": "High",
+   "payload": "R-73*4,R-27ER*6",
+   "late_activation": true
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "name": "Vague Su-30",
+   "unit_type": "Su-30",
+   "count": 2,
+   "start": "air",
+   "position": {
+    "x": -275000.0,
+    "y": 560000.0
+   },
+   "altitude_ft": 25000,
+   "speed_kt": 420,
+   "heading_deg": 180,
+   "task": "CAP",
+   "skill": "High",
+   "payload": "R-73*2,R-77*6,ECM",
+   "late_activation": true
+  }
+ },
+ {
+  "name": "add_trigger_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "name": "Sanctuaire Gudauta",
+   "position": {
+    "x": -195650.6,
+    "y": 515898.8
+   },
+   "radius": 15000
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "name": "IADS Soukhoumi - SA-11",
+   "position": {
+    "x": -200000,
+    "y": 545000
+   },
+   "units": [
+    {
+     "type": "SA-11 Buk LN 9A310M1",
+     "name": "#veafInterpreter[\"-sa11, country russia\"] IADS-Soukhoumi"
+    }
+   ]
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "name": "IADS Soukhoumi - SA-15",
+   "position": {
+    "x": -200000.0,
+    "y": 546500.0
+   },
+   "units": [
+    {
+     "type": "Tor 9A331",
+     "name": "#veafInterpreter[\"-sa15, country russia\"] IADS-Soukhoumi"
+    }
+   ]
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "name": "IADS Soukhoumi - EWR",
+   "position": {
+    "x": -193071.8,
+    "y": 549000.0
+   },
+   "units": [
+    {
+     "type": "55G6 EWR",
+     "name": "#veafInterpreter[\"-ewr, country russia\"] IADS-Soukhoumi"
+    }
+   ]
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "category": "vehicle",
+   "name": "Defense Kutaisi - NASAMS",
+   "position": {
+    "x": -284582.8,
+    "y": 687529.7
+   },
+   "units": [
+    {
+     "type": "NASAMS_LN_C",
+     "name": "#veafInterpreter[\"-nasams, country usa\"] Defense-Kutaisi"
+    }
+   ]
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "category": "vehicle",
+   "name": "Defense Senaki - Hawk",
+   "position": {
+    "x": -279403.1,
+    "y": 648379.2
+   },
+   "units": [
+    {
+     "type": "Hawk ln",
+     "name": "#veafInterpreter[\"-hawk, country usa\"] Defense-Senaki"
+    }
+   ]
+  }
+ },
+ {
+  "name": "add_trigger_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "name": "Bac a sable",
+   "position": {
+    "x": -298000,
+    "y": 688000
+   },
+   "radius": 3000
+  }
+ },
+ {
+  "name": "add_trigger_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "name": "Demo CSAR",
+   "position": {
+    "x": -260641.7,
+    "y": 680225.3
+   },
+   "radius": 1500
+  }
+ }
+]
