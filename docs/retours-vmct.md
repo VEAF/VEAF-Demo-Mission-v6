@@ -3,23 +3,27 @@
 Ce que la construction de la démo (2026-10-05, veaf-tools 6.27.0, serveur MCP de `develop` à `3c257c96`) a trouvé de manquant ou de faux dans les outils.
 Chaque ligne dit quoi, où, comment on l'a vu, et ce que la démo fait à la place.
 
-## État après VMCT #1083
+## État en VMCT 6.28.0
 
-Les n° 1 à 15 sont corrigés dans VMCT par le lot `FIX-DEMO-MISSION-FINDINGS` ([VEAF/VEAF-Mission-Creation-Tools#1083](https://github.com/VEAF/VEAF-Mission-Creation-Tools/pull/1083), mergé dans `develop` le 2026-10-05), à paraître dans la version qui suit la 6.27.0.
-La démo a été reconstruite avec `develop` et vérifiée en jeu par le pont dcs-bridge le 2026-10-05.
+Les n° 1 à 15 sont corrigés par le lot `FIX-DEMO-MISSION-FINDINGS` ([VEAF/VEAF-Mission-Creation-Tools#1083](https://github.com/VEAF/VEAF-Mission-Creation-Tools/pull/1083)), et les n° 18 à 21 par les lots `FIX-COMBATMISSION-MENU-MISSING` (#1085), `FIX-DEMO-RECETTE-FINDINGS` (#1086) et `FIX-DUPLICATE-UNIT-NAMES` (#1087) ; tous sont dans la release 6.28.0 (2026-10-06).
+La démo a été recettée par le pont dcs-bridge sur la candidate `6.28.0+805f37b5` : 48 contrôles sur 48 en français, la passe anglaise verte sur `6.28.0+60130a90` hors le n° 19 corrigé depuis.
 
 | n° | Ticket VMCT | État dans la démo |
 |---|---|---|
 | 8 | 01 | Contournement retiré : « Créer un pilote abattu près de Khoni » est une action `lua` de `user_menus` ; `tools/verify.py` vérifie que chaque fonction appelée est définie dans `mission-script.lua`. Vérifié en jeu. |
 | 13 | 02 | Rien à retirer ; la config démarre en entier, mais aucune erreur de module n'a été provoquée en jeu. |
 | 12, 14 | 03 | Le commentaire reste sur sa propre ligne et `tools/verify.py` garde son contrôle ; CTLD démarre en jeu, le cas du commentaire en fin de ligne n'y a pas été rejoué. |
-| 1 | 04 | Les scripts redirigent toujours la sortie vers un fichier, tant que la 6.27.0 publiée a le défaut. |
+| 1 | 04 | Les scripts redirigent toujours la sortie vers un fichier : sans défaut depuis 6.28.0, la consigne reste pour qui construit avec une version plus ancienne. |
 | 15 | 05 | Contournement retiré : le porteur `#command="-cargoships"` de `tools/gen_08_vmct_1083.py` remplace les deux cargos natifs ; 7 navires vus en jeu. |
 | 9 | 06 | Contournement retiré : l'opération s'active depuis son menu (« +Activer la zone ») ; vérifié en jeu. |
 | 2, 3, 4, 5, 7 | 07 | Les scripts de la démo restent en place : ils ont déjà produit la mission. |
 | 6, 10, 11 | 08 | La visite cite le libellé porte-avions traduit. |
 
-Les n° 16, 17 et 19 à 21 restent ouverts ; le n° 18 est dans le lot `FIX-COMBATMISSION-MENU-MISSING`.
+| 18 | FIX-COMBATMISSION-MENU-MISSING | Menu MISSIONS présent dès le démarrage ; sonde `welcome`. |
+| 19 | FIX-DUPLICATE-UNIT-NAMES | `-menage` détruit tout, unités numérotées ; sonde `sandbox`. |
+| 20, 21 | FIX-DEMO-RECETTE-FINDINGS | Brouillard traduit ; groupe CAS nommé selon son camp, la sonde lit toujours `veafCasMission.casGroupName`. |
+
+Les n° 16 et 17 restent ouverts.
 
 ## Constats
 
