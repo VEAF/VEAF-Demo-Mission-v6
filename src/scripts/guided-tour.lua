@@ -40,7 +40,7 @@ What you should see : The VEAF menu and its submenus, and in every aircraft the 
 Le bac à sable, au sud de Kutaisi (point nommé ALPHA), sert à essayer les commandes qu'on tape dans un marqueur F10 : faire apparaître des unités, un convoi, de la fumée, un FARP, et tout effacer.
 
 À faire :
-- -sa8 : une batterie SA-8 (alias livré ; liste complète dans la documentation des raccourcis).
+- -sa8 : une batterie SA-8 (alias livré ; tous les alias sont listés dans la page « Alias » de la documentation).
 - -armor : un groupe blindé tiré au sort ; -armor, size 4, defense 0 pour le régler.
 - _spawn unit, name T-80UD, hdg 270 : un char isolé, cap 270.
 - -convoy, dest ALPHA : un convoi qui rejoint le point nommé ALPHA par la route (posez le marqueur à quelques km).
@@ -54,7 +54,7 @@ Ce qu'on doit voir : Chaque commande répond par un message et fait apparaître 
 The sandbox, south of Kutaisi (named point ALPHA), is where you try the commands typed into an F10 marker: spawn units, a convoy, smoke, a FARP, and wipe it all.
 
 What to do :
-- -sa8: an SA-8 battery (shipped alias; full list in the shortcuts documentation).
+- -sa8: an SA-8 battery (shipped alias; every alias is listed on the 'Aliases' page of the documentation).
 - -armor: a random armour group; -armor, size 4, defense 0 to tune it.
 - _spawn unit, name T-80UD, hdg 270: a single tank, heading 270.
 - -convoy, dest ALPHA: a convoy that drives by road to the named point ALPHA (place the marker a few km away).

@@ -23,7 +23,8 @@
 #   probe     sondes lancées par tools/recette_pont.py dans la mission en cours (dcs-bridge) :
 #             liste de { name, act?, check, wait?, timeout? }, Lua avec les fonctions R.* de
 #             tools/recette-lib.lua ; `check` rend `ok, détail` (voir le skill maj-demo)
-#   doc       page de documentation VEAF (chemin après /documentation/dev/)
+#   doc       page de documentation VEAF (chemin après /documentation/latest/)
+#   links     facultatif : autres pages de la documentation, liste de { path, fr, en } (libellé du lien)
 
 chapters:
   start: { fr: "1. Prise en main", en: "1. Getting started" }
@@ -83,7 +84,7 @@ steps:
       en: "The sandbox, south of Kutaisi (named point ALPHA), is where you try the commands typed into an F10 marker: spawn units, a convoy, smoke, a FARP, and wipe it all."
     how:
       fr:
-        - "`-sa8` : une batterie SA-8 (alias livré ; liste complète dans la documentation des raccourcis)."
+        - "`-sa8` : une batterie SA-8 (alias livré ; tous les alias sont listés dans la page « Alias » de la documentation)."
         - "`-armor` : un groupe blindé tiré au sort ; `-armor, size 4, defense 0` pour le régler."
         - "`_spawn unit, name T-80UD, hdg 270` : un char isolé, cap 270."
         - "`-convoy, dest ALPHA` : un convoi qui rejoint le point nommé ALPHA par la route (posez le marqueur à quelques km)."
@@ -91,7 +92,7 @@ steps:
         - "`-smoke` : une fumée blanche (`-smoke, color red` pour du rouge) ; `-farp` : un FARP complet avec son décor."
         - "`-boum` : une explosion de 500 kg ; `-menage` : détruit tout dans un rayon de 2 km (deux raccourcis propres à cette mission)."
       en:
-        - "`-sa8`: an SA-8 battery (shipped alias; full list in the shortcuts documentation)."
+        - "`-sa8`: an SA-8 battery (shipped alias; every alias is listed on the 'Aliases' page of the documentation)."
         - "`-armor`: a random armour group; `-armor, size 4, defense 0` to tune it."
         - "`_spawn unit, name T-80UD, hdg 270`: a single tank, heading 270."
         - "`-convoy, dest ALPHA`: a convoy that drives by road to the named point ALPHA (place the marker a few km away)."
@@ -148,6 +149,8 @@ steps:
         return n == 0, n .. " unités restantes " .. R.types(t)
       timeout: 30
     doc: "mission-maker/scripts/veafSpawn/"
+    links:
+      - { path: "ALIASES/", fr: "Liste des alias", en: "Alias list" }
 
   - id: generated
     chapter: start
