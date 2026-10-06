@@ -1,0 +1,35 @@
+# Généré par tools/gen_i18n.py depuis src/versions.yaml et i18n/en.yaml : ne pas modifier à la main.
+# Variantes météo du build anglais (profil EN) : même météo, noms anglais.
+position:
+  latitude: 42.179154
+  longitude: 42.495684
+  timezone: Asia/Tbilisi
+base_date: '2024-06-15'
+versions:
+- name: morning-real
+  time: 09:00
+  airport_icao: UGKO
+- name: morning-clear
+  time: 09:00
+  weather:
+    temperature: 22.0
+    wind_speed: 3.0
+    wind_direction: 270.0
+    visibility: 40000
+    cloud_type: clear
+    fog_enabled: false
+- name: dawn-scattered
+  time: sunrise
+  metar: METAR UGKO 150300Z 09006KT 9999 SCT040 16/12 Q1015
+- name: evening-rain
+  time: sunset-45*60
+  metar: METAR UGKO 151700Z 27014G24KT 5000 RA OVC015 17/16 Q1008
+- name: night-clear
+  time: '23:00'
+  weather:
+    temperature: 16.0
+    wind_speed: 2.0
+    wind_direction: 90.0
+    visibility: 40000
+    cloud_type: clear
+    fog_enabled: false

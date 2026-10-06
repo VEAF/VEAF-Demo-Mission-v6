@@ -105,3 +105,12 @@ combat_missions:
     elements:
       Bombardiers: Bombers
       Escorte: Escort
+
+# Noms des variantes météo de src/versions.yaml dans les .miz anglais (nom de fichier) :
+# tools/gen_i18n.py écrit src/versions.en.yaml, que le profil EN désigne (pipeline.weather.file).
+weather_variants:
+  matin-reel: morning-real
+  matin-degage: morning-clear
+  aube-epars: dawn-scattered
+  soir-pluie: evening-rain
+  nuit-degage: night-clear

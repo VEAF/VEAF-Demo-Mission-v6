@@ -13,13 +13,14 @@ Elle a deux usages : faire découvrir chaque fonctionnalité aux joueurs (visite
 4. `python tools/gen_tour.py`, puis `python tools/gen_map.py` si un lieu a bougé, puis `python tools/gen_05_dessins.py` + `python tools/mcp.py batch tools/batches/05-dessins.json` pour les dessins F10 ;
 5. `.\veaf-tools.exe mission validate`, `.\veaf-tools.exe build`, `python tools/localize_miz.py`, `python tools/verify.py` (tout au vert) ; `lua tools/test_tour.lua fr` et `en`.
 
-Ne jamais modifier à la main `README.md`, `README.en.md`, `docs/recette.md`, `src/scripts/guided-tour.lua`, ni la fin de `mission.yaml` (profils et `build_variants`) : ils sont générés.
+Ne jamais modifier à la main `README.md`, `README.en.md`, `docs/recette.md`, `src/scripts/guided-tour.lua`, `src/versions.en.yaml`, ni la fin de `mission.yaml` (profils et `build_variants`) : ils sont générés.
 
 ## Deux langues, deux missions complètes
 
 Un build produit une mission `_FR` et une `_EN` par variante météo (`build_variants` de `mission.yaml`, profils `FR` et `EN`).
 `mission.yaml` et `src/mission/` portent le français ; le profil `EN` (généré depuis `i18n/en.yaml`) traduit la configuration VEAF, et `tools/localize_miz.py` traduit après le build ce qui vit dans la mission DCS (briefing, étiquettes F10, cartes).
 Les noms de groupes et de zones de combat visibles sur la carte F10 sont des identifiants anglais neutres, communs aux deux.
+Les variantes météo s'éditent dans `src/versions.yaml` seulement : `tools/gen_i18n.py` en tire `src/versions.en.yaml` (même météo, noms anglais d'`i18n/en.yaml`), que le profil `EN` désigne, et les `.miz` anglais portent ces noms.
 
 ## Avant chaque release des outils
 

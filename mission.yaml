@@ -516,6 +516,9 @@ profiles:
       - name: Escort
         groups:
         - Raid Senaki - MiG-29S
+    pipeline:
+      weather:
+        file: src/versions.en.yaml
   LOCAL_TEST:
     global_log_level: debug
     pipeline:
@@ -711,6 +714,6 @@ profiles:
       - name: Escort
         groups:
         - Raid Senaki - MiG-29S
-    global_log_level: debug
     pipeline:
       weather: false
+    global_log_level: debug

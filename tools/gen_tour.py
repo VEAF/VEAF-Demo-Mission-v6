@@ -34,6 +34,8 @@ WEATHER = {
     "en": [("matin-reel", "morning, real Kutaisi weather"), ("matin-degage", "morning, clear sky"),
            ("aube-epars", "dawn, scattered clouds"), ("soir-pluie", "evening, rain"), ("nuit-degage", "night, clear sky")],
 }
+# les .miz _EN portent les noms anglais des variantes (src/versions.en.yaml, tools/gen_i18n.py)
+VARIANT_EN = yaml.safe_load((ROOT / "i18n/en.yaml").read_text(encoding="utf-8"))["weather_variants"]
 
 
 def downloads(lang):
@@ -41,8 +43,9 @@ def downloads(lang):
     head = "| Météo | Français | Anglais |" if lang == "fr" else "| Weather | French | English |"
     rows = [head, "|---|---|---|"]
     for variant, label in WEATHER[lang]:
+        en = VARIANT_EN[variant]
         rows.append(f"| {label} | [{variant}_FR.miz]({MIZ.format(lang='FR', variant=variant)}) "
-                    f"| [{variant}_EN.miz]({MIZ.format(lang='EN', variant=variant)}) |")
+                    f"| [{en}_EN.miz]({MIZ.format(lang='EN', variant=en)}) |")
     return chr(10).join(rows)
 
 data = yaml.safe_load((ROOT / "tour/steps.yaml").read_text(encoding="utf-8"))
@@ -141,7 +144,7 @@ def sentences(s):
 
 # ── README ─────────────────────────────────────────────────────────────────────────────────────
 INTRO = {
-    "fr": f"""Ce document est aussi disponible [en anglais](README.en.md).
+    "fr": f"""🇬🇧 *This document is also available [in English](README.en.md).*
 
 # Mission de démo VEAF (Caucase)
 
@@ -198,7 +201,7 @@ Tous les aérodromes russes et abkhazes sont rouges, sans slot. Les dynamiques n
 | CVN-71 Roosevelt | 271.0 AM | 71X TDR, ICLS 1, Link 4 337.0 | — | au large de Batumi |
 | FARP Khoni | 127.5 AM | — | — | sud-ouest de Khoni |
 """,
-    "en": f"""This document is also available [in French](README.md).
+    "en": f"""🇫🇷 *Ce document existe aussi [en français](README.md).*
 
 # VEAF demo mission (Caucasus)
 

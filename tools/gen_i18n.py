@@ -1,4 +1,4 @@
-"""Écrit la fin de mission.yaml : les profils FR et EN, leurs profils de test, et `build_variants`.
+"""Écrit la fin de mission.yaml (profils FR et EN, leurs profils de test, `build_variants`) et src/versions.en.yaml.
 
     python tools/gen_i18n.py
 
@@ -99,10 +99,23 @@ for m in cms:
             missing.append(f"combat_missions.{m['name']}.elements.{e['name']}")
         e["name"] = names.get(e["name"], e["name"])
 
+# Variantes météo : même météo, noms anglais (ils finissent dans le nom des .miz _EN). Le build lit le
+# fichier que le profil désigne (pipeline.weather.file), versions.yaml reste la seule source à éditer.
+VERSIONS_EN = "src/versions.en.yaml"
+versions = yaml.safe_load((ROOT / "src/versions.yaml").read_text(encoding="utf-8"))
+for v in versions["versions"]:
+    v["name"] = tr("weather_variants", v["name"])
+
 if missing:
     sys.exit("traductions manquantes dans i18n/en.yaml :\n  " + "\n  ".join(missing))
 
-EN_PROFILE = {"mission": {"language": "en"}, "modules": en_modules, "cap_missions": caps, "combat_missions": cms}
+(ROOT / VERSIONS_EN).write_text(
+    "# Généré par tools/gen_i18n.py depuis src/versions.yaml et i18n/en.yaml : ne pas modifier à la main.\n"
+    "# Variantes météo du build anglais (profil EN) : même météo, noms anglais.\n"
+    + yaml.safe_dump(versions, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")
+
+EN_PROFILE = {"mission": {"language": "en"}, "modules": en_modules, "cap_missions": caps, "combat_missions": cms,
+              "pipeline": {"weather": {"file": VERSIONS_EN}}}
 TEST = {"global_log_level": "debug", "pipeline": {"weather": False}}
 profiles = {
     "FR": {"mission": {"language": "fr"}},
@@ -123,4 +136,4 @@ body = yaml.safe_dump({"build_variants": ["FR", "EN"], "profiles": profiles}, al
 text = (ROOT / "mission.yaml").read_text(encoding="utf-8")
 i = text.index(MARK)
 (ROOT / "mission.yaml").write_text(text[:i] + header + body, encoding="utf-8")
-print("mission.yaml : build_variants FR, EN ; profils FR, EN, LOCAL_TEST, LOCAL_TEST_EN")
+print(f"mission.yaml : build_variants FR, EN ; profils FR, EN, LOCAL_TEST, LOCAL_TEST_EN ; {VERSIONS_EN}")

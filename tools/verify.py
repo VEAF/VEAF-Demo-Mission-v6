@@ -21,6 +21,8 @@ from i18n_texts import BRIEFING, drawing_labels  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 CFG = yaml.safe_load((ROOT / "mission.yaml").read_text(encoding="utf-8"))
+VARIANTS_FR = {v["name"] for v in yaml.safe_load((ROOT / "src/versions.yaml").read_text(encoding="utf-8"))["versions"]}
+VARIANTS_EN = set(yaml.safe_load((ROOT / "i18n/en.yaml").read_text(encoding="utf-8"))["weather_variants"].values())
 STEPS = yaml.safe_load((ROOT / "tour/steps.yaml").read_text(encoding="utf-8"))["steps"]
 NUM = {}
 for _i, _s in enumerate(STEPS, 1):
@@ -145,6 +147,11 @@ def check(path):
     name = Path(path).name
     if "_EN" in name or "_FR" in name:
         verdict(("_EN" in name) == (lang == "en"), "langue du profil conforme au nom du .miz", f"{lang} pour {name}")
+    # variante météo : nom français dans un _FR, anglais dans un _EN (src/versions.en.yaml, tools/gen_i18n.py)
+    variant = name[:-4].split("_EN_" if lang == "en" else "_FR_")[-1] if ("_EN_" in name or "_FR_" in name) else None
+    if variant is not None:
+        names = VARIANTS_EN if lang == "en" else VARIANTS_FR
+        verdict(variant in names, f"nom de variante météo en {lang}", f"{variant} pour {name}")
     expected = BRIEFING[lang]
     texts = [o.get("text") for layer in seq((m.get("drawings") or {}).get("layers"))
              for o in seq(layer.get("objects")) if o.get("text")]
