@@ -7,12 +7,54 @@ Chaque ligne est un observable : on coche quand on l'a vu, on note ce qu'on a vu
 
 ## Avant DCS
 
-- [ ] `veaf-tools mission validate` sans erreur.
-- [ ] `veaf-tools build` sans erreur, missions `_FR` et `_EN` ; journal relu : presets injectés, waypoints injectés, liens des entrepôts, nombre de variantes météo, aucun avertissement nouveau.
-- [ ] `python tools/localize_miz.py` : chaque `.miz` `_EN` localisé (briefing, étiquettes F10, cartes).
-- [ ] `python tools/verify.py` : tous les contrôles des `.miz` au vert, dans les deux langues.
+- [ ] `python tools/build_candidate.py` sans erreur : validate, build des missions `_FR` et `_EN`, localisation, missions de test, `verify.py` au vert.
+- [ ] Journal du build relu (`missions/candidate-build.log`) : presets injectés, waypoints injectés, liens des entrepôts, nombre de variantes météo, aucun avertissement nouveau.
+
+## Par le pont
+
+Sur `missions-test/VEAF_Demo_TEST_FR.miz` fraîchement chargée : `python tools/recette_pont.py --lang fr` ; puis sur `_EN.miz` : `--lang en`.
+Il vérifie que chaque chemin « VEAF > … » cité par la visite existe dans le menu, puis lance les sondes de chaque étape :
+
+- 01 Bienvenue : Configuration VEAF chargée en entier (zones, missions, QRA, moyens, fonction du menu Démo)
+- 01 Bienvenue : Mission, configuration VEAF et visite guidée dans la langue demandée (--lang)
+- 01 Bienvenue : Menu VEAF > MISSIONS présent dès le démarrage
+- 02 Bac à sable : les commandes de marqueur : `-sa8` : une batterie SA-8 au marqueur
+- 02 Bac à sable : les commandes de marqueur : `_spawn unit, name T-80UD, hdg 270` : un char
+- 02 Bac à sable : les commandes de marqueur : `-armor` : un groupe blindé
+- 02 Bac à sable : les commandes de marqueur : `-point BRAVO` : un point nommé
+- 02 Bac à sable : les commandes de marqueur : `-farp` : un FARP et son décor
+- 02 Bac à sable : les commandes de marqueur : `-menage` : tout est détruit autour du marqueur
+- 03 Missions générées : CAS et transport : `_cas` : un groupe ennemi et le menu MISSION CAS
+- 03 Missions générées : CAS et transport : `_transport, from ALPHA` : mission créée, menu MISSION DE TRANSPORT peuplé
+- 04 Entraînement de Khoni : trois niveaux : Khoni facile : huit camions
+- 04 Entraînement de Khoni : trois niveaux : Khoni moyen : plus que le facile, dont 2 pièces de DCA sur 4
+- 04 Entraînement de Khoni : trois niveaux : Khoni difficile : plus que le moyen
+- 05 Front de Gali, et le drone JTAC : Gali : la zone apparaît, artillerie Msta comprise
+- 05 Front de Gali, et le drone JTAC : Reaper 1 déclaré JTAC par CTLD, code 1511
+- 06 Défense aérienne intégrée (Skynet) : Réseau rouge : SA-11, SA-15, SA-6 d'Ochamchire et EWR inscrits dans Skynet
+- 07 Mission chaînée : le port d'Ochamchire : Port activé ; la zone des navires n'existe pas encore
+- 07 Mission chaînée : le port d'Ochamchire : Port détruit : les navires apparaissent une minute après
+- 08 Opération Tkvarcheli : tâches et dépendances : Opération activée depuis son menu : les trois tâches apparaissent
+- 09 Convoi en mouvement : Convoi activé : il roule
+- 10 QRA de Soukhoumi : QRA de Soukhoumi prête
+- 11 CAP à la demande et raid sur Senaki : Menu MISSIONS : la CAP MiG-29S Good scale 1 apparaît en vol
+- 11 CAP à la demande et raid sur Senaki : `-airstart Raid-Senaki/Good/1` : le raid apparaît avec son escorte
+- 11 CAP à la demande et raid sur Senaki : `-airstop Raid-Senaki/Good/1` : le raid s'arrête
+- 12 Arène BVR (vagues aériennes) : Arène BVR enregistrée avec ses trois vagues
+- 13 Sanctuaire rouge de Gudauta : Sanctuaire rouge de Gudauta enregistré (15 km, protection contre les missiles)
+- 14 Ravitailleurs, AWACS et escorte : Texaco 1, Arco 1, Overlord 1 et son escorte en vol
+- 14 Ravitailleurs, AWACS et escorte : Menu MOYENS : Overlord 1 réapparaît avec son escorte
+- 15 Hélicoptères : FARP, CTLD, CSAR : FARP Khoni présent
+- 15 Hélicoptères : FARP, CTLD, CSAR : Pilote abattu créé par la fonction du menu Démo : commandes
+- 16 Porte-avions Stennis et Roosevelt : Opérations aériennes du Stennis : il accélère face au vent
+- 16 Porte-avions Stennis et Roosevelt : S-3B et Pedro du Stennis présents avec les opérations
+
+- [ ] FR : `0 en échec`.
+- [ ] EN : `0 en échec`.
 
 ## En jeu
+
+Ce que les sondes ne voient pas : ce qui se lit, s'entend ou se pilote.
 
 Version des outils : `______`  —  Date : `______`  —  Testeur : `______`
 
@@ -42,4 +84,4 @@ Version des outils : `______`  —  Date : `______`  —  Testeur : `______`
 - [ ] Les dessins F10 (cercles et étiquettes des étapes) sont visibles et lisibles sur la carte du camp bleu.
 - [ ] Version anglaise (`_EN`) : menus VEAF, CTLD, visite, « Demo: commands », briefing, carte F10 et cartes du briefing en anglais ; dérouler au moins les étapes 01, 02, 04 et 10 en anglais.
 - [ ] La visite guidée existe dans la langue du build, et chaque entrée pose son repère F10.
-- [ ] Les chemins de menu cités par la visite correspondent aux menus réels.
+- [ ] Les chemins de menu hors VEAF cités par la visite (CTLD, SKYNET, Démo : commandes) correspondent aux menus réels.

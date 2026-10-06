@@ -35,3 +35,4 @@ src/scripts/veafDynamicConfig.lua
 # Python
 __pycache__/
 *.pyc
+/dcs-serve.yaml

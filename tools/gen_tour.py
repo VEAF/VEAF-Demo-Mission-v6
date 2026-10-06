@@ -406,17 +406,29 @@ def gen_recette():
            "",
            "## Avant DCS",
            "",
-           "- [ ] `veaf-tools mission validate` sans erreur.",
-           "- [ ] `veaf-tools build` sans erreur, missions `_FR` et `_EN` ; journal relu : presets injectés, waypoints injectés, liens des entrepôts, nombre de variantes météo, aucun avertissement nouveau.",
-           "- [ ] `python tools/localize_miz.py` : chaque `.miz` `_EN` localisé (briefing, étiquettes F10, cartes).",
-           "- [ ] `python tools/verify.py` : tous les contrôles des `.miz` au vert, dans les deux langues.",
+           "- [ ] `python tools/build_candidate.py` sans erreur : validate, build des missions `_FR` et `_EN`, localisation, missions de test, `verify.py` au vert.",
+           "- [ ] Journal du build relu (`missions/candidate-build.log`) : presets injectés, waypoints injectés, liens des entrepôts, nombre de variantes météo, aucun avertissement nouveau.",
            "",
-           "## En jeu",
+           "## Par le pont",
            "",
-           "Version des outils : `______`  —  Date : `______`  —  Testeur : `______`",
-           "",
-           "| # | Étape | Contrôle | OK | Constat |",
-           "|---|---|---|---|---|"]
+           "Sur `missions-test/VEAF_Demo_TEST_FR.miz` fraîchement chargée : `python tools/recette_pont.py --lang fr` ; puis sur `_EN.miz` : `--lang en`.",
+           "Il vérifie que chaque chemin « VEAF > … » cité par la visite existe dans le menu, puis lance les sondes de chaque étape :",
+           ""]
+    for i, s in enumerate(STEPS, 1):
+        for pr in s.get("probe") or []:
+            out.append(f"- {i:02d} {s['title']['fr']} : {pr['name']}")
+    out += ["",
+            "- [ ] FR : `0 en échec`.",
+            "- [ ] EN : `0 en échec`.",
+            "",
+            "## En jeu",
+            "",
+            "Ce que les sondes ne voient pas : ce qui se lit, s'entend ou se pilote.",
+            "",
+            "Version des outils : `______`  —  Date : `______`  —  Testeur : `______`",
+            "",
+            "| # | Étape | Contrôle | OK | Constat |",
+            "|---|---|---|---|---|"]
     for i, s in enumerate(STEPS, 1):
         out.append(f"| {i:02d} | {s['title']['fr']} | {s['check']} | ☐ | |")
     out += ["", "## Hors étapes", "",
@@ -424,7 +436,7 @@ def gen_recette():
             "- [ ] Les dessins F10 (cercles et étiquettes des étapes) sont visibles et lisibles sur la carte du camp bleu.",
             "- [ ] Version anglaise (`_EN`) : menus VEAF, CTLD, visite, « Demo: commands », briefing, carte F10 et cartes du briefing en anglais ; dérouler au moins les étapes 01, 02, 04 et 10 en anglais.",
             "- [ ] La visite guidée existe dans la langue du build, et chaque entrée pose son repère F10.",
-            "- [ ] Les chemins de menu cités par la visite correspondent aux menus réels.", ""]
+            "- [ ] Les chemins de menu hors VEAF cités par la visite (CTLD, SKYNET, Démo : commandes) correspondent aux menus réels.", ""]
     (ROOT / "docs").mkdir(exist_ok=True)
     (ROOT / "docs/recette.md").write_text("\n".join(out), encoding="utf-8")
 

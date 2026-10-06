@@ -273,7 +273,7 @@ Des patrouilles rouges qu'on fait apparaître depuis le menu, de menaces différ
 
 **À faire** :
 
-- Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > niveau (Good, Excellent) > taille (scale 1, 2) > Activer la mission.
+- Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > scale 1 > Activer la mission ; même menu pour le niveau Excellent et la taille scale 2.
 - Menu F10 > Autre > VEAF > MISSIONS > Raid sur Senaki > Good > scale 1 > Activer la mission, puis interceptez les bombardiers.
 - Ou par marqueur : `-airstart Raid-Senaki/Good/1`, `-airstop Raid-Senaki/Good/1` (nom, niveau, taille).
 
@@ -358,7 +358,7 @@ Le menu OPS PORTE-AVIONS met le navire face au vent pour les opérations aérien
 **À faire** :
 
 - Stennis : TACAN 74X STN, ICLS 4, Link 4 336.0, tour 274.0 AM. Roosevelt : TACAN 71X TDR, ICLS 1, Link 4 337.0, tour 271.0 AM.
-- Menu F10 > Autre > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > Démarrer les opérations aériennes pour 45 minutes.
+- Menu F10 > Autre > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > +Démarrer les opérations aériennes pour 45 minutes.
 - Slots de pont : Stennis F/A-18C, Roosevelt F-14B.
 
 **Ce qu'on doit voir** : Le porte-avions vire face au vent, accélère, et le menu donne le cap de récupération ; le S-3B ravitaille.
@@ -375,8 +375,8 @@ Sur un serveur VEAF, la météo suit la METAR réelle de Kutaisi (UGKO).
 **À faire** :
 
 - Prenez un slot à Kutaisi : lisez le message d'accueil.
-- Menu F10 > Autre > VEAF > MÉTÉO ET ATC > météo au point le plus proche / ATC de la base la plus proche.
-- En F-16C à Kutaisi : F10 > Autre > VEAF > Assistance > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE.
+- Menu F10 > Autre > VEAF > MÉTÉO ET ATC > Météo sur le point le plus proche ; dans le même menu, ATC de la base la plus proche.
+- En F-16C à Kutaisi : F10 > Autre > VEAF > ASSISTANCE > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE.
 
 **Ce qu'on doit voir** : Le message d'accueil donne la piste en service ; la checklist coche les étapes déjà faites.
 

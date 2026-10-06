@@ -19,7 +19,10 @@
 #   what      fr / en : ce que c'est, en une ou deux phrases
 #   how       fr / en : ce que le joueur fait (liste)
 #   see       fr / en : ce qu'il doit observer
-#   check     contrôle de recette (fr) : l'observable qui dit que la fonctionnalité marche
+#   check     contrôle de recette (fr) : l'observable qui dit que la fonctionnalité marche, à l'œil
+#   probe     sondes lancées par tools/recette_pont.py dans la mission en cours (dcs-bridge) :
+#             liste de { name, act?, check, wait?, timeout? }, Lua avec les fonctions R.* de
+#             tools/recette-lib.lua ; `check` rend `ok, détail` (voir le skill maj-demo)
 #   doc       page de documentation VEAF (chemin après /documentation/dev/)
 
 chapters:
@@ -50,6 +53,24 @@ steps:
       fr: "Le menu VEAF, ses sous-menus, et dans chaque avion les préréglages radio et les points de navigation injectés par le build."
       en: "The VEAF menu and its submenus, and in every aircraft the radio presets and waypoints injected by the build."
     check: "Menu F10 > Autre > VEAF présent ; canal 1 de la radio d'un F-16C = un canal du plan VEAF ; points de navigation présents dans l'avion ; slots dynamiques sur Kutaisi, Senaki, Kobuleti, Batumi (multijoueur)."
+    probe:
+    - name: "Configuration VEAF chargée en entier (zones, missions, QRA, moyens, fonction du menu Démo)"
+      check: |
+        local zones, missions = R.count(veafCombatZone.zonesDict), R.count(veafCombatMission.missionsDict)
+        local ok = zones >= 12 and missions >= 30 and veafQraManager.get("QRA Sukhumi") ~= nil
+          and veafAssets.get("Texaco 1") ~= nil and type(demo.spawnCsar) == "function"
+        return ok, zones .. " zones, " .. missions .. " missions"
+    - name: "Mission, configuration VEAF et visite guidée dans la langue demandée (--lang)"
+      check: |
+        local cfg = veaf.config.language or "fr"
+        local tour = demoTour and demoTour.lang
+        return cfg == R.expected and tour == R.expected, "config " .. tostring(cfg) .. ", visite " .. tostring(tour) .. ", attendu " .. R.expected
+    - name: "Menu VEAF > MISSIONS présent dès le démarrage"
+      check: |
+        for _, sm in ipairs(veafRadio._builder._root.subMenus) do
+          if sm.title == "MISSIONS" then return true, #sm.subMenus .. " missions au menu" end
+        end
+        return false, "pas de menu MISSIONS (VMCT FIX-COMBATMISSION-MENU-MISSING)"
     doc: "mission-maker/GUIDE/"
 
   - id: sandbox
@@ -81,6 +102,51 @@ steps:
       fr: "Chaque commande répond par un message et fait apparaître ce qu'elle annonce à l'emplacement du marqueur ; le marqueur disparaît une fois la commande exécutée."
       en: "Each command answers with a message and spawns what it announces at the marker; the marker disappears once the command has run."
     check: "`-sa8`, `-armor`, `-convoy, dest ALPHA`, `-point`, `-smoke`, `-farp`, `-boum`, `-menage` : chacune produit son effet au marqueur, sans erreur dans dcs.log."
+    probe:
+    - name: "`-sa8` : une batterie SA-8 au marqueur"
+      act: |
+        R.marker("-sa8", "Bac a sable", -1500, 0)
+      check: |
+        local _, _, t = R.inZone("Bac a sable")
+        return (t["Osa 9A33 ln"] or 0) >= 1, R.types(t)
+      timeout: 20
+    - name: "`_spawn unit, name T-80UD, hdg 270` : un char"
+      act: |
+        R.marker("_spawn unit, name T-80UD, hdg 270", "Bac a sable", 1500, 0)
+      check: |
+        local _, _, t = R.inZone("Bac a sable")
+        return (t["T-80UD"] or 0) >= 1, R.types(t)
+      timeout: 20
+    - name: "`-armor` : un groupe blindé"
+      act: |
+        R.mem.armorBefore = R.inZone("Bac a sable")
+        R.marker("-armor", "Bac a sable", 0, 1500)
+      check: |
+        local n = R.inZone("Bac a sable")
+        return n >= R.mem.armorBefore + 3, R.mem.armorBefore .. " -> " .. n .. " unités"
+      timeout: 20
+    - name: "`-point BRAVO` : un point nommé"
+      act: |
+        R.marker("-point BRAVO", "Bac a sable", 0, -1500)
+      check: |
+        return veafNamedPoints.getPoint("BRAVO") ~= nil, ""
+      timeout: 10
+    - name: "`-farp` : un FARP et son décor"
+      act: |
+        local _, s = R.inZone("Bac a sable")
+        R.mem.farpBefore = s
+        R.marker("-farp", "Bac a sable", 1000, 1000)
+      check: |
+        local _, s = R.inZone("Bac a sable")
+        return s > R.mem.farpBefore, R.mem.farpBefore .. " -> " .. s .. " statiques"
+      timeout: 20
+    - name: "`-menage` : tout est détruit autour du marqueur"
+      act: |
+        R.marker("-menage", "Bac a sable")
+      check: |
+        local n, _, t = R.inZone("Bac a sable", -1500)
+        return n == 0, n .. " unités restantes " .. R.types(t)
+      timeout: 30
     doc: "mission-maker/scripts/veafSpawn/"
 
   - id: generated
@@ -106,6 +172,26 @@ steps:
       fr: "Un menu propre à la mission générée, et un message quand l'objectif est atteint."
       en: "A menu specific to the generated mission, and a message when the objective is met."
     check: "`_cas` : groupe ennemi créé, menu MISSION CAS peuplé, fumée sur cible. `_transport, from ALPHA` : menu MISSION DE TRANSPORT peuplé, zone de livraison fumée."
+    probe:
+    - name: "`_cas` : un groupe ennemi et le menu MISSION CAS"
+      act: |
+        R.marker("_cas", "Bac a sable")
+      check: |
+        local menu = R.menu(R.L("MISSION CAS", "CAS MISSION"))
+        local g = Group.getByName(veafCasMission.casGroupName)
+        local n = R.alive(veafCasMission.casGroupName)
+        local enemy = g ~= nil and g:getCoalition() == coalition.side.RED
+        return n > 0 and enemy and #menu.commands + #menu.subMenus > 1, n .. " unités ennemies dans " .. veafCasMission.casGroupName
+      timeout: 30
+    - name: "`_transport, from ALPHA` : mission créée, menu MISSION DE TRANSPORT peuplé"
+      act: |
+        R.marker("_transport, from ALPHA", "combatZone_Khoni_Easy", 4000, 0)
+      check: |
+        local menu = R.menu(R.L("MISSION DE TRANSPORT", "TRANSPORT MISSION"))
+        local titles = {}
+        for _, c in ipairs(menu.commands) do table.insert(titles, c.title) end
+        return #menu.commands > 1, table.concat(titles, " | ")
+      timeout: 30
     doc: "mission-maker/scripts/veafCasMission/"
 
   # ── 2. Zones de combat ─────────────────────────────────────────────────────────────────────
@@ -130,6 +216,40 @@ steps:
       fr: "Facile : huit camions. Moyen : les camions, une compagnie blindée et deux pièces de DCA tirées parmi quatre (jamais les mêmes d'une fois sur l'autre). Difficile : en plus, un bataillon blindé et deux systèmes courte portée tirés au sort."
       en: "Easy: eight trucks. Medium: the trucks, an armour company and two AAA pieces drawn among four (never the same twice). Hard: on top, an armour battalion and two short-range systems drawn at random."
     check: "Chaque niveau fait apparaître plus que celui qu'il inclut ; le tirage #spawngroup donne 2 pièces de DCA sur 4 au moyen, différentes d'une activation à l'autre ; la zone se termine quand tout est détruit."
+    probe:
+    - name: "Khoni facile : huit camions"
+      act: |
+        R.click(R.L("ZONES DE COMBAT", "COMBAT ZONES"), R.L("Entraînement Khoni", "Khoni training"), R.L("Khoni - facile", "Khoni - easy"), R.L("Activer la zone", "Activate zone"))
+      check: |
+        local n, _, t = R.inZone("combatZone_Khoni_Easy")
+        R.mem.easy = n
+        return n >= 8, n .. " unités " .. R.types(t)
+      timeout: 30
+    - name: "Khoni moyen : plus que le facile, dont 2 pièces de DCA sur 4"
+      act: |
+        veafCombatZone.DesactivateZone("combatZone_Khoni_Easy", true)
+        R.click(R.L("ZONES DE COMBAT", "COMBAT ZONES"), R.L("Entraînement Khoni", "Khoni training"), R.L("Khoni - moyen", "Khoni - medium"), R.L("Activer la zone", "Activate zone"))
+      check: |
+        local n, _, t = R.inZone("combatZone_Khoni_Easy")
+        R.mem.medium = n
+        -- les pièces de DCA tirées au sort (#spawngroup) sont des groupes à part ; un Shilka peut aussi
+        -- venir de la défense du peloton blindé, d'où le compte par groupe et non par type d'unité
+        local aaa = 0
+        for _, name in pairs(veafCombatZone.GetZone("combatZone_Khoni_Medium").spawnedGroups or {}) do
+          if not name:find("-target-", 1, true) and not name:find("Armored", 1, true) then aaa = aaa + 1 end
+        end
+        return n > R.mem.easy and aaa == 2, R.mem.easy .. " -> " .. n .. " unités, " .. aaa .. " groupes de DCA, " .. R.types(t)
+      wait: 5
+      timeout: 30
+    - name: "Khoni difficile : plus que le moyen"
+      act: |
+        veafCombatZone.DesactivateZone("combatZone_Khoni_Medium", true)
+        R.click(R.L("ZONES DE COMBAT", "COMBAT ZONES"), R.L("Entraînement Khoni", "Khoni training"), R.L("Khoni - difficile", "Khoni - hard"), R.L("Activer la zone", "Activate zone"))
+      check: |
+        local n, _, t = R.inZone("combatZone_Khoni_Easy")
+        return n > R.mem.medium, R.mem.medium .. " -> " .. n .. " unités " .. R.types(t)
+      wait: 5
+      timeout: 30
     doc: "mission-maker/scripts/veafCombatZone/"
 
   - id: front
@@ -153,6 +273,18 @@ steps:
       fr: "Un seul des deux groupes blindés apparaît ; le drone annonce sa cible et la désigne au code 1511."
       en: "Only one of the two armour groups appears; the drone announces its target and lases it on code 1511."
     check: "Un seul groupe blindé sur deux ; artillerie Msta présente ; Reaper 1 déclaré JTAC par CTLD sur le code 1511 et 35.55 FM, et il désigne un véhicule."
+    probe:
+    - name: "Gali : la zone apparaît, artillerie Msta comprise"
+      act: |
+        R.click(R.L("ZONES DE COMBAT", "COMBAT ZONES"), R.L("Front de Gali", "Gali front"), R.L("Activer la zone", "Activate zone"))
+      check: |
+        local n, _, t = R.inZone("combatZone_Gali")
+        return n > 0 and (t["SAU Msta"] or 0) > 0, n .. " unités " .. R.types(t)
+      timeout: 30
+    - name: "Reaper 1 déclaré JTAC par CTLD, code 1511"
+      check: |
+        local j = CTLDJTACManager.getInstance().jtacs["Reaper 1"]
+        return j ~= nil and j.laserCode == 1511, j and ("code " .. tostring(j.laserCode) .. ", " .. tostring(j.state)) or "absent"
     doc: "mission-maker/concepts/combat-zones/"
 
   - id: iads
@@ -176,6 +308,16 @@ steps:
       fr: "Le SA-6 n'émet pas tant que le réseau ne vous a pas détecté, puis s'allume ; le menu SKYNET IADS COALITION: RED montre quel site émet."
       en: "The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS COALITION: RED menu shows which site is emitting."
     check: "SA-11, SA-15 et EWR présents dès le départ (interpréteur) ; SA-6 d'Ochamchire actif au démarrage et inscrit dans le réseau Skynet ; radar éteint tant qu'aucun avion bleu n'est détecté ; menu SKYNET IADS COALITION: RED présent ; vue des guetteurs rouge affichable depuis le slot game master rouge."
+    probe:
+    - name: "Réseau rouge : SA-11, SA-15, SA-6 d'Ochamchire et EWR inscrits dans Skynet"
+      check: |
+        local iads = veafSkynet.getIADS("red iads")
+        local names = {}
+        for _, s in ipairs(iads:getSAMSites()) do table.insert(names, s:getDCSName()) end
+        local all = table.concat(names, " ")
+        local ok = all:find("SA11", 1, true) and all:find("SA15", 1, true) and all:find("SA6", 1, true)
+          and #iads:getEarlyWarningRadars() >= 1 and veafCombatZone.GetZone("combatZone_Ochamchire_SAM"):isActive()
+        return ok and true or false, #names .. " sites, " .. #iads:getEarlyWarningRadars() .. " EWR : " .. all
     doc: "mission-maker/scripts/veafSkynetIadsHelper/"
 
   - id: chained
@@ -197,6 +339,25 @@ steps:
       fr: "La zone 1 se termine, et les navires apparaissent au large sans qu'aucun menu ne les ait activés. Attention : le cercle de la QRA de Soukhoumi couvre Ochamchire."
       en: "Zone 1 completes, and the ships appear offshore without any menu activating them. Beware: the Sukhumi QRA circle covers Ochamchire."
     check: "La zone 2 (navires) n'existe pas avant la fin de la zone 1 et apparaît 60 s après ; elle n'a pas de menu propre."
+    probe:
+    - name: "Port activé ; la zone des navires n'existe pas encore"
+      act: |
+        R.click(R.L("ZONES DE COMBAT", "COMBAT ZONES"), R.L("Port d'Ochamchire - 1 : dépôt", "Ochamchire port - 1: depot"), R.L("Activer la zone", "Activate zone"))
+      check: |
+        local n = R.inZone("combatZone_Ochamchire_Port")
+        local ships = veafCombatZone.GetZone("combatZone_Ochamchire_Ships"):isActive()
+        return n > 0 and not ships, n .. " unités au port, navires actifs : " .. tostring(ships)
+      timeout: 30
+    - name: "Port détruit : les navires apparaissent une minute après"
+      act: |
+        R.destroyZone("combatZone_Ochamchire_Port")
+      check: |
+        local n, _, t = R.inZone("combatZone_Ochamchire_Ships")
+        local cargo = 0
+        for k, v in pairs(t) do if k:find("cargo", 1, true) or k == "ELNYA" then cargo = cargo + v end end
+        return cargo >= 3, n .. " navires " .. R.types(t)
+      wait: 60
+      timeout: 120
     doc: "mission-maker/scripts/veafCombatZone/"
 
   - id: operation
@@ -218,6 +379,19 @@ steps:
       fr: "Les tâches passent de « en cours » à « terminée » ; quand les trois sont faites, le message « L'opération … est terminée »."
       en: "Tasks move from \"in progress\" to \"done\"; when all three are done, the message \"Operation … is over\"."
     check: "L'opération active ses trois zones ; la tâche PC n'est listée comme objectif qu'après radar + dépôt ; les statiques détruits sont comptés (zone dépôt terminée) ; message de fin d'opération."
+    probe:
+    - name: "Opération activée depuis son menu : les trois tâches apparaissent"
+      act: |
+        R.click(R.L("ZONES DE COMBAT", "COMBAT ZONES"), R.L("Opération Tkvarcheli", "Operation Tkvarcheli"), R.L("Activer la zone", "Activate zone"))
+      check: |
+        local parts, ok = {}, true
+        for _, z in ipairs({ "combatZone_Tkvarcheli_Radar", "combatZone_Tkvarcheli_Depot", "combatZone_Tkvarcheli_HQ" }) do
+          local n, s = R.inZone(z)
+          ok = ok and n + s > 0
+          table.insert(parts, z:sub(23) .. " " .. n .. "+" .. s)
+        end
+        return ok, table.concat(parts, ", ")
+      timeout: 30
     doc: "mission-maker/scripts/veafCombatZone/"
 
   - id: convoy
@@ -239,6 +413,26 @@ steps:
       fr: "Le convoi roule vers Gali, puis revient, en boucle."
       en: "The convoy drives to Gali, then comes back, in a loop."
     check: "Le convoi roule (position qui change entre deux relevés), atteint Gali et repart vers Ochamchire."
+    probe:
+    - name: "Convoi activé : il roule"
+      act: |
+        R.click(R.L("ZONES DE COMBAT", "COMBAT ZONES"), R.L("Convoi d'Ochamchire", "Ochamchire convoy"), R.L("Activer la zone", "Activate zone"))
+      check: |
+        local z = veafCombatZone.GetZone("combatZone_Convoy")
+        for _, name in pairs(z.spawnedGroups or {}) do
+          local g = Group.getByName(name)
+          local u = g and g:getUnit(1)
+          if u then
+            local p = u:getPoint()
+            if R.mem.convoy and ((p.x - R.mem.convoy.x) ^ 2 + (p.z - R.mem.convoy.z) ^ 2) ^ 0.5 > 100 then
+              return true, name .. " a roulé " .. math.floor(((p.x - R.mem.convoy.x) ^ 2 + (p.z - R.mem.convoy.z) ^ 2) ^ 0.5) .. " m"
+            end
+            R.mem.convoy = R.mem.convoy or { x = p.x, z = p.z }
+          end
+        end
+        return false, "pas encore de déplacement"
+      wait: 5
+      timeout: 90
     doc: "mission-maker/scripts/veafCombatZone/"
 
   # ── 3. Menace aérienne ─────────────────────────────────────────────────────────────────────
@@ -261,6 +455,12 @@ steps:
       fr: "Un message annonce le décollage ; les chasseurs viennent vers vous. Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est vidé d'intrus."
       en: "A message announces the scramble; the fighters come at you. Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders."
     check: "Entrée d'un avion bleu dans le cercle : décollage d'une paire après 60 s ; avec trois intrus, deux paires ; aucune réaction à un hélicoptère ; menu Démo : commandes arrête et redémarre la QRA."
+    probe:
+    - name: "QRA de Soukhoumi prête"
+      check: |
+        local q = veafQraManager.get("QRA Sukhumi")
+        local s = veafQraManager.statusToString(q.state)
+        return s == "STATUS_READY", s
     doc: "mission-maker/scripts/veafQraManager/"
 
   - id: cap
@@ -273,17 +473,44 @@ steps:
       en: "Red patrols you spawn from the menu, each a different threat (MiG-29S Fox 3, Su-27 Fox 1, MiG-31), and a scripted mission: two Su-24M escorted by two MiG-29S head out to bomb Senaki."
     how:
       fr:
-        - "Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > niveau (Good, Excellent) > taille (scale 1, 2) > Activer la mission."
+        - "Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > scale 1 > Activer la mission ; même menu pour le niveau Excellent et la taille scale 2."
         - "Menu F10 > Autre > VEAF > MISSIONS > Raid sur Senaki > Good > scale 1 > Activer la mission, puis interceptez les bombardiers."
         - "Ou par marqueur : `-airstart Raid-Senaki/Good/1`, `-airstop Raid-Senaki/Good/1` (nom, niveau, taille)."
       en:
-        - "F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > level (Good, Excellent) > size (scale 1, 2) > Activate mission."
+        - "F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > scale 1 > Activate mission; same menu for the Excellent level and scale 2."
         - "F10 > Other > VEAF > MISSIONS > Senaki raid > Good > scale 1 > Activate mission, then intercept the bombers."
         - "Or by marker: `-airstart Raid-Senaki/Good/1`, `-airstop Raid-Senaki/Good/1` (name, level, size)."
     see:
       fr: "La patrouille apparaît en vol sur son hippodrome et engage ce qui entre à portée ; le raid vole vers Senaki et bombarde la base s'il n'est pas intercepté."
       en: "The patrol spawns airborne on its race-track and engages what comes in range; the raid flies to Senaki and bombs the base unless intercepted."
     check: "Chaque CAP apparaît au niveau et à la taille demandés et engage (tir de missile sur une cible bleue) ; le raid apparaît avec son escorte et suit sa route vers Senaki ; `-airstart Raid-Senaki/Good/1` / `-airstop` fonctionnent."
+    probe:
+    - name: "Menu MISSIONS : la CAP MiG-29S Good scale 1 apparaît en vol"
+      act: |
+        R.click("MISSIONS", "CAP MiG-29S Gudauta FL250", "Good", "scale 1", R.L("Activer la mission", "Activate mission"))
+      check: |
+        local m = veafCombatMission.GetMission("CAP MiG-29S Gudauta FL250/Good/1")
+        local groups = m:getSpawnedGroups() or {}
+        local airborne = 0
+        for _, g in pairs(groups) do
+          if g:isExist() and g:getUnit(1) and g:getUnit(1):inAir() then airborne = airborne + 1 end
+        end
+        return m:isActive() and airborne > 0, airborne .. " groupe(s) en vol"
+      timeout: 30
+    - name: "`-airstart Raid-Senaki/Good/1` : le raid apparaît avec son escorte"
+      act: |
+        R.marker("-airstart Raid-Senaki/Good/1", "Bac a sable")
+      check: |
+        local m = veafCombatMission.GetMission("Raid-Senaki/Good/1")
+        local n = R.count(m:getSpawnedGroups())
+        return m:isActive() and n >= 2, n .. " groupes"
+      timeout: 30
+    - name: "`-airstop Raid-Senaki/Good/1` : le raid s'arrête"
+      act: |
+        R.marker("-airstop Raid-Senaki/Good/1", "Bac a sable")
+      check: |
+        return not veafCombatMission.GetMission("Raid-Senaki/Good/1"):isActive(), ""
+      timeout: 20
     doc: "mission-maker/scripts/veafCombatMission/"
 
   - id: airwaves
@@ -305,6 +532,11 @@ steps:
       fr: "Message de début, puis une vague ; la suivante arrive une minute après la destruction de la précédente. Si vous mourez, l'arène se réinitialise."
       en: "A start message, then a wave; the next comes one minute after the previous is destroyed. If you die, the arena resets."
     check: "Entrée d'un joueur bleu : vague 1 après 30 s ; vague suivante 60 s après la destruction de la précédente ; reset par le menu Démo : commandes."
+    probe:
+    - name: "Arène BVR enregistrée avec ses trois vagues"
+      check: |
+        local w = veafAirWaves.get("Arene BVR")
+        return w ~= nil and #w.waves == 3, w and (#w.waves .. " vagues, état " .. tostring(w.state)) or "absente"
     doc: "mission-maker/scripts/veafAirWaves/"
 
   - id: sanctuary
@@ -324,6 +556,11 @@ steps:
       fr: "Avertissement après 10 s, défense déployée à 60 s, avion abattu à 120 s."
       en: "Warning after 10 s, defences deployed at 60 s, aircraft shot down at 120 s."
     check: "Joueur bleu dans le cercle : avertissement à 10 s, défense à 60 s, destruction à 120 s ; un missile tiré sur une unité rouge du sanctuaire est détruit."
+    probe:
+    - name: "Sanctuaire rouge de Gudauta enregistré (15 km, protection contre les missiles)"
+      check: |
+        local s = veafSanctuary.zonesList[1]
+        return s ~= nil and math.abs(s.radius - 15000) < 500 and s.protectFromMissiles == true, s and (s.name .. ", " .. math.floor(s.radius) .. " m") or "absent"
     doc: "mission-maker/scripts/veafSanctuary/"
 
   # ── 4. Soutien et logistique ───────────────────────────────────────────────────────────────
@@ -348,6 +585,30 @@ steps:
       fr: "Les ravitailleurs répondent sur leur fréquence et leur TACAN ; après un _move tanker, Texaco 1 rejoint sa nouvelle orbite."
       en: "Tankers answer on their frequency and TACAN; after a _move tanker, Texaco 1 flies to its new orbit."
     check: "Ravitaillement possible sur Texaco 1 (perche) et Arco 1 (panier), TACAN reçus ; réapparition d'Overlord 1 avec son escorte ; `_move tanker` déplace l'orbite de Texaco 1."
+    probe:
+    - name: "Texaco 1, Arco 1, Overlord 1 et son escorte en vol"
+      check: |
+        local parts, ok = {}, true
+        for _, name in ipairs({ "Texaco 1", "Arco 1", "Overlord 1", "Overlord 1 escort" }) do
+          local g = Group.getByName(name)
+          local up = g and g:getUnit(1) and g:getUnit(1):inAir()
+          ok = ok and up
+          table.insert(parts, name .. (up and " en vol" or " ABSENT"))
+        end
+        return ok and true or false, table.concat(parts, ", ")
+    - name: "Menu MOYENS : Overlord 1 réapparaît avec son escorte"
+      act: |
+        R.mem.awacsId, R.mem.escortId = Group.getByName("Overlord 1"):getID(), Group.getByName("Overlord 1 escort"):getID()
+        R.click(R.L("MOYENS", "ASSETS"), "Overlord 1 (E-3A)", R.L("Réapparition de Overlord 1 (E-3A)", "Respawn Overlord 1 (E-3A)"))
+      check: |
+        local a, e = Group.getByName("Overlord 1"), Group.getByName("Overlord 1 escort")
+        if not (a and e and a:getUnit(1) and e:getUnit(1)) then return false, "AWACS ou escorte absent" end
+        local renewed = a:getID() ~= R.mem.awacsId and e:getID() ~= R.mem.escortId
+        local pa, pe = a:getUnit(1):getPoint(), e:getUnit(1):getPoint()
+        local km = ((pa.x - pe.x) ^ 2 + (pa.z - pe.z) ^ 2) ^ 0.5 / 1000
+        return renewed and km < 10, "réapparus : " .. tostring(renewed) .. ", escorte à " .. math.floor(km) .. " km de l'AWACS"
+      wait: 10
+      timeout: 30
     doc: "mission-maker/scripts/veafAssets/"
 
   - id: helos
@@ -371,6 +632,18 @@ steps:
       fr: "Le FARP ravitaille et réarme ; CTLD charge les troupes ; le pilote abattu émet une balise et se laisse embarquer."
       en: "The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards."
     check: "Ravitaillement et réarmement au FARP Khoni ; chargement CTLD de troupes et d'une caisse au FARP ; pilote abattu créé par le menu, balise ADF audible, récupérable et ramené."
+    probe:
+    - name: "FARP Khoni présent"
+      check: |
+        return Airbase.getByName("FARP Khoni") ~= nil, ""
+    - name: "Pilote abattu créé par la fonction du menu Démo : commandes"
+      act: |
+        R.mem.csarBefore = R.count(csar.woundedGroups)
+        demo.spawnCsar()
+      check: |
+        local n = R.count(csar.woundedGroups)
+        return n > R.mem.csarBefore, R.mem.csarBefore .. " -> " .. n .. " pilote(s) à secourir"
+      timeout: 15
     doc: "mission-maker/GUIDE/"
 
   - id: carrier
@@ -384,16 +657,35 @@ steps:
     how:
       fr:
         - "Stennis : TACAN 74X STN, ICLS 4, Link 4 336.0, tour 274.0 AM. Roosevelt : TACAN 71X TDR, ICLS 1, Link 4 337.0, tour 271.0 AM."
-        - "Menu F10 > Autre > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > Démarrer les opérations aériennes pour 45 minutes."
+        - "Menu F10 > Autre > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > +Démarrer les opérations aériennes pour 45 minutes."
         - "Slots de pont : Stennis F/A-18C, Roosevelt F-14B."
       en:
         - "Stennis: TACAN 74X STN, ICLS 4, Link 4 336.0, tower 274.0 AM. Roosevelt: TACAN 71X TDR, ICLS 1, Link 4 337.0, tower 271.0 AM."
-        - "F10 > Other > VEAF > CARRIER OPS > CARRIER OPS - BLUE > CSG-74 Stennis > Start carrier air operations for 45 minutes."
+        - "F10 > Other > VEAF > CARRIER OPS > CARRIER OPS - BLUE > CSG-74 Stennis > +Start carrier air operations for 45 minutes."
         - "Deck slots: Stennis F/A-18C, Roosevelt F-14B."
     see:
       fr: "Le porte-avions vire face au vent, accélère, et le menu donne le cap de récupération ; le S-3B ravitaille."
       en: "The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels."
     check: "Démarrage des opérations : virage face au vent et vitesse ; TACAN / ICLS / Link 4 reçus ; S-3B et Pedro présents pour chaque navire."
+    probe:
+    - name: "Opérations aériennes du Stennis : il accélère face au vent"
+      act: |
+        R.click(R.L("OPS PORTE-AVIONS", "CARRIER OPS"), R.L("OPS PORTE-AVIONS - BLEU", "CARRIER OPS - BLUE"), "CSG-74 Stennis", R.L("Démarrer les opérations aériennes pour 45 minutes", "Start carrier air operations for 45 minutes"))
+      check: |
+        local c = veafCarrierOperations.carriers["CSG-74 Stennis"]
+        local v = Unit.getByName(c.carrierUnitName):getVelocity()
+        local kt = (v.x ^ 2 + v.z ^ 2) ^ 0.5 * 1.944
+        local hdg = math.deg(math.atan2(v.z, v.x)) % 360
+        local gap = math.abs((hdg - (c.heading or -999) + 180) % 360 - 180)
+        return c.conductingAirOperations == true and kt > 3 and gap < 15, "opérations " .. tostring(c.conductingAirOperations) .. ", cap " .. math.floor(hdg) .. " pour BRC " .. tostring(c.heading and math.floor(c.heading)) .. ", " .. math.floor(kt) .. " kt"
+      wait: 30
+      timeout: 180
+    - name: "S-3B et Pedro du Stennis présents avec les opérations"
+      check: |
+        local c = veafCarrierOperations.carriers["CSG-74 Stennis"]
+        local t, p = Unit.getByName(c.tankerUnitName), Unit.getByName(c.pedroUnitName)
+        return t ~= nil and p ~= nil, "S-3B " .. tostring(t ~= nil) .. ", Pedro " .. tostring(p ~= nil)
+      timeout: 60
     doc: "mission-maker/scripts/veafCarrierOperations/"
 
   - id: weather
@@ -407,12 +699,12 @@ steps:
     how:
       fr:
         - "Prenez un slot à Kutaisi : lisez le message d'accueil."
-        - "Menu F10 > Autre > VEAF > MÉTÉO ET ATC > météo au point le plus proche / ATC de la base la plus proche."
-        - "En F-16C à Kutaisi : F10 > Autre > VEAF > Assistance > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE."
+        - "Menu F10 > Autre > VEAF > MÉTÉO ET ATC > Météo sur le point le plus proche ; dans le même menu, ATC de la base la plus proche."
+        - "En F-16C à Kutaisi : F10 > Autre > VEAF > ASSISTANCE > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE."
       en:
         - "Take a slot at Kutaisi: read the welcome message."
-        - "F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point / ATC on closest airbase."
-        - "In the F-16C at Kutaisi: F10 > Other > VEAF > Assistance > Cold start; then, at the root of the VEAF menu: Assistance: confirm the step / Assistance: skip the step."
+        - "F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point; in the same menu, ATC on closest airbase."
+        - "In the F-16C at Kutaisi: F10 > Other > VEAF > ASSISTANCE > Cold start; then, at the root of the VEAF menu: ASSISTANCE: CONFIRM THE STEP / ASSISTANCE: SKIP THE STEP."
     see:
       fr: "Le message d'accueil donne la piste en service ; la checklist coche les étapes déjà faites."
       en: "The welcome message gives the runway in use; the checklist ticks the steps already done."

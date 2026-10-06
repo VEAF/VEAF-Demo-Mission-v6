@@ -240,7 +240,7 @@ What you should see : A message announces the scramble; the fighters come at you
 Des patrouilles rouges qu'on fait apparaître depuis le menu, de menaces différentes (MiG-29S Fox 3, Su-27 Fox 1, MiG-31), et une mission scénarisée : deux Su-24M escortés par deux MiG-29S partent bombarder Senaki.
 
 À faire :
-- Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > niveau (Good, Excellent) > taille (scale 1, 2) > Activer la mission.
+- Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > scale 1 > Activer la mission ; même menu pour le niveau Excellent et la taille scale 2.
 - Menu F10 > Autre > VEAF > MISSIONS > Raid sur Senaki > Good > scale 1 > Activer la mission, puis interceptez les bombardiers.
 - Ou par marqueur : -airstart Raid-Senaki/Good/1, -airstop Raid-Senaki/Good/1 (nom, niveau, taille).
 
@@ -250,7 +250,7 @@ Ce qu'on doit voir : La patrouille apparaît en vol sur son hippodrome et engage
 Red patrols you spawn from the menu, each a different threat (MiG-29S Fox 3, Su-27 Fox 1, MiG-31), and a scripted mission: two Su-24M escorted by two MiG-29S head out to bomb Senaki.
 
 What to do :
-- F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > level (Good, Excellent) > size (scale 1, 2) > Activate mission.
+- F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > scale 1 > Activate mission; same menu for the Excellent level and scale 2.
 - F10 > Other > VEAF > MISSIONS > Senaki raid > Good > scale 1 > Activate mission, then intercept the bombers.
 - Or by marker: -airstart Raid-Senaki/Good/1, -airstop Raid-Senaki/Good/1 (name, level, size).
 
@@ -345,7 +345,7 @@ Deux porte-avions au large de Batumi, chacun avec son ravitailleur S-3B et son h
 
 À faire :
 - Stennis : TACAN 74X STN, ICLS 4, Link 4 336.0, tour 274.0 AM. Roosevelt : TACAN 71X TDR, ICLS 1, Link 4 337.0, tour 271.0 AM.
-- Menu F10 > Autre > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > Démarrer les opérations aériennes pour 45 minutes.
+- Menu F10 > Autre > VEAF > OPS PORTE-AVIONS > OPS PORTE-AVIONS - BLEU > CSG-74 Stennis > +Démarrer les opérations aériennes pour 45 minutes.
 - Slots de pont : Stennis F/A-18C, Roosevelt F-14B.
 
 Ce qu'on doit voir : Le porte-avions vire face au vent, accélère, et le menu donne le cap de récupération ; le S-3B ravitaille.]=],
@@ -355,7 +355,7 @@ Two carriers off Batumi, each with its S-3B tanker and rescue helicopter. The CA
 
 What to do :
 - Stennis: TACAN 74X STN, ICLS 4, Link 4 336.0, tower 274.0 AM. Roosevelt: TACAN 71X TDR, ICLS 1, Link 4 337.0, tower 271.0 AM.
-- F10 > Other > VEAF > CARRIER OPS > CARRIER OPS - BLUE > CSG-74 Stennis > Start carrier air operations for 45 minutes.
+- F10 > Other > VEAF > CARRIER OPS > CARRIER OPS - BLUE > CSG-74 Stennis > +Start carrier air operations for 45 minutes.
 - Deck slots: Stennis F/A-18C, Roosevelt F-14B.
 
 What you should see : The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels.]=] } },
@@ -367,8 +367,8 @@ Un message d'accueil à la prise de slot (base, piste en service, météo), un m
 
 À faire :
 - Prenez un slot à Kutaisi : lisez le message d'accueil.
-- Menu F10 > Autre > VEAF > MÉTÉO ET ATC > météo au point le plus proche / ATC de la base la plus proche.
-- En F-16C à Kutaisi : F10 > Autre > VEAF > Assistance > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE.
+- Menu F10 > Autre > VEAF > MÉTÉO ET ATC > Météo sur le point le plus proche ; dans le même menu, ATC de la base la plus proche.
+- En F-16C à Kutaisi : F10 > Autre > VEAF > ASSISTANCE > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE.
 
 Ce qu'on doit voir : Le message d'accueil donne la piste en service ; la checklist coche les étapes déjà faites.]=],
              en = [=[WEATHER, ATC AND COCKPIT ASSISTANCE
@@ -377,8 +377,8 @@ A welcome message when you take a slot (base, runway in use, weather), a weather
 
 What to do :
 - Take a slot at Kutaisi: read the welcome message.
-- F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point / ATC on closest airbase.
-- In the F-16C at Kutaisi: F10 > Other > VEAF > Assistance > Cold start; then, at the root of the VEAF menu: Assistance: confirm the step / Assistance: skip the step.
+- F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point; in the same menu, ATC on closest airbase.
+- In the F-16C at Kutaisi: F10 > Other > VEAF > ASSISTANCE > Cold start; then, at the root of the VEAF menu: ASSISTANCE: CONFIRM THE STEP / ASSISTANCE: SKIP THE STEP.
 
 What you should see : The welcome message gives the runway in use; the checklist ticks the steps already done.]=] } },
 }

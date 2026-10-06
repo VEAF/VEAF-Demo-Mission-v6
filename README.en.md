@@ -273,7 +273,7 @@ Red patrols you spawn from the menu, each a different threat (MiG-29S Fox 3, Su-
 
 **What to do**:
 
-- F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > level (Good, Excellent) > size (scale 1, 2) > Activate mission.
+- F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > scale 1 > Activate mission; same menu for the Excellent level and scale 2.
 - F10 > Other > VEAF > MISSIONS > Senaki raid > Good > scale 1 > Activate mission, then intercept the bombers.
 - Or by marker: `-airstart Raid-Senaki/Good/1`, `-airstop Raid-Senaki/Good/1` (name, level, size).
 
@@ -358,7 +358,7 @@ The CARRIER OPS menu turns the ship into the wind for air operations.
 **What to do**:
 
 - Stennis: TACAN 74X STN, ICLS 4, Link 4 336.0, tower 274.0 AM. Roosevelt: TACAN 71X TDR, ICLS 1, Link 4 337.0, tower 271.0 AM.
-- F10 > Other > VEAF > CARRIER OPS > CARRIER OPS - BLUE > CSG-74 Stennis > Start carrier air operations for 45 minutes.
+- F10 > Other > VEAF > CARRIER OPS > CARRIER OPS - BLUE > CSG-74 Stennis > +Start carrier air operations for 45 minutes.
 - Deck slots: Stennis F/A-18C, Roosevelt F-14B.
 
 **What you should see**: The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels.
@@ -375,8 +375,8 @@ On a VEAF server, the weather follows Kutaisi's real METAR (UGKO).
 **What to do**:
 
 - Take a slot at Kutaisi: read the welcome message.
-- F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point / ATC on closest airbase.
-- In the F-16C at Kutaisi: F10 > Other > VEAF > Assistance > Cold start; then, at the root of the VEAF menu: Assistance: confirm the step / Assistance: skip the step.
+- F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point; in the same menu, ATC on closest airbase.
+- In the F-16C at Kutaisi: F10 > Other > VEAF > ASSISTANCE > Cold start; then, at the root of the VEAF menu: ASSISTANCE: CONFIRM THE STEP / ASSISTANCE: SKIP THE STEP.
 
 **What you should see**: The welcome message gives the runway in use; the checklist ticks the steps already done.
 
