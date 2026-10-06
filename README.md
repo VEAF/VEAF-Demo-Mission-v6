@@ -111,7 +111,7 @@ Le bac à sable, au sud de Kutaisi (point nommé ALPHA), sert à essayer les com
 
 **À faire** :
 
-- `-sa8` : une batterie SA-8 (alias livré ; liste complète dans la documentation des raccourcis).
+- `-sa8` : une batterie SA-8 (alias livré ; tous les alias sont listés dans la page « Alias » de la documentation).
 - `-armor` : un groupe blindé tiré au sort ; `-armor, size 4, defense 0` pour le régler.
 - `_spawn unit, name T-80UD, hdg 270` : un char isolé, cap 270.
 - `-convoy, dest ALPHA` : un convoi qui rejoint le point nommé ALPHA par la route (posez le marqueur à quelques km).
@@ -121,7 +121,7 @@ Le bac à sable, au sud de Kutaisi (point nommé ALPHA), sert à essayer les com
 
 **Ce qu'on doit voir** : Chaque commande répond par un message et fait apparaître ce qu'elle annonce à l'emplacement du marqueur ; le marqueur disparaît une fois la commande exécutée.
 
-**Fonctionnalités** : `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafSpawn/)
+**Fonctionnalités** : `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafSpawn/) · [Liste des alias](https://veaf.github.io/documentation/latest/ALIASES/)
 
 #### 03 Missions générées : CAS et transport
 

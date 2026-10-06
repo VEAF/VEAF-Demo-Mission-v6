@@ -111,7 +111,7 @@ The sandbox, south of Kutaisi (named point ALPHA), is where you try the commands
 
 **What to do**:
 
-- `-sa8`: an SA-8 battery (shipped alias; full list in the shortcuts documentation).
+- `-sa8`: an SA-8 battery (shipped alias; every alias is listed on the 'Aliases' page of the documentation).
 - `-armor`: a random armour group; `-armor, size 4, defense 0` to tune it.
 - `_spawn unit, name T-80UD, hdg 270`: a single tank, heading 270.
 - `-convoy, dest ALPHA`: a convoy that drives by road to the named point ALPHA (place the marker a few km away).
@@ -121,7 +121,7 @@ The sandbox, south of Kutaisi (named point ALPHA), is where you try the commands
 
 **What you should see**: Each command answers with a message and spawns what it announces at the marker; the marker disappears once the command has run.
 
-**Features**: `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafSpawn/)
+**Features**: `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafSpawn/) · [Alias list](https://veaf.github.io/documentation/latest/en/ALIASES/)
 
 #### 03 Generated missions: CAS and transport
 

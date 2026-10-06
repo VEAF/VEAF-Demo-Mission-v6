@@ -392,7 +392,8 @@ def gen_readme(lang):
             out.append("")
             mods = ", ".join(f"`{m}`" for m in s["modules"])
             out.append((f"**{t['modules']}** : " if lang == "fr" else f"**{t['modules']}**: ") + mods
-                       + f" — [{t['doc']}]({DOC[lang]}{s['doc']})")
+                       + f" — [{t['doc']}]({DOC[lang]}{s['doc']})"
+                       + "".join(f" · [{l[lang]}]({DOC[lang]}{l['path']})" for l in s.get("links", [])))
             out.append("")
     out.append(MAKERS[lang])
     name = "README.md" if lang == "fr" else "README.en.md"
