@@ -76,13 +76,14 @@ Tous les aérodromes russes et abkhazes sont rouges, sans slot. Les dynamiques n
 | 09 | [Convoi en mouvement](#09-convoi-en-mouvement) | BULLSEYE 303/20 — 38 nm de Senaki-Kolkhi | `COMBATZONE` |
 | 10 | [Convoi sous le feu](#10-convoi-sous-le-feu) | BULLSEYE 112/44 — 11 nm de Kutaisi | `GROUNDAI`, `SPAWN` |
 | 11 | [QRA de Soukhoumi](#11-qra-de-soukhoumi) | BULLSEYE 297/39 — 55 nm de Senaki-Kolkhi | `QRA`, `RADIO` |
-| 12 | [CAP à la demande et raid sur Senaki](#12-cap-à-la-demande-et-raid-sur-senaki) | BULLSEYE 297/69 — 85 nm de Senaki-Kolkhi | `COMBATMISSION` |
-| 13 | [Arène BVR (vagues aériennes)](#13-arène-bvr-vagues-aériennes) | BULLSEYE 239/44 — 43 nm de Kobuleti | `AIRWAVES`, `RADIO` |
-| 14 | [Sanctuaire rouge de Gudauta](#14-sanctuaire-rouge-de-gudauta) | BULLSEYE 297/69 — 85 nm de Senaki-Kolkhi | `SANCTUARY` |
-| 15 | [Ravitailleurs, AWACS et escorte](#15-ravitailleurs-awacs-et-escorte) | BULLSEYE 122/48 — 14 nm de Kutaisi (au départ de la mission) | `ASSETS`, `MOVE` |
-| 16 | [Hélicoptères : FARP, CTLD, CSAR](#16-hélicoptères--farp-ctld-csar) | BULLSEYE 112/26 — 9 nm de Kutaisi | `CTLD`, `CSAR`, `GRASS` |
-| 17 | [Porte-avions Stennis et Roosevelt](#17-porte-avions-stennis-et-roosevelt) | BULLSEYE 203/48 — 17 nm de Batumi (au départ de la mission) | `CARRIER` |
-| 18 | [Météo, ATC et assistance cockpit](#18-météo-atc-et-assistance-cockpit) | BULLSEYE 119/34 — 0 nm de Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
+| 12 | [Niveau d'opposition](#12-niveau-dopposition) | Partout (pas de lieu particulier) | `QRA`, `COMBATMISSION` |
+| 13 | [CAP à la demande et raid sur Senaki](#13-cap-à-la-demande-et-raid-sur-senaki) | BULLSEYE 297/69 — 85 nm de Senaki-Kolkhi | `COMBATMISSION` |
+| 14 | [Arène BVR (vagues aériennes)](#14-arène-bvr-vagues-aériennes) | BULLSEYE 239/44 — 43 nm de Kobuleti | `AIRWAVES`, `RADIO` |
+| 15 | [Sanctuaire rouge de Gudauta](#15-sanctuaire-rouge-de-gudauta) | BULLSEYE 297/69 — 85 nm de Senaki-Kolkhi | `SANCTUARY` |
+| 16 | [Ravitailleurs, AWACS et escorte](#16-ravitailleurs-awacs-et-escorte) | BULLSEYE 122/48 — 14 nm de Kutaisi (au départ de la mission) | `ASSETS`, `MOVE` |
+| 17 | [Hélicoptères : FARP, CTLD, CSAR](#17-hélicoptères--farp-ctld-csar) | BULLSEYE 112/26 — 9 nm de Kutaisi | `CTLD`, `CSAR`, `GRASS` |
+| 18 | [Porte-avions Stennis et Roosevelt](#18-porte-avions-stennis-et-roosevelt) | BULLSEYE 203/48 — 17 nm de Batumi (au départ de la mission) | `CARRIER` |
+| 19 | [Météo, ATC et assistance cockpit](#19-météo-atc-et-assistance-cockpit) | BULLSEYE 119/34 — 0 nm de Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
 
 ### 1. Prise en main
 
@@ -271,6 +272,7 @@ Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde
 
 Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Ochamchire.
 Elle répond à la menace : un intrus fait décoller une paire tirée au sort entre MiG-29S et Su-27 ; trois intrus ou plus, deux paires parmi Su-30, MiG-31 et MiG-29S.
+Trois joueurs bleus connectés comptent comme trois intrus (étape suivante, niveau d'opposition).
 Elle ne réagit pas aux hélicoptères.
 
 **Où** : BULLSEYE 297/39 — 55 nm de Senaki-Kolkhi
@@ -285,7 +287,26 @@ Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est 
 
 **Fonctionnalités** : `QRA`, `RADIO` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafQraManager/)
 
-#### 12 CAP à la demande et raid sur Senaki
+#### 12 Niveau d'opposition
+
+La chasse rouge se dimensionne au nombre de joueurs : la mission porte un niveau, le nombre d'avions bleus pour lequel l'opposition est réglée, qui suit ici les joueurs connectés.
+La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dans son cercle ; les CAP à la demande offrent une taille automatique, une patrouille pour deux joueurs.
+
+**Où** : Partout (pas de lieu particulier)
+
+**À faire** :
+
+- Menu F10 > Autre > VEAF > Opposition > Niveau actuel : le niveau et son mode.
+- Marqueur `_opposition 4` : le niveau passe à 4 et ne suit plus les joueurs ; `_opposition players` le refait suivre.
+- Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
+
+**Ce qu'on doit voir** : Chaque changement de niveau est annoncé à tous.
+Au niveau 4, un seul intrus dans le cercle de Soukhoumi fait décoller deux paires, et « Taille auto » active la CAP en scale 2.
+Quand un joueur se déconnecte, le niveau ne baisse qu'après 5 minutes.
+
+**Fonctionnalités** : `QRA`, `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafQraManager/#opposition-level)
+
+#### 13 CAP à la demande et raid sur Senaki
 
 Des patrouilles rouges qu'on fait apparaître depuis le menu, de menaces différentes (MiG-29S Fox 3, Su-27 Fox 1, MiG-31), et une mission scénarisée : deux Su-24M escortés par deux MiG-29S partent bombarder Senaki.
 
@@ -301,7 +322,7 @@ Des patrouilles rouges qu'on fait apparaître depuis le menu, de menaces différ
 
 **Fonctionnalités** : `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafCombatMission/)
 
-#### 13 Arène BVR (vagues aériennes)
+#### 14 Arène BVR (vagues aériennes)
 
 Une arène au large de Poti : dès qu'un avion bleu y entre, des vagues de chasseurs rouges arrivent l'une après l'autre, de plus en plus dures (MiG-29S seul, deux Su-27, deux Su-30).
 
@@ -317,7 +338,7 @@ Si vous mourez, l'arène se réinitialise.
 
 **Fonctionnalités** : `AIRWAVES`, `RADIO` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafAirWaves/)
 
-#### 14 Sanctuaire rouge de Gudauta
+#### 15 Sanctuaire rouge de Gudauta
 
 Un sanctuaire protège une zone pour un camp : un pilote adverse qui y entre est averti, puis une défense apparaît, puis il est abattu.
 Celui-ci protège Gudauta (15 km) côté rouge ; il détruit aussi les missiles tirés sur les unités qui s'y trouvent.
@@ -334,7 +355,7 @@ Celui-ci protège Gudauta (15 km) côté rouge ; il détruit aussi les missiles 
 
 ### 4. Soutien et logistique
 
-#### 15 Ravitailleurs, AWACS et escorte
+#### 16 Ravitailleurs, AWACS et escorte
 
 Deux ravitailleurs (Texaco 1 à perche, Arco 1 à panier) et un AWACS (Overlord 1) escorté par deux F-15C.
 Le menu MOYENS les relance et donne leurs informations ; une commande de marqueur déplace un ravitailleur.
@@ -351,7 +372,7 @@ Le menu MOYENS les relance et donne leurs informations ; une commande de marqueu
 
 **Fonctionnalités** : `ASSETS`, `MOVE` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafAssets/)
 
-#### 16 Hélicoptères : FARP, CTLD, CSAR
+#### 17 Hélicoptères : FARP, CTLD, CSAR
 
 Le FARP Khoni réarme et ravitaille les hélicoptères ; son dépôt de munitions est un point de chargement CTLD (troupes et caisses).
 Un pilote abattu peut être créé à la demande, à aller chercher en hélicoptère (CSAR).
@@ -368,7 +389,7 @@ Un pilote abattu peut être créé à la demande, à aller chercher en hélicopt
 
 **Fonctionnalités** : `CTLD`, `CSAR`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/GUIDE/)
 
-#### 17 Porte-avions Stennis et Roosevelt
+#### 18 Porte-avions Stennis et Roosevelt
 
 Deux porte-avions au large de Batumi, chacun avec son ravitailleur S-3B et son hélicoptère de sauvetage.
 Le menu OPS PORTE-AVIONS met le navire face au vent pour les opérations aériennes.
@@ -385,7 +406,7 @@ Le menu OPS PORTE-AVIONS met le navire face au vent pour les opérations aérien
 
 **Fonctionnalités** : `CARRIER` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafCarrierOperations/)
 
-#### 18 Météo, ATC et assistance cockpit
+#### 19 Météo, ATC et assistance cockpit
 
 Un message d'accueil à la prise de slot (base, piste en service, météo), un menu météo et ATC, et pour le F-16C une checklist de démarrage pas à pas.
 Sur un serveur VEAF, la météo suit la METAR réelle de Kutaisi (UGKO).

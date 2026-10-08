@@ -243,7 +243,7 @@ What you should see : Before the first shot, the trucks leave on their own (the 
     title = { fr = [=[QRA de Soukhoumi]=], en = [=[Sukhumi QRA]=] },
     text = { fr = [=[QRA DE SOUKHOUMI
 
-Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Ochamchire. Elle répond à la menace : un intrus fait décoller une paire tirée au sort entre MiG-29S et Su-27 ; trois intrus ou plus, deux paires parmi Su-30, MiG-31 et MiG-29S. Elle ne réagit pas aux hélicoptères.
+Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Ochamchire. Elle répond à la menace : un intrus fait décoller une paire tirée au sort entre MiG-29S et Su-27 ; trois intrus ou plus, deux paires parmi Su-30, MiG-31 et MiG-29S. Trois joueurs bleus connectés comptent comme trois intrus (étape suivante, niveau d'opposition). Elle ne réagit pas aux hélicoptères.
 
 À faire :
 - Entrez dans le cercle (dessiné sur la carte F10) avec un avion : la QRA décolle 60 s plus tard.
@@ -252,14 +252,36 @@ Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Oc
 Ce qu'on doit voir : Un message annonce le décollage ; les chasseurs viennent vers vous. Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est vidé d'intrus.]=],
              en = [=[SUKHUMI QRA
 
-A quick reaction alert (QRA) defends Sukhumi within a 40 km circle that covers Ochamchire. It answers the threat: one intruder scrambles a pair drawn between MiG-29S and Su-27; three or more, two pairs among Su-30, MiG-31 and MiG-29S. It ignores helicopters.
+A quick reaction alert (QRA) defends Sukhumi within a 40 km circle that covers Ochamchire. It answers the threat: one intruder scrambles a pair drawn between MiG-29S and Su-27; three or more, two pairs among Su-30, MiG-31 and MiG-29S. Three blue players connected count as three intruders (next step, the opposition level). It ignores helicopters.
 
 What to do :
 - Enter the circle (drawn on the F10 map) in an aircraft: the QRA scrambles 60 s later.
 - F10 > Other > Demo: commands > Stop / Start the Sukhumi QRA (a menu declared in YAML).
 
 What you should see : A message announces the scramble; the fighters come at you. Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.]=] } },
-  { n = 12, id = "cap", chapter = "air", anchorKind = "airbase", anchorName = [=[Gudauta]=],
+  { n = 12, id = "opposition", chapter = "air", anchorKind = "none", anchorName = [=[]=],
+    title = { fr = [=[Niveau d'opposition]=], en = [=[Opposition level]=] },
+    text = { fr = [=[NIVEAU D'OPPOSITION
+
+La chasse rouge se dimensionne au nombre de joueurs : la mission porte un niveau, le nombre d'avions bleus pour lequel l'opposition est réglée, qui suit ici les joueurs connectés. La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dans son cercle ; les CAP à la demande offrent une taille automatique, une patrouille pour deux joueurs.
+
+À faire :
+- Menu F10 > Autre > VEAF > Opposition > Niveau actuel : le niveau et son mode.
+- Marqueur _opposition 4 : le niveau passe à 4 et ne suit plus les joueurs ; _opposition players le refait suivre.
+- Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
+
+Ce qu'on doit voir : Chaque changement de niveau est annoncé à tous. Au niveau 4, un seul intrus dans le cercle de Soukhoumi fait décoller deux paires, et « Taille auto » active la CAP en scale 2. Quand un joueur se déconnecte, le niveau ne baisse qu'après 5 minutes.]=],
+             en = [=[OPPOSITION LEVEL
+
+The red fighters scale with the number of players: the mission carries a level, the number of blue aircraft the opposition is sized for, which here follows the players connected. The Sukhumi QRA takes the tier of the bigger of that level and the intruders in its circle; the on-demand CAPs offer an automatic size, one patrol per two players.
+
+What to do :
+- F10 > Other > VEAF > Opposition > Current level: the level and its mode.
+- Marker _opposition 4: the level goes to 4 and stops following the players; _opposition players makes it follow again.
+- F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level).
+
+What you should see : Every change of level is announced to all. At level 4, a single intruder in the Sukhumi circle scrambles two pairs, and "Auto scale" activates the CAP at scale 2. When a player leaves, the level drops only after 5 minutes.]=] } },
+  { n = 13, id = "cap", chapter = "air", anchorKind = "airbase", anchorName = [=[Gudauta]=],
     title = { fr = [=[CAP à la demande et raid sur Senaki]=], en = [=[On-demand CAP and the Senaki raid]=] },
     text = { fr = [=[CAP À LA DEMANDE ET RAID SUR SENAKI
 
@@ -281,7 +303,7 @@ What to do :
 - Or by marker: -airstart Raid-Senaki/Good/1, -airstop Raid-Senaki/Good/1 (name, level, size).
 
 What you should see : The patrol spawns airborne on its race-track and engages what comes in range; the raid flies to Senaki and bombs the base unless intercepted.]=] } },
-  { n = 13, id = "airwaves", chapter = "air", anchorKind = "zone", anchorName = [=[Arene BVR]=],
+  { n = 14, id = "airwaves", chapter = "air", anchorKind = "zone", anchorName = [=[Arene BVR]=],
     title = { fr = [=[Arène BVR (vagues aériennes)]=], en = [=[BVR arena (air waves)]=] },
     text = { fr = [=[ARÈNE BVR (VAGUES AÉRIENNES)
 
@@ -301,7 +323,7 @@ What to do :
 - To start over: F10 > Other > Demo: commands > Reset the BVR arena.
 
 What you should see : A start message, then a wave; the next comes one minute after the previous is destroyed. If you die, the arena resets.]=] } },
-  { n = 14, id = "sanctuary", chapter = "air", anchorKind = "zone", anchorName = [=[Sanctuaire Gudauta]=],
+  { n = 15, id = "sanctuary", chapter = "air", anchorKind = "zone", anchorName = [=[Sanctuaire Gudauta]=],
     title = { fr = [=[Sanctuaire rouge de Gudauta]=], en = [=[Gudauta red sanctuary]=] },
     text = { fr = [=[SANCTUAIRE ROUGE DE GUDAUTA
 
@@ -319,7 +341,7 @@ What to do :
 - Fly into the Gudauta circle in a blue aircraft and stay.
 
 What you should see : Warning after 10 s, defences deployed at 60 s, aircraft shot down at 120 s.]=] } },
-  { n = 15, id = "assets", chapter = "support", anchorKind = "group", anchorName = [=[Texaco 1]=],
+  { n = 16, id = "assets", chapter = "support", anchorKind = "group", anchorName = [=[Texaco 1]=],
     title = { fr = [=[Ravitailleurs, AWACS et escorte]=], en = [=[Tankers, AWACS and escort]=] },
     text = { fr = [=[RAVITAILLEURS, AWACS ET ESCORTE
 
@@ -341,7 +363,7 @@ What to do :
 - Marker _move tanker, name Texaco 1, alt 22000 where you want the race-track.
 
 What you should see : Tankers answer on their frequency and TACAN; after a _move tanker, Texaco 1 flies to its new orbit.]=] } },
-  { n = 16, id = "helos", chapter = "support", anchorKind = "group", anchorName = [=[FARP Khoni]=],
+  { n = 17, id = "helos", chapter = "support", anchorKind = "group", anchorName = [=[FARP Khoni]=],
     title = { fr = [=[Hélicoptères : FARP, CTLD, CSAR]=], en = [=[Helicopters: FARP, CTLD, CSAR]=] },
     text = { fr = [=[HÉLICOPTÈRES : FARP, CTLD, CSAR
 
@@ -363,7 +385,7 @@ What to do :
 - F10 > Other > Demo: commands > Create a downed pilot near Khoni, then the CSAR menu for its beacon and position.
 
 What you should see : The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.]=] } },
-  { n = 17, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
+  { n = 18, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
     title = { fr = [=[Porte-avions Stennis et Roosevelt]=], en = [=[Stennis and Roosevelt carriers]=] },
     text = { fr = [=[PORTE-AVIONS STENNIS ET ROOSEVELT
 
@@ -385,7 +407,7 @@ What to do :
 - Deck slots: Stennis F/A-18C, Roosevelt F-14B.
 
 What you should see : The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels.]=] } },
-  { n = 18, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
+  { n = 19, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
     title = { fr = [=[Météo, ATC et assistance cockpit]=], en = [=[Weather, ATC and cockpit assistance]=] },
     text = { fr = [=[MÉTÉO, ATC ET ASSISTANCE COCKPIT
 

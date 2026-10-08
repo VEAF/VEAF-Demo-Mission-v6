@@ -25,6 +25,14 @@ mission:
 security:
   disabled: true
 
+# ── Niveau d'opposition ──────────────────────────────────────────────────────
+# La chasse rouge se dimensionne au nombre de joueurs bleus connectés : la QRA de Soukhoumi
+# (scale_with_opposition) prend le palier du plus grand de ce niveau et des intrus dans son cercle,
+# et chaque combat mission offre « Taille auto ». Hausse immédiate, baisse après 5 min.
+opposition:
+  level: 1
+  follow: players
+
 modules:
   # ── Infrastructure ──
   UNITS:
@@ -184,6 +192,9 @@ modules:
         enemy_coalitions:
           - BLUE
         # Un intrus : une paire tirée au sort entre MiG-29S et Su-27 ; trois ou plus : deux paires parmi trois.
+        # « Trois » compte aussi les joueurs connectés (opposition: ci-dessus) : à trois joueurs, un seul
+        # intrus fait décoller deux paires.
+        scale_with_opposition: true
         groups_by_enemy_count:
           - enemy_count: 1
             groups:
