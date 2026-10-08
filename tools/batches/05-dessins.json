@@ -202,6 +202,24 @@
   "params": {
    "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
    "layer": "Blue",
+   "name": "Cercle Embuscade",
+   "remove": true
+  }
+ },
+ {
+  "name": "edit_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "name": "Étiquette Embuscade",
+   "remove": true
+  }
+ },
+ {
+  "name": "edit_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
    "name": "Étiquette Arene BVR",
    "remove": true
   }
@@ -662,7 +680,7 @@
     "x": -283415.0,
     "y": 705205.0
    },
-   "text": "10. Convoi sous le feu (départ : -convoy, dest EMBUSCADE)",
+   "text": "10. Convoi sous le feu (départ : -convoy, dest EMBUSCADE, side blue)",
    "color": "0x6a3d9aff",
    "fill_color": "0xffffffe6",
    "font_size": 14
