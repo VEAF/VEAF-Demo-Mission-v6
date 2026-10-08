@@ -56,30 +56,34 @@ FIXED = {
     "fr": {"Op_Tkvarcheli": "Opération Tkvarcheli (3 tâches)", "QRA-Soukhoumi": "QRA Sukhumi",
            "Sanctuaire Gudauta": "Sanctuaire rouge de Gudauta", "Bac a sable": "Bac à sable (point ALPHA)",
            "Demo CSAR": "Pilote abattu (CSAR, menu Démo : commandes)", "Arene BVR": "Arène BVR (vagues aériennes)",
+           "Embuscade": "Convoi sous le feu (départ : -convoy, dest EMBUSCADE)",
            "training_suffix": " (entraînement, 3 niveaux)"},
     "en": {"Op_Tkvarcheli": "Operation Tkvarcheli (3 tasks)", "QRA-Soukhoumi": "QRA Sukhumi",
            "Sanctuaire Gudauta": "Gudauta red sanctuary", "Bac a sable": "Sandbox (point ALPHA)",
            "Demo CSAR": "Downed pilot (CSAR, Demo: commands menu)", "Arene BVR": "BVR arena (air waves)",
+           "Embuscade": "Convoy under fire (start: -convoy, dest EMBUSCADE)",
            "training_suffix": " (training, 3 levels)"},
 }
 
 MAP = {
     "fr": {"titles": {"carte": "Mission de démo VEAF — Caucase",
-                      "01-kutaisi-khoni": "Kutaisi et Khoni : bac à sable, entraînement, FARP, CSAR",
+                      "01-kutaisi-khoni": "Kutaisi et Khoni : bac à sable, entraînement, FARP, CSAR, embuscade",
                       "02-front": "Front : Gali, Ochamchire, Tkvarcheli, convoi",
                       "03-mer": "Mer : arène BVR, porte-avions, Arco 1",
                       "04-abkhazie": "Soukhoumi et Gudauta : IADS, QRA, sanctuaire"},
            "legend": ["zone d'entraînement", "zone de combat", "ravitailleur / AWACS", "arène BVR", "étape de la visite (n°)"],
            "sanctuary": "Sanctuaire", "arena": "Arène BVR", "levels": " (3 niveaux)", "easy": " - facile",
-           "operation": "Opération Tkvarcheli (3 tâches)", "sandbox": "Bac à sable (ALPHA)", "csar": "Pilote abattu (CSAR)"},
+           "operation": "Opération Tkvarcheli (3 tâches)", "sandbox": "Bac à sable (ALPHA)", "csar": "Pilote abattu (CSAR)",
+           "ambush": "Convoi sous le feu (départ)"},
     "en": {"titles": {"carte": "VEAF demo mission — Caucasus",
-                      "01-kutaisi-khoni": "Kutaisi and Khoni: sandbox, training, FARP, CSAR",
+                      "01-kutaisi-khoni": "Kutaisi and Khoni: sandbox, training, FARP, CSAR, ambush",
                       "02-front": "Front: Gali, Ochamchire, Tkvarcheli, convoy",
                       "03-mer": "Sea: BVR arena, carriers, Arco 1",
                       "04-abkhazie": "Sukhumi and Gudauta: IADS, QRA, sanctuary"},
            "legend": ["training zone", "combat zone", "tanker / AWACS", "BVR arena", "guided tour step (no.)"],
            "sanctuary": "Sanctuary", "arena": "BVR arena", "levels": " (3 levels)", "easy": " - easy",
-           "operation": "Operation Tkvarcheli (3 tasks)", "sandbox": "Sandbox (ALPHA)", "csar": "Downed pilot (CSAR)"},
+           "operation": "Operation Tkvarcheli (3 tasks)", "sandbox": "Sandbox (ALPHA)", "csar": "Downed pilot (CSAR)",
+           "ambush": "Convoy under fire (start)"},
 }
 
 
@@ -114,7 +118,7 @@ def drawing_labels(lang, numbers):
         if z.get("training"):
             title = title.rsplit(" - ", 1)[0] + fixed["training_suffix"]
         lab(zn, title)
-    for zn in ("Op_Tkvarcheli", "QRA-Soukhoumi", "Sanctuaire Gudauta", "Bac a sable", "Demo CSAR", "Arene BVR"):
+    for zn in ("Op_Tkvarcheli", "QRA-Soukhoumi", "Sanctuaire Gudauta", "Bac a sable", "Demo CSAR", "Embuscade", "Arene BVR"):
         lab(zn, fixed[zn])
     for n in ("Texaco 1", "Arco 1", "Overlord 1"):
         out[f"Étiquette {n}"] = n

@@ -1,0 +1,40 @@
+[
+ {
+  "name": "add_trigger_zone",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "name": "Embuscade",
+   "position": {
+    "x": -283715.0,
+    "y": 705205.0
+   },
+   "radius": 300
+  }
+ },
+ {
+  "name": "add_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "category": "vehicle",
+   "name": "Embuscade-blindes",
+   "position": {
+    "x": -282289.0,
+    "y": 707791.0
+   },
+   "keep_position": true,
+   "units": [
+    {
+     "type": "BMP-2",
+     "count": 2
+    },
+    {
+     "type": "BTR-80",
+     "count": 1
+    }
+   ]
+  }
+ }
+]

@@ -57,6 +57,7 @@ zone("QRA-Soukhoumi", RED_C, "0x00000000")
 zone("Sanctuaire Gudauta", RED_C, RED_F)
 zone("Bac a sable", PURPLE_C, PURPLE_F)
 zone("Demo CSAR", PURPLE_C, PURPLE_F)
+zone("Embuscade", PURPLE_C, PURPLE_F)
 # l'arène AIRWAVES se dessine elle-même en jeu (draw_zone: true) ; on n'ajoute que son étiquette
 x, y, r = ZONES["Arene BVR"]
 b.act("add_map_drawing", layer="Blue", shape="textbox", name="Étiquette Arene BVR", position=xy((x + r, y)),

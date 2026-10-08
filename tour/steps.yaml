@@ -438,6 +438,53 @@ steps:
       timeout: 90
     doc: "mission-maker/scripts/veafCombatZone/"
 
+  - id: convoy-ambush
+    chapter: ground
+    title: { fr: "Convoi sous le feu", en: "Convoy under fire" }
+    anchor: { zone: "Embuscade" }
+    modules: [GROUNDAI, SPAWN]
+    what:
+      fr: "Un convoi que vous lancez vers une embuscade de trois blindés rouges, à l'est de Kutaisi. Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde, appelle l'appui aérien et se replie."
+      en: "A convoy you send toward an ambush of three red armoured vehicles, east of Kutaisi. Left to DCS, it would die there without firing; driven by VEAF, it watches, splits, calls for air support and falls back."
+    how:
+      fr:
+        - "Posez un marqueur dans la zone « Embuscade » avec `-convoy, dest EMBUSCADE` : le convoi prend la route vers l'est."
+        - "Suivez-le sur la carte F10 ; l'embuscade attend à 400 m de la route, 2,8 km plus loin."
+        - "Au contact, lisez l'appel *troops in contact* : position, ennemis, cap et distance ; cherchez les fumigènes rouge (l'ennemi) et vert (le convoi)."
+        - "Quand le convoi tient la position : `_gc convoy, status`, puis `_gc convoy, resume` pour qu'il reparte et se reforme."
+      en:
+        - "Drop a marker in the 'Embuscade' zone with `-convoy, dest EMBUSCADE`: the convoy takes the road east."
+        - "Follow it on the F10 map; the ambush waits 400 m off the road, 2.8 km further on."
+        - "At contact, read the *troops in contact* call: position, enemies, bearing and distance; look for the red smoke (the enemy) and the green one (the convoy)."
+        - "When the convoy holds its position: `_gc convoy, status`, then `_gc convoy, resume` to drive on and regroup."
+    see:
+      fr: "Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide s'affiche pour les bleus."
+      en: "Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help shows to blue."
+    check: "Le convoi réagit avant d'être détruit : groupe « unarmed » détaché, appel « TROOPS IN CONTACT » affiché, fumigènes rouge et vert ; après une minute sans contact, il tient la position et `resume` le reforme."
+    probe:
+    - name: "`-convoy, dest EMBUSCADE` : le convoi est surveillé"
+      act: |
+        R.marker("-convoy, dest EMBUSCADE", "Embuscade", 0, 0)
+      check: |
+        for name, h in pairs(veafGroundAI.convoysByGroupName or {}) do
+          R.mem.ambushConvoy = h
+          return true, name
+        end
+        return false, "aucun convoi surveillé"
+      timeout: 20
+    - name: "Au contact, il réagit avant d'être détruit"
+      check: |
+        local h = R.mem.ambushConvoy
+        if not h then return false, "pas de convoi" end
+        local state = ConvoyUnitHandler.stateToString(h.state)
+        if h.state == ConvoyUnitHandler.STATE_FIGHTING or h.state == ConvoyUnitHandler.STATE_FALLING_BACK then
+          return h:getGroup() ~= nil or h:getUnarmedGroup() ~= nil, state .. ", non armés : " .. tostring(h.unarmedGroupName)
+        end
+        return false, state
+      wait: 5
+      timeout: 400
+    doc: "mission-maker/scripts/veafGroundAI/"
+
   # ── 3. Menace aérienne ─────────────────────────────────────────────────────────────────────
   - id: qra
     chapter: air
