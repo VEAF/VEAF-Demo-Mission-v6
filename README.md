@@ -257,10 +257,11 @@ Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde
 
 - Posez un marqueur dans la zone « Embuscade » avec `-convoy, dest EMBUSCADE, side blue` : le convoi prend la route vers l'est.
 - Suivez-le sur la carte F10 ; l'embuscade attend à 400 m de la route, 2,8 km plus loin.
-- Au contact, lisez l'appel *troops in contact* : position, ennemis, cap et distance ; cherchez les fumigènes rouge (l'ennemi) et vert (le convoi).
-- Quand le convoi tient la position : `_gc convoy, status`, puis `_gc convoy, resume` pour qu'il reparte et se reforme.
+- Au contact, lisez son compte rendu, ouvert par son indicatif (Mule, Bison…) : « Bison, contact avant, 1 ennemi à 2290 m au 059, on engage le combat » ; un marqueur F10 le montre tant que le contact dure.
+- Assez fort, il va au contact, détruit l'embuscade, va rechercher ses camions et reprend la route tout seul.
+- Trop faible, il appelle l'appui aérien (*troops in contact*), marque l'ennemi d'un fumigène rouge et lui-même d'un vert, se replie et tient la position : `_gc <indicatif>, resume` le fait repartir.
 
-**Ce qu'on doit voir** : Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide s'affiche pour les bleus.
+**Ce qu'on doit voir** : Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide ne vient que du repli.
 
 **Fonctionnalités** : `GROUNDAI`, `SPAWN` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafGroundAI/)
 

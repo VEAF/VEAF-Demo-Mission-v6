@@ -257,10 +257,11 @@ Left to DCS, it would die there without firing; driven by VEAF, it watches, spli
 
 - Drop a marker in the 'Embuscade' zone with `-convoy, dest EMBUSCADE, side blue`: the convoy takes the road east.
 - Follow it on the F10 map; the ambush waits 400 m off the road, 2.8 km further on.
-- At contact, read the *troops in contact* call: position, enemies, bearing and distance; look for the red smoke (the enemy) and the green one (the convoy).
-- When the convoy holds its position: `_gc convoy, status`, then `_gc convoy, resume` to drive on and regroup.
+- At contact, read its report, opened by its callsign (Mule, Bison…): 'Bison, contact ahead, 1 enemy at 2290 m bearing 059, engaging'; an F10 marker shows it while the contact lasts.
+- Strong enough, it closes in, destroys the ambush, fetches its trucks and drives on by itself.
+- Outgunned, it calls for air support (*troops in contact*), marks the enemy with a red smoke and itself with a green one, falls back and holds: `_gc <callsign>, resume` sends it on its way.
 
-**What you should see**: Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help shows to blue.
+**What you should see**: Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help only comes with a fall back.
 
 **Features**: `GROUNDAI`, `SPAWN` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafGroundAI/)
 

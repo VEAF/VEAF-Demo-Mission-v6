@@ -222,10 +222,11 @@ Un convoi que vous lancez vers une embuscade de trois blindés rouges, à l'est 
 À faire :
 - Posez un marqueur dans la zone « Embuscade » avec -convoy, dest EMBUSCADE, side blue : le convoi prend la route vers l'est.
 - Suivez-le sur la carte F10 ; l'embuscade attend à 400 m de la route, 2,8 km plus loin.
-- Au contact, lisez l'appel *troops in contact* : position, ennemis, cap et distance ; cherchez les fumigènes rouge (l'ennemi) et vert (le convoi).
-- Quand le convoi tient la position : _gc convoy, status, puis _gc convoy, resume pour qu'il reparte et se reforme.
+- Au contact, lisez son compte rendu, ouvert par son indicatif (Mule, Bison…) : « Bison, contact avant, 1 ennemi à 2290 m au 059, on engage le combat » ; un marqueur F10 le montre tant que le contact dure.
+- Assez fort, il va au contact, détruit l'embuscade, va rechercher ses camions et reprend la route tout seul.
+- Trop faible, il appelle l'appui aérien (*troops in contact*), marque l'ennemi d'un fumigène rouge et lui-même d'un vert, se replie et tient la position : _gc <indicatif>, resume le fait repartir.
 
-Ce qu'on doit voir : Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide s'affiche pour les bleus.]=],
+Ce qu'on doit voir : Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide ne vient que du repli.]=],
              en = [=[CONVOY UNDER FIRE
 
 A convoy you send toward an ambush of three red armoured vehicles, east of Kutaisi. Left to DCS, it would die there without firing; driven by VEAF, it watches, splits, calls for air support and falls back.
@@ -233,10 +234,11 @@ A convoy you send toward an ambush of three red armoured vehicles, east of Kutai
 What to do :
 - Drop a marker in the 'Embuscade' zone with -convoy, dest EMBUSCADE, side blue: the convoy takes the road east.
 - Follow it on the F10 map; the ambush waits 400 m off the road, 2.8 km further on.
-- At contact, read the *troops in contact* call: position, enemies, bearing and distance; look for the red smoke (the enemy) and the green one (the convoy).
-- When the convoy holds its position: _gc convoy, status, then _gc convoy, resume to drive on and regroup.
+- At contact, read its report, opened by its callsign (Mule, Bison…): 'Bison, contact ahead, 1 enemy at 2290 m bearing 059, engaging'; an F10 marker shows it while the contact lasts.
+- Strong enough, it closes in, destroys the ambush, fetches its trucks and drives on by itself.
+- Outgunned, it calls for air support (*troops in contact*), marks the enemy with a red smoke and itself with a green one, falls back and holds: _gc <callsign>, resume sends it on its way.
 
-What you should see : Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help shows to blue.]=] } },
+What you should see : Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help only comes with a fall back.]=] } },
   { n = 11, id = "qra", chapter = "air", anchorKind = "zone", anchorName = [=[QRA-Soukhoumi]=],
     title = { fr = [=[QRA de Soukhoumi]=], en = [=[Sukhumi QRA]=] },
     text = { fr = [=[QRA DE SOUKHOUMI
