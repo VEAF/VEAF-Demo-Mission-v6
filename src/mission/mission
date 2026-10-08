@@ -6860,7 +6860,7 @@ Guide détaillé : https://github.com/VEAF/VEAF-Demo-Mission-v6",
             mapX = -283415.0,
             mapY = 705205.0,
             primitiveType = "TextBox",
-            text = "10. Convoi sous le feu (départ : -convoy, dest EMBUSCADE)",
+            text = "10. Convoi sous le feu (départ : -convoy, dest EMBUSCADE, side blue)",
             visible = true,
           },
           [25] = {

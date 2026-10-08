@@ -36,7 +36,7 @@ Il vérifie que chaque chemin « VEAF > … » cité par la visite existe dans l
 - 07 Mission chaînée : le port d'Ochamchire : Port détruit : les navires apparaissent une minute après
 - 08 Opération Tkvarcheli : tâches et dépendances : Opération activée depuis son menu : les trois tâches apparaissent
 - 09 Convoi en mouvement : Convoi activé : il roule
-- 10 Convoi sous le feu : `-convoy, dest EMBUSCADE` : le convoi est surveillé
+- 10 Convoi sous le feu : `-convoy, dest EMBUSCADE, side blue` : le convoi est surveillé
 - 10 Convoi sous le feu : Au contact, il réagit avant d'être détruit
 - 11 QRA de Soukhoumi : QRA de Soukhoumi prête
 - 12 CAP à la demande et raid sur Senaki : Menu MISSIONS : la CAP MiG-29S Good scale 1 apparaît en vol

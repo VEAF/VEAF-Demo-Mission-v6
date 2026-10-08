@@ -56,12 +56,12 @@ FIXED = {
     "fr": {"Op_Tkvarcheli": "Opération Tkvarcheli (3 tâches)", "QRA-Soukhoumi": "QRA Sukhumi",
            "Sanctuaire Gudauta": "Sanctuaire rouge de Gudauta", "Bac a sable": "Bac à sable (point ALPHA)",
            "Demo CSAR": "Pilote abattu (CSAR, menu Démo : commandes)", "Arene BVR": "Arène BVR (vagues aériennes)",
-           "Embuscade": "Convoi sous le feu (départ : -convoy, dest EMBUSCADE)",
+           "Embuscade": "Convoi sous le feu (départ : -convoy, dest EMBUSCADE, side blue)",
            "training_suffix": " (entraînement, 3 niveaux)"},
     "en": {"Op_Tkvarcheli": "Operation Tkvarcheli (3 tasks)", "QRA-Soukhoumi": "QRA Sukhumi",
            "Sanctuaire Gudauta": "Gudauta red sanctuary", "Bac a sable": "Sandbox (point ALPHA)",
            "Demo CSAR": "Downed pilot (CSAR, Demo: commands menu)", "Arene BVR": "BVR arena (air waves)",
-           "Embuscade": "Convoy under fire (start: -convoy, dest EMBUSCADE)",
+           "Embuscade": "Convoy under fire (start: -convoy, dest EMBUSCADE, side blue)",
            "training_suffix": " (training, 3 levels)"},
 }
 

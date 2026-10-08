@@ -255,7 +255,7 @@ Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde
 
 **À faire** :
 
-- Posez un marqueur dans la zone « Embuscade » avec `-convoy, dest EMBUSCADE` : le convoi prend la route vers l'est.
+- Posez un marqueur dans la zone « Embuscade » avec `-convoy, dest EMBUSCADE, side blue` : le convoi prend la route vers l'est.
 - Suivez-le sur la carte F10 ; l'embuscade attend à 400 m de la route, 2,8 km plus loin.
 - Au contact, lisez l'appel *troops in contact* : position, ennemis, cap et distance ; cherchez les fumigènes rouge (l'ennemi) et vert (le convoi).
 - Quand le convoi tient la position : `_gc convoy, status`, puis `_gc convoy, resume` pour qu'il reparte et se reforme.

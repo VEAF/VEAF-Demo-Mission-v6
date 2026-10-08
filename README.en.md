@@ -255,7 +255,7 @@ Left to DCS, it would die there without firing; driven by VEAF, it watches, spli
 
 **What to do**:
 
-- Drop a marker in the 'Embuscade' zone with `-convoy, dest EMBUSCADE`: the convoy takes the road east.
+- Drop a marker in the 'Embuscade' zone with `-convoy, dest EMBUSCADE, side blue`: the convoy takes the road east.
 - Follow it on the F10 map; the ambush waits 400 m off the road, 2.8 km further on.
 - At contact, read the *troops in contact* call: position, enemies, bearing and distance; look for the red smoke (the enemy) and the green one (the convoy).
 - When the convoy holds its position: `_gc convoy, status`, then `_gc convoy, resume` to drive on and regroup.

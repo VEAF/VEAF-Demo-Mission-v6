@@ -448,12 +448,12 @@ steps:
       en: "A convoy you send toward an ambush of three red armoured vehicles, east of Kutaisi. Left to DCS, it would die there without firing; driven by VEAF, it watches, splits, calls for air support and falls back."
     how:
       fr:
-        - "Posez un marqueur dans la zone « Embuscade » avec `-convoy, dest EMBUSCADE` : le convoi prend la route vers l'est."
+        - "Posez un marqueur dans la zone « Embuscade » avec `-convoy, dest EMBUSCADE, side blue` : le convoi prend la route vers l'est."
         - "Suivez-le sur la carte F10 ; l'embuscade attend à 400 m de la route, 2,8 km plus loin."
         - "Au contact, lisez l'appel *troops in contact* : position, ennemis, cap et distance ; cherchez les fumigènes rouge (l'ennemi) et vert (le convoi)."
         - "Quand le convoi tient la position : `_gc convoy, status`, puis `_gc convoy, resume` pour qu'il reparte et se reforme."
       en:
-        - "Drop a marker in the 'Embuscade' zone with `-convoy, dest EMBUSCADE`: the convoy takes the road east."
+        - "Drop a marker in the 'Embuscade' zone with `-convoy, dest EMBUSCADE, side blue`: the convoy takes the road east."
         - "Follow it on the F10 map; the ambush waits 400 m off the road, 2.8 km further on."
         - "At contact, read the *troops in contact* call: position, enemies, bearing and distance; look for the red smoke (the enemy) and the green one (the convoy)."
         - "When the convoy holds its position: `_gc convoy, status`, then `_gc convoy, resume` to drive on and regroup."
@@ -462,15 +462,18 @@ steps:
       en: "Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help shows to blue."
     check: "Le convoi réagit avant d'être détruit : groupe « unarmed » détaché, appel « TROOPS IN CONTACT » affiché, fumigènes rouge et vert ; après une minute sans contact, il tient la position et `resume` le reforme."
     probe:
-    - name: "`-convoy, dest EMBUSCADE` : le convoi est surveillé"
+    - name: "`-convoy, dest EMBUSCADE, side blue` : le convoi est surveillé"
       act: |
-        R.marker("-convoy, dest EMBUSCADE", "Embuscade", 0, 0)
+        R.marker("-convoy, dest EMBUSCADE, side blue", "Embuscade", 0, 0)
       check: |
+        -- un convoi bleu : `-convoy` fait apparaître un convoi rouge sans `side blue`, et l'embuscade est rouge
         for name, h in pairs(veafGroundAI.convoysByGroupName or {}) do
-          R.mem.ambushConvoy = h
-          return true, name
+          if h.side == coalition.side.BLUE then
+            R.mem.ambushConvoy = h
+            return true, name
+          end
         end
-        return false, "aucun convoi surveillé"
+        return false, "aucun convoi bleu surveillé"
       timeout: 20
     - name: "Au contact, il réagit avant d'être détruit"
       check: |

@@ -220,7 +220,7 @@ What you should see : The convoy drives to Gali, then comes back, in a loop.]=] 
 Un convoi que vous lancez vers une embuscade de trois blindés rouges, à l'est de Kutaisi. Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde, appelle l'appui aérien et se replie.
 
 À faire :
-- Posez un marqueur dans la zone « Embuscade » avec -convoy, dest EMBUSCADE : le convoi prend la route vers l'est.
+- Posez un marqueur dans la zone « Embuscade » avec -convoy, dest EMBUSCADE, side blue : le convoi prend la route vers l'est.
 - Suivez-le sur la carte F10 ; l'embuscade attend à 400 m de la route, 2,8 km plus loin.
 - Au contact, lisez l'appel *troops in contact* : position, ennemis, cap et distance ; cherchez les fumigènes rouge (l'ennemi) et vert (le convoi).
 - Quand le convoi tient la position : _gc convoy, status, puis _gc convoy, resume pour qu'il reparte et se reforme.
@@ -231,7 +231,7 @@ Ce qu'on doit voir : Avant le premier tir, les camions partent seuls (groupe « 
 A convoy you send toward an ambush of three red armoured vehicles, east of Kutaisi. Left to DCS, it would die there without firing; driven by VEAF, it watches, splits, calls for air support and falls back.
 
 What to do :
-- Drop a marker in the 'Embuscade' zone with -convoy, dest EMBUSCADE: the convoy takes the road east.
+- Drop a marker in the 'Embuscade' zone with -convoy, dest EMBUSCADE, side blue: the convoy takes the road east.
 - Follow it on the F10 map; the ambush waits 400 m off the road, 2.8 km further on.
 - At contact, read the *troops in contact* call: position, enemies, bearing and distance; look for the red smoke (the enemy) and the green one (the convoy).
 - When the convoy holds its position: _gc convoy, status, then _gc convoy, resume to drive on and regroup.

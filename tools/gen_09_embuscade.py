@@ -1,7 +1,7 @@
 """Lot 09 : l'embuscade du convoi sous le feu (VMCT FEAT-CONVOY-UNDER-FIRE, #1099).
 
 Une route à l'est de Kutaisi, relevée en jeu le 2026-10-08 (`land.findPathOnRoads`) : le joueur lance
-`-convoy, dest EMBUSCADE` à son départ (zone « Embuscade »), et la route passe à 400 m de trois blindés
+`-convoy, dest EMBUSCADE, side blue` à son départ (zone « Embuscade »), et la route passe à 400 m de trois blindés
 rouges. C'est là que VMCT les a mesurés : un convoi DCS livré à lui-même y meurt sans tirer.
 Le point nommé EMBUSCADE, au bout de la route, est dans mission.yaml (NAMEDPOINTS).
 """
