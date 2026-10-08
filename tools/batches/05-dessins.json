@@ -526,7 +526,7 @@
     "x": -181381.7,
     "y": 565908.8
    },
-   "text": "10. QRA Sukhumi",
+   "text": "11. QRA Sukhumi",
    "color": "0xc2362bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -560,7 +560,7 @@
     "x": -180650.6,
     "y": 515898.8
    },
-   "text": "13. Sanctuaire rouge de Gudauta",
+   "text": "14. Sanctuaire rouge de Gudauta",
    "color": "0xc2362bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -639,13 +639,47 @@
   "params": {
    "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
    "layer": "Blue",
+   "shape": "circle",
+   "name": "Cercle Embuscade",
+   "position": {
+    "x": -283715.0,
+    "y": 705205.0
+   },
+   "radius": 300,
+   "color": "0x6a3d9aff",
+   "fill_color": "0x6a3d9a20",
+   "thickness": 4
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
+   "shape": "textbox",
+   "name": "Étiquette Embuscade",
+   "position": {
+    "x": -283415.0,
+    "y": 705205.0
+   },
+   "text": "10. Convoi sous le feu (départ : -convoy, dest EMBUSCADE)",
+   "color": "0x6a3d9aff",
+   "fill_color": "0xffffffe6",
+   "font_size": 14
+  }
+ },
+ {
+  "name": "add_map_drawing",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
+   "layer": "Blue",
    "shape": "textbox",
    "name": "Étiquette Arene BVR",
    "position": {
     "x": -270000,
     "y": 560000
    },
-   "text": "12. Arène BVR (vagues aériennes)",
+   "text": "13. Arène BVR (vagues aériennes)",
    "color": "0xd9822bff",
    "fill_color": "0xffffffe6",
    "font_size": 14

@@ -36,18 +36,20 @@ Il vérifie que chaque chemin « VEAF > … » cité par la visite existe dans l
 - 07 Mission chaînée : le port d'Ochamchire : Port détruit : les navires apparaissent une minute après
 - 08 Opération Tkvarcheli : tâches et dépendances : Opération activée depuis son menu : les trois tâches apparaissent
 - 09 Convoi en mouvement : Convoi activé : il roule
-- 10 QRA de Soukhoumi : QRA de Soukhoumi prête
-- 11 CAP à la demande et raid sur Senaki : Menu MISSIONS : la CAP MiG-29S Good scale 1 apparaît en vol
-- 11 CAP à la demande et raid sur Senaki : `-airstart Raid-Senaki/Good/1` : le raid apparaît avec son escorte
-- 11 CAP à la demande et raid sur Senaki : `-airstop Raid-Senaki/Good/1` : le raid s'arrête
-- 12 Arène BVR (vagues aériennes) : Arène BVR enregistrée avec ses trois vagues
-- 13 Sanctuaire rouge de Gudauta : Sanctuaire rouge de Gudauta enregistré (15 km, protection contre les missiles)
-- 14 Ravitailleurs, AWACS et escorte : Texaco 1, Arco 1, Overlord 1 et son escorte en vol
-- 14 Ravitailleurs, AWACS et escorte : Menu MOYENS : Overlord 1 réapparaît avec son escorte
-- 15 Hélicoptères : FARP, CTLD, CSAR : FARP Khoni présent
-- 15 Hélicoptères : FARP, CTLD, CSAR : Pilote abattu créé par la fonction du menu Démo : commandes
-- 16 Porte-avions Stennis et Roosevelt : Opérations aériennes du Stennis : il accélère face au vent
-- 16 Porte-avions Stennis et Roosevelt : S-3B et Pedro du Stennis présents avec les opérations
+- 10 Convoi sous le feu : `-convoy, dest EMBUSCADE` : le convoi est surveillé
+- 10 Convoi sous le feu : Au contact, il réagit avant d'être détruit
+- 11 QRA de Soukhoumi : QRA de Soukhoumi prête
+- 12 CAP à la demande et raid sur Senaki : Menu MISSIONS : la CAP MiG-29S Good scale 1 apparaît en vol
+- 12 CAP à la demande et raid sur Senaki : `-airstart Raid-Senaki/Good/1` : le raid apparaît avec son escorte
+- 12 CAP à la demande et raid sur Senaki : `-airstop Raid-Senaki/Good/1` : le raid s'arrête
+- 13 Arène BVR (vagues aériennes) : Arène BVR enregistrée avec ses trois vagues
+- 14 Sanctuaire rouge de Gudauta : Sanctuaire rouge de Gudauta enregistré (15 km, protection contre les missiles)
+- 15 Ravitailleurs, AWACS et escorte : Texaco 1, Arco 1, Overlord 1 et son escorte en vol
+- 15 Ravitailleurs, AWACS et escorte : Menu MOYENS : Overlord 1 réapparaît avec son escorte
+- 16 Hélicoptères : FARP, CTLD, CSAR : FARP Khoni présent
+- 16 Hélicoptères : FARP, CTLD, CSAR : Pilote abattu créé par la fonction du menu Démo : commandes
+- 17 Porte-avions Stennis et Roosevelt : Opérations aériennes du Stennis : il accélère face au vent
+- 17 Porte-avions Stennis et Roosevelt : S-3B et Pedro du Stennis présents avec les opérations
 
 - [ ] FR : `0 en échec`.
 - [ ] EN : `0 en échec`.
@@ -69,14 +71,15 @@ Version des outils : `______`  —  Date : `______`  —  Testeur : `______`
 | 07 | Mission chaînée : le port d'Ochamchire | La zone 2 (navires) n'existe pas avant la fin de la zone 1 et apparaît 60 s après ; elle n'a pas de menu propre. | ☐ | |
 | 08 | Opération Tkvarcheli : tâches et dépendances | L'opération active ses trois zones ; la tâche PC n'est listée comme objectif qu'après radar + dépôt ; les statiques détruits sont comptés (zone dépôt terminée) ; message de fin d'opération. | ☐ | |
 | 09 | Convoi en mouvement | Le convoi roule (position qui change entre deux relevés), atteint Gali et repart vers Ochamchire. | ☐ | |
-| 10 | QRA de Soukhoumi | Entrée d'un avion bleu dans le cercle : décollage d'une paire après 60 s ; avec trois intrus, deux paires ; aucune réaction à un hélicoptère ; menu Démo : commandes arrête et redémarre la QRA. | ☐ | |
-| 11 | CAP à la demande et raid sur Senaki | Chaque CAP apparaît au niveau et à la taille demandés et engage (tir de missile sur une cible bleue) ; le raid apparaît avec son escorte et suit sa route vers Senaki ; `-airstart Raid-Senaki/Good/1` / `-airstop` fonctionnent. | ☐ | |
-| 12 | Arène BVR (vagues aériennes) | Entrée d'un joueur bleu : vague 1 après 30 s ; vague suivante 60 s après la destruction de la précédente ; reset par le menu Démo : commandes. | ☐ | |
-| 13 | Sanctuaire rouge de Gudauta | Joueur bleu dans le cercle : avertissement à 10 s, défense à 60 s, destruction à 120 s ; un missile tiré sur une unité rouge du sanctuaire est détruit. | ☐ | |
-| 14 | Ravitailleurs, AWACS et escorte | Ravitaillement possible sur Texaco 1 (perche) et Arco 1 (panier), TACAN reçus ; réapparition d'Overlord 1 avec son escorte ; `_move tanker` déplace l'orbite de Texaco 1. | ☐ | |
-| 15 | Hélicoptères : FARP, CTLD, CSAR | Ravitaillement et réarmement au FARP Khoni ; chargement CTLD de troupes et d'une caisse au FARP ; pilote abattu créé par le menu, balise ADF audible, récupérable et ramené. | ☐ | |
-| 16 | Porte-avions Stennis et Roosevelt | Démarrage des opérations : virage face au vent et vitesse ; TACAN / ICLS / Link 4 reçus ; S-3B et Pedro présents pour chaque navire. | ☐ | |
-| 17 | Météo, ATC et assistance cockpit | Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent). | ☐ | |
+| 10 | Convoi sous le feu | Le convoi réagit avant d'être détruit : groupe « unarmed » détaché, appel « TROOPS IN CONTACT » affiché, fumigènes rouge et vert ; après une minute sans contact, il tient la position et `resume` le reforme. | ☐ | |
+| 11 | QRA de Soukhoumi | Entrée d'un avion bleu dans le cercle : décollage d'une paire après 60 s ; avec trois intrus, deux paires ; aucune réaction à un hélicoptère ; menu Démo : commandes arrête et redémarre la QRA. | ☐ | |
+| 12 | CAP à la demande et raid sur Senaki | Chaque CAP apparaît au niveau et à la taille demandés et engage (tir de missile sur une cible bleue) ; le raid apparaît avec son escorte et suit sa route vers Senaki ; `-airstart Raid-Senaki/Good/1` / `-airstop` fonctionnent. | ☐ | |
+| 13 | Arène BVR (vagues aériennes) | Entrée d'un joueur bleu : vague 1 après 30 s ; vague suivante 60 s après la destruction de la précédente ; reset par le menu Démo : commandes. | ☐ | |
+| 14 | Sanctuaire rouge de Gudauta | Joueur bleu dans le cercle : avertissement à 10 s, défense à 60 s, destruction à 120 s ; un missile tiré sur une unité rouge du sanctuaire est détruit. | ☐ | |
+| 15 | Ravitailleurs, AWACS et escorte | Ravitaillement possible sur Texaco 1 (perche) et Arco 1 (panier), TACAN reçus ; réapparition d'Overlord 1 avec son escorte ; `_move tanker` déplace l'orbite de Texaco 1. | ☐ | |
+| 16 | Hélicoptères : FARP, CTLD, CSAR | Ravitaillement et réarmement au FARP Khoni ; chargement CTLD de troupes et d'une caisse au FARP ; pilote abattu créé par le menu, balise ADF audible, récupérable et ramené. | ☐ | |
+| 17 | Porte-avions Stennis et Roosevelt | Démarrage des opérations : virage face au vent et vitesse ; TACAN / ICLS / Link 4 reçus ; S-3B et Pedro présents pour chaque navire. | ☐ | |
+| 18 | Météo, ATC et assistance cockpit | Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent). | ☐ | |
 
 ## Hors étapes
 

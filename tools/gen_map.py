@@ -175,12 +175,16 @@ def draw(v, legend=True, lang="fr"):
                          "below": ((x, y + r + 4), "mt"), "above": ((x, y - r - 4), "mb")}[side]
             text(d, xy_, name, col, 16, anchor=anch)
     # zones de service : bac à sable (point nommé ALPHA) et pilote abattu à la demande
-    for zn, label_ in (("Bac a sable", T["sandbox"]), ("Demo CSAR", T["csar"])):
+    for zn, label_ in (("Bac a sable", T["sandbox"]), ("Demo CSAR", T["csar"]), ("Embuscade", T["ambush"])):
         tz = ZONES[zn]
         circle(d, v, tz[:2], tz[2], "#6a3d9a", 3, dash=6)
         if not legend:
             x, y = v.px(tz[:2])
-            text(d, (x + tz[2] * v.m_to_px(tz[:2]) + 6, y), label_, "#6a3d9a", 16, anchor="lm")
+            # l'embuscade est au bord est de sa carte : son étiquette va à gauche, sous le numéro d'étape
+            if zn == "Embuscade":
+                text(d, (x - 14, y + 14), label_, "#6a3d9a", 16, anchor="rt")
+            else:
+                text(d, (x + tz[2] * v.m_to_px(tz[:2]) + 6, y), label_, "#6a3d9a", 16, anchor="lm")
     if not legend:
         x, y = v.px(ZONES["Op_Tkvarcheli"][:2])
         text(d, (x + 30, y - 40), T["operation"], RED, 16, anchor="lm")
@@ -277,7 +281,7 @@ def main():
     views = [
         ("carte", all_pts, 10000),
         ("01-kutaisi-khoni",
-         pts_of("Bac a sable", "combatZone_Khoni_Easy", "FARP Khoni", "Demo CSAR", "Kutaisi", "Senaki"), 6000),
+         pts_of("Bac a sable", "combatZone_Khoni_Easy", "FARP Khoni", "Demo CSAR", "Embuscade", "Kutaisi", "Senaki"), 6000),
         ("02-front",
          pts_of("combatZone_Gali", "combatZone_Ochamchire_SAM", "combatZone_Ochamchire_Ships", "Op_Tkvarcheli",
                 "combatZone_Convoy"), 6000),

@@ -71,6 +71,10 @@ modules:
       - name: ALPHA
         lat: "42.05701"
         lon: "42.51315"
+      # Le bout de la route de l'embuscade, à l'est de Kutaisi (étape « Convoi sous le feu »).
+      - name: EMBUSCADE
+        lat: "42.15312"
+        lon: "42.83108"
   MOVE: true
   GRASS: true
   WEATHER: true

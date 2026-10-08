@@ -213,7 +213,31 @@ What to do :
 - Zone info: the convoy position when you ask.
 
 What you should see : The convoy drives to Gali, then comes back, in a loop.]=] } },
-  { n = 10, id = "qra", chapter = "air", anchorKind = "zone", anchorName = [=[QRA-Soukhoumi]=],
+  { n = 10, id = "convoy-ambush", chapter = "ground", anchorKind = "zone", anchorName = [=[Embuscade]=],
+    title = { fr = [=[Convoi sous le feu]=], en = [=[Convoy under fire]=] },
+    text = { fr = [=[CONVOI SOUS LE FEU
+
+Un convoi que vous lancez vers une embuscade de trois blindés rouges, à l'est de Kutaisi. Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde, appelle l'appui aérien et se replie.
+
+À faire :
+- Posez un marqueur dans la zone « Embuscade » avec -convoy, dest EMBUSCADE : le convoi prend la route vers l'est.
+- Suivez-le sur la carte F10 ; l'embuscade attend à 400 m de la route, 2,8 km plus loin.
+- Au contact, lisez l'appel *troops in contact* : position, ennemis, cap et distance ; cherchez les fumigènes rouge (l'ennemi) et vert (le convoi).
+- Quand le convoi tient la position : _gc convoy, status, puis _gc convoy, resume pour qu'il reparte et se reforme.
+
+Ce qu'on doit voir : Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide s'affiche pour les bleus.]=],
+             en = [=[CONVOY UNDER FIRE
+
+A convoy you send toward an ambush of three red armoured vehicles, east of Kutaisi. Left to DCS, it would die there without firing; driven by VEAF, it watches, splits, calls for air support and falls back.
+
+What to do :
+- Drop a marker in the 'Embuscade' zone with -convoy, dest EMBUSCADE: the convoy takes the road east.
+- Follow it on the F10 map; the ambush waits 400 m off the road, 2.8 km further on.
+- At contact, read the *troops in contact* call: position, enemies, bearing and distance; look for the red smoke (the enemy) and the green one (the convoy).
+- When the convoy holds its position: _gc convoy, status, then _gc convoy, resume to drive on and regroup.
+
+What you should see : Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help shows to blue.]=] } },
+  { n = 11, id = "qra", chapter = "air", anchorKind = "zone", anchorName = [=[QRA-Soukhoumi]=],
     title = { fr = [=[QRA de Soukhoumi]=], en = [=[Sukhumi QRA]=] },
     text = { fr = [=[QRA DE SOUKHOUMI
 
@@ -233,7 +257,7 @@ What to do :
 - F10 > Other > Demo: commands > Stop / Start the Sukhumi QRA (a menu declared in YAML).
 
 What you should see : A message announces the scramble; the fighters come at you. Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.]=] } },
-  { n = 11, id = "cap", chapter = "air", anchorKind = "airbase", anchorName = [=[Gudauta]=],
+  { n = 12, id = "cap", chapter = "air", anchorKind = "airbase", anchorName = [=[Gudauta]=],
     title = { fr = [=[CAP à la demande et raid sur Senaki]=], en = [=[On-demand CAP and the Senaki raid]=] },
     text = { fr = [=[CAP À LA DEMANDE ET RAID SUR SENAKI
 
@@ -255,7 +279,7 @@ What to do :
 - Or by marker: -airstart Raid-Senaki/Good/1, -airstop Raid-Senaki/Good/1 (name, level, size).
 
 What you should see : The patrol spawns airborne on its race-track and engages what comes in range; the raid flies to Senaki and bombs the base unless intercepted.]=] } },
-  { n = 12, id = "airwaves", chapter = "air", anchorKind = "zone", anchorName = [=[Arene BVR]=],
+  { n = 13, id = "airwaves", chapter = "air", anchorKind = "zone", anchorName = [=[Arene BVR]=],
     title = { fr = [=[Arène BVR (vagues aériennes)]=], en = [=[BVR arena (air waves)]=] },
     text = { fr = [=[ARÈNE BVR (VAGUES AÉRIENNES)
 
@@ -275,7 +299,7 @@ What to do :
 - To start over: F10 > Other > Demo: commands > Reset the BVR arena.
 
 What you should see : A start message, then a wave; the next comes one minute after the previous is destroyed. If you die, the arena resets.]=] } },
-  { n = 13, id = "sanctuary", chapter = "air", anchorKind = "zone", anchorName = [=[Sanctuaire Gudauta]=],
+  { n = 14, id = "sanctuary", chapter = "air", anchorKind = "zone", anchorName = [=[Sanctuaire Gudauta]=],
     title = { fr = [=[Sanctuaire rouge de Gudauta]=], en = [=[Gudauta red sanctuary]=] },
     text = { fr = [=[SANCTUAIRE ROUGE DE GUDAUTA
 
@@ -293,7 +317,7 @@ What to do :
 - Fly into the Gudauta circle in a blue aircraft and stay.
 
 What you should see : Warning after 10 s, defences deployed at 60 s, aircraft shot down at 120 s.]=] } },
-  { n = 14, id = "assets", chapter = "support", anchorKind = "group", anchorName = [=[Texaco 1]=],
+  { n = 15, id = "assets", chapter = "support", anchorKind = "group", anchorName = [=[Texaco 1]=],
     title = { fr = [=[Ravitailleurs, AWACS et escorte]=], en = [=[Tankers, AWACS and escort]=] },
     text = { fr = [=[RAVITAILLEURS, AWACS ET ESCORTE
 
@@ -315,7 +339,7 @@ What to do :
 - Marker _move tanker, name Texaco 1, alt 22000 where you want the race-track.
 
 What you should see : Tankers answer on their frequency and TACAN; after a _move tanker, Texaco 1 flies to its new orbit.]=] } },
-  { n = 15, id = "helos", chapter = "support", anchorKind = "group", anchorName = [=[FARP Khoni]=],
+  { n = 16, id = "helos", chapter = "support", anchorKind = "group", anchorName = [=[FARP Khoni]=],
     title = { fr = [=[Hélicoptères : FARP, CTLD, CSAR]=], en = [=[Helicopters: FARP, CTLD, CSAR]=] },
     text = { fr = [=[HÉLICOPTÈRES : FARP, CTLD, CSAR
 
@@ -337,7 +361,7 @@ What to do :
 - F10 > Other > Demo: commands > Create a downed pilot near Khoni, then the CSAR menu for its beacon and position.
 
 What you should see : The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.]=] } },
-  { n = 16, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
+  { n = 17, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
     title = { fr = [=[Porte-avions Stennis et Roosevelt]=], en = [=[Stennis and Roosevelt carriers]=] },
     text = { fr = [=[PORTE-AVIONS STENNIS ET ROOSEVELT
 
@@ -359,7 +383,7 @@ What to do :
 - Deck slots: Stennis F/A-18C, Roosevelt F-14B.
 
 What you should see : The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels.]=] } },
-  { n = 17, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
+  { n = 18, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
     title = { fr = [=[Météo, ATC et assistance cockpit]=], en = [=[Weather, ATC and cockpit assistance]=] },
     text = { fr = [=[MÉTÉO, ATC ET ASSISTANCE COCKPIT
 
