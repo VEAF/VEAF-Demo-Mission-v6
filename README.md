@@ -299,7 +299,7 @@ La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dan
 
 **À faire** :
 
-- Menu F10 > Autre > VEAF > Opposition > Niveau actuel : le niveau et son mode.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau actuel : le niveau et son mode.
 - Marqueur `_opposition 4` : le niveau passe à 4 et ne suit plus les joueurs ; `_opposition players` le refait suivre.
 - Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
 

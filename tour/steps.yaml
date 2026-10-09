@@ -557,17 +557,17 @@ steps:
       en: "The red fighters scale with the number of players: the mission carries a level, the number of blue aircraft the opposition is sized for, which here follows the players connected. The Sukhumi QRA takes the tier of the bigger of that level and the intruders in its circle; the on-demand CAPs offer an automatic size, one patrol per two players."
     how:
       fr:
-        - "Menu F10 > Autre > VEAF > Opposition > Niveau actuel : le niveau et son mode."
+        - "Menu F10 > Autre > VEAF > OPPOSITION > Niveau actuel : le niveau et son mode."
         - "Marqueur `_opposition 4` : le niveau passe à 4 et ne suit plus les joueurs ; `_opposition players` le refait suivre."
         - "Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition)."
       en:
-        - "F10 > Other > VEAF > Opposition > Current level: the level and its mode."
+        - "F10 > Other > VEAF > OPPOSITION > Current level: the level and its mode."
         - "Marker `_opposition 4`: the level goes to 4 and stops following the players; `_opposition players` makes it follow again."
         - "F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level)."
     see:
       fr: "Chaque changement de niveau est annoncé à tous. Au niveau 4, un seul intrus dans le cercle de Soukhoumi fait décoller deux paires, et « Taille auto » active la CAP en scale 2. Quand un joueur se déconnecte, le niveau ne baisse qu'après 5 minutes."
       en: "Every change of level is announced to all. At level 4, a single intruder in the Sukhumi circle scrambles two pairs, and \"Auto scale\" activates the CAP at scale 2. When a player leaves, the level drops only after 5 minutes."
-    check: "Opposition > Niveau actuel annonce le niveau ; `_opposition 4` l'annonce à 4 « fixe » ; un intrus seul dans le cercle de Soukhoumi fait alors décoller deux paires ; Taille auto active la CAP Good/2 ; `_opposition players` revient au nombre de joueurs connectés."
+    check: "OPPOSITION > Niveau actuel annonce le niveau ; `_opposition 4` l'annonce à 4 « fixe » ; un intrus seul dans le cercle de Soukhoumi fait alors décoller deux paires ; Taille auto active la CAP Good/2 ; `_opposition players` revient au nombre de joueurs connectés."
     probe:
     - name: "Un niveau d'opposition est réglé"
       check: |

@@ -266,7 +266,7 @@ What you should see : A message announces the scramble; the fighters roll on Suk
 La chasse rouge se dimensionne au nombre de joueurs : la mission porte un niveau, le nombre d'avions bleus pour lequel l'opposition est réglée, qui suit ici les joueurs connectés. La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dans son cercle ; les CAP à la demande offrent une taille automatique, une patrouille pour deux joueurs.
 
 À faire :
-- Menu F10 > Autre > VEAF > Opposition > Niveau actuel : le niveau et son mode.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau actuel : le niveau et son mode.
 - Marqueur _opposition 4 : le niveau passe à 4 et ne suit plus les joueurs ; _opposition players le refait suivre.
 - Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
 
@@ -276,7 +276,7 @@ Ce qu'on doit voir : Chaque changement de niveau est annoncé à tous. Au niveau
 The red fighters scale with the number of players: the mission carries a level, the number of blue aircraft the opposition is sized for, which here follows the players connected. The Sukhumi QRA takes the tier of the bigger of that level and the intruders in its circle; the on-demand CAPs offer an automatic size, one patrol per two players.
 
 What to do :
-- F10 > Other > VEAF > Opposition > Current level: the level and its mode.
+- F10 > Other > VEAF > OPPOSITION > Current level: the level and its mode.
 - Marker _opposition 4: the level goes to 4 and stops following the players; _opposition players makes it follow again.
 - F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level).
 
