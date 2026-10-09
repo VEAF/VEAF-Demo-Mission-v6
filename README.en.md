@@ -274,7 +274,7 @@ Left to DCS, it would die there without firing; driven by VEAF, it watches, spli
 
 A quick reaction alert (QRA) defends Sukhumi within a 40 km circle that covers Ochamchire.
 It answers the threat: one intruder scrambles a pair drawn between MiG-29S and Su-27; three or more, two pairs among Su-30, MiG-31 and MiG-29S.
-Three blue players connected count as three intruders (next step, the opposition level).
+Three blue players on CAP count as three intruders (next step, the opposition level).
 It ignores helicopters.
 The fighters take off from Sukhumi's runway, then climb to their patrol.
 
@@ -292,20 +292,21 @@ Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.
 
 #### 12 Opposition level
 
-The red fighters scale with the number of players: the mission carries a level, the number of blue aircraft the opposition is sized for, which here follows the players connected.
+The red fighters scale with the number of players: the mission carries a level, the number of blue aircraft the opposition is sized for, which here follows the players on CAP: those flying with a radar-guided air-to-air missile (Fox 1 or Fox 3), read from what they carry — not the helicopters nor the ground attack.
 The Sukhumi QRA takes the tier of the bigger of that level and the intruders in its circle; the on-demand CAPs offer an automatic size, one patrol per two players.
 
 **Where**: Anywhere (no particular place)
 
 **What to do**:
 
-- F10 > Other > VEAF > OPPOSITION > Current level: the level and its mode.
-- Marker `_opposition 4`: the level goes to 4 and stops following the players; `_opposition players` makes it follow again.
+- F10 > Other > VEAF > Opposition > Current level: the level and its mode.
+- F10 > Other > VEAF > Opposition > Level > 4 player(s) on CAP: the level goes to 4 and stops following the players; Opposition > Mode > follows the players airborne armed for air-to-air makes it follow again.
+- Or by marker: `_opposition 4`, `_opposition air_to_air`.
 - F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level).
 
 **What you should see**: Every change of level is announced to all.
 At level 4, a single intruder in the Sukhumi circle scrambles two pairs, and "Auto scale" activates the CAP at scale 2.
-When a player leaves, the level drops only after 5 minutes.
+A pilot who rearms with air-to-air missiles counts as soon as he is airborne again; when a player on CAP lands or leaves, the level drops only after 5 minutes.
 
 **Features**: `QRA`, `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafQraManager/#opposition-level)
 
