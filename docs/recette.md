@@ -38,7 +38,9 @@ Il vérifie que chaque chemin « VEAF > … » cité par la visite existe dans l
 - 09 Convoi en mouvement : Convoi activé : il roule
 - 10 Convoi sous le feu : `-convoy, dest EMBUSCADE, side blue` : le convoi est surveillé
 - 10 Convoi sous le feu : Au contact, il réagit avant d'être détruit
+- 10 Convoi sous le feu : En repli sans pilote bleu, ni appel ni fumigène
 - 11 QRA de Soukhoumi : QRA de Soukhoumi prête
+- 11 QRA de Soukhoumi : Ses quatre groupes décollent de la piste de Soukhoumi
 - 12 Niveau d'opposition : Un niveau d'opposition est réglé
 - 12 Niveau d'opposition : `_opposition 4` : niveau 4, fixe
 - 12 Niveau d'opposition : La QRA de Soukhoumi choisit son palier d'après le niveau
@@ -51,10 +53,13 @@ Il vérifie que chaque chemin « VEAF > … » cité par la visite existe dans l
 - 15 Sanctuaire rouge de Gudauta : Sanctuaire rouge de Gudauta enregistré (15 km, protection contre les missiles)
 - 16 Ravitailleurs, AWACS et escorte : Texaco 1, Arco 1, Overlord 1 et son escorte en vol
 - 16 Ravitailleurs, AWACS et escorte : Menu MOYENS : Overlord 1 réapparaît avec son escorte
-- 17 Hélicoptères : FARP, CTLD, CSAR : FARP Khoni présent
-- 17 Hélicoptères : FARP, CTLD, CSAR : Pilote abattu créé par la fonction du menu Démo : commandes
-- 18 Porte-avions Stennis et Roosevelt : Opérations aériennes du Stennis : il accélère face au vent
-- 18 Porte-avions Stennis et Roosevelt : S-3B et Pedro du Stennis présents avec les opérations
+- 17 Escorte à la demande : Escorte de Texaco 1 par le modèle fox3
+- 17 Escorte à la demande : Escorte refusée, sans modèle à ce nom
+- 18 Hélicoptères : FARP, CTLD, CSAR : FARP Khoni présent
+- 18 Hélicoptères : FARP, CTLD, CSAR : Pilote abattu créé par la fonction du menu Démo : commandes
+- 19 Aérodromes : caisses et troupes CTLD : Kutaisi : zone logistique et zone de troupes bleues
+- 20 Porte-avions Stennis et Roosevelt : Opérations aériennes du Stennis : il accélère face au vent
+- 20 Porte-avions Stennis et Roosevelt : S-3B et Pedro du Stennis présents avec les opérations
 
 - [ ] FR : `0 en échec`.
 - [ ] EN : `0 en échec`.
@@ -76,16 +81,18 @@ Version des outils : `______`  —  Date : `______`  —  Testeur : `______`
 | 07 | Mission chaînée : le port d'Ochamchire | La zone 2 (navires) n'existe pas avant la fin de la zone 1 et apparaît 60 s après ; elle n'a pas de menu propre. | ☐ | |
 | 08 | Opération Tkvarcheli : tâches et dépendances | L'opération active ses trois zones ; la tâche PC n'est listée comme objectif qu'après radar + dépôt ; les statiques détruits sont comptés (zone dépôt terminée) ; message de fin d'opération. | ☐ | |
 | 09 | Convoi en mouvement | Le convoi roule (position qui change entre deux relevés), atteint Gali et repart vers Ochamchire. | ☐ | |
-| 10 | Convoi sous le feu | Le convoi réagit avant d'être détruit : groupe « unarmed » détaché, compte rendu de contact sous son indicatif, marqueur F10 ; vainqueur, il repart seul, par la route, ses camions repris ; en repli, appel « TROOPS IN CONTACT », fumigènes rouge et vert, puis il tient la position. | ☐ | |
-| 11 | QRA de Soukhoumi | Un seul joueur connecté, entrée d'un avion bleu dans le cercle : décollage d'une paire après 60 s ; avec trois intrus, deux paires ; aucune réaction à un hélicoptère ; menu Démo : commandes arrête et redémarre la QRA. | ☐ | |
-| 12 | Niveau d'opposition | Opposition > Niveau actuel annonce le niveau ; `_opposition 4` l'annonce à 4 « fixe » ; un intrus seul dans le cercle de Soukhoumi fait alors décoller deux paires ; Taille auto active la CAP Good/2 ; `_opposition players` revient au nombre de joueurs connectés. | ☐ | |
+| 10 | Convoi sous le feu | Le convoi réagit avant d'être détruit : groupe « unarmed » détaché, compte rendu de contact sous son indicatif, marqueur F10 ; vainqueur, il repart seul, par la route, ses camions repris ; en repli avec un pilote bleu en vol, appel « TROOPS IN CONTACT », fumigènes rouge et vert, puis il tient la position ; en repli sans pilote bleu connecté (slot game master seul), ni appel ni fumigène. | ☐ | |
+| 11 | QRA de Soukhoumi | Un seul joueur connecté, entrée d'un avion bleu dans le cercle : après 60 s, une paire décolle de la piste de Soukhoumi (pas d'apparition en vol) et monte vers l'intrus ; avec deux paires, les quatre avions décollent sans se percuter ; avec trois intrus, deux paires ; aucune réaction à un hélicoptère ; menu Démo : commandes arrête et redémarre la QRA. | ☐ | |
+| 12 | Niveau d'opposition | OPPOSITION > Niveau actuel annonce le niveau ; `_opposition 4` l'annonce à 4 « fixe » ; un intrus seul dans le cercle de Soukhoumi fait alors décoller deux paires ; Taille auto active la CAP Good/2 ; `_opposition players` revient au nombre de joueurs connectés. | ☐ | |
 | 13 | CAP à la demande et raid sur Senaki | Chaque CAP apparaît au niveau et à la taille demandés et engage (tir de missile sur une cible bleue) ; le raid apparaît avec son escorte et suit sa route vers Senaki ; `-airstart Raid-Senaki/Good/1` / `-airstop` fonctionnent. | ☐ | |
 | 14 | Arène BVR (vagues aériennes) | Entrée d'un joueur bleu : vague 1 après 30 s ; vague suivante 60 s après la destruction de la précédente ; reset par le menu Démo : commandes. | ☐ | |
 | 15 | Sanctuaire rouge de Gudauta | Joueur bleu dans le cercle : avertissement à 10 s, défense à 60 s, destruction à 120 s ; un missile tiré sur une unité rouge du sanctuaire est détruit. | ☐ | |
 | 16 | Ravitailleurs, AWACS et escorte | Ravitaillement possible sur Texaco 1 (perche) et Arco 1 (panier), TACAN reçus ; réapparition d'Overlord 1 avec son escorte ; `_move tanker` déplace l'orbite de Texaco 1. | ☐ | |
-| 17 | Hélicoptères : FARP, CTLD, CSAR | Ravitaillement et réarmement au FARP Khoni ; chargement CTLD de troupes et d'une caisse au FARP ; pilote abattu créé par le menu, balise ADF audible, récupérable et ramené. | ☐ | |
-| 18 | Porte-avions Stennis et Roosevelt | Démarrage des opérations : virage face au vent et vitesse ; TACAN / ICLS / Link 4 reçus ; S-3B et Pedro présents pour chaque navire. | ☐ | |
-| 19 | Météo, ATC et assistance cockpit | Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent). | ☐ | |
+| 17 | Escorte à la demande | En A-10C ou F-16C en vol, +Escorte-moi (fox3) fait apparaître un F-15C qui suit l'avion ; `-escort introuvable` affiche « Aucun modèle d'escorte « introuvable » pour votre camp : pas d'escorte » ; en UH-1H, « Seul un avion peut être escorté ». | ☐ | |
+| 18 | Hélicoptères : FARP, CTLD, CSAR | Ravitaillement et réarmement au FARP Khoni ; chargement CTLD de troupes et d'une caisse au FARP ; pilote abattu créé par le menu, balise ADF audible, récupérable et ramené. | ☐ | |
+| 19 | Aérodromes : caisses et troupes CTLD | Cercle vert visible autour de Kutaisi pour le camp bleu ; en UH-1H posé dans le cercle, embarquement de troupes et caisse CTLD possibles ; troupes débarquées dans le cercle renvoyées à la base, hors du cercle déployées. | ☐ | |
+| 20 | Porte-avions Stennis et Roosevelt | Démarrage des opérations : virage face au vent et vitesse ; TACAN / ICLS / Link 4 reçus ; S-3B et Pedro présents pour chaque navire. | ☐ | |
+| 21 | Météo, ATC et assistance cockpit | Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent). | ☐ | |
 
 ## Hors étapes
 
