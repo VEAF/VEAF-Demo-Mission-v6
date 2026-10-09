@@ -272,7 +272,7 @@ Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde
 
 Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Ochamchire.
 Elle répond à la menace : un intrus fait décoller une paire tirée au sort entre MiG-29S et Su-27 ; trois intrus ou plus, deux paires parmi Su-30, MiG-31 et MiG-29S.
-Trois joueurs bleus connectés comptent comme trois intrus (étape suivante, niveau d'opposition).
+Trois joueurs bleus en CAP comptent comme trois intrus (étape suivante, niveau d'opposition).
 Elle ne réagit pas aux hélicoptères.
 
 **Où** : BULLSEYE 297/39 — 55 nm de Senaki-Kolkhi
@@ -289,7 +289,7 @@ Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est 
 
 #### 12 Niveau d'opposition
 
-La chasse rouge se dimensionne au nombre de joueurs : la mission porte un niveau, le nombre d'avions bleus pour lequel l'opposition est réglée, qui suit ici les joueurs connectés.
+La chasse rouge se dimensionne au nombre de joueurs : la mission porte un niveau, le nombre d'avions bleus pour lequel l'opposition est réglée, qui suit ici les joueurs en CAP : ceux qui volent avec un missile air-air à guidage radar (Fox 1 ou Fox 3), lu sur ce qu'ils emportent — pas les hélicos ni l'attaque au sol.
 La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dans son cercle ; les CAP à la demande offrent une taille automatique, une patrouille pour deux joueurs.
 
 **Où** : Partout (pas de lieu particulier)
@@ -297,12 +297,13 @@ La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dan
 **À faire** :
 
 - Menu F10 > Autre > VEAF > Opposition > Niveau actuel : le niveau et son mode.
-- Marqueur `_opposition 4` : le niveau passe à 4 et ne suit plus les joueurs ; `_opposition players` le refait suivre.
+- Menu F10 > Autre > VEAF > Opposition > Niveau > 4 joueur(s) en CAP : le niveau passe à 4 et ne suit plus les joueurs ; Opposition > Mode > suit les joueurs en vol armés air-air le refait suivre.
+- Ou par marqueur : `_opposition 4`, `_opposition air_to_air`.
 - Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
 
 **Ce qu'on doit voir** : Chaque changement de niveau est annoncé à tous.
 Au niveau 4, un seul intrus dans le cercle de Soukhoumi fait décoller deux paires, et « Taille auto » active la CAP en scale 2.
-Quand un joueur se déconnecte, le niveau ne baisse qu'après 5 minutes.
+Un pilote qui réarme en missiles air-air compte dès qu'il redécolle ; quand un joueur en CAP atterrit ou se déconnecte, le niveau ne baisse qu'après 5 minutes.
 
 **Fonctionnalités** : `QRA`, `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafQraManager/#opposition-level)
 
