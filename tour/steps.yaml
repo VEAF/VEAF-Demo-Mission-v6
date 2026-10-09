@@ -770,7 +770,8 @@ steps:
     probe:
     - name: "Escorte de Texaco 1 par le modèle fox3"
       act: |
-        R.mem.escort = veafSpawn.spawnEscort("fox3", "Texaco 1", nil, true, true)
+        -- le pays du camp, comme « Escorte-moi » passe celui du pilote : sans pays, spawnEscort refuse avant de chercher un modèle
+        R.mem.escort = veafSpawn.spawnEscort("fox3", "Texaco 1", veaf.getCountryForCoalition(coalition.side.BLUE), true, true)
       check: |
         local g = R.mem.escort and Group.getByName(R.mem.escort)
         local ok = g ~= nil and g:getUnit(1) ~= nil
@@ -780,8 +781,11 @@ steps:
       timeout: 15
     - name: "Escorte refusée, sans modèle à ce nom"
       check: |
-        local name = veafSpawn.spawnEscort("introuvable", "Texaco 1", nil, false, true)
-        return name == nil, "refus : " .. tostring(name == nil)
+        local country = veaf.getCountryForCoalition(coalition.side.BLUE)
+        local name = veafSpawn.spawnEscort("introuvable", "Texaco 1", country, false, true)
+        -- refusé faute de modèle, pas faute de pays : le modèle fox3 du même camp, lui, existe
+        local fox3 = veafSpawn.findSpawnableAircraftGroupname("fox3", coalition.side.BLUE)
+        return name == nil and fox3 ~= nil, "refus : " .. tostring(name == nil) .. ", modèle fox3 : " .. tostring(fox3)
     doc: "mission-maker/scripts/veafSpawn/"
 
   - id: helos
