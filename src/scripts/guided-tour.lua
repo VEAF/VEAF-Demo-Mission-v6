@@ -224,9 +224,9 @@ Un convoi que vous lancez vers une embuscade de trois blindés rouges, à l'est 
 - Suivez-le sur la carte F10 ; l'embuscade attend à 400 m de la route, 2,8 km plus loin.
 - Au contact, lisez son compte rendu, ouvert par son indicatif (Mule, Bison…) : « Bison, contact avant, 1 ennemi à 2290 m au 059, on engage le combat » ; un marqueur F10 le montre tant que le contact dure.
 - Assez fort, il va au contact, détruit l'embuscade, va rechercher ses camions et reprend la route tout seul.
-- Trop faible, il appelle l'appui aérien (*troops in contact*), marque l'ennemi d'un fumigène rouge et lui-même d'un vert, se replie et tient la position : _gc <indicatif>, resume le fait repartir.
+- Trop faible, il appelle l'appui aérien (*troops in contact*), marque l'ennemi d'un fumigène rouge et lui-même d'un vert, se replie et tient la position : _gc <indicatif>, resume le fait repartir. L'appel et les fumigènes sont pour les pilotes : sans pilote bleu connecté, il se replie sans rien dire.
 
-Ce qu'on doit voir : Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide ne vient que du repli.]=],
+Ce qu'on doit voir : Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide ne vient que du repli, et seulement si des pilotes bleus sont connectés.]=],
              en = [=[CONVOY UNDER FIRE
 
 A convoy you send toward an ambush of three red armoured vehicles, east of Kutaisi. Left to DCS, it would die there without firing; driven by VEAF, it watches, splits, calls for air support and falls back.
@@ -236,29 +236,29 @@ What to do :
 - Follow it on the F10 map; the ambush waits 400 m off the road, 2.8 km further on.
 - At contact, read its report, opened by its callsign (Mule, Bison…): 'Bison, contact ahead, 1 enemy at 2290 m bearing 059, engaging'; an F10 marker shows it while the contact lasts.
 - Strong enough, it closes in, destroys the ambush, fetches its trucks and drives on by itself.
-- Outgunned, it calls for air support (*troops in contact*), marks the enemy with a red smoke and itself with a green one, falls back and holds: _gc <callsign>, resume sends it on its way.
+- Outgunned, it calls for air support (*troops in contact*), marks the enemy with a red smoke and itself with a green one, falls back and holds: _gc <callsign>, resume sends it on its way. The call and the smokes are for the pilots: with no blue pilot connected, it falls back without a word.
 
-What you should see : Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help only comes with a fall back.]=] } },
+What you should see : Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help only comes with a fall back, and only when blue pilots are connected.]=] } },
   { n = 11, id = "qra", chapter = "air", anchorKind = "zone", anchorName = [=[QRA-Soukhoumi]=],
     title = { fr = [=[QRA de Soukhoumi]=], en = [=[Sukhumi QRA]=] },
     text = { fr = [=[QRA DE SOUKHOUMI
 
-Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Ochamchire. Elle répond à la menace : un intrus fait décoller une paire tirée au sort entre MiG-29S et Su-27 ; trois intrus ou plus, deux paires parmi Su-30, MiG-31 et MiG-29S. Trois joueurs bleus connectés comptent comme trois intrus (étape suivante, niveau d'opposition). Elle ne réagit pas aux hélicoptères.
+Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Ochamchire. Elle répond à la menace : un intrus fait décoller une paire tirée au sort entre MiG-29S et Su-27 ; trois intrus ou plus, deux paires parmi Su-30, MiG-31 et MiG-29S. Trois joueurs bleus connectés comptent comme trois intrus (étape suivante, niveau d'opposition). Elle ne réagit pas aux hélicoptères. Les chasseurs décollent de la piste de Soukhoumi, puis montent à leur patrouille.
 
 À faire :
 - Entrez dans le cercle (dessiné sur la carte F10) avec un avion : la QRA décolle 60 s plus tard.
 - Menu F10 > Autre > Démo : commandes > Arrêter / Démarrer la QRA de Soukhoumi (menu déclaré en YAML).
 
-Ce qu'on doit voir : Un message annonce le décollage ; les chasseurs viennent vers vous. Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est vidé d'intrus.]=],
+Ce qu'on doit voir : Un message annonce le décollage ; les chasseurs roulent sur la piste de Soukhoumi, décollent et viennent vers vous. Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est vidé d'intrus.]=],
              en = [=[SUKHUMI QRA
 
-A quick reaction alert (QRA) defends Sukhumi within a 40 km circle that covers Ochamchire. It answers the threat: one intruder scrambles a pair drawn between MiG-29S and Su-27; three or more, two pairs among Su-30, MiG-31 and MiG-29S. Three blue players connected count as three intruders (next step, the opposition level). It ignores helicopters.
+A quick reaction alert (QRA) defends Sukhumi within a 40 km circle that covers Ochamchire. It answers the threat: one intruder scrambles a pair drawn between MiG-29S and Su-27; three or more, two pairs among Su-30, MiG-31 and MiG-29S. Three blue players connected count as three intruders (next step, the opposition level). It ignores helicopters. The fighters take off from Sukhumi's runway, then climb to their patrol.
 
 What to do :
 - Enter the circle (drawn on the F10 map) in an aircraft: the QRA scrambles 60 s later.
 - F10 > Other > Demo: commands > Stop / Start the Sukhumi QRA (a menu declared in YAML).
 
-What you should see : A message announces the scramble; the fighters come at you. Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.]=] } },
+What you should see : A message announces the scramble; the fighters roll on Sukhumi's runway, take off and come at you. Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.]=] } },
   { n = 12, id = "opposition", chapter = "air", anchorKind = "none", anchorName = [=[]=],
     title = { fr = [=[Niveau d'opposition]=], en = [=[Opposition level]=] },
     text = { fr = [=[NIVEAU D'OPPOSITION
@@ -363,7 +363,29 @@ What to do :
 - Marker _move tanker, name Texaco 1, alt 22000 where you want the race-track.
 
 What you should see : Tankers answer on their frequency and TACAN; after a _move tanker, Texaco 1 flies to its new orbit.]=] } },
-  { n = 17, id = "helos", chapter = "support", anchorKind = "group", anchorName = [=[FARP Khoni]=],
+  { n = 17, id = "escort", chapter = "support", anchorKind = "none", anchorName = [=[]=],
+    title = { fr = [=[Escorte à la demande]=], en = [=[Escort on demand]=] },
+    text = { fr = [=[ESCORTE À LA DEMANDE
+
+Un pilote d'avion bleu fait venir une escorte de chasse depuis le menu : un F-15C apparaît près de lui et le couvre. Quand l'escorte ne peut pas venir, le menu dit pourquoi.
+
+À faire :
+- En vol dans un avion bleu, Menu F10 > Autre > VEAF > APPARITION > +Escorte-moi (fox3) : un F-15C Fox 3 ; +Escorte-moi (fox2) pour un Fox 2.
+- Pour voir un refus, posez près de votre avion un marqueur -escort introuvable : aucun modèle ne porte ce nom.
+- Dans un hélicoptère, le même menu refuse : seul un avion peut être escorté.
+
+Ce qu'on doit voir : « Une escorte … part couvrir … », et le F-15C se place à vos côtés ; un refus s'affiche à l'écran avec sa raison, au lieu de rien.]=],
+             en = [=[ESCORT ON DEMAND
+
+A blue airplane pilot calls a fighter escort from the menu: an F-15C appears near them and covers them. When the escort cannot come, the menu says why.
+
+What to do :
+- Airborne in a blue airplane, F10 > Other > VEAF > SPAWN > +Escort me (fox3): a Fox 3 F-15C; +Escort me (fox2) for a Fox 2.
+- To see a refusal, drop a marker -escort introuvable near your aircraft: no template carries that name.
+- In a helicopter, the same menu refuses: only an airplane can be escorted.
+
+What you should see : 'An escort … is on its way to cover …', and the F-15C joins you; a refusal shows on screen with its reason, instead of nothing.]=] } },
+  { n = 18, id = "helos", chapter = "support", anchorKind = "group", anchorName = [=[FARP Khoni]=],
     title = { fr = [=[Hélicoptères : FARP, CTLD, CSAR]=], en = [=[Helicopters: FARP, CTLD, CSAR]=] },
     text = { fr = [=[HÉLICOPTÈRES : FARP, CTLD, CSAR
 
@@ -385,7 +407,29 @@ What to do :
 - F10 > Other > Demo: commands > Create a downed pilot near Khoni, then the CSAR menu for its beacon and position.
 
 What you should see : The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.]=] } },
-  { n = 18, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
+  { n = 19, id = "airfields", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
+    title = { fr = [=[Aérodromes : caisses et troupes CTLD]=], en = [=[Airfields: CTLD crates and troops]=] },
+    text = { fr = [=[AÉRODROMES : CAISSES ET TROUPES CTLD
+
+Chaque aérodrome tenu est, pour son camp, une zone logistique CTLD (caisses) et une zone d'embarquement de troupes, dans un cercle vert de 250 m dessiné sur la carte F10. Le cercle suit le propriétaire du terrain : il s'éteint quand le terrain est pris et revient pour le nouveau camp après deux minutes d'occupation au sol.
+
+À faire :
+- Carte F10 : le cercle vert autour de Kutaisi (et de Senaki, Kobuleti, Batumi).
+- En UH-1H ou Mi-8 à Kutaisi, posez-vous dans le cercle : Menu F10 > Autre > CTLD, embarquez des troupes, puis demandez une caisse.
+- Débarquez les troupes hors du cercle pour les déployer ; débarquées dans le cercle, elles rentrent à la base.
+
+Ce qu'on doit voir : Les troupes embarquent et la caisse apparaît près de l'hélicoptère, sans FARP ni dépôt : l'aérodrome suffit.]=],
+             en = [=[AIRFIELDS: CTLD CRATES AND TROOPS
+
+Every airfield held is, for its side, a CTLD logistic zone (crates) and a troop pickup zone, inside a 250 m green circle drawn on the F10 map. The circle follows the field's owner: it goes dark when the field is taken and comes back for the new side after two minutes of occupation on the ground.
+
+What to do :
+- F10 map: the green circle around Kutaisi (and Senaki, Kobuleti, Batumi).
+- In a UH-1H or Mi-8 at Kutaisi, land inside the circle: F10 > Other > CTLD, board troops, then request a crate.
+- Unload the troops outside the circle to deploy them; unloaded inside it, they go back to base.
+
+What you should see : The troops board and the crate appears near the helicopter, with no FARP or depot: the airfield is enough.]=] } },
+  { n = 20, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
     title = { fr = [=[Porte-avions Stennis et Roosevelt]=], en = [=[Stennis and Roosevelt carriers]=] },
     text = { fr = [=[PORTE-AVIONS STENNIS ET ROOSEVELT
 
@@ -407,7 +451,7 @@ What to do :
 - Deck slots: Stennis F/A-18C, Roosevelt F-14B.
 
 What you should see : The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels.]=] } },
-  { n = 19, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
+  { n = 21, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
     title = { fr = [=[Météo, ATC et assistance cockpit]=], en = [=[Weather, ATC and cockpit assistance]=] },
     text = { fr = [=[MÉTÉO, ATC ET ASSISTANCE COCKPIT
 

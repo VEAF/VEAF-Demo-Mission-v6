@@ -81,9 +81,11 @@ Tous les aérodromes russes et abkhazes sont rouges, sans slot. Les dynamiques n
 | 14 | [Arène BVR (vagues aériennes)](#14-arène-bvr-vagues-aériennes) | BULLSEYE 239/44 — 43 nm de Kobuleti | `AIRWAVES`, `RADIO` |
 | 15 | [Sanctuaire rouge de Gudauta](#15-sanctuaire-rouge-de-gudauta) | BULLSEYE 297/69 — 85 nm de Senaki-Kolkhi | `SANCTUARY` |
 | 16 | [Ravitailleurs, AWACS et escorte](#16-ravitailleurs-awacs-et-escorte) | BULLSEYE 122/48 — 14 nm de Kutaisi (au départ de la mission) | `ASSETS`, `MOVE` |
-| 17 | [Hélicoptères : FARP, CTLD, CSAR](#17-hélicoptères--farp-ctld-csar) | BULLSEYE 112/26 — 9 nm de Kutaisi | `CTLD`, `CSAR`, `GRASS` |
-| 18 | [Porte-avions Stennis et Roosevelt](#18-porte-avions-stennis-et-roosevelt) | BULLSEYE 203/48 — 17 nm de Batumi (au départ de la mission) | `CARRIER` |
-| 19 | [Météo, ATC et assistance cockpit](#19-météo-atc-et-assistance-cockpit) | BULLSEYE 119/34 — 0 nm de Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
+| 17 | [Escorte à la demande](#17-escorte-à-la-demande) | Partout (pas de lieu particulier) | `SPAWN` |
+| 18 | [Hélicoptères : FARP, CTLD, CSAR](#18-hélicoptères--farp-ctld-csar) | BULLSEYE 112/26 — 9 nm de Kutaisi | `CTLD`, `CSAR`, `GRASS` |
+| 19 | [Aérodromes : caisses et troupes CTLD](#19-aérodromes--caisses-et-troupes-ctld) | BULLSEYE 119/34 — 0 nm de Kutaisi | `CTLD` |
+| 20 | [Porte-avions Stennis et Roosevelt](#20-porte-avions-stennis-et-roosevelt) | BULLSEYE 203/48 — 17 nm de Batumi (au départ de la mission) | `CARRIER` |
+| 21 | [Météo, ATC et assistance cockpit](#21-météo-atc-et-assistance-cockpit) | BULLSEYE 119/34 — 0 nm de Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
 
 ### 1. Prise en main
 
@@ -260,9 +262,9 @@ Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde
 - Suivez-le sur la carte F10 ; l'embuscade attend à 400 m de la route, 2,8 km plus loin.
 - Au contact, lisez son compte rendu, ouvert par son indicatif (Mule, Bison…) : « Bison, contact avant, 1 ennemi à 2290 m au 059, on engage le combat » ; un marqueur F10 le montre tant que le contact dure.
 - Assez fort, il va au contact, détruit l'embuscade, va rechercher ses camions et reprend la route tout seul.
-- Trop faible, il appelle l'appui aérien (*troops in contact*), marque l'ennemi d'un fumigène rouge et lui-même d'un vert, se replie et tient la position : `_gc <indicatif>, resume` le fait repartir.
+- Trop faible, il appelle l'appui aérien (*troops in contact*), marque l'ennemi d'un fumigène rouge et lui-même d'un vert, se replie et tient la position : `_gc <indicatif>, resume` le fait repartir. L'appel et les fumigènes sont pour les pilotes : sans pilote bleu connecté, il se replie sans rien dire.
 
-**Ce qu'on doit voir** : Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide ne vient que du repli.
+**Ce qu'on doit voir** : Avant le premier tir, les camions partent seuls (groupe « unarmed »), les véhicules armés vont au contact ou se replient s'ils sont trop faibles ; l'appel à l'aide ne vient que du repli, et seulement si des pilotes bleus sont connectés.
 
 **Fonctionnalités** : `GROUNDAI`, `SPAWN` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafGroundAI/)
 
@@ -274,6 +276,7 @@ Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Oc
 Elle répond à la menace : un intrus fait décoller une paire tirée au sort entre MiG-29S et Su-27 ; trois intrus ou plus, deux paires parmi Su-30, MiG-31 et MiG-29S.
 Trois joueurs bleus connectés comptent comme trois intrus (étape suivante, niveau d'opposition).
 Elle ne réagit pas aux hélicoptères.
+Les chasseurs décollent de la piste de Soukhoumi, puis montent à leur patrouille.
 
 **Où** : BULLSEYE 297/39 — 55 nm de Senaki-Kolkhi
 
@@ -282,7 +285,7 @@ Elle ne réagit pas aux hélicoptères.
 - Entrez dans le cercle (dessiné sur la carte F10) avec un avion : la QRA décolle 60 s plus tard.
 - Menu F10 > Autre > Démo : commandes > Arrêter / Démarrer la QRA de Soukhoumi (menu déclaré en YAML).
 
-**Ce qu'on doit voir** : Un message annonce le décollage ; les chasseurs viennent vers vous.
+**Ce qu'on doit voir** : Un message annonce le décollage ; les chasseurs roulent sur la piste de Soukhoumi, décollent et viennent vers vous.
 Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est vidé d'intrus.
 
 **Fonctionnalités** : `QRA`, `RADIO` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafQraManager/)
@@ -372,7 +375,24 @@ Le menu MOYENS les relance et donne leurs informations ; une commande de marqueu
 
 **Fonctionnalités** : `ASSETS`, `MOVE` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafAssets/)
 
-#### 17 Hélicoptères : FARP, CTLD, CSAR
+#### 17 Escorte à la demande
+
+Un pilote d'avion bleu fait venir une escorte de chasse depuis le menu : un F-15C apparaît près de lui et le couvre.
+Quand l'escorte ne peut pas venir, le menu dit pourquoi.
+
+**Où** : Partout (pas de lieu particulier)
+
+**À faire** :
+
+- En vol dans un avion bleu, Menu F10 > Autre > VEAF > APPARITION > +Escorte-moi (fox3) : un F-15C Fox 3 ; +Escorte-moi (fox2) pour un Fox 2.
+- Pour voir un refus, posez près de votre avion un marqueur `-escort introuvable` : aucun modèle ne porte ce nom.
+- Dans un hélicoptère, le même menu refuse : seul un avion peut être escorté.
+
+**Ce qu'on doit voir** : « Une escorte … part couvrir … », et le F-15C se place à vos côtés ; un refus s'affiche à l'écran avec sa raison, au lieu de rien.
+
+**Fonctionnalités** : `SPAWN` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafSpawn/)
+
+#### 18 Hélicoptères : FARP, CTLD, CSAR
 
 Le FARP Khoni réarme et ravitaille les hélicoptères ; son dépôt de munitions est un point de chargement CTLD (troupes et caisses).
 Un pilote abattu peut être créé à la demande, à aller chercher en hélicoptère (CSAR).
@@ -389,7 +409,24 @@ Un pilote abattu peut être créé à la demande, à aller chercher en hélicopt
 
 **Fonctionnalités** : `CTLD`, `CSAR`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/GUIDE/)
 
-#### 18 Porte-avions Stennis et Roosevelt
+#### 19 Aérodromes : caisses et troupes CTLD
+
+Chaque aérodrome tenu est, pour son camp, une zone logistique CTLD (caisses) et une zone d'embarquement de troupes, dans un cercle vert de 250 m dessiné sur la carte F10.
+Le cercle suit le propriétaire du terrain : il s'éteint quand le terrain est pris et revient pour le nouveau camp après deux minutes d'occupation au sol.
+
+**Où** : BULLSEYE 119/34 — 0 nm de Kutaisi
+
+**À faire** :
+
+- Carte F10 : le cercle vert autour de Kutaisi (et de Senaki, Kobuleti, Batumi).
+- En UH-1H ou Mi-8 à Kutaisi, posez-vous dans le cercle : Menu F10 > Autre > CTLD, embarquez des troupes, puis demandez une caisse.
+- Débarquez les troupes hors du cercle pour les déployer ; débarquées dans le cercle, elles rentrent à la base.
+
+**Ce qu'on doit voir** : Les troupes embarquent et la caisse apparaît près de l'hélicoptère, sans FARP ni dépôt : l'aérodrome suffit.
+
+**Fonctionnalités** : `CTLD` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/GUIDE/#ctld-airbase-logistics)
+
+#### 20 Porte-avions Stennis et Roosevelt
 
 Deux porte-avions au large de Batumi, chacun avec son ravitailleur S-3B et son hélicoptère de sauvetage.
 Le menu OPS PORTE-AVIONS met le navire face au vent pour les opérations aériennes.
@@ -406,7 +443,7 @@ Le menu OPS PORTE-AVIONS met le navire face au vent pour les opérations aérien
 
 **Fonctionnalités** : `CARRIER` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafCarrierOperations/)
 
-#### 19 Météo, ATC et assistance cockpit
+#### 21 Météo, ATC et assistance cockpit
 
 Un message d'accueil à la prise de slot (base, piste en service, météo), un menu météo et ATC, et pour le F-16C une checklist de démarrage pas à pas.
 Sur un serveur VEAF, la météo suit la METAR réelle de Kutaisi (UGKO).
