@@ -81,9 +81,11 @@ Every Russian and Abkhazian airfield is red, without slots. Dynamic slots only w
 | 14 | [BVR arena (air waves)](#14-bvr-arena-air-waves) | BULLSEYE 239/44 — 43 nm from Kobuleti | `AIRWAVES`, `RADIO` |
 | 15 | [Gudauta red sanctuary](#15-gudauta-red-sanctuary) | BULLSEYE 297/69 — 85 nm from Senaki-Kolkhi | `SANCTUARY` |
 | 16 | [Tankers, AWACS and escort](#16-tankers-awacs-and-escort) | BULLSEYE 122/48 — 14 nm from Kutaisi (at mission start) | `ASSETS`, `MOVE` |
-| 17 | [Helicopters: FARP, CTLD, CSAR](#17-helicopters-farp-ctld-csar) | BULLSEYE 112/26 — 9 nm from Kutaisi | `CTLD`, `CSAR`, `GRASS` |
-| 18 | [Stennis and Roosevelt carriers](#18-stennis-and-roosevelt-carriers) | BULLSEYE 203/48 — 17 nm from Batumi (at mission start) | `CARRIER` |
-| 19 | [Weather, ATC and cockpit assistance](#19-weather-atc-and-cockpit-assistance) | BULLSEYE 119/34 — 0 nm from Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
+| 17 | [Escort on demand](#17-escort-on-demand) | Anywhere (no particular place) | `SPAWN` |
+| 18 | [Helicopters: FARP, CTLD, CSAR](#18-helicopters-farp-ctld-csar) | BULLSEYE 112/26 — 9 nm from Kutaisi | `CTLD`, `CSAR`, `GRASS` |
+| 19 | [Airfields: CTLD crates and troops](#19-airfields-ctld-crates-and-troops) | BULLSEYE 119/34 — 0 nm from Kutaisi | `CTLD` |
+| 20 | [Stennis and Roosevelt carriers](#20-stennis-and-roosevelt-carriers) | BULLSEYE 203/48 — 17 nm from Batumi (at mission start) | `CARRIER` |
+| 21 | [Weather, ATC and cockpit assistance](#21-weather-atc-and-cockpit-assistance) | BULLSEYE 119/34 — 0 nm from Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
 
 ### 1. Getting started
 
@@ -260,9 +262,9 @@ Left to DCS, it would die there without firing; driven by VEAF, it watches, spli
 - Follow it on the F10 map; the ambush waits 400 m off the road, 2.8 km further on.
 - At contact, read its report, opened by its callsign (Mule, Bison…): 'Bison, contact ahead, 1 enemy at 2290 m bearing 059, engaging'; an F10 marker shows it while the contact lasts.
 - Strong enough, it closes in, destroys the ambush, fetches its trucks and drives on by itself.
-- Outgunned, it calls for air support (*troops in contact*), marks the enemy with a red smoke and itself with a green one, falls back and holds: `_gc <callsign>, resume` sends it on its way.
+- Outgunned, it calls for air support (*troops in contact*), marks the enemy with a red smoke and itself with a green one, falls back and holds: `_gc <callsign>, resume` sends it on its way. The call and the smokes are for the pilots: with no blue pilot connected, it falls back without a word.
 
-**What you should see**: Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help only comes with a fall back.
+**What you should see**: Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help only comes with a fall back, and only when blue pilots are connected.
 
 **Features**: `GROUNDAI`, `SPAWN` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafGroundAI/)
 
@@ -274,6 +276,7 @@ A quick reaction alert (QRA) defends Sukhumi within a 40 km circle that covers O
 It answers the threat: one intruder scrambles a pair drawn between MiG-29S and Su-27; three or more, two pairs among Su-30, MiG-31 and MiG-29S.
 Three blue players on CAP count as three intruders (next step, the opposition level).
 It ignores helicopters.
+The fighters take off from Sukhumi's runway, then climb to their patrol.
 
 **Where**: BULLSEYE 297/39 — 55 nm from Senaki-Kolkhi
 
@@ -282,7 +285,7 @@ It ignores helicopters.
 - Enter the circle (drawn on the F10 map) in an aircraft: the QRA scrambles 60 s later.
 - F10 > Other > Demo: commands > Stop / Start the Sukhumi QRA (a menu declared in YAML).
 
-**What you should see**: A message announces the scramble; the fighters come at you.
+**What you should see**: A message announces the scramble; the fighters roll on Sukhumi's runway, take off and come at you.
 Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.
 
 **Features**: `QRA`, `RADIO` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafQraManager/)
@@ -373,7 +376,24 @@ The ASSETS menu respawns them and gives their details; a marker command moves a 
 
 **Features**: `ASSETS`, `MOVE` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafAssets/)
 
-#### 17 Helicopters: FARP, CTLD, CSAR
+#### 17 Escort on demand
+
+A blue airplane pilot calls a fighter escort from the menu: an F-15C appears near them and covers them.
+When the escort cannot come, the menu says why.
+
+**Where**: Anywhere (no particular place)
+
+**What to do**:
+
+- Airborne in a blue airplane, F10 > Other > VEAF > SPAWN > +Escort me (fox3): a Fox 3 F-15C; +Escort me (fox2) for a Fox 2.
+- To see a refusal, drop a marker `-escort introuvable` near your aircraft: no template carries that name.
+- In a helicopter, the same menu refuses: only an airplane can be escorted.
+
+**What you should see**: 'An escort … is on its way to cover …', and the F-15C joins you; a refusal shows on screen with its reason, instead of nothing.
+
+**Features**: `SPAWN` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafSpawn/)
+
+#### 18 Helicopters: FARP, CTLD, CSAR
 
 FARP Khoni rearms and refuels helicopters; its ammo dump is a CTLD loading point (troops and crates).
 A downed pilot can be created on demand, to be rescued by helicopter (CSAR).
@@ -390,7 +410,24 @@ A downed pilot can be created on demand, to be rescued by helicopter (CSAR).
 
 **Features**: `CTLD`, `CSAR`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/GUIDE/)
 
-#### 18 Stennis and Roosevelt carriers
+#### 19 Airfields: CTLD crates and troops
+
+Every airfield held is, for its side, a CTLD logistic zone (crates) and a troop pickup zone, inside a 250 m green circle drawn on the F10 map.
+The circle follows the field's owner: it goes dark when the field is taken and comes back for the new side after two minutes of occupation on the ground.
+
+**Where**: BULLSEYE 119/34 — 0 nm from Kutaisi
+
+**What to do**:
+
+- F10 map: the green circle around Kutaisi (and Senaki, Kobuleti, Batumi).
+- In a UH-1H or Mi-8 at Kutaisi, land inside the circle: F10 > Other > CTLD, board troops, then request a crate.
+- Unload the troops outside the circle to deploy them; unloaded inside it, they go back to base.
+
+**What you should see**: The troops board and the crate appears near the helicopter, with no FARP or depot: the airfield is enough.
+
+**Features**: `CTLD` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/GUIDE/#ctld-airbase-logistics)
+
+#### 20 Stennis and Roosevelt carriers
 
 Two carriers off Batumi, each with its S-3B tanker and rescue helicopter.
 The CARRIER OPS menu turns the ship into the wind for air operations.
@@ -407,7 +444,7 @@ The CARRIER OPS menu turns the ship into the wind for air operations.
 
 **Features**: `CARRIER` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafCarrierOperations/)
 
-#### 19 Weather, ATC and cockpit assistance
+#### 21 Weather, ATC and cockpit assistance
 
 A welcome message when you take a slot (base, runway in use, weather), a weather and ATC menu, and for the F-16C a step-by-step start-up checklist.
 On a VEAF server, the weather follows Kutaisi's real METAR (UGKO).
