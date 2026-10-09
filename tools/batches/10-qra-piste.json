@@ -1,0 +1,106 @@
+[
+ {
+  "name": "remove_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "group_name": "QRA Sukhumi - MiG-29S"
+  }
+ },
+ {
+  "name": "remove_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "group_name": "QRA Sukhumi - Su-27"
+  }
+ },
+ {
+  "name": "remove_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "group_name": "QRA Sukhumi - Su-30"
+  }
+ },
+ {
+  "name": "remove_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "group_name": "QRA Sukhumi - MiG-31"
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "name": "QRA Sukhumi - MiG-29S",
+   "unit_type": "MiG-29S",
+   "count": 2,
+   "start": "runway",
+   "airfield": "Sukhumi-Babushara",
+   "task": "Intercept",
+   "skill": "High",
+   "late_activation": true,
+   "payload": "R-77*4,R-73*2",
+   "speed_kt": 350
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "name": "QRA Sukhumi - Su-27",
+   "unit_type": "Su-27",
+   "count": 2,
+   "start": "runway",
+   "airfield": "Sukhumi-Babushara",
+   "task": "Intercept",
+   "skill": "High",
+   "late_activation": true,
+   "payload": "R-73*4,R-27ER*6",
+   "speed_kt": 350
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "name": "QRA Sukhumi - Su-30",
+   "unit_type": "Su-30",
+   "count": 2,
+   "start": "runway",
+   "airfield": "Sukhumi-Babushara",
+   "task": "Intercept",
+   "skill": "High",
+   "late_activation": true,
+   "payload": "R-73*2,R-77*6,ECM",
+   "speed_kt": 350
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "coalition": "red",
+   "country_id": 0,
+   "country_name": "Russia",
+   "name": "QRA Sukhumi - MiG-31",
+   "unit_type": "MiG-31",
+   "count": 2,
+   "start": "runway",
+   "airfield": "Sukhumi-Babushara",
+   "task": "Intercept",
+   "skill": "High",
+   "late_activation": true,
+   "payload": "R-40R*2,R-33*4",
+   "speed_kt": 350
+  }
+ }
+]

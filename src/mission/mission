@@ -2474,546 +2474,6 @@ mission =
           plane = {
             group = {
               [1] = {
-                groupId = 60,
-                name = "QRA Sukhumi - MiG-29S",
-                task = "Intercept",
-                communication = true,
-                dynSpawnTemplate = false,
-                frequency = 251.0,
-                hidden = false,
-                lateActivation = true,
-                modulation = 0,
-                radioSet = true,
-                route = {
-                  points = {
-                    [1] = {
-                      name = "",
-                      type = "Turning Point",
-                      task = {
-                        id = "ComboTask",
-                        params = {
-                          tasks = {},
-                        },
-                      },
-                      action = "Turning Point",
-                      alt = 4572.0,
-                      alt_type = "BARO",
-                      ETA = 0,
-                      ETA_locked = true,
-                      formation_template = "",
-                      speed = 180.0554,
-                      speed_locked = true,
-                      x = -221381.7,
-                      y = 565908.8,
-                    },
-                  },
-                },
-                start_time = 0,
-                uncontrollable = false,
-                uncontrolled = false,
-                units = {
-                  [1] = {
-                    unitId = 80,
-                    name = "QRA Sukhumi - MiG-29S-1",
-                    type = "MiG-29S",
-                    skill = "High",
-                    alt = 4572.0,
-                    alt_type = "BARO",
-                    callsign = 101,
-                    heading = 0.0,
-                    onboard_num = "035",
-                    payload = {
-                      chaff = 30,
-                      flare = 30,
-                      fuel = 3493,
-                      gun = 100,
-                      pylons = {
-                        [1] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [2] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [3] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [5] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [6] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [7] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                      },
-                    },
-                    speed = 180.0554,
-                    x = -221381.7,
-                    y = 565908.8,
-                  },
-                  [2] = {
-                    unitId = 81,
-                    name = "QRA Sukhumi - MiG-29S-2",
-                    type = "MiG-29S",
-                    skill = "High",
-                    alt = 4572.0,
-                    alt_type = "BARO",
-                    callsign = 102,
-                    heading = 0.0,
-                    onboard_num = "036",
-                    payload = {
-                      chaff = 30,
-                      flare = 30,
-                      fuel = 3493,
-                      gun = 100,
-                      pylons = {
-                        [1] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [2] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [3] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [5] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [6] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [7] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                      },
-                    },
-                    speed = 180.0554,
-                    x = -221321.7,
-                    y = 565908.8,
-                  },
-                },
-                x = -221381.7,
-                y = 565908.8,
-              },
-              [2] = {
-                groupId = 61,
-                name = "QRA Sukhumi - Su-27",
-                task = "Intercept",
-                communication = true,
-                dynSpawnTemplate = false,
-                frequency = 251.0,
-                hidden = false,
-                lateActivation = true,
-                modulation = 0,
-                radioSet = true,
-                route = {
-                  points = {
-                    [1] = {
-                      name = "",
-                      type = "Turning Point",
-                      task = {
-                        id = "ComboTask",
-                        params = {
-                          tasks = {},
-                        },
-                      },
-                      action = "Turning Point",
-                      alt = 4572.0,
-                      alt_type = "BARO",
-                      ETA = 0,
-                      ETA_locked = true,
-                      formation_template = "",
-                      speed = 180.0554,
-                      speed_locked = true,
-                      x = -221381.7,
-                      y = 565908.8,
-                    },
-                  },
-                },
-                start_time = 0,
-                uncontrollable = false,
-                uncontrolled = false,
-                units = {
-                  [1] = {
-                    unitId = 82,
-                    name = "QRA Sukhumi - Su-27-1",
-                    type = "Su-27",
-                    skill = "High",
-                    alt = 4572.0,
-                    alt_type = "BARO",
-                    callsign = 103,
-                    heading = 0.0,
-                    onboard_num = "037",
-                    payload = {
-                      chaff = 96,
-                      flare = 96,
-                      fuel = 9400,
-                      gun = 100,
-                      pylons = {
-                        [1] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [2] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [3] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [4] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [5] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [6] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [7] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [8] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [9] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [10] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                      },
-                    },
-                    speed = 180.0554,
-                    x = -221381.7,
-                    y = 565908.8,
-                  },
-                  [2] = {
-                    unitId = 83,
-                    name = "QRA Sukhumi - Su-27-2",
-                    type = "Su-27",
-                    skill = "High",
-                    alt = 4572.0,
-                    alt_type = "BARO",
-                    callsign = 104,
-                    heading = 0.0,
-                    onboard_num = "038",
-                    payload = {
-                      chaff = 96,
-                      flare = 96,
-                      fuel = 9400,
-                      gun = 100,
-                      pylons = {
-                        [1] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [2] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [3] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [4] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [5] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [6] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [7] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [8] = {
-                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
-                        },
-                        [9] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [10] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                      },
-                    },
-                    speed = 180.0554,
-                    x = -221321.7,
-                    y = 565908.8,
-                  },
-                },
-                x = -221381.7,
-                y = 565908.8,
-              },
-              [3] = {
-                groupId = 62,
-                name = "QRA Sukhumi - Su-30",
-                task = "Intercept",
-                communication = true,
-                dynSpawnTemplate = false,
-                frequency = 251.0,
-                hidden = false,
-                lateActivation = true,
-                modulation = 0,
-                radioSet = true,
-                route = {
-                  points = {
-                    [1] = {
-                      name = "",
-                      type = "Turning Point",
-                      task = {
-                        id = "ComboTask",
-                        params = {
-                          tasks = {},
-                        },
-                      },
-                      action = "Turning Point",
-                      alt = 4572.0,
-                      alt_type = "BARO",
-                      ETA = 0,
-                      ETA_locked = true,
-                      formation_template = "",
-                      speed = 180.0554,
-                      speed_locked = true,
-                      x = -221381.7,
-                      y = 565908.8,
-                    },
-                  },
-                },
-                start_time = 0,
-                uncontrollable = false,
-                uncontrolled = false,
-                units = {
-                  [1] = {
-                    unitId = 84,
-                    name = "QRA Sukhumi - Su-30-1",
-                    type = "Su-30",
-                    skill = "High",
-                    alt = 4572.0,
-                    alt_type = "BARO",
-                    callsign = 105,
-                    heading = 0.0,
-                    onboard_num = "039",
-                    payload = {
-                      chaff = 96,
-                      flare = 96,
-                      fuel = 9400,
-                      gun = 100,
-                      pylons = {
-                        [1] = {
-                          CLSID = "{44EE8698-89F9-48EE-AF36-5FD31896A82F}",
-                        },
-                        [2] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [3] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [4] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [5] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [6] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [7] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [8] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [9] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [10] = {
-                          CLSID = "{44EE8698-89F9-48EE-AF36-5FD31896A82A}",
-                        },
-                      },
-                    },
-                    speed = 180.0554,
-                    x = -221381.7,
-                    y = 565908.8,
-                  },
-                  [2] = {
-                    unitId = 85,
-                    name = "QRA Sukhumi - Su-30-2",
-                    type = "Su-30",
-                    skill = "High",
-                    alt = 4572.0,
-                    alt_type = "BARO",
-                    callsign = 106,
-                    heading = 0.0,
-                    onboard_num = "040",
-                    payload = {
-                      chaff = 96,
-                      flare = 96,
-                      fuel = 9400,
-                      gun = 100,
-                      pylons = {
-                        [1] = {
-                          CLSID = "{44EE8698-89F9-48EE-AF36-5FD31896A82F}",
-                        },
-                        [2] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [3] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [4] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [5] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [6] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [7] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [8] = {
-                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
-                        },
-                        [9] = {
-                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
-                        },
-                        [10] = {
-                          CLSID = "{44EE8698-89F9-48EE-AF36-5FD31896A82A}",
-                        },
-                      },
-                    },
-                    speed = 180.0554,
-                    x = -221321.7,
-                    y = 565908.8,
-                  },
-                },
-                x = -221381.7,
-                y = 565908.8,
-              },
-              [4] = {
-                groupId = 63,
-                name = "QRA Sukhumi - MiG-31",
-                task = "Intercept",
-                communication = true,
-                dynSpawnTemplate = false,
-                frequency = 251.0,
-                hidden = false,
-                lateActivation = true,
-                modulation = 0,
-                radioSet = true,
-                route = {
-                  points = {
-                    [1] = {
-                      name = "",
-                      type = "Turning Point",
-                      task = {
-                        id = "ComboTask",
-                        params = {
-                          tasks = {},
-                        },
-                      },
-                      action = "Turning Point",
-                      alt = 4572.0,
-                      alt_type = "BARO",
-                      ETA = 0,
-                      ETA_locked = true,
-                      formation_template = "",
-                      speed = 180.0554,
-                      speed_locked = true,
-                      x = -221381.7,
-                      y = 565908.8,
-                    },
-                  },
-                },
-                start_time = 0,
-                uncontrollable = false,
-                uncontrolled = false,
-                units = {
-                  [1] = {
-                    unitId = 86,
-                    name = "QRA Sukhumi - MiG-31-1",
-                    type = "MiG-31",
-                    skill = "High",
-                    alt = 4572.0,
-                    alt_type = "BARO",
-                    callsign = 107,
-                    heading = 0.0,
-                    onboard_num = "041",
-                    payload = {
-                      chaff = 0,
-                      flare = 0,
-                      fuel = 15500,
-                      gun = 100,
-                      pylons = {
-                        [1] = {
-                          CLSID = "{4EDBA993-2E34-444C-95FB-549300BF7CAF}",
-                        },
-                        [2] = {
-                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
-                        },
-                        [3] = {
-                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
-                        },
-                        [4] = {
-                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
-                        },
-                        [5] = {
-                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
-                        },
-                        [6] = {
-                          CLSID = "{4EDBA993-2E34-444C-95FB-549300BF7CAF}",
-                        },
-                      },
-                    },
-                    speed = 180.0554,
-                    x = -221381.7,
-                    y = 565908.8,
-                  },
-                  [2] = {
-                    unitId = 87,
-                    name = "QRA Sukhumi - MiG-31-2",
-                    type = "MiG-31",
-                    skill = "High",
-                    alt = 4572.0,
-                    alt_type = "BARO",
-                    callsign = 108,
-                    heading = 0.0,
-                    onboard_num = "042",
-                    payload = {
-                      chaff = 0,
-                      flare = 0,
-                      fuel = 15500,
-                      gun = 100,
-                      pylons = {
-                        [1] = {
-                          CLSID = "{4EDBA993-2E34-444C-95FB-549300BF7CAF}",
-                        },
-                        [2] = {
-                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
-                        },
-                        [3] = {
-                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
-                        },
-                        [4] = {
-                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
-                        },
-                        [5] = {
-                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
-                        },
-                        [6] = {
-                          CLSID = "{4EDBA993-2E34-444C-95FB-549300BF7CAF}",
-                        },
-                      },
-                    },
-                    speed = 180.0554,
-                    x = -221321.7,
-                    y = 565908.8,
-                  },
-                },
-                x = -221381.7,
-                y = 565908.8,
-              },
-              [5] = {
                 groupId = 64,
                 name = "OnDemand-CAP MiG-29S Gudauta FL250",
                 task = "CAP",
@@ -3182,7 +2642,7 @@ mission =
                 x = -185000,
                 y = 520000,
               },
-              [6] = {
+              [2] = {
                 groupId = 65,
                 name = "OnDemand-CAP Su-27 sea FL300",
                 task = "CAP",
@@ -3375,7 +2835,7 @@ mission =
                 x = -250000,
                 y = 520000,
               },
-              [7] = {
+              [3] = {
                 groupId = 66,
                 name = "OnDemand-CAP MiG-31 Sochi FL350",
                 task = "CAP",
@@ -3544,7 +3004,7 @@ mission =
                 x = -160000,
                 y = 470000,
               },
-              [8] = {
+              [4] = {
                 groupId = 67,
                 name = "Raid Senaki - Su-24M",
                 task = "Ground Attack",
@@ -3744,7 +3204,7 @@ mission =
                 x = -200000,
                 y = 530000,
               },
-              [9] = {
+              [5] = {
                 groupId = 68,
                 name = "Raid Senaki - MiG-29S",
                 task = "Escort",
@@ -3893,7 +3353,7 @@ mission =
                 x = -202000.0,
                 y = 530000.0,
               },
-              [10] = {
+              [6] = {
                 groupId = 69,
                 name = "Wave MiG-29S",
                 task = "CAP",
@@ -3976,7 +3436,7 @@ mission =
                 x = -275000.0,
                 y = 560000.0,
               },
-              [11] = {
+              [7] = {
                 groupId = 70,
                 name = "Wave Su-27",
                 task = "CAP",
@@ -4123,7 +3583,7 @@ mission =
                 x = -275000.0,
                 y = 560000.0,
               },
-              [12] = {
+              [8] = {
                 groupId = 71,
                 name = "Wave Su-30",
                 task = "CAP",
@@ -4269,6 +3729,550 @@ mission =
                 },
                 x = -275000.0,
                 y = 560000.0,
+              },
+              [9] = {
+                groupId = 82,
+                name = "QRA Sukhumi - MiG-29S",
+                task = "Intercept",
+                communication = true,
+                dynSpawnTemplate = false,
+                frequency = 251.0,
+                hidden = false,
+                lateActivation = true,
+                modulation = 0,
+                radioSet = true,
+                route = {
+                  points = {
+                    [1] = {
+                      name = "",
+                      type = "TakeOff",
+                      task = {
+                        id = "ComboTask",
+                        params = {
+                          tasks = {},
+                        },
+                      },
+                      action = "From Runway",
+                      airdromeId = 20,
+                      alt = 0.0,
+                      alt_type = "BARO",
+                      ETA = 0,
+                      ETA_locked = true,
+                      formation_template = "",
+                      speed = 180.0554,
+                      speed_locked = true,
+                      x = -221354.84375,
+                      y = 565922.125,
+                    },
+                  },
+                },
+                start_time = 0,
+                uncontrollable = false,
+                uncontrolled = false,
+                units = {
+                  [1] = {
+                    unitId = 115,
+                    name = "QRA Sukhumi - MiG-29S-1",
+                    type = "MiG-29S",
+                    skill = "High",
+                    alt = 0.0,
+                    alt_type = "BARO",
+                    callsign = 124,
+                    heading = 0.0,
+                    onboard_num = "058",
+                    payload = {
+                      chaff = 30,
+                      flare = 30,
+                      fuel = 3493,
+                      gun = 100,
+                      pylons = {
+                        [1] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [2] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [3] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [5] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [6] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [7] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                      },
+                    },
+                    speed = 180.0554,
+                    x = -221354.84375,
+                    y = 565922.125,
+                  },
+                  [2] = {
+                    unitId = 116,
+                    name = "QRA Sukhumi - MiG-29S-2",
+                    type = "MiG-29S",
+                    skill = "High",
+                    alt = 0.0,
+                    alt_type = "BARO",
+                    callsign = 125,
+                    heading = 0.0,
+                    onboard_num = "059",
+                    payload = {
+                      chaff = 30,
+                      flare = 30,
+                      fuel = 3493,
+                      gun = 100,
+                      pylons = {
+                        [1] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [2] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [3] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [5] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [6] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [7] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                      },
+                    },
+                    speed = 180.0554,
+                    x = -221294.84375,
+                    y = 565922.125,
+                  },
+                },
+                x = -221354.84375,
+                y = 565922.125,
+              },
+              [10] = {
+                groupId = 83,
+                name = "QRA Sukhumi - Su-27",
+                task = "Intercept",
+                communication = true,
+                dynSpawnTemplate = false,
+                frequency = 251.0,
+                hidden = false,
+                lateActivation = true,
+                modulation = 0,
+                radioSet = true,
+                route = {
+                  points = {
+                    [1] = {
+                      name = "",
+                      type = "TakeOff",
+                      task = {
+                        id = "ComboTask",
+                        params = {
+                          tasks = {},
+                        },
+                      },
+                      action = "From Runway",
+                      airdromeId = 20,
+                      alt = 0.0,
+                      alt_type = "BARO",
+                      ETA = 0,
+                      ETA_locked = true,
+                      formation_template = "",
+                      speed = 180.0554,
+                      speed_locked = true,
+                      x = -221354.84375,
+                      y = 565922.125,
+                    },
+                  },
+                },
+                start_time = 0,
+                uncontrollable = false,
+                uncontrolled = false,
+                units = {
+                  [1] = {
+                    unitId = 117,
+                    name = "QRA Sukhumi - Su-27-1",
+                    type = "Su-27",
+                    skill = "High",
+                    alt = 0.0,
+                    alt_type = "BARO",
+                    callsign = 126,
+                    heading = 0.0,
+                    onboard_num = "060",
+                    payload = {
+                      chaff = 96,
+                      flare = 96,
+                      fuel = 9400,
+                      gun = 100,
+                      pylons = {
+                        [1] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [2] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [3] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [4] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [5] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [6] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [7] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [8] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [9] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [10] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                      },
+                    },
+                    speed = 180.0554,
+                    x = -221354.84375,
+                    y = 565922.125,
+                  },
+                  [2] = {
+                    unitId = 118,
+                    name = "QRA Sukhumi - Su-27-2",
+                    type = "Su-27",
+                    skill = "High",
+                    alt = 0.0,
+                    alt_type = "BARO",
+                    callsign = 127,
+                    heading = 0.0,
+                    onboard_num = "061",
+                    payload = {
+                      chaff = 96,
+                      flare = 96,
+                      fuel = 9400,
+                      gun = 100,
+                      pylons = {
+                        [1] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [2] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [3] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [4] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [5] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [6] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [7] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [8] = {
+                          CLSID = "{E8069896-8435-4B90-95C0-01A03AE6E400}",
+                        },
+                        [9] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [10] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                      },
+                    },
+                    speed = 180.0554,
+                    x = -221294.84375,
+                    y = 565922.125,
+                  },
+                },
+                x = -221354.84375,
+                y = 565922.125,
+              },
+              [11] = {
+                groupId = 84,
+                name = "QRA Sukhumi - Su-30",
+                task = "Intercept",
+                communication = true,
+                dynSpawnTemplate = false,
+                frequency = 251.0,
+                hidden = false,
+                lateActivation = true,
+                modulation = 0,
+                radioSet = true,
+                route = {
+                  points = {
+                    [1] = {
+                      name = "",
+                      type = "TakeOff",
+                      task = {
+                        id = "ComboTask",
+                        params = {
+                          tasks = {},
+                        },
+                      },
+                      action = "From Runway",
+                      airdromeId = 20,
+                      alt = 0.0,
+                      alt_type = "BARO",
+                      ETA = 0,
+                      ETA_locked = true,
+                      formation_template = "",
+                      speed = 180.0554,
+                      speed_locked = true,
+                      x = -221354.84375,
+                      y = 565922.125,
+                    },
+                  },
+                },
+                start_time = 0,
+                uncontrollable = false,
+                uncontrolled = false,
+                units = {
+                  [1] = {
+                    unitId = 119,
+                    name = "QRA Sukhumi - Su-30-1",
+                    type = "Su-30",
+                    skill = "High",
+                    alt = 0.0,
+                    alt_type = "BARO",
+                    callsign = 128,
+                    heading = 0.0,
+                    onboard_num = "062",
+                    payload = {
+                      chaff = 96,
+                      flare = 96,
+                      fuel = 9400,
+                      gun = 100,
+                      pylons = {
+                        [1] = {
+                          CLSID = "{44EE8698-89F9-48EE-AF36-5FD31896A82F}",
+                        },
+                        [2] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [3] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [4] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [5] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [6] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [7] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [8] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [9] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [10] = {
+                          CLSID = "{44EE8698-89F9-48EE-AF36-5FD31896A82A}",
+                        },
+                      },
+                    },
+                    speed = 180.0554,
+                    x = -221354.84375,
+                    y = 565922.125,
+                  },
+                  [2] = {
+                    unitId = 120,
+                    name = "QRA Sukhumi - Su-30-2",
+                    type = "Su-30",
+                    skill = "High",
+                    alt = 0.0,
+                    alt_type = "BARO",
+                    callsign = 129,
+                    heading = 0.0,
+                    onboard_num = "063",
+                    payload = {
+                      chaff = 96,
+                      flare = 96,
+                      fuel = 9400,
+                      gun = 100,
+                      pylons = {
+                        [1] = {
+                          CLSID = "{44EE8698-89F9-48EE-AF36-5FD31896A82F}",
+                        },
+                        [2] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [3] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [4] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [5] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [6] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [7] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [8] = {
+                          CLSID = "{B4C01D60-A8A3-4237-BD72-CA7655BC0FE9}",
+                        },
+                        [9] = {
+                          CLSID = "{FBC29BFE-3D24-4C64-B81D-941239D12249}",
+                        },
+                        [10] = {
+                          CLSID = "{44EE8698-89F9-48EE-AF36-5FD31896A82A}",
+                        },
+                      },
+                    },
+                    speed = 180.0554,
+                    x = -221294.84375,
+                    y = 565922.125,
+                  },
+                },
+                x = -221354.84375,
+                y = 565922.125,
+              },
+              [12] = {
+                groupId = 85,
+                name = "QRA Sukhumi - MiG-31",
+                task = "Intercept",
+                communication = true,
+                dynSpawnTemplate = false,
+                frequency = 251.0,
+                hidden = false,
+                lateActivation = true,
+                modulation = 0,
+                radioSet = true,
+                route = {
+                  points = {
+                    [1] = {
+                      name = "",
+                      type = "TakeOff",
+                      task = {
+                        id = "ComboTask",
+                        params = {
+                          tasks = {},
+                        },
+                      },
+                      action = "From Runway",
+                      airdromeId = 20,
+                      alt = 0.0,
+                      alt_type = "BARO",
+                      ETA = 0,
+                      ETA_locked = true,
+                      formation_template = "",
+                      speed = 180.0554,
+                      speed_locked = true,
+                      x = -221354.84375,
+                      y = 565922.125,
+                    },
+                  },
+                },
+                start_time = 0,
+                uncontrollable = false,
+                uncontrolled = false,
+                units = {
+                  [1] = {
+                    unitId = 121,
+                    name = "QRA Sukhumi - MiG-31-1",
+                    type = "MiG-31",
+                    skill = "High",
+                    alt = 0.0,
+                    alt_type = "BARO",
+                    callsign = 130,
+                    heading = 0.0,
+                    onboard_num = "064",
+                    payload = {
+                      chaff = 0,
+                      flare = 0,
+                      fuel = 15500,
+                      gun = 100,
+                      pylons = {
+                        [1] = {
+                          CLSID = "{4EDBA993-2E34-444C-95FB-549300BF7CAF}",
+                        },
+                        [2] = {
+                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
+                        },
+                        [3] = {
+                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
+                        },
+                        [4] = {
+                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
+                        },
+                        [5] = {
+                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
+                        },
+                        [6] = {
+                          CLSID = "{4EDBA993-2E34-444C-95FB-549300BF7CAF}",
+                        },
+                      },
+                    },
+                    speed = 180.0554,
+                    x = -221354.84375,
+                    y = 565922.125,
+                  },
+                  [2] = {
+                    unitId = 122,
+                    name = "QRA Sukhumi - MiG-31-2",
+                    type = "MiG-31",
+                    skill = "High",
+                    alt = 0.0,
+                    alt_type = "BARO",
+                    callsign = 131,
+                    heading = 0.0,
+                    onboard_num = "065",
+                    payload = {
+                      chaff = 0,
+                      flare = 0,
+                      fuel = 15500,
+                      gun = 100,
+                      pylons = {
+                        [1] = {
+                          CLSID = "{4EDBA993-2E34-444C-95FB-549300BF7CAF}",
+                        },
+                        [2] = {
+                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
+                        },
+                        [3] = {
+                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
+                        },
+                        [4] = {
+                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
+                        },
+                        [5] = {
+                          CLSID = "{F1243568-8EF0-49D4-9CB5-4DA90D92BC1D}",
+                        },
+                        [6] = {
+                          CLSID = "{4EDBA993-2E34-444C-95FB-549300BF7CAF}",
+                        },
+                      },
+                    },
+                    speed = 180.0554,
+                    x = -221294.84375,
+                    y = 565922.125,
+                  },
+                },
+                x = -221354.84375,
+                y = 565922.125,
               },
             },
           },
