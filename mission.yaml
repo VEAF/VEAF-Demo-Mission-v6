@@ -536,12 +536,21 @@ profiles:
       weather:
         file: src/versions.en.yaml
   LOCAL_TEST:
+    mission:
+      ground_control:
+        game_master:
+          blue: 1
+          red: 1
     global_log_level: debug
     pipeline:
       weather: false
   LOCAL_TEST_EN:
     mission:
       language: en
+      ground_control:
+        game_master:
+          blue: 1
+          red: 1
     modules:
       RADIO:
         user_menus:

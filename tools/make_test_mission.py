@@ -7,6 +7,7 @@ Pour chaque langue, construit le profil LOCAL_TEST (FR) ou LOCAL_TEST_EN (logs d
 variantes météo), localise le .miz anglais (tools/localize_miz.py), puis écrit
 missions-test/VEAF_Demo_TEST_<FR|EN>.miz (ignoré par git) avec :
   - un game master bleu et un rouge (rôle « instructor » de DCS) : on voit tout, on se place partout ;
+    posés par le build lui-même (`mission.ground_control` des profils LOCAL_TEST, tools/gen_i18n.py) ;
   - le déclencheur du pont dcs-bridge (`veaf-tools dcs inject-bridge`), pour sonder la mission en cours
     depuis l'extérieur avec dcs-serve.
 Les slots `Client` moteur chaud de Kutaisi sont déjà dans la démo : les slots dynamiques ne marchent
@@ -20,7 +21,7 @@ import sys
 from pathlib import Path
 
 from paths import VMCT  # noqa: F401
-from mission_tools.miz_tools import read_miz, write_miz  # noqa: E402
+from mission_tools.miz_tools import read_miz  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = {"fr": "LOCAL_TEST", "en": "LOCAL_TEST_EN"}
@@ -42,11 +43,9 @@ for lang in langs:
     shutil.move(built, out)
     if lang == "en":
         subprocess.run([sys.executable, str(ROOT / "tools/localize_miz.py"), str(out)], check=True)
-    miz = read_miz(out)
-    roles = miz.mission_content.setdefault("groundControl", {}).setdefault("roles", {})
-    roles.setdefault("instructor", {})
-    roles["instructor"].update({"blue": 1, "red": 1})
-    write_miz(miz, out)
+    gm = read_miz(out).mission_content.get("groundControl", {}).get("roles", {}).get("instructor", {})
+    if gm.get("blue") != 1 or gm.get("red") != 1:
+        sys.exit(f"{out.name} : le build n'a pas posé les game masters de mission.ground_control ({gm})")
     with open(out_dir / f"bridge-{lang}.log", "w", encoding="utf-8") as f:
         subprocess.run([TOOL, "dcs", "inject-bridge", str(out)], check=True,
                        stdout=f, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL)

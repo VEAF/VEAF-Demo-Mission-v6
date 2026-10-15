@@ -96,7 +96,7 @@ Une zone d'entraînement en trois niveaux posés sur le même cercle. Chaque niv
 À faire :
 - Menu F10 > Autre > VEAF > ZONES DE COMBAT > Entraînement Khoni > Khoni - facile > Activer la zone.
 - Détruisez les camions, puis désactivez et passez au niveau moyen, puis au difficile.
-- Infos de la zone, fumée et fusée éclairante dans le même menu.
+- Infos de la zone, fumée et fusée éclairante dans le même menu. Les infos donnent la position de la zone (coordonnées, bullseye), l'élévation du sol en son centre (ligne ÉLÉVATION, en ft et en m) et la météo.
 
 Ce qu'on doit voir : Facile : huit camions. Moyen : les camions, une compagnie blindée et deux pièces de DCA tirées parmi quatre (jamais les mêmes d'une fois sur l'autre). Difficile : en plus, un bataillon blindé et deux systèmes courte portée tirés au sort.]=],
              en = [=[KHONI TRAINING RANGE: THREE LEVELS
@@ -106,7 +106,7 @@ A training range in three levels on the same circle. Each level includes the one
 What to do :
 - F10 > Other > VEAF > COMBAT ZONES > Khoni training > Khoni - easy > Activate zone.
 - Destroy the trucks, then deactivate and move on to medium, then hard.
-- Zone info, smoke and illumination flare are in the same menu.
+- Zone info, smoke and illumination flare are in the same menu. The info gives the zone position (coordinates, bullseye), the ground elevation at its centre (ELEVATION line, in ft and m) and the weather.
 
 What you should see : Easy: eight trucks. Medium: the trucks, an armour company and two AAA pieces drawn among four (never the same twice). Hard: on top, an armour battalion and two short-range systems drawn at random.]=] } },
   { n = 5, id = "front", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Gali]=],
@@ -246,7 +246,7 @@ What you should see : Before the first shot, the trucks leave on their own (the 
 Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Ochamchire. Elle répond à la menace : un intrus fait décoller une paire tirée au sort entre MiG-29S et Su-27 ; trois intrus ou plus, deux paires parmi Su-30, MiG-31 et MiG-29S. Trois joueurs bleus en CAP comptent comme trois intrus (étape suivante, niveau d'opposition). Elle ne réagit pas aux hélicoptères. Les chasseurs décollent de la piste de Soukhoumi, puis montent à leur patrouille.
 
 À faire :
-- Entrez dans le cercle (dessiné sur la carte F10) avec un avion : la QRA décolle 60 s plus tard.
+- Entrez dans le cercle (dessiné en tirets sur la carte F10 : une limite de détection, pas un terrain) avec un avion : la QRA décolle 60 s plus tard.
 - Menu F10 > Autre > Démo : commandes > Arrêter / Démarrer la QRA de Soukhoumi (menu déclaré en YAML).
 
 Ce qu'on doit voir : Un message annonce le décollage ; les chasseurs roulent sur la piste de Soukhoumi, décollent et viennent vers vous. Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est vidé d'intrus.]=],
@@ -255,7 +255,7 @@ Ce qu'on doit voir : Un message annonce le décollage ; les chasseurs roulent su
 A quick reaction alert (QRA) defends Sukhumi within a 40 km circle that covers Ochamchire. It answers the threat: one intruder scrambles a pair drawn between MiG-29S and Su-27; three or more, two pairs among Su-30, MiG-31 and MiG-29S. Three blue players on CAP count as three intruders (next step, the opposition level). It ignores helicopters. The fighters take off from Sukhumi's runway, then climb to their patrol.
 
 What to do :
-- Enter the circle (drawn on the F10 map) in an aircraft: the QRA scrambles 60 s later.
+- Enter the circle (dashed on the F10 map: a detection boundary, not ground) in an aircraft: the QRA scrambles 60 s later.
 - F10 > Other > Demo: commands > Stop / Start the Sukhumi QRA (a menu declared in YAML).
 
 What you should see : A message announces the scramble; the fighters roll on Sukhumi's runway, take off and come at you. Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.]=] } },
@@ -266,8 +266,8 @@ What you should see : A message announces the scramble; the fighters roll on Suk
 La chasse rouge se dimensionne au nombre de joueurs : la mission porte un niveau, le nombre d'avions bleus pour lequel l'opposition est réglée, qui suit ici les joueurs en CAP : ceux qui volent avec un missile air-air à guidage radar (Fox 1 ou Fox 3), lu sur ce qu'ils emportent — pas les hélicos ni l'attaque au sol. La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dans son cercle ; les CAP à la demande offrent une taille automatique, une patrouille pour deux joueurs.
 
 À faire :
-- Menu F10 > Autre > VEAF > Opposition > Niveau actuel : le niveau et son mode.
-- Menu F10 > Autre > VEAF > Opposition > Niveau > 4 joueur(s) en CAP : le niveau passe à 4 et ne suit plus les joueurs ; Opposition > Mode > suit les joueurs en vol armés air-air le refait suivre.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau actuel : le niveau et son mode.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau > +4 joueur(s) en CAP : le niveau passe à 4 et ne suit plus les joueurs ; OPPOSITION > Mode > +suit les joueurs en vol armés air-air le refait suivre.
 - Ou par marqueur : _opposition 4, _opposition air_to_air.
 - Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
 
@@ -277,8 +277,8 @@ Ce qu'on doit voir : Chaque changement de niveau est annoncé à tous. Au niveau
 The red fighters scale with the number of players: the mission carries a level, the number of blue aircraft the opposition is sized for, which here follows the players on CAP: those flying with a radar-guided air-to-air missile (Fox 1 or Fox 3), read from what they carry — not the helicopters nor the ground attack. The Sukhumi QRA takes the tier of the bigger of that level and the intruders in its circle; the on-demand CAPs offer an automatic size, one patrol per two players.
 
 What to do :
-- F10 > Other > VEAF > Opposition > Current level: the level and its mode.
-- F10 > Other > VEAF > Opposition > Level > 4 player(s) on CAP: the level goes to 4 and stops following the players; Opposition > Mode > follows the players airborne armed for air-to-air makes it follow again.
+- F10 > Other > VEAF > OPPOSITION > Current level: the level and its mode.
+- F10 > Other > VEAF > OPPOSITION > Level > +4 player(s) on CAP: the level goes to 4 and stops following the players; OPPOSITION > Mode > +follows the players airborne armed for air-to-air makes it follow again.
 - Or by marker: _opposition 4, _opposition air_to_air.
 - F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level).
 

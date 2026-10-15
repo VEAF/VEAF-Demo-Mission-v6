@@ -6,8 +6,16 @@ python mcp.py run <action> '<json params>' [--full]
 python mcp.py batch file.json [--full]
 """
 import json, sys, subprocess
+from pathlib import Path
 
 from paths import VMCT  # noqa: E402  (met aussi le code VMCT sur sys.path)
+
+# Le code VMCT a ses dépendances (astral, entre autres, absent du Python du poste) : on se relance
+# dans le venv poetry du checkout, celui que tools/build_candidate.py utilise aussi.
+venv = Path(subprocess.run(["poetry", "env", "info", "-p"], cwd=VMCT, capture_output=True, text=True,
+                           check=True).stdout.strip())
+if Path(sys.prefix).resolve() != venv.resolve():
+    sys.exit(subprocess.run([str(venv / "Scripts" / "python.exe"), *sys.argv]).returncode)
 
 br = subprocess.run(["git", "-C", VMCT, "branch", "--show-current"], capture_output=True, text=True).stdout.strip()
 if br != "develop":

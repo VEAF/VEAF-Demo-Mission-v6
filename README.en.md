@@ -157,7 +157,7 @@ Each level includes the one below: medium also spawns the easy targets, hard als
 
 - F10 > Other > VEAF > COMBAT ZONES > Khoni training > Khoni - easy > Activate zone.
 - Destroy the trucks, then deactivate and move on to medium, then hard.
-- Zone info, smoke and illumination flare are in the same menu.
+- Zone info, smoke and illumination flare are in the same menu. The info gives the zone position (coordinates, bullseye), the ground elevation at its centre (ELEVATION line, in ft and m) and the weather.
 
 **What you should see**: Easy: eight trucks.
 Medium: the trucks, an armour company and two AAA pieces drawn among four (never the same twice).
@@ -282,7 +282,7 @@ The fighters take off from Sukhumi's runway, then climb to their patrol.
 
 **What to do**:
 
-- Enter the circle (drawn on the F10 map) in an aircraft: the QRA scrambles 60 s later.
+- Enter the circle (dashed on the F10 map: a detection boundary, not ground) in an aircraft: the QRA scrambles 60 s later.
 - F10 > Other > Demo: commands > Stop / Start the Sukhumi QRA (a menu declared in YAML).
 
 **What you should see**: A message announces the scramble; the fighters roll on Sukhumi's runway, take off and come at you.
@@ -299,8 +299,8 @@ The Sukhumi QRA takes the tier of the bigger of that level and the intruders in 
 
 **What to do**:
 
-- F10 > Other > VEAF > Opposition > Current level: the level and its mode.
-- F10 > Other > VEAF > Opposition > Level > 4 player(s) on CAP: the level goes to 4 and stops following the players; Opposition > Mode > follows the players airborne armed for air-to-air makes it follow again.
+- F10 > Other > VEAF > OPPOSITION > Current level: the level and its mode.
+- F10 > Other > VEAF > OPPOSITION > Level > +4 player(s) on CAP: the level goes to 4 and stops following the players; OPPOSITION > Mode > +follows the players airborne armed for air-to-air makes it follow again.
 - Or by marker: `_opposition 4`, `_opposition air_to_air`.
 - F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level).
 

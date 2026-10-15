@@ -157,7 +157,7 @@ Chaque niveau inclut le précédent : le moyen fait apparaître les cibles du fa
 
 - Menu F10 > Autre > VEAF > ZONES DE COMBAT > Entraînement Khoni > Khoni - facile > Activer la zone.
 - Détruisez les camions, puis désactivez et passez au niveau moyen, puis au difficile.
-- Infos de la zone, fumée et fusée éclairante dans le même menu.
+- Infos de la zone, fumée et fusée éclairante dans le même menu. Les infos donnent la position de la zone (coordonnées, bullseye), l'élévation du sol en son centre (ligne ÉLÉVATION, en ft et en m) et la météo.
 
 **Ce qu'on doit voir** : Facile : huit camions.
 Moyen : les camions, une compagnie blindée et deux pièces de DCA tirées parmi quatre (jamais les mêmes d'une fois sur l'autre).
@@ -282,7 +282,7 @@ Les chasseurs décollent de la piste de Soukhoumi, puis montent à leur patrouil
 
 **À faire** :
 
-- Entrez dans le cercle (dessiné sur la carte F10) avec un avion : la QRA décolle 60 s plus tard.
+- Entrez dans le cercle (dessiné en tirets sur la carte F10 : une limite de détection, pas un terrain) avec un avion : la QRA décolle 60 s plus tard.
 - Menu F10 > Autre > Démo : commandes > Arrêter / Démarrer la QRA de Soukhoumi (menu déclaré en YAML).
 
 **Ce qu'on doit voir** : Un message annonce le décollage ; les chasseurs roulent sur la piste de Soukhoumi, décollent et viennent vers vous.
@@ -299,8 +299,8 @@ La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dan
 
 **À faire** :
 
-- Menu F10 > Autre > VEAF > Opposition > Niveau actuel : le niveau et son mode.
-- Menu F10 > Autre > VEAF > Opposition > Niveau > 4 joueur(s) en CAP : le niveau passe à 4 et ne suit plus les joueurs ; Opposition > Mode > suit les joueurs en vol armés air-air le refait suivre.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau actuel : le niveau et son mode.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau > +4 joueur(s) en CAP : le niveau passe à 4 et ne suit plus les joueurs ; OPPOSITION > Mode > +suit les joueurs en vol armés air-air le refait suivre.
 - Ou par marqueur : `_opposition 4`, `_opposition air_to_air`.
 - Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
 
