@@ -8,7 +8,7 @@ ctld.configUser = [[
 # Sections mm_facing / advanced are for readability; the generator merges them.
 # configVersion: the schema/catalogue version this document is authored against. A
 # configUser carries it too, so the tool can detect a version gap on a CTLD upgrade.
-configVersion: "2.0.0"
+configVersion: "2.2.0"
 mm_facing:
   AASystemCrateStacking: false
   AASystemLimitBLUE: 20
@@ -240,6 +240,7 @@ mm_facing:
   enableFastRopeInsertion: true
   enableHoverSlingload: true
   enablePackingVehicles: true
+  enableParachuteDrop: true
   enableSmokeDrop: true
   enabledFOBBuilding: true
   enabledRadioBeaconDrop: true
@@ -986,7 +987,9 @@ advanced:
   beaconRefreshInterval: 60
   beaconRemovalRadius: 500
   beaconTextSize: 12
+  crateDropExtraDistance: 2
   crateSpacing: 5
+  crateSpawnGap: 0.5
   ctldLogPath: ''
   debug: false
   debugScreenLog: false

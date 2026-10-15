@@ -530,7 +530,8 @@
    "radius": 40000,
    "color": "0xc2362bff",
    "fill_color": "0x00000000",
-   "thickness": 4
+   "thickness": 4,
+   "style": "dash"
   }
  },
  {

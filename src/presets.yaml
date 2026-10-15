@@ -15,6 +15,8 @@ channel_lists: # Role-based preset plan (ADR 0010): declare each Radio role's Ch
       04: Arco-1
       05: Stennis
       06: Roosevelt
+      07: S3B-Stennis
+      08: S3B-Roosevelt
 
     primary_2: # second V/UHF radio : Guard, puis les bases bleues avec slots (fréquences DCS des tours)
       01:
@@ -152,6 +154,14 @@ channels_collection: # Lists all the radio channels available on the map
         title: Roosevelt / 71X
         freqs:
           uhf: 271
+      S3B-Stennis:
+        title: S-3B Stennis / tanker
+        freqs:
+          uhf: 290.9
+      S3B-Roosevelt:
+        title: S-3B Roosevelt / tanker
+        freqs:
+          uhf: 290.8
       Overlord-1:
         title: Overlord-1 (AWACS)
         freqs:

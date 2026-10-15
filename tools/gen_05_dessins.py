@@ -38,10 +38,10 @@ for layer in dcslua.seq(MIS["drawings"]["layers"]):
         b.act("edit_map_drawing", layer=layer["name"], name=o["name"], remove=True)
 
 
-def zone(zone_name, color, fill):
+def zone(zone_name, color, fill, style=None):
     x, y, r = ZONES[zone_name]
     b.act("add_map_drawing", layer="Blue", shape="circle", name=f"Cercle {zone_name}", position=xy((x, y)),
-          radius=r, color=color, fill_color=fill, thickness=4)
+          radius=r, color=color, fill_color=fill, thickness=4, **({"style": style} if style else {}))
     # au nord du cercle (x = nord dans le repère DCS)
     b.act("add_map_drawing", layer="Blue", shape="textbox", name=f"Étiquette {zone_name}", position=xy((x + r, y)),
           text=LABELS[f"Étiquette {zone_name}"], color=color, fill_color=LABEL_BG, font_size=14)
@@ -53,7 +53,8 @@ for z in CFG["modules"]["COMBATZONE"]["combat_zones"]:
     training = z.get("training")
     zone(z["zone_name"], GREEN_C if training else RED_C, GREEN_F if training else RED_F)
 zone("Op_Tkvarcheli", RED_C, "0x00000000")
-zone("QRA-Soukhoumi", RED_C, "0x00000000")
+# le cercle de la QRA est une limite de détection, pas un terrain : en tirets (style, VMCT 6.30.0)
+zone("QRA-Soukhoumi", RED_C, "0x00000000", style="dash")
 zone("Sanctuaire Gudauta", RED_C, RED_F)
 zone("Bac a sable", PURPLE_C, PURPLE_F)
 zone("Demo CSAR", PURPLE_C, PURPLE_F)

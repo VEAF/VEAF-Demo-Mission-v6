@@ -117,12 +117,16 @@ if missing:
 EN_PROFILE = {"mission": {"language": "en"}, "modules": en_modules, "cap_missions": caps, "combat_missions": cms,
               "pipeline": {"weather": {"file": VERSIONS_EN}}}
 TEST = {"global_log_level": "debug", "pipeline": {"weather": False}}
+# Test local : un game master bleu et un rouge (rôle « instructor » de DCS), posés par le build depuis
+# VMCT 6.30.0 (mission.ground_control) ; les missions publiées n'en ont pas.
+TEST_GROUND_CONTROL = {"game_master": {"blue": 1, "red": 1}}
 profiles = {
     "FR": {"mission": {"language": "fr"}},
     "EN": EN_PROFILE,
     # Test local : logs détaillés, une seule météo (pas de variantes), build plus rapide.
-    "LOCAL_TEST": copy.deepcopy(TEST),
-    "LOCAL_TEST_EN": {**copy.deepcopy(EN_PROFILE), **copy.deepcopy(TEST)},
+    "LOCAL_TEST": {"mission": {"ground_control": copy.deepcopy(TEST_GROUND_CONTROL)}, **copy.deepcopy(TEST)},
+    "LOCAL_TEST_EN": {**copy.deepcopy(EN_PROFILE), **copy.deepcopy(TEST),
+                      "mission": {"language": "en", "ground_control": copy.deepcopy(TEST_GROUND_CONTROL)}},
 }
 
 header = f"""{MARK} (générés par tools/gen_i18n.py — ne pas modifier à la main) ────
