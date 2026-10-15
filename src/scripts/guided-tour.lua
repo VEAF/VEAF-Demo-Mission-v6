@@ -266,8 +266,8 @@ What you should see : A message announces the scramble; the fighters roll on Suk
 La chasse rouge se dimensionne au nombre de joueurs : la mission porte un niveau, le nombre d'avions bleus pour lequel l'opposition est réglée, qui suit ici les joueurs en CAP : ceux qui volent avec un missile air-air à guidage radar (Fox 1 ou Fox 3), lu sur ce qu'ils emportent — pas les hélicos ni l'attaque au sol. La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dans son cercle ; les CAP à la demande offrent une taille automatique, une patrouille pour deux joueurs.
 
 À faire :
-- Menu F10 > Autre > VEAF > Opposition > Niveau actuel : le niveau et son mode.
-- Menu F10 > Autre > VEAF > Opposition > Niveau > 4 joueur(s) en CAP : le niveau passe à 4 et ne suit plus les joueurs ; Opposition > Mode > suit les joueurs en vol armés air-air le refait suivre.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau actuel : le niveau et son mode.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau > +4 joueur(s) en CAP : le niveau passe à 4 et ne suit plus les joueurs ; OPPOSITION > Mode > +suit les joueurs en vol armés air-air le refait suivre.
 - Ou par marqueur : _opposition 4, _opposition air_to_air.
 - Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
 
@@ -277,8 +277,8 @@ Ce qu'on doit voir : Chaque changement de niveau est annoncé à tous. Au niveau
 The red fighters scale with the number of players: the mission carries a level, the number of blue aircraft the opposition is sized for, which here follows the players on CAP: those flying with a radar-guided air-to-air missile (Fox 1 or Fox 3), read from what they carry — not the helicopters nor the ground attack. The Sukhumi QRA takes the tier of the bigger of that level and the intruders in its circle; the on-demand CAPs offer an automatic size, one patrol per two players.
 
 What to do :
-- F10 > Other > VEAF > Opposition > Current level: the level and its mode.
-- F10 > Other > VEAF > Opposition > Level > 4 player(s) on CAP: the level goes to 4 and stops following the players; Opposition > Mode > follows the players airborne armed for air-to-air makes it follow again.
+- F10 > Other > VEAF > OPPOSITION > Current level: the level and its mode.
+- F10 > Other > VEAF > OPPOSITION > Level > +4 player(s) on CAP: the level goes to 4 and stops following the players; OPPOSITION > Mode > +follows the players airborne armed for air-to-air makes it follow again.
 - Or by marker: _opposition 4, _opposition air_to_air.
 - F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level).
 

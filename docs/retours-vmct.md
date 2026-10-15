@@ -3,6 +3,16 @@
 Ce que la construction de la démo (2026-10-05, veaf-tools 6.27.0, serveur MCP de `develop` à `3c257c96`) a trouvé de manquant ou de faux dans les outils.
 Chaque ligne dit quoi, où, comment on l'a vu, et ce que la démo fait à la place.
 
+## État en VMCT 6.30.0
+
+Recette par le pont dcs-bridge le 2026-10-15 sur la candidate `6.29.0+caaccdc3` (`develop` avant le passage en 6.30.0) : 65 contrôles sur 65 en anglais ; en français, 60 sur 65 au premier passage, puis, sur une mission reconstruite et rechargée, les chemins de menu (19 sur 19) et les étapes `convoy-ambush` et `qra` (5 sur 5) au vert.
+Les 5 échecs du premier passage n'étaient pas des défauts VMCT : deux chemins de menu de l'étape `opposition` écrits `Opposition` au lieu de `OPPOSITION` et sans le `+` des commandes protégées (texte de la visite corrigé), et trois délais dépassés du pont pendant que la fenêtre DCS était réduite (DCS réduit ne fait plus tourner la mission).
+Aucun défaut VMCT trouvé.
+
+- n° 2 : depuis 6.30.0, `add_group` et `create_combat_zone` font partir une route de convoi `On Road` (FIX-OPEN-TRAINING-FALKLANDS-FINDINGS, ticket 04). `tools/fix_convoy_on_road.py` reste : il a déjà produit la mission.
+- Les game masters des missions de test viennent de `mission.ground_control` (FIX-OPEN-TRAINING-CAUCASUS-FINDINGS, ticket 01) : `tools/make_test_mission.py` ne retouche plus le `.miz`, il vérifie qu'ils y sont.
+- Le build signale depuis 6.29.0 un AWACS ou un ravitailleur qu'aucun preset n'atteint : les deux S-3B des porte-avions (290.9 et 290.8) n'en avaient pas, leurs canaux sont ajoutés à `src/presets.yaml`.
+
 ## État en VMCT 6.28.0
 
 Les n° 1 à 15 sont corrigés par le lot `FIX-DEMO-MISSION-FINDINGS` ([VEAF/VEAF-Mission-Creation-Tools#1083](https://github.com/VEAF/VEAF-Mission-Creation-Tools/pull/1083)), et les n° 18 à 21 par les lots `FIX-COMBATMISSION-MENU-MISSING` (#1085), `FIX-DEMO-RECETTE-FINDINGS` (#1086) et `FIX-DUPLICATE-UNIT-NAMES` (#1087) ; tous sont dans la release 6.28.0 (2026-10-06).

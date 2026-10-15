@@ -299,8 +299,8 @@ The Sukhumi QRA takes the tier of the bigger of that level and the intruders in 
 
 **What to do**:
 
-- F10 > Other > VEAF > Opposition > Current level: the level and its mode.
-- F10 > Other > VEAF > Opposition > Level > 4 player(s) on CAP: the level goes to 4 and stops following the players; Opposition > Mode > follows the players airborne armed for air-to-air makes it follow again.
+- F10 > Other > VEAF > OPPOSITION > Current level: the level and its mode.
+- F10 > Other > VEAF > OPPOSITION > Level > +4 player(s) on CAP: the level goes to 4 and stops following the players; OPPOSITION > Mode > +follows the players airborne armed for air-to-air makes it follow again.
 - Or by marker: `_opposition 4`, `_opposition air_to_air`.
 - F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level).
 
