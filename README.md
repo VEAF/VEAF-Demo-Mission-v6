@@ -301,12 +301,14 @@ La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dan
 
 - Menu F10 > Autre > VEAF > OPPOSITION > Niveau actuel : le niveau et son mode.
 - Menu F10 > Autre > VEAF > OPPOSITION > Niveau > +4 joueur(s) en CAP : le niveau passe à 4 et ne suit plus les joueurs ; OPPOSITION > Mode > +suit les joueurs en vol armés air-air le refait suivre.
-- Ou par marqueur : `_opposition 4`, `_opposition air_to_air`.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau > +0 avion : plus aucune chasse rouge ne décolle de Soukhoumi, jusqu'à ce qu'on remonte le niveau.
+- Ou par marqueur : `_opposition 4`, `_opposition 0`, `_opposition air_to_air`.
 - Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
 
 **Ce qu'on doit voir** : Chaque changement de niveau est annoncé à tous.
 Au niveau 4, un seul intrus dans le cercle de Soukhoumi fait décoller deux paires, et « Taille auto » active la CAP en scale 2.
 Un pilote qui réarme en missiles air-air compte dès qu'il redécolle ; quand un joueur en CAP atterrit ou se déconnecte, le niveau ne baisse qu'après 5 minutes.
+À « 0 avion », Niveau actuel annonce « aucune chasse adverse (fixe) » et la QRA reste au sol quoi qu'il entre dans son cercle ; un niveau qui descend tout seul à 0 (personne en CAP) laisse la QRA répondre aux intrus.
 
 **Fonctionnalités** : `QRA`, `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafQraManager/#opposition-level)
 
