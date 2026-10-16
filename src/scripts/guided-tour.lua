@@ -268,10 +268,11 @@ La chasse rouge se dimensionne au nombre de joueurs : la mission porte un niveau
 À faire :
 - Menu F10 > Autre > VEAF > OPPOSITION > Niveau actuel : le niveau et son mode.
 - Menu F10 > Autre > VEAF > OPPOSITION > Niveau > +4 joueur(s) en CAP : le niveau passe à 4 et ne suit plus les joueurs ; OPPOSITION > Mode > +suit les joueurs en vol armés air-air le refait suivre.
-- Ou par marqueur : _opposition 4, _opposition air_to_air.
+- Menu F10 > Autre > VEAF > OPPOSITION > Niveau > +0 avion : plus aucune chasse rouge ne décolle de Soukhoumi, jusqu'à ce qu'on remonte le niveau.
+- Ou par marqueur : _opposition 4, _opposition 0, _opposition air_to_air.
 - Menu F10 > Autre > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Taille auto (niveau d'opposition).
 
-Ce qu'on doit voir : Chaque changement de niveau est annoncé à tous. Au niveau 4, un seul intrus dans le cercle de Soukhoumi fait décoller deux paires, et « Taille auto » active la CAP en scale 2. Un pilote qui réarme en missiles air-air compte dès qu'il redécolle ; quand un joueur en CAP atterrit ou se déconnecte, le niveau ne baisse qu'après 5 minutes.]=],
+Ce qu'on doit voir : Chaque changement de niveau est annoncé à tous. Au niveau 4, un seul intrus dans le cercle de Soukhoumi fait décoller deux paires, et « Taille auto » active la CAP en scale 2. Un pilote qui réarme en missiles air-air compte dès qu'il redécolle ; quand un joueur en CAP atterrit ou se déconnecte, le niveau ne baisse qu'après 5 minutes. À « 0 avion », Niveau actuel annonce « aucune chasse adverse (fixe) » et la QRA reste au sol quoi qu'il entre dans son cercle ; un niveau qui descend tout seul à 0 (personne en CAP) laisse la QRA répondre aux intrus.]=],
              en = [=[OPPOSITION LEVEL
 
 The red fighters scale with the number of players: the mission carries a level, the number of blue aircraft the opposition is sized for, which here follows the players on CAP: those flying with a radar-guided air-to-air missile (Fox 1 or Fox 3), read from what they carry — not the helicopters nor the ground attack. The Sukhumi QRA takes the tier of the bigger of that level and the intruders in its circle; the on-demand CAPs offer an automatic size, one patrol per two players.
@@ -279,10 +280,11 @@ The red fighters scale with the number of players: the mission carries a level, 
 What to do :
 - F10 > Other > VEAF > OPPOSITION > Current level: the level and its mode.
 - F10 > Other > VEAF > OPPOSITION > Level > +4 player(s) on CAP: the level goes to 4 and stops following the players; OPPOSITION > Mode > +follows the players airborne armed for air-to-air makes it follow again.
-- Or by marker: _opposition 4, _opposition air_to_air.
+- F10 > Other > VEAF > OPPOSITION > Level > +0 aircraft: no red fighter takes off from Sukhumi any more, until the level is raised.
+- Or by marker: _opposition 4, _opposition 0, _opposition air_to_air.
 - F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level).
 
-What you should see : Every change of level is announced to all. At level 4, a single intruder in the Sukhumi circle scrambles two pairs, and "Auto scale" activates the CAP at scale 2. A pilot who rearms with air-to-air missiles counts as soon as he is airborne again; when a player on CAP lands or leaves, the level drops only after 5 minutes.]=] } },
+What you should see : Every change of level is announced to all. At level 4, a single intruder in the Sukhumi circle scrambles two pairs, and "Auto scale" activates the CAP at scale 2. A pilot who rearms with air-to-air missiles counts as soon as he is airborne again; when a player on CAP lands or leaves, the level drops only after 5 minutes. At "0 aircraft", Current level says "no enemy fighters (fixed)" and the QRA stays on the ground whatever enters its circle; a level that falls to 0 by itself (nobody on CAP) lets the QRA answer the intruders.]=] } },
   { n = 13, id = "cap", chapter = "air", anchorKind = "airbase", anchorName = [=[Gudauta]=],
     title = { fr = [=[CAP à la demande et raid sur Senaki]=], en = [=[On-demand CAP and the Senaki raid]=] },
     text = { fr = [=[CAP À LA DEMANDE ET RAID SUR SENAKI
