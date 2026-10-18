@@ -66,26 +66,27 @@ Tous les aérodromes russes et abkhazes sont rouges, sans slot. Les dynamiques n
 | # | Étapes | Où | Fonctionnalités |
 |---|---|---|---|
 | 01 | [Bienvenue](#01-bienvenue) | Partout (pas de lieu particulier) | `RADIO`, `build:dynamic_slots`, `build:presets`, `build:waypoints`, `build:weather` |
-| 02 | [Bac à sable : les commandes de marqueur](#02-bac-à-sable--les-commandes-de-marqueur) | BULLSEYE 127/40 — 7 nm de Kutaisi | `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` |
-| 03 | [Missions générées : CAS et transport](#03-missions-générées--cas-et-transport) | BULLSEYE 127/40 — 7 nm de Kutaisi | `CASMISSION`, `TRANSPORTMISSION`, `GROUNDAI` |
-| 04 | [Entraînement de Khoni : trois niveaux](#04-entraînement-de-khoni--trois-niveaux) | BULLSEYE 107/21 — 13 nm de Senaki-Kolkhi | `COMBATZONE`, `AIEN` |
-| 05 | [Front de Gali, et le drone JTAC](#05-front-de-gali-et-le-drone-jtac) | BULLSEYE 312/8 — 26 nm de Senaki-Kolkhi | `COMBATZONE`, `ASSETS`, `CTLD` |
-| 06 | [Défense aérienne intégrée (Skynet)](#06-défense-aérienne-intégrée-skynet) | BULLSEYE 309/24 — 42 nm de Senaki-Kolkhi | `SKYNET`, `INTERPRETER`, `COMBATZONE` |
-| 07 | [Mission chaînée : le port d'Ochamchire](#07-mission-chaînée--le-port-dochamchire) | BULLSEYE 301/21 — 39 nm de Senaki-Kolkhi | `COMBATZONE` |
-| 08 | [Opération Tkvarcheli : tâches et dépendances](#08-opération-tkvarcheli--tâches-et-dépendances) | BULLSEYE 332/22 — 40 nm de Senaki-Kolkhi | `COMBATZONE` |
-| 09 | [Convoi en mouvement](#09-convoi-en-mouvement) | BULLSEYE 303/20 — 38 nm de Senaki-Kolkhi | `COMBATZONE` |
-| 10 | [Convoi sous le feu](#10-convoi-sous-le-feu) | BULLSEYE 112/44 — 11 nm de Kutaisi | `GROUNDAI`, `SPAWN` |
-| 11 | [QRA de Soukhoumi](#11-qra-de-soukhoumi) | BULLSEYE 297/39 — 55 nm de Senaki-Kolkhi | `QRA`, `RADIO` |
-| 12 | [Niveau d'opposition](#12-niveau-dopposition) | Partout (pas de lieu particulier) | `QRA`, `COMBATMISSION` |
-| 13 | [CAP à la demande et raid sur Senaki](#13-cap-à-la-demande-et-raid-sur-senaki) | BULLSEYE 297/69 — 85 nm de Senaki-Kolkhi | `COMBATMISSION` |
-| 14 | [Arène BVR (vagues aériennes)](#14-arène-bvr-vagues-aériennes) | BULLSEYE 239/44 — 43 nm de Kobuleti | `AIRWAVES`, `RADIO` |
-| 15 | [Sanctuaire rouge de Gudauta](#15-sanctuaire-rouge-de-gudauta) | BULLSEYE 297/69 — 85 nm de Senaki-Kolkhi | `SANCTUARY` |
-| 16 | [Ravitailleurs, AWACS et escorte](#16-ravitailleurs-awacs-et-escorte) | BULLSEYE 122/48 — 14 nm de Kutaisi (au départ de la mission) | `ASSETS`, `MOVE` |
-| 17 | [Escorte à la demande](#17-escorte-à-la-demande) | Partout (pas de lieu particulier) | `SPAWN` |
-| 18 | [Hélicoptères : FARP, CTLD, CSAR](#18-hélicoptères--farp-ctld-csar) | BULLSEYE 112/26 — 9 nm de Kutaisi | `CTLD`, `CSAR`, `GRASS` |
-| 19 | [Aérodromes : caisses et troupes CTLD](#19-aérodromes--caisses-et-troupes-ctld) | BULLSEYE 119/34 — 0 nm de Kutaisi | `CTLD` |
-| 20 | [Porte-avions Stennis et Roosevelt](#20-porte-avions-stennis-et-roosevelt) | BULLSEYE 203/48 — 17 nm de Batumi (au départ de la mission) | `CARRIER` |
-| 21 | [Météo, ATC et assistance cockpit](#21-météo-atc-et-assistance-cockpit) | BULLSEYE 119/34 — 0 nm de Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
+| 02 | [La planchette : presets radio et mire](#02-la-planchette--presets-radio-et-mire) | Partout (pas de lieu particulier) | `build:presets` |
+| 03 | [Bac à sable : les commandes de marqueur](#03-bac-à-sable--les-commandes-de-marqueur) | BULLSEYE 127/40 — 7 nm de Kutaisi | `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` |
+| 04 | [Missions générées : CAS et transport](#04-missions-générées--cas-et-transport) | BULLSEYE 127/40 — 7 nm de Kutaisi | `CASMISSION`, `TRANSPORTMISSION`, `GROUNDAI` |
+| 05 | [Entraînement de Khoni : trois niveaux](#05-entraînement-de-khoni--trois-niveaux) | BULLSEYE 107/21 — 13 nm de Senaki-Kolkhi | `COMBATZONE`, `AIEN` |
+| 06 | [Front de Gali, et le drone JTAC](#06-front-de-gali-et-le-drone-jtac) | BULLSEYE 312/8 — 26 nm de Senaki-Kolkhi | `COMBATZONE`, `ASSETS`, `CTLD` |
+| 07 | [Défense aérienne intégrée (Skynet)](#07-défense-aérienne-intégrée-skynet) | BULLSEYE 309/24 — 42 nm de Senaki-Kolkhi | `SKYNET`, `INTERPRETER`, `COMBATZONE` |
+| 08 | [Mission chaînée : le port d'Ochamchire](#08-mission-chaînée--le-port-dochamchire) | BULLSEYE 301/21 — 39 nm de Senaki-Kolkhi | `COMBATZONE` |
+| 09 | [Opération Tkvarcheli : tâches et dépendances](#09-opération-tkvarcheli--tâches-et-dépendances) | BULLSEYE 332/22 — 40 nm de Senaki-Kolkhi | `COMBATZONE` |
+| 10 | [Convoi en mouvement](#10-convoi-en-mouvement) | BULLSEYE 303/20 — 38 nm de Senaki-Kolkhi | `COMBATZONE` |
+| 11 | [Convoi sous le feu](#11-convoi-sous-le-feu) | BULLSEYE 112/44 — 11 nm de Kutaisi | `GROUNDAI`, `SPAWN` |
+| 12 | [QRA de Soukhoumi](#12-qra-de-soukhoumi) | BULLSEYE 297/39 — 55 nm de Senaki-Kolkhi | `QRA`, `RADIO` |
+| 13 | [Niveau d'opposition](#13-niveau-dopposition) | Partout (pas de lieu particulier) | `QRA`, `COMBATMISSION` |
+| 14 | [CAP à la demande et raid sur Senaki](#14-cap-à-la-demande-et-raid-sur-senaki) | BULLSEYE 297/69 — 85 nm de Senaki-Kolkhi | `COMBATMISSION` |
+| 15 | [Arène BVR (vagues aériennes)](#15-arène-bvr-vagues-aériennes) | BULLSEYE 239/44 — 43 nm de Kobuleti | `AIRWAVES`, `RADIO` |
+| 16 | [Sanctuaire rouge de Gudauta](#16-sanctuaire-rouge-de-gudauta) | BULLSEYE 297/69 — 85 nm de Senaki-Kolkhi | `SANCTUARY` |
+| 17 | [Ravitailleurs, AWACS et escorte](#17-ravitailleurs-awacs-et-escorte) | BULLSEYE 122/48 — 14 nm de Kutaisi (au départ de la mission) | `ASSETS`, `MOVE` |
+| 18 | [Escorte à la demande](#18-escorte-à-la-demande) | Partout (pas de lieu particulier) | `SPAWN` |
+| 19 | [Hélicoptères : FARP, CTLD, CSAR](#19-hélicoptères--farp-ctld-csar) | BULLSEYE 112/26 — 9 nm de Kutaisi | `CTLD`, `CSAR`, `GRASS` |
+| 20 | [Aérodromes : caisses et troupes CTLD](#20-aérodromes--caisses-et-troupes-ctld) | BULLSEYE 119/34 — 0 nm de Kutaisi | `CTLD` |
+| 21 | [Porte-avions Stennis et Roosevelt](#21-porte-avions-stennis-et-roosevelt) | BULLSEYE 203/48 — 17 nm de Batumi (au départ de la mission) | `CARRIER` |
+| 22 | [Météo, ATC et assistance cockpit](#22-météo-atc-et-assistance-cockpit) | BULLSEYE 119/34 — 0 nm de Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
 
 ### 1. Prise en main
 
@@ -107,7 +108,27 @@ Un repère est posé sur votre carte F10 quand vous ouvrez une étape.
 
 **Fonctionnalités** : `RADIO`, `build:dynamic_slots`, `build:presets`, `build:waypoints`, `build:weather` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/GUIDE/)
 
-#### 02 Bac à sable : les commandes de marqueur
+#### 02 La planchette : presets radio et mire
+
+Le build ajoute à chaque avion une page de planchette avec ses presets radio : un bloc par radio, titré avec le poste du cockpit, puis le canal, le nom et la fréquence.
+Une page de mire, commune à tous, sert à remettre la fenêtre de la planchette aux bonnes proportions : DCS étire chaque page à la taille de la fenêtre.
+
+**Où** : Partout (pas de lieu particulier)
+
+**À faire** :
+
+- Prenez un slot A-10C II à Kutaisi et ouvrez la planchette : RShift+K (touche par défaut de DCS).
+- Tournez les pages avec `]` (suivante) et `[` (précédente) jusqu'à la page « Réglage de la planchette ».
+- Si ses cercles ne sont pas ronds, redimensionnez la fenêtre de la planchette jusqu'à ce qu'ils le soient, puis revenez à la page « A-10C II ».
+
+**Ce qu'on doit voir** : La page « A-10C II » montre trois blocs, « 1.
+UHF/VHF · ARC-210 », « 2.
+UHF AM · ARC-164 » et « 3.
+VHF FM · ARC-186 », lisibles sans déformation ; les cercles de la mire sont ronds.
+
+**Fonctionnalités** : `build:presets` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/concepts/radio-presets/)
+
+#### 03 Bac à sable : les commandes de marqueur
 
 Le bac à sable, au sud de Kutaisi (point nommé ALPHA), sert à essayer les commandes qu'on tape dans un marqueur F10 : faire apparaître des unités, un convoi, de la fumée, un FARP, et tout effacer.
 
@@ -127,7 +148,7 @@ Le bac à sable, au sud de Kutaisi (point nommé ALPHA), sert à essayer les com
 
 **Fonctionnalités** : `SPAWN`, `SHORTCUTS`, `NAMEDPOINTS`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafSpawn/) · [Liste des alias](https://veaf.github.io/documentation/latest/ALIASES/)
 
-#### 03 Missions générées : CAS et transport
+#### 04 Missions générées : CAS et transport
 
 Deux commandes fabriquent une mission complète là où vous posez le marqueur : un appui aérien rapproché (CAS) ou un transport héliporté.
 
@@ -146,7 +167,7 @@ Deux commandes fabriquent une mission complète là où vous posez le marqueur :
 
 ### 2. Zones de combat
 
-#### 04 Entraînement de Khoni : trois niveaux
+#### 05 Entraînement de Khoni : trois niveaux
 
 Une zone d'entraînement en trois niveaux posés sur le même cercle.
 Chaque niveau inclut le précédent : le moyen fait apparaître les cibles du facile en plus des siennes, le difficile celles du moyen.
@@ -165,7 +186,7 @@ Difficile : en plus, un bataillon blindé et deux systèmes courte portée tiré
 
 **Fonctionnalités** : `COMBATZONE`, `AIEN` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafCombatZone/)
 
-#### 05 Front de Gali, et le drone JTAC
+#### 06 Front de Gali, et le drone JTAC
 
 Une vraie zone de combat sur le front de l'Inguri.
 Son contenu est décrit par des unités-porteuses qui portent une commande (#command) : la zone fait apparaître à leur place un groupe blindé tiré au sort parmi deux, une batterie d'artillerie, une DCA et des MANPADS.
@@ -183,7 +204,7 @@ Le drone Reaper 1 orbite au-dessus et désigne les blindés au laser.
 
 **Fonctionnalités** : `COMBATZONE`, `ASSETS`, `CTLD` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/concepts/combat-zones/)
 
-#### 06 Défense aérienne intégrée (Skynet)
+#### 07 Défense aérienne intégrée (Skynet)
 
 Le réseau de défense aérienne rouge : un radar d'alerte, un SA-11 et un SA-15 permanents près de Gudauta (posés par #veafInterpreter), plus le SA-6 d'Ochamchire, une zone de combat active dès le démarrage qui rejoint le réseau.
 Les batteries gardent leur radar éteint et ne l'allument que quand le réseau le leur demande.
@@ -201,7 +222,7 @@ Les unités au sol rouges servent de guetteurs : elles voient les avions et rela
 
 **Fonctionnalités** : `SKYNET`, `INTERPRETER`, `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafSkynetIadsHelper/)
 
-#### 07 Mission chaînée : le port d'Ochamchire
+#### 08 Mission chaînée : le port d'Ochamchire
 
 Deux zones enchaînées : la seconde n'existe pas tant que la première n'est pas terminée.
 D'abord le dépôt du port, puis, une minute après sa destruction, les cargos et leur corvette en rade (lutte antinavire).
@@ -218,7 +239,7 @@ Attention : le cercle de la QRA de Soukhoumi couvre Ochamchire.
 
 **Fonctionnalités** : `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafCombatZone/)
 
-#### 08 Opération Tkvarcheli : tâches et dépendances
+#### 09 Opération Tkvarcheli : tâches et dépendances
 
 Une opération regroupe plusieurs zones en tâches : le radar et le dépôt d'abord, puis le poste de commandement, qui n'est donné comme objectif qu'une fois les deux premiers détruits.
 Toutes les unités apparaissent à l'activation : la dépendance ordonne les objectifs, pas l'apparition.
@@ -234,7 +255,7 @@ Toutes les unités apparaissent à l'activation : la dépendance ordonne les obj
 
 **Fonctionnalités** : `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafCombatZone/)
 
-#### 09 Convoi en mouvement
+#### 10 Convoi en mouvement
 
 Un convoi logistique, cinq camions et sa Shilka, qui fait la navette entre Ochamchire et Gali : une cible qui bouge.
 
@@ -249,7 +270,7 @@ Un convoi logistique, cinq camions et sa Shilka, qui fait la navette entre Ocham
 
 **Fonctionnalités** : `COMBATZONE` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafCombatZone/)
 
-#### 10 Convoi sous le feu
+#### 11 Convoi sous le feu
 
 Un convoi que vous lancez vers une embuscade de trois blindés rouges, à l'est de Kutaisi.
 Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde, appelle l'appui aérien et se replie.
@@ -270,7 +291,7 @@ Livré à DCS, il y mourrait sans tirer ; piloté par VEAF, il guette, se scinde
 
 ### 3. Menace aérienne
 
-#### 11 QRA de Soukhoumi
+#### 12 QRA de Soukhoumi
 
 Une alerte en vol (QRA) défend Soukhoumi dans un cercle de 40 km, qui couvre Ochamchire.
 Elle répond à la menace : un intrus fait décoller une paire tirée au sort entre MiG-29S et Su-27 ; trois intrus ou plus, deux paires parmi Su-30, MiG-31 et MiG-29S.
@@ -290,7 +311,7 @@ Une fois la QRA détruite, elle se réarme 5 minutes après que le cercle s'est 
 
 **Fonctionnalités** : `QRA`, `RADIO` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafQraManager/)
 
-#### 12 Niveau d'opposition
+#### 13 Niveau d'opposition
 
 La chasse rouge se dimensionne au nombre de joueurs : la mission porte un niveau, le nombre d'avions bleus pour lequel l'opposition est réglée, qui suit ici les joueurs en CAP : ceux qui volent avec un missile air-air à guidage radar (Fox 1 ou Fox 3), lu sur ce qu'ils emportent — pas les hélicos ni l'attaque au sol.
 La QRA de Soukhoumi prend le palier du plus grand de ce niveau et des intrus dans son cercle ; les CAP à la demande offrent une taille automatique, une patrouille pour deux joueurs.
@@ -312,7 +333,7 @@ Un pilote qui réarme en missiles air-air compte dès qu'il redécolle ; quand u
 
 **Fonctionnalités** : `QRA`, `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafQraManager/#opposition-level)
 
-#### 13 CAP à la demande et raid sur Senaki
+#### 14 CAP à la demande et raid sur Senaki
 
 Des patrouilles rouges qu'on fait apparaître depuis le menu, de menaces différentes (MiG-29S Fox 3, Su-27 Fox 1, MiG-31), et une mission scénarisée : deux Su-24M escortés par deux MiG-29S partent bombarder Senaki.
 
@@ -328,7 +349,7 @@ Des patrouilles rouges qu'on fait apparaître depuis le menu, de menaces différ
 
 **Fonctionnalités** : `COMBATMISSION` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafCombatMission/)
 
-#### 14 Arène BVR (vagues aériennes)
+#### 15 Arène BVR (vagues aériennes)
 
 Une arène au large de Poti : dès qu'un avion bleu y entre, des vagues de chasseurs rouges arrivent l'une après l'autre, de plus en plus dures (MiG-29S seul, deux Su-27, deux Su-30).
 
@@ -344,7 +365,7 @@ Si vous mourez, l'arène se réinitialise.
 
 **Fonctionnalités** : `AIRWAVES`, `RADIO` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafAirWaves/)
 
-#### 15 Sanctuaire rouge de Gudauta
+#### 16 Sanctuaire rouge de Gudauta
 
 Un sanctuaire protège une zone pour un camp : un pilote adverse qui y entre est averti, puis une défense apparaît, puis il est abattu.
 Celui-ci protège Gudauta (15 km) côté rouge ; il détruit aussi les missiles tirés sur les unités qui s'y trouvent.
@@ -361,7 +382,7 @@ Celui-ci protège Gudauta (15 km) côté rouge ; il détruit aussi les missiles 
 
 ### 4. Soutien et logistique
 
-#### 16 Ravitailleurs, AWACS et escorte
+#### 17 Ravitailleurs, AWACS et escorte
 
 Deux ravitailleurs (Texaco 1 à perche, Arco 1 à panier) et un AWACS (Overlord 1) escorté par deux F-15C.
 Le menu MOYENS les relance et donne leurs informations ; une commande de marqueur déplace un ravitailleur.
@@ -378,7 +399,7 @@ Le menu MOYENS les relance et donne leurs informations ; une commande de marqueu
 
 **Fonctionnalités** : `ASSETS`, `MOVE` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafAssets/)
 
-#### 17 Escorte à la demande
+#### 18 Escorte à la demande
 
 Un pilote d'avion bleu fait venir une escorte de chasse depuis le menu : un F-15C apparaît près de lui et le couvre.
 Quand l'escorte ne peut pas venir, le menu dit pourquoi.
@@ -395,7 +416,7 @@ Quand l'escorte ne peut pas venir, le menu dit pourquoi.
 
 **Fonctionnalités** : `SPAWN` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafSpawn/)
 
-#### 18 Hélicoptères : FARP, CTLD, CSAR
+#### 19 Hélicoptères : FARP, CTLD, CSAR
 
 Le FARP Khoni réarme et ravitaille les hélicoptères ; son dépôt de munitions est un point de chargement CTLD (troupes et caisses).
 Un pilote abattu peut être créé à la demande, à aller chercher en hélicoptère (CSAR).
@@ -412,7 +433,7 @@ Un pilote abattu peut être créé à la demande, à aller chercher en hélicopt
 
 **Fonctionnalités** : `CTLD`, `CSAR`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/GUIDE/)
 
-#### 19 Aérodromes : caisses et troupes CTLD
+#### 20 Aérodromes : caisses et troupes CTLD
 
 Chaque aérodrome tenu est, pour son camp, une zone logistique CTLD (caisses) et une zone d'embarquement de troupes, dans un cercle vert de 250 m dessiné sur la carte F10.
 Le cercle suit le propriétaire du terrain : il s'éteint quand le terrain est pris et revient pour le nouveau camp après deux minutes d'occupation au sol.
@@ -429,7 +450,7 @@ Le cercle suit le propriétaire du terrain : il s'éteint quand le terrain est p
 
 **Fonctionnalités** : `CTLD` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/GUIDE/#ctld-airbase-logistics)
 
-#### 20 Porte-avions Stennis et Roosevelt
+#### 21 Porte-avions Stennis et Roosevelt
 
 Deux porte-avions au large de Batumi, chacun avec son ravitailleur S-3B et son hélicoptère de sauvetage.
 Le menu OPS PORTE-AVIONS met le navire face au vent pour les opérations aériennes.
@@ -446,7 +467,7 @@ Le menu OPS PORTE-AVIONS met le navire face au vent pour les opérations aérien
 
 **Fonctionnalités** : `CARRIER` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafCarrierOperations/)
 
-#### 21 Météo, ATC et assistance cockpit
+#### 22 Météo, ATC et assistance cockpit
 
 Un message d'accueil à la prise de slot (base, piste en service, météo), un menu météo et ATC, et pour le F-16C une checklist de démarrage pas à pas.
 Sur un serveur VEAF, la météo suit la METAR réelle de Kutaisi (UGKO).
