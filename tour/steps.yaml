@@ -74,6 +74,28 @@ steps:
         return false, "pas de menu MISSIONS (VMCT FIX-COMBATMISSION-MENU-MISSING)"
     doc: "mission-maker/GUIDE/"
 
+  - id: kneeboard
+    chapter: start
+    title: { fr: "La planchette : presets radio et mire", en: "The kneeboard: radio presets and test pattern" }
+    modules: [build:presets]
+    what:
+      fr: "Le build ajoute à chaque avion une page de planchette avec ses presets radio : un bloc par radio, titré avec le poste du cockpit, puis le canal, le nom et la fréquence. Une page de mire, commune à tous, sert à remettre la fenêtre de la planchette aux bonnes proportions : DCS étire chaque page à la taille de la fenêtre."
+      en: "The build adds to every aircraft a kneeboard page with its radio presets: one block per radio, titled with the cockpit set, then the channel, the name and the frequency. A test pattern page, shared by all, puts the kneeboard window back to the right shape: DCS stretches every page to the size of the window."
+    how:
+      fr:
+        - "Prenez un slot A-10C II à Kutaisi et ouvrez la planchette : RShift+K (touche par défaut de DCS)."
+        - "Tournez les pages avec `]` (suivante) et `[` (précédente) jusqu'à la page « Réglage de la planchette »."
+        - "Si ses cercles ne sont pas ronds, redimensionnez la fenêtre de la planchette jusqu'à ce qu'ils le soient, puis revenez à la page « A-10C II »."
+      en:
+        - "Take an A-10C II slot at Kutaisi and open the kneeboard: RShift+K (DCS default key)."
+        - "Flip pages with `]` (next) and `[` (previous) until the \"Kneeboard setup\" page."
+        - "If its circles are not round, resize the kneeboard window until they are, then go back to the \"A-10C II\" page."
+    see:
+      fr: "La page « A-10C II » montre trois blocs, « 1. UHF/VHF · ARC-210 », « 2. UHF AM · ARC-164 » et « 3. VHF FM · ARC-186 », lisibles sans déformation ; les cercles de la mire sont ronds."
+      en: "The \"A-10C II\" page shows three blocks, \"1. UHF/VHF · ARC-210\", \"2. UHF AM · ARC-164\" and \"3. VHF FM · ARC-186\", readable without distortion; the test pattern's circles are round."
+    check: "Planchette d'un A-10C II : page des presets avec trois blocs titrés par le poste du cockpit, sous-titre et numéro de page non masqués par les onglets ni par les boutons UP/DN ; page « Réglage de la planchette » présente, cercles ronds dans la fenêtre par défaut."
+    doc: "mission-maker/concepts/radio-presets/"
+
   - id: sandbox
     chapter: start
     title: { fr: "Bac à sable : les commandes de marqueur", en: "Sandbox: marker commands" }

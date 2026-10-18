@@ -306,7 +306,7 @@
     "x": -262494.7,
     "y": 665870.8
    },
-   "text": "4. Khoni (entraînement, 3 niveaux)",
+   "text": "5. Khoni (entraînement, 3 niveaux)",
    "color": "0x2e7f38ff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -340,7 +340,7 @@
     "x": -240944.1,
     "y": 618636.8
    },
-   "text": "5. Front de Gali",
+   "text": "6. Front de Gali",
    "color": "0xc2362bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -374,7 +374,7 @@
     "x": -223833.1,
     "y": 594446.8
    },
-   "text": "6. SAM d'Ochamchire",
+   "text": "7. SAM d'Ochamchire",
    "color": "0xc2362bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -408,7 +408,7 @@
     "x": -232072.4,
     "y": 595507.5
    },
-   "text": "7. Port d'Ochamchire - 1 : dépôt",
+   "text": "8. Port d'Ochamchire - 1 : dépôt",
    "color": "0xc2362bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -476,7 +476,7 @@
     "x": -231638.5,
     "y": 598386.0
    },
-   "text": "9. Convoi d'Ochamchire",
+   "text": "10. Convoi d'Ochamchire",
    "color": "0xc2362bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -510,7 +510,7 @@
     "x": -211565.1,
     "y": 610142.3
    },
-   "text": "8. Opération Tkvarcheli (3 tâches)",
+   "text": "9. Opération Tkvarcheli (3 tâches)",
    "color": "0xc2362bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -545,7 +545,7 @@
     "x": -181381.7,
     "y": 565908.8
    },
-   "text": "11. QRA Sukhumi",
+   "text": "12. QRA Sukhumi",
    "color": "0xc2362bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -579,7 +579,7 @@
     "x": -180650.6,
     "y": 515898.8
    },
-   "text": "15. Sanctuaire rouge de Gudauta",
+   "text": "16. Sanctuaire rouge de Gudauta",
    "color": "0xc2362bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -613,7 +613,7 @@
     "x": -295000,
     "y": 688000
    },
-   "text": "2. Bac à sable (point ALPHA)",
+   "text": "3. Bac à sable (point ALPHA)",
    "color": "0x6a3d9aff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -681,7 +681,7 @@
     "x": -283415.0,
     "y": 705205.0
    },
-   "text": "10. Convoi sous le feu (départ : -convoy, dest EMBUSCADE, side blue)",
+   "text": "11. Convoi sous le feu (départ : -convoy, dest EMBUSCADE, side blue)",
    "color": "0x6a3d9aff",
    "fill_color": "0xffffffe6",
    "font_size": 14
@@ -698,7 +698,7 @@
     "x": -270000,
     "y": 560000
    },
-   "text": "14. Arène BVR (vagues aériennes)",
+   "text": "15. Arène BVR (vagues aériennes)",
    "color": "0xd9822bff",
    "fill_color": "0xffffffe6",
    "font_size": 14
