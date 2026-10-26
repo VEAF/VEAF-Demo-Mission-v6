@@ -55,7 +55,29 @@ What to do :
 - If its circles are not round, resize the kneeboard window until they are, then go back to the "A-10C II" page.
 
 What you should see : The "A-10C II" page shows three blocks, "1. UHF/VHF · ARC-210", "2. UHF AM · ARC-164" and "3. VHF FM · ARC-186", readable without distortion; the test pattern's circles are round.]=] } },
-  { n = 3, id = "sandbox", chapter = "start", anchorKind = "zone", anchorName = [=[Bac a sable]=],
+  { n = 3, id = "kneeboard-briefing", chapter = "start", anchorKind = "none", anchorName = [=[]=],
+    title = { fr = [=[Le briefing dans la planchette]=], en = [=[The briefing on the kneeboard]=] },
+    text = { fr = [=[LE BRIEFING DANS LA PLANCHETTE
+
+Le briefing de la mission (action build_mission_briefing des outils VEAF) ajoute aussi ses pages à la planchette de chaque avion, dessinées au format portrait de la page : la carte de situation, un zoom par objectif, une carte de vol et les coordonnées des cibles.
+
+À faire :
+- Prenez un slot A-10C II à Kutaisi et ouvrez la planchette : RShift+K (touche par défaut de DCS).
+- Tournez les pages avec ] (suivante) après la page « Réglage de la planchette ».
+- Recommencez dans un autre type d'avion, par exemple un F-16C à Kutaisi.
+
+Ce qu'on doit voir : Après la mire : la carte de situation (01-briefing-overview.jpg), un zoom par objectif (02-briefing-objective-…), la « Carte de vol » (chaque point, le cap et la distance de sa branche, le relief le plus haut dessus, les radios), puis les « Coordonnées cibles » (nom, coordonnées, altitude). Les numéros de canal de la carte de vol sont des slots DCS : sur l'AJS-37, ce ne sont pas les numéros de groupe du cockpit (limitation connue briefing-channels-are-dcs-slots).]=],
+             en = [=[THE BRIEFING ON THE KNEEBOARD
+
+The mission briefing (the VEAF tools' build_mission_briefing action) also adds its pages to every aircraft's kneeboard, drawn for the page's portrait shape: the situation map, one zoom per objective, a flight card and the target coordinates.
+
+What to do :
+- Take an A-10C II slot at Kutaisi and open the kneeboard: RShift+K (DCS default key).
+- Flip pages with ] (next) after the "Kneeboard setup" page.
+- Do it again in another aircraft type, for example an F-16C at Kutaisi.
+
+What you should see : After the test pattern: the situation map (01-briefing-overview.jpg), one zoom per objective (02-briefing-objective-…), the "Flight card" (each waypoint, the heading and distance of its leg, the highest ground on it, the radios), then the "Target coordinates" (name, coordinates, elevation). The channel numbers on the flight card are DCS slots: on the AJS-37 they are not the cockpit's Group numbers (known limitation briefing-channels-are-dcs-slots).]=] } },
+  { n = 4, id = "sandbox", chapter = "start", anchorKind = "zone", anchorName = [=[Bac a sable]=],
     title = { fr = [=[Bac à sable : les commandes de marqueur]=], en = [=[Sandbox: marker commands]=] },
     text = { fr = [=[BAC À SABLE : LES COMMANDES DE MARQUEUR
 
@@ -85,7 +107,7 @@ What to do :
 - -boum: a 500 kg explosion; -menage: destroys everything within 2 km (two shortcuts defined by this mission).
 
 What you should see : Each command answers with a message and spawns what it announces at the marker; the marker disappears once the command has run.]=] } },
-  { n = 4, id = "generated", chapter = "start", anchorKind = "zone", anchorName = [=[Bac a sable]=],
+  { n = 5, id = "generated", chapter = "start", anchorKind = "zone", anchorName = [=[Bac a sable]=],
     title = { fr = [=[Missions générées : CAS et transport]=], en = [=[Generated missions: CAS and transport]=] },
     text = { fr = [=[MISSIONS GÉNÉRÉES : CAS ET TRANSPORT
 
@@ -109,7 +131,7 @@ What to do :
 - F10 > Other > VEAF > TRANSPORT MISSION: drop zone position, smoke.
 
 What you should see : A menu specific to the generated mission, and a message when the objective is met.]=] } },
-  { n = 5, id = "training", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Khoni_Easy]=],
+  { n = 6, id = "training", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Khoni_Easy]=],
     title = { fr = [=[Entraînement de Khoni : trois niveaux]=], en = [=[Khoni training range: three levels]=] },
     text = { fr = [=[ENTRAÎNEMENT DE KHONI : TROIS NIVEAUX
 
@@ -131,7 +153,7 @@ What to do :
 - Zone info, smoke and illumination flare are in the same menu. The info gives the zone position (coordinates, bullseye), the ground elevation at its centre (ELEVATION line, in ft and m) and the weather.
 
 What you should see : Easy: eight trucks. Medium: the trucks, an armour company and two AAA pieces drawn among four (never the same twice). Hard: on top, an armour battalion and two short-range systems drawn at random.]=] } },
-  { n = 6, id = "front", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Gali]=],
+  { n = 7, id = "front", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Gali]=],
     title = { fr = [=[Front de Gali, et le drone JTAC]=], en = [=[Gali front, and the JTAC drone]=] },
     text = { fr = [=[FRONT DE GALI, ET LE DRONE JTAC
 
@@ -153,7 +175,7 @@ What to do :
 - The drone can be respawned from F10 > Other > VEAF > ASSETS > Reaper 1 (MQ-9, JTAC).
 
 What you should see : Only one of the two armour groups appears; the drone announces its target and lases it on code 1511.]=] } },
-  { n = 7, id = "iads", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Ochamchire_SAM]=],
+  { n = 8, id = "iads", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Ochamchire_SAM]=],
     title = { fr = [=[Défense aérienne intégrée (Skynet)]=], en = [=[Integrated air defence (Skynet)]=] },
     text = { fr = [=[DÉFENSE AÉRIENNE INTÉGRÉE (SKYNET)
 
@@ -175,7 +197,7 @@ What to do :
 - The spotter view belongs to each side: F10 > Other > VEAF > SPOTTER NETWORK > Show the spotter view shows YOUR side's spotters. To see the red network, take the red game master slot of the test mission (reopen the F10 map after clicking).
 
 What you should see : The SA-6 stays silent until the network has detected you, then lights up; the SKYNET IADS COALITION: RED menu shows which site is emitting.]=] } },
-  { n = 8, id = "chained", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Ochamchire_Port]=],
+  { n = 9, id = "chained", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Ochamchire_Port]=],
     title = { fr = [=[Mission chaînée : le port d'Ochamchire]=], en = [=[Chained mission: Ochamchire port]=] },
     text = { fr = [=[MISSION CHAÎNÉE : LE PORT D'OCHAMCHIRE
 
@@ -195,7 +217,7 @@ What to do :
 - Destroy the trucks and the ZU-23, then wait one minute.
 
 What you should see : Zone 1 completes, and the ships appear offshore without any menu activating them. Beware: the Sukhumi QRA circle covers Ochamchire.]=] } },
-  { n = 9, id = "operation", chapter = "ground", anchorKind = "zone", anchorName = [=[Op_Tkvarcheli]=],
+  { n = 10, id = "operation", chapter = "ground", anchorKind = "zone", anchorName = [=[Op_Tkvarcheli]=],
     title = { fr = [=[Opération Tkvarcheli : tâches et dépendances]=], en = [=[Operation Tkvarcheli: tasks and dependencies]=] },
     text = { fr = [=[OPÉRATION TKVARCHELI : TÂCHES ET DÉPENDANCES
 
@@ -215,7 +237,7 @@ What to do :
 - The same menu gives the current task; destroy the 1L13 radar and the depot (statics), then the command post.
 
 What you should see : Tasks move from "in progress" to "done"; when all three are done, the message "Operation … is over".]=] } },
-  { n = 10, id = "convoy", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Convoy]=],
+  { n = 11, id = "convoy", chapter = "ground", anchorKind = "zone", anchorName = [=[combatZone_Convoy]=],
     title = { fr = [=[Convoi en mouvement]=], en = [=[Moving convoy]=] },
     text = { fr = [=[CONVOI EN MOUVEMENT
 
@@ -235,7 +257,7 @@ What to do :
 - Zone info: the convoy position when you ask.
 
 What you should see : The convoy drives to Gali, then comes back, in a loop.]=] } },
-  { n = 11, id = "convoy-ambush", chapter = "ground", anchorKind = "zone", anchorName = [=[Embuscade]=],
+  { n = 12, id = "convoy-ambush", chapter = "ground", anchorKind = "zone", anchorName = [=[Embuscade]=],
     title = { fr = [=[Convoi sous le feu]=], en = [=[Convoy under fire]=] },
     text = { fr = [=[CONVOI SOUS LE FEU
 
@@ -261,7 +283,7 @@ What to do :
 - Outgunned, it calls for air support (*troops in contact*), marks the enemy with a red smoke and itself with a green one, falls back and holds: _gc <callsign>, resume sends it on its way. The call and the smokes are for the pilots: with no blue pilot connected, it falls back without a word.
 
 What you should see : Before the first shot, the trucks leave on their own (the 'unarmed' group), the armed vehicles close in, or fall back when outgunned; the call for help only comes with a fall back, and only when blue pilots are connected.]=] } },
-  { n = 12, id = "qra", chapter = "air", anchorKind = "zone", anchorName = [=[QRA-Soukhoumi]=],
+  { n = 13, id = "qra", chapter = "air", anchorKind = "zone", anchorName = [=[QRA-Soukhoumi]=],
     title = { fr = [=[QRA de Soukhoumi]=], en = [=[Sukhumi QRA]=] },
     text = { fr = [=[QRA DE SOUKHOUMI
 
@@ -281,7 +303,7 @@ What to do :
 - F10 > Other > Demo: commands > Stop / Start the Sukhumi QRA (a menu declared in YAML).
 
 What you should see : A message announces the scramble; the fighters roll on Sukhumi's runway, take off and come at you. Once destroyed, the QRA rearms 5 minutes after the circle is clear of intruders.]=] } },
-  { n = 13, id = "opposition", chapter = "air", anchorKind = "none", anchorName = [=[]=],
+  { n = 14, id = "opposition", chapter = "air", anchorKind = "none", anchorName = [=[]=],
     title = { fr = [=[Niveau d'opposition]=], en = [=[Opposition level]=] },
     text = { fr = [=[NIVEAU D'OPPOSITION
 
@@ -307,7 +329,7 @@ What to do :
 - F10 > Other > VEAF > MISSIONS > CAP MiG-29S Gudauta FL250 > Good > Auto scale (opposition level).
 
 What you should see : Every change of level is announced to all. At level 4, a single intruder in the Sukhumi circle scrambles two pairs, and "Auto scale" activates the CAP at scale 2. A pilot who rearms with air-to-air missiles counts as soon as he is airborne again; when a player on CAP lands or leaves, the level drops only after 5 minutes. At "0 aircraft", Current level says "no enemy fighters (fixed)" and the QRA stays on the ground whatever enters its circle; a level that falls to 0 by itself (nobody on CAP) lets the QRA answer the intruders.]=] } },
-  { n = 14, id = "cap", chapter = "air", anchorKind = "airbase", anchorName = [=[Gudauta]=],
+  { n = 15, id = "cap", chapter = "air", anchorKind = "airbase", anchorName = [=[Gudauta]=],
     title = { fr = [=[CAP à la demande et raid sur Senaki]=], en = [=[On-demand CAP and the Senaki raid]=] },
     text = { fr = [=[CAP À LA DEMANDE ET RAID SUR SENAKI
 
@@ -329,7 +351,7 @@ What to do :
 - Or by marker: -airstart Raid-Senaki/Good/1, -airstop Raid-Senaki/Good/1 (name, level, size).
 
 What you should see : The patrol spawns airborne on its race-track and engages what comes in range; the raid flies to Senaki and bombs the base unless intercepted.]=] } },
-  { n = 15, id = "airwaves", chapter = "air", anchorKind = "zone", anchorName = [=[Arene BVR]=],
+  { n = 16, id = "airwaves", chapter = "air", anchorKind = "zone", anchorName = [=[Arene BVR]=],
     title = { fr = [=[Arène BVR (vagues aériennes)]=], en = [=[BVR arena (air waves)]=] },
     text = { fr = [=[ARÈNE BVR (VAGUES AÉRIENNES)
 
@@ -349,7 +371,7 @@ What to do :
 - To start over: F10 > Other > Demo: commands > Reset the BVR arena.
 
 What you should see : A start message, then a wave; the next comes one minute after the previous is destroyed. If you die, the arena resets.]=] } },
-  { n = 16, id = "sanctuary", chapter = "air", anchorKind = "zone", anchorName = [=[Sanctuaire Gudauta]=],
+  { n = 17, id = "sanctuary", chapter = "air", anchorKind = "zone", anchorName = [=[Sanctuaire Gudauta]=],
     title = { fr = [=[Sanctuaire rouge de Gudauta]=], en = [=[Gudauta red sanctuary]=] },
     text = { fr = [=[SANCTUAIRE ROUGE DE GUDAUTA
 
@@ -367,7 +389,7 @@ What to do :
 - Fly into the Gudauta circle in a blue aircraft and stay.
 
 What you should see : Warning after 10 s, defences deployed at 60 s, aircraft shot down at 120 s.]=] } },
-  { n = 17, id = "assets", chapter = "support", anchorKind = "group", anchorName = [=[Texaco 1]=],
+  { n = 18, id = "assets", chapter = "support", anchorKind = "group", anchorName = [=[Texaco 1]=],
     title = { fr = [=[Ravitailleurs, AWACS et escorte]=], en = [=[Tankers, AWACS and escort]=] },
     text = { fr = [=[RAVITAILLEURS, AWACS ET ESCORTE
 
@@ -389,7 +411,7 @@ What to do :
 - Marker _move tanker, name Texaco 1, alt 22000 where you want the race-track.
 
 What you should see : Tankers answer on their frequency and TACAN; after a _move tanker, Texaco 1 flies to its new orbit.]=] } },
-  { n = 18, id = "escort", chapter = "support", anchorKind = "none", anchorName = [=[]=],
+  { n = 19, id = "escort", chapter = "support", anchorKind = "none", anchorName = [=[]=],
     title = { fr = [=[Escorte à la demande]=], en = [=[Escort on demand]=] },
     text = { fr = [=[ESCORTE À LA DEMANDE
 
@@ -411,7 +433,7 @@ What to do :
 - In a helicopter, the same menu refuses: only an airplane can be escorted.
 
 What you should see : 'An escort … is on its way to cover …', and the F-15C joins you; a refusal shows on screen with its reason, instead of nothing.]=] } },
-  { n = 19, id = "helos", chapter = "support", anchorKind = "group", anchorName = [=[FARP Khoni]=],
+  { n = 20, id = "helos", chapter = "support", anchorKind = "group", anchorName = [=[FARP Khoni]=],
     title = { fr = [=[Hélicoptères : FARP, CTLD, CSAR]=], en = [=[Helicopters: FARP, CTLD, CSAR]=] },
     text = { fr = [=[HÉLICOPTÈRES : FARP, CTLD, CSAR
 
@@ -433,7 +455,7 @@ What to do :
 - F10 > Other > Demo: commands > Create a downed pilot near Khoni, then the CSAR menu for its beacon and position.
 
 What you should see : The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.]=] } },
-  { n = 20, id = "airfields", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
+  { n = 21, id = "airfields", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
     title = { fr = [=[Aérodromes : caisses et troupes CTLD]=], en = [=[Airfields: CTLD crates and troops]=] },
     text = { fr = [=[AÉRODROMES : CAISSES ET TROUPES CTLD
 
@@ -455,7 +477,7 @@ What to do :
 - Unload the troops outside the circle to deploy them; unloaded inside it, they go back to base.
 
 What you should see : The troops board and the crate appears near the helicopter, with no FARP or depot: the airfield is enough.]=] } },
-  { n = 21, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
+  { n = 22, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
     title = { fr = [=[Porte-avions Stennis et Roosevelt]=], en = [=[Stennis and Roosevelt carriers]=] },
     text = { fr = [=[PORTE-AVIONS STENNIS ET ROOSEVELT
 
@@ -477,7 +499,7 @@ What to do :
 - Deck slots: Stennis F/A-18C, Roosevelt F-14B.
 
 What you should see : The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels.]=] } },
-  { n = 22, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
+  { n = 23, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
     title = { fr = [=[Météo, ATC et assistance cockpit]=], en = [=[Weather, ATC and cockpit assistance]=] },
     text = { fr = [=[MÉTÉO, ATC ET ASSISTANCE COCKPIT
 

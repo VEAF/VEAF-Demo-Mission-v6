@@ -96,6 +96,28 @@ steps:
     check: "Planchette d'un A-10C II : page des presets avec trois blocs titrés par le poste du cockpit, sous-titre et numéro de page non masqués par les onglets ni par les boutons UP/DN ; page « Réglage de la planchette » présente, cercles ronds dans la fenêtre par défaut."
     doc: "mission-maker/concepts/radio-presets/"
 
+  - id: kneeboard-briefing
+    chapter: start
+    title: { fr: "Le briefing dans la planchette", en: "The briefing on the kneeboard" }
+    modules: [build:briefing]
+    what:
+      fr: "Le briefing de la mission (action `build_mission_briefing` des outils VEAF) ajoute aussi ses pages à la planchette de chaque avion, dessinées au format portrait de la page : la carte de situation, un zoom par objectif, une carte de vol et les coordonnées des cibles."
+      en: "The mission briefing (the VEAF tools' `build_mission_briefing` action) also adds its pages to every aircraft's kneeboard, drawn for the page's portrait shape: the situation map, one zoom per objective, a flight card and the target coordinates."
+    how:
+      fr:
+        - "Prenez un slot A-10C II à Kutaisi et ouvrez la planchette : RShift+K (touche par défaut de DCS)."
+        - "Tournez les pages avec `]` (suivante) après la page « Réglage de la planchette »."
+        - "Recommencez dans un autre type d'avion, par exemple un F-16C à Kutaisi."
+      en:
+        - "Take an A-10C II slot at Kutaisi and open the kneeboard: RShift+K (DCS default key)."
+        - "Flip pages with `]` (next) after the \"Kneeboard setup\" page."
+        - "Do it again in another aircraft type, for example an F-16C at Kutaisi."
+    see:
+      fr: "Après la mire : la carte de situation (`01-briefing-overview.jpg`), un zoom par objectif (`02-briefing-objective-…`), la « Carte de vol » (chaque point, le cap et la distance de sa branche, le relief le plus haut dessus, les radios), puis les « Coordonnées cibles » (nom, coordonnées, altitude). Les numéros de canal de la carte de vol sont des slots DCS : sur l'AJS-37, ce ne sont pas les numéros de groupe du cockpit (limitation connue `briefing-channels-are-dcs-slots`)."
+      en: "After the test pattern: the situation map (`01-briefing-overview.jpg`), one zoom per objective (`02-briefing-objective-…`), the \"Flight card\" (each waypoint, the heading and distance of its leg, the highest ground on it, the radios), then the \"Target coordinates\" (name, coordinates, elevation). The channel numbers on the flight card are DCS slots: on the AJS-37 they are not the cockpit's Group numbers (known limitation `briefing-channels-are-dcs-slots`)."
+    check: "Planchette d'un A-10C II et d'un autre type (F-16C) : après « Réglage de la planchette », carte de situation, un zoom par objectif, carte de vol, coordonnées cibles, dans cet ordre, lisibles et non étirées (cercles de la mire ronds). En AJS-37 (slot dynamique), les canaux de la carte de vol sont des slots DCS, pas les groupes du cockpit : limitation connue, pas un défaut."
+    doc: "mission-maker/AI_ASSISTANT_CATALOG/#mission-briefing"
+
   - id: sandbox
     chapter: start
     title: { fr: "Bac à sable : les commandes de marqueur", en: "Sandbox: marker commands" }
