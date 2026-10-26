@@ -29,6 +29,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from paths import VMCT  # noqa: E402
+import briefing_batch  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 LOGS = ROOT / "missions"
@@ -87,16 +88,8 @@ def main():
     subprocess.run([sys.executable, "tools/localize_miz.py"], cwd=ROOT, check=True)
     # le briefing lit les .miz construits : après le build et la traduction, avant les missions de test
     # qui reprennent ses pages ; sans le paramètre `language`, il mettrait du français dans les _EN
-    schema = subprocess.run([sys.executable, "tools/mcp.py", "describe", "build_mission_briefing"], cwd=ROOT,
-                            capture_output=True, text=True)
-    if schema.returncode:
-        sys.exit(f"tools/mcp.py ne lit pas build_mission_briefing (venv VMCT à jour ? poetry install) :\n"
-                 f"{schema.stderr.strip().splitlines()[-1:]}")
-    if '"language"' in schema.stdout:
-        run([sys.executable, "tools/mcp.py", "batch", "tools/batches/11-briefing.json"], ROOT,
-            LOGS / "candidate-briefing.log")
-    else:
-        print("briefing sauté : build_mission_briefing n'a pas encore `language` (VMCT FEAT-BRIEFING-PER-LANGUAGE)")
+    if briefing_batch.supported():
+        run([sys.executable, *briefing_batch.BATCH], ROOT, LOGS / "candidate-briefing.log")
     if "--no-test" not in sys.argv:
         subprocess.run([sys.executable, "tools/make_test_mission.py"], cwd=ROOT, check=True,
                        env={**os.environ, "VEAF_TOOLS": str(tool)})

@@ -7,7 +7,8 @@
   1. dépôt propre et à jour avec origin/main (la release pointe sur un commit publié) ;
   2. veaf-tools-updater.exe --tag <tag> : installe les exe et les scripts publiés de cette version ;
      une version de développement (« 6.27.0+28c606b3 », posée par publish-local) est refusée ;
-  3. build des deux langues, tools/localize_miz.py, tools/verify.py ;
+  3. build des deux langues, tools/localize_miz.py, le briefing (lot 11, tools/briefing_batch.py : seulement
+     quand build_mission_briefing a `language`), tools/verify.py ;
   4. gh release create v<version> avec les dix .miz (5 météos × FR/EN).
 
 Les noms des .miz ne portent pas de version : le README pointe sur releases/latest/download/<nom>.miz,
@@ -19,6 +20,9 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import briefing_batch  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = "VEAF/VEAF-Demo-Mission-v6"
@@ -75,6 +79,8 @@ def main():
     run([str(ROOT / "veaf-tools.exe"), "mission", "validate"], log=MISSIONS / "validate.log")
     run([str(ROOT / "veaf-tools.exe"), "build"], log=MISSIONS / "build.log")
     run([sys.executable, "tools/localize_miz.py"])
+    if briefing_batch.supported():  # le briefing lit les .miz construits, dans chaque langue
+        run([sys.executable, *briefing_batch.BATCH], log=MISSIONS / "briefing.log")
     run([sys.executable, "tools/verify.py"], log=MISSIONS / "verify.log")
     mizs = sorted(MISSIONS.glob("*.miz"))
     if len(mizs) != EXPECTED:
