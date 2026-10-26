@@ -11,7 +11,7 @@ Elle a deux usages : faire découvrir chaque fonctionnalité aux joueurs (visite
 2. ajouter son étape dans `tour/steps.yaml`, **en français et en anglais**, avec son contrôle à l'œil (`check`) et ses sondes (`probe`, lancées par `tools/recette_pont.py`) — c'est la **source unique** de la visite, du README et de la recette ; le texte anglais cite les libellés du build anglais (`COMBAT ZONES`, `ASSETS`…) ;
 3. traduire tout nouveau texte de `mission.yaml` dans `i18n/en.yaml`, puis `python tools/gen_i18n.py` ; un nouveau texte de la mission DCS (briefing, étiquette F10, carte) va dans `tools/i18n_texts.py` ;
 4. `python tools/gen_tour.py`, puis `python tools/gen_map.py` si un lieu a bougé, puis `python tools/gen_05_dessins.py` + `python tools/mcp.py batch tools/batches/05-dessins.json` pour les dessins F10 ;
-5. `.\veaf-tools.exe mission validate`, `.\veaf-tools.exe build`, `python tools/localize_miz.py`, `python tools/verify.py` (tout au vert) ; `lua tools/test_tour.lua fr` et `en`.
+5. `.\veaf-tools.exe mission validate`, `.\veaf-tools.exe build`, `python tools/localize_miz.py`, `python tools/mcp.py batch tools/batches/11-briefing.json` (le briefing lit les `.miz` construits : après chaque build), `python tools/verify.py` (tout au vert) ; `lua tools/test_tour.lua fr` et `en`.
 
 Ne jamais modifier à la main `README.md`, `README.en.md`, `docs/recette.md`, `src/scripts/guided-tour.lua`, `src/versions.en.yaml`, ni la fin de `mission.yaml` (profils et `build_variants`) : ils sont générés.
 

@@ -10,8 +10,8 @@ C'est la recette d'avant release : on vérifie ce qui va sortir, pas ce qui est 
      veaf-tools*.exe qui ne sont pas ceux du checkout : ceux de la démo sont sauvegardés avant et remis
      après ;
   3. le build passe par le veaf-tools du venv poetry de VMCT, donc par le code du checkout :
-     `mission build` (missions/), tools/localize_miz.py, tools/verify.py, puis les missions de test
-     (tools/make_test_mission.py, variable VEAF_TOOLS).
+     `mission build` (missions/), tools/localize_miz.py, le briefing (lot 11, tools/gen_11_briefing.py),
+     les missions de test (tools/make_test_mission.py, variable VEAF_TOOLS), puis tools/verify.py.
 
 Ensuite : charger missions-test/VEAF_Demo_TEST_FR.miz et lancer tools/recette_pont.py.
 published/ reste celui du checkout jusqu'au prochain `veaf-tools-updater.exe` (tools/release.py le fait).
@@ -85,6 +85,18 @@ def main():
     run([str(tool), "mission", "validate"], ROOT, LOGS / "candidate-validate.log")
     run([str(tool), "mission", "build"], ROOT, LOGS / "candidate-build.log")
     subprocess.run([sys.executable, "tools/localize_miz.py"], cwd=ROOT, check=True)
+    # le briefing lit les .miz construits : après le build et la traduction, avant les missions de test
+    # qui reprennent ses pages ; sans le paramètre `language`, il mettrait du français dans les _EN
+    schema = subprocess.run([sys.executable, "tools/mcp.py", "describe", "build_mission_briefing"], cwd=ROOT,
+                            capture_output=True, text=True)
+    if schema.returncode:
+        sys.exit(f"tools/mcp.py ne lit pas build_mission_briefing (venv VMCT à jour ? poetry install) :\n"
+                 f"{schema.stderr.strip().splitlines()[-1:]}")
+    if '"language"' in schema.stdout:
+        run([sys.executable, "tools/mcp.py", "batch", "tools/batches/11-briefing.json"], ROOT,
+            LOGS / "candidate-briefing.log")
+    else:
+        print("briefing sauté : build_mission_briefing n'a pas encore `language` (VMCT FEAT-BRIEFING-PER-LANGUAGE)")
     if "--no-test" not in sys.argv:
         subprocess.run([sys.executable, "tools/make_test_mission.py"], cwd=ROOT, check=True,
                        env={**os.environ, "VEAF_TOOLS": str(tool)})

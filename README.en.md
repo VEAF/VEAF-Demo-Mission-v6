@@ -512,11 +512,13 @@ From this folder, with `veaf-tools.exe` (installed by `veaf-tools-updater.exe`, 
 .\veaf-tools.exe mission validate
 .\veaf-tools.exe build
 python tools/localize_miz.py
+python tools/mcp.py batch tools/batches/11-briefing.json
 python tools/verify.py
 ```
 
 `build` builds both languages (`build_variants` in `mission.yaml`): in `missions/`, one `_FR` and one `_EN` mission per weather variant of `src/versions.yaml`.
 `localize_miz.py` then puts into English what lives in the DCS mission of the `_EN` versions (briefing, F10 labels, briefing maps): without it, `verify.py` rejects the English `.miz`.
+The `11-briefing.json` batch writes the mission briefing in each language (deck, briefing maps, kneeboard pages); it needs a VMCT release whose `build_mission_briefing` has the `language` parameter, and runs again after every build.
 For a local test (verbose logs, a single weather, game masters, dcs-bridge): `python tools/make_test_mission.py`, which writes `missions-test/VEAF_Demo_TEST_FR.miz` and `_EN.miz`.
 
 ### Files
