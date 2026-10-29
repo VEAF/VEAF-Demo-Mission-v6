@@ -20,7 +20,7 @@ Cette mission montre chaque fonctionnalité des outils VEAF, une par étape. Cha
 À faire :
 - Les menus VEAF sont dans F10 > Autre > VEAF ; ce menu a plusieurs pages (« Page suivante » en bas). La visite guidée et le menu « Démo : commandes » sont à part, directement dans F10 > Autre.
 - Beaucoup de commandes se tapent dans un marqueur de la carte F10 : bouton « Ajouter un repère » de la barre du haut, clic sur la carte, tapez le texte, puis cliquez ailleurs pour valider.
-- Slots : à Kutaisi, des slots classiques moteur chaud (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), et des slots dynamiques sur les quatre bases bleues en multijoueur ; sur les porte-avions, F/A-18C et F-14B.
+- Slots : à Kutaisi, des slots classiques moteur chaud (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D, CH-47F), et des slots dynamiques sur les quatre bases bleues en multijoueur ; sur les porte-avions, F/A-18C et F-14B.
 
 Ce qu'on doit voir : Le menu VEAF, ses sous-menus, et dans chaque avion les préréglages radio et les points de navigation injectés par le build.]=],
              en = [=[WELCOME
@@ -30,7 +30,7 @@ This mission shows every feature of the VEAF tools, one per step. Each step give
 What to do :
 - VEAF menus are under F10 > Other > VEAF; that menu has several pages ("Next page" at the bottom). The guided tour and the "Demo: commands" menu are separate, directly under F10 > Other.
 - Many commands are typed into an F10 map marker: "Add mark" button in the top bar, click on the map, type the text, then click elsewhere to validate.
-- Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers.
+- Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D, CH-47F), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers.
 
 What you should see : The VEAF menu and its submenus, and in every aircraft the radio presets and waypoints injected by the build.]=] } },
   { n = 2, id = "kneeboard", chapter = "start", anchorKind = "none", anchorName = [=[]=],
@@ -440,9 +440,9 @@ What you should see : 'An escort … is on its way to cover …', and the F-15C 
 Le FARP Khoni réarme et ravitaille les hélicoptères ; son dépôt de munitions est un point de chargement CTLD (troupes et caisses). Un pilote abattu peut être créé à la demande, à aller chercher en hélicoptère (CSAR).
 
 À faire :
-- Décollez de Kutaisi en UH-1H ou Mi-8 et posez-vous au FARP Khoni (127.5 AM).
+- Décollez de Kutaisi en UH-1H, Mi-8 ou CH-47F et posez-vous au FARP Khoni (127.5 AM).
 - Menu F10 > Autre > CTLD : charger des troupes, demander une caisse, puis les déposer ailleurs.
-- Menu F10 > Autre > Démo : commandes > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position.
+- Menu F10 > Autre > Démo : commandes > Créer un pilote abattu près de Khoni, puis Menu F10 > Autre > CSAR > List Active CSAR pour sa balise et sa position ; le CH-47F a ce menu CSAR comme l'UH-1H et le Mi-8.
 
 Ce qu'on doit voir : Le FARP ravitaille et réarme ; CTLD charge les troupes ; le pilote abattu émet une balise et se laisse embarquer.]=],
              en = [=[HELICOPTERS: FARP, CTLD, CSAR
@@ -450,9 +450,9 @@ Ce qu'on doit voir : Le FARP ravitaille et réarme ; CTLD charge les troupes ; l
 FARP Khoni rearms and refuels helicopters; its ammo dump is a CTLD loading point (troops and crates). A downed pilot can be created on demand, to be rescued by helicopter (CSAR).
 
 What to do :
-- Take off from Kutaisi in a UH-1H or Mi-8 and land at FARP Khoni (127.5 AM).
+- Take off from Kutaisi in a UH-1H, Mi-8 or CH-47F and land at FARP Khoni (127.5 AM).
 - F10 > Other > CTLD: load troops, request a crate, then drop them elsewhere.
-- F10 > Other > Demo: commands > Create a downed pilot near Khoni, then the CSAR menu for its beacon and position.
+- F10 > Other > Demo: commands > Create a downed pilot near Khoni, then F10 > Other > CSAR > List Active CSAR for its beacon and position; the CH-47F has this CSAR menu, like the UH-1H and the Mi-8.
 
 What you should see : The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.]=] } },
   { n = 21, id = "airfields", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
@@ -477,7 +477,33 @@ What to do :
 - Unload the troops outside the circle to deploy them; unloaded inside it, they go back to base.
 
 What you should see : The troops board and the crate appears near the helicopter, with no FARP or depot: the airfield is enough.]=] } },
-  { n = 22, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
+  { n = 22, id = "fatcow", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
+    title = { fr = [=[Fat Cow : la FARP du CH-47F]=], en = [=[Fat Cow: the CH-47F's FARP]=] },
+    text = { fr = [=[FAT COW : LA FARP DU CH-47F
+
+Un CH-47F charge des réservoirs de carburant et des munitions dans une zone logistique CTLD, se pose où il veut et ouvre une FARP : les hélicoptères s'y ravitaillent et s'y réarment. Le stock de la FARP est ce que le CH-47F transporte, ni plus ni moins ; il baisse à chaque plein. Seul, un pilote d'AH-64D ou de Ka-50 peut aussi faire venir une Fat Cow pilotée par l'IA.
+
+À faire :
+- Prenez le slot CH-47F de Kutaisi et posez-vous dans le cercle vert de l'aérodrome (zone logistique CTLD, 1,6 km au nord-nord-est de la place du CH-47F).
+- Menu F10 > Autre > CTLD > Fat Cow > Charger > 40 Hellfire (25 laser, 15 radar), 2400 obus : deux réservoirs et les caisses de munitions passent en soute.
+- Posez-vous loin de toute base, là où la FARP doit servir, puis Menu F10 > Autre > CTLD > Fat Cow > Déployer la FARP Fat Cow.
+- En AH-64D (slot de Kutaisi), posez-vous à côté du CH-47F et demandez le plein et le réarmement à l'équipe au sol (menu radio, F8).
+- Seul en AH-64D : Menu F10 > Autre > CTLD > Fat Cow > Demander une Fat Cow > un chargement ; le CH-47F IA rejoint la patrouille, et Atterris ici le fait se poser à côté de vous.
+
+Ce qu'on doit voir : Le message « FARP Fat Cow ouverte » donne le stock ; des caisses et quelques soldats apparaissent autour du CH-47F ; l'AH-64D fait le plein et reçoit ses Hellfire, et Menu F10 > Autre > CTLD > Fat Cow > Stock de la Fat Cow montre le stock qui a baissé.]=],
+             en = [=[FAT COW: THE CH-47F'S FARP
+
+A CH-47F loads fuel tanks and ammunition in a CTLD logistic zone, lands wherever it wants and opens a FARP where helicopters refuel and rearm. The FARP's stock is what the CH-47F carries, no more; it goes down with every refuel. Flying alone, an AH-64D or Ka-50 pilot can also call in an AI-flown Fat Cow.
+
+What to do :
+- Take the CH-47F slot at Kutaisi and land inside the airfield's green circle (CTLD logistic zone, 1.6 km north-north-east of the CH-47F's spot).
+- F10 > Other > CTLD > Fat Cow > Load > 40 Hellfires (25 laser, 15 radar), 2400 rounds: two fuel tanks and the ammunition crates go into the hold.
+- Land away from any base, where the FARP is needed, then F10 > Other > CTLD > Fat Cow > Deploy the Fat Cow FARP.
+- In an AH-64D (Kutaisi slot), land next to the CH-47F and ask the ground crew for fuel and weapons (radio menu, F8).
+- Alone in an AH-64D: F10 > Other > CTLD > Fat Cow > Request a Fat Cow > a loadout; the AI CH-47F joins the flight, and Land here sets it down next to you.
+
+What you should see : The "Fat Cow FARP open" message gives the stock; crates and a few soldiers appear around the CH-47F; the AH-64D refuels and gets its Hellfires, and F10 > Other > CTLD > Fat Cow > Fat Cow stock shows the stock gone down.]=] } },
+  { n = 23, id = "carrier", chapter = "support", anchorKind = "group", anchorName = [=[CSG-74 Stennis]=],
     title = { fr = [=[Porte-avions Stennis et Roosevelt]=], en = [=[Stennis and Roosevelt carriers]=] },
     text = { fr = [=[PORTE-AVIONS STENNIS ET ROOSEVELT
 
@@ -499,7 +525,7 @@ What to do :
 - Deck slots: Stennis F/A-18C, Roosevelt F-14B.
 
 What you should see : The carrier turns into the wind, speeds up, and the menu gives the recovery course; the S-3B refuels.]=] } },
-  { n = 23, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
+  { n = 24, id = "weather", chapter = "support", anchorKind = "airbase", anchorName = [=[Kutaisi]=],
     title = { fr = [=[Météo, ATC et assistance cockpit]=], en = [=[Weather, ATC and cockpit assistance]=] },
     text = { fr = [=[MÉTÉO, ATC ET ASSISTANCE COCKPIT
 

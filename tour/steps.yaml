@@ -45,11 +45,11 @@ steps:
       fr:
         - "Les menus VEAF sont dans F10 > Autre > VEAF ; ce menu a plusieurs pages (« Page suivante » en bas). La visite guidée et le menu « Démo : commandes » sont à part, directement dans F10 > Autre."
         - "Beaucoup de commandes se tapent dans un marqueur de la carte F10 : bouton « Ajouter un repère » de la barre du haut, clic sur la carte, tapez le texte, puis cliquez ailleurs pour valider."
-        - "Slots : à Kutaisi, des slots classiques moteur chaud (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), et des slots dynamiques sur les quatre bases bleues en multijoueur ; sur les porte-avions, F/A-18C et F-14B."
+        - "Slots : à Kutaisi, des slots classiques moteur chaud (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D, CH-47F), et des slots dynamiques sur les quatre bases bleues en multijoueur ; sur les porte-avions, F/A-18C et F-14B."
       en:
         - "VEAF menus are under F10 > Other > VEAF; that menu has several pages (\"Next page\" at the bottom). The guided tour and the \"Demo: commands\" menu are separate, directly under F10 > Other."
         - "Many commands are typed into an F10 map marker: \"Add mark\" button in the top bar, click on the map, type the text, then click elsewhere to validate."
-        - "Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers."
+        - "Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D, CH-47F), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers."
     see:
       fr: "Le menu VEAF, ses sous-menus, et dans chaque avion les préréglages radio et les points de navigation injectés par le build."
       en: "The VEAF menu and its submenus, and in every aircraft the radio presets and waypoints injected by the build."
@@ -861,21 +861,24 @@ steps:
       en: "FARP Khoni rearms and refuels helicopters; its ammo dump is a CTLD loading point (troops and crates). A downed pilot can be created on demand, to be rescued by helicopter (CSAR)."
     how:
       fr:
-        - "Décollez de Kutaisi en UH-1H ou Mi-8 et posez-vous au FARP Khoni (127.5 AM)."
+        - "Décollez de Kutaisi en UH-1H, Mi-8 ou CH-47F et posez-vous au FARP Khoni (127.5 AM)."
         - "Menu F10 > Autre > CTLD : charger des troupes, demander une caisse, puis les déposer ailleurs."
-        - "Menu F10 > Autre > Démo : commandes > Créer un pilote abattu près de Khoni, puis menu CSAR pour sa balise et sa position."
+        - "Menu F10 > Autre > Démo : commandes > Créer un pilote abattu près de Khoni, puis Menu F10 > Autre > CSAR > List Active CSAR pour sa balise et sa position ; le CH-47F a ce menu CSAR comme l'UH-1H et le Mi-8."
       en:
-        - "Take off from Kutaisi in a UH-1H or Mi-8 and land at FARP Khoni (127.5 AM)."
+        - "Take off from Kutaisi in a UH-1H, Mi-8 or CH-47F and land at FARP Khoni (127.5 AM)."
         - "F10 > Other > CTLD: load troops, request a crate, then drop them elsewhere."
-        - "F10 > Other > Demo: commands > Create a downed pilot near Khoni, then the CSAR menu for its beacon and position."
+        - "F10 > Other > Demo: commands > Create a downed pilot near Khoni, then F10 > Other > CSAR > List Active CSAR for its beacon and position; the CH-47F has this CSAR menu, like the UH-1H and the Mi-8."
     see:
       fr: "Le FARP ravitaille et réarme ; CTLD charge les troupes ; le pilote abattu émet une balise et se laisse embarquer."
       en: "The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards."
-    check: "Ravitaillement et réarmement au FARP Khoni ; chargement CTLD de troupes et d'une caisse au FARP ; pilote abattu créé par le menu, balise ADF audible, récupérable et ramené."
+    check: "Ravitaillement et réarmement au FARP Khoni ; chargement CTLD de troupes et d'une caisse au FARP ; pilote abattu créé par le menu, balise ADF audible, récupérable et ramené ; menu F10 > Autre > CSAR présent dans le CH-47F."
     probe:
     - name: "FARP Khoni présent"
       check: |
         return Airbase.getByName("FARP Khoni") ~= nil, ""
+    - name: "CSAR connaît le CH-47F (menu CSAR dans le Chinook)"
+      check: |
+        return csar.aircraftType["CH-47Fbl1"] ~= nil, "places : " .. tostring(csar.aircraftType["CH-47Fbl1"])
     - name: "Pilote abattu créé par la fonction du menu Démo : commandes"
       act: |
         R.mem.csarBefore = R.count(csar.woundedGroups)
@@ -919,6 +922,78 @@ steps:
       wait: 5
       timeout: 60
     doc: "mission-maker/GUIDE/#ctld-airbase-logistics"
+
+  - id: fatcow
+    chapter: support
+    title: { fr: "Fat Cow : la FARP du CH-47F", en: "Fat Cow: the CH-47F's FARP" }
+    anchor: { airbase: "Kutaisi" }
+    modules: [CTLD, GRASS]
+    what:
+      fr: "Un CH-47F charge des réservoirs de carburant et des munitions dans une zone logistique CTLD, se pose où il veut et ouvre une FARP : les hélicoptères s'y ravitaillent et s'y réarment. Le stock de la FARP est ce que le CH-47F transporte, ni plus ni moins ; il baisse à chaque plein. Seul, un pilote d'AH-64D ou de Ka-50 peut aussi faire venir une Fat Cow pilotée par l'IA."
+      en: "A CH-47F loads fuel tanks and ammunition in a CTLD logistic zone, lands wherever it wants and opens a FARP where helicopters refuel and rearm. The FARP's stock is what the CH-47F carries, no more; it goes down with every refuel. Flying alone, an AH-64D or Ka-50 pilot can also call in an AI-flown Fat Cow."
+    how:
+      fr:
+        - "Prenez le slot CH-47F de Kutaisi et posez-vous dans le cercle vert de l'aérodrome (zone logistique CTLD, 1,6 km au nord-nord-est de la place du CH-47F)."
+        - "Menu F10 > Autre > CTLD > Fat Cow > Charger > 40 Hellfire (25 laser, 15 radar), 2400 obus : deux réservoirs et les caisses de munitions passent en soute."
+        - "Posez-vous loin de toute base, là où la FARP doit servir, puis Menu F10 > Autre > CTLD > Fat Cow > Déployer la FARP Fat Cow."
+        - "En AH-64D (slot de Kutaisi), posez-vous à côté du CH-47F et demandez le plein et le réarmement à l'équipe au sol (menu radio, F8)."
+        - "Seul en AH-64D : Menu F10 > Autre > CTLD > Fat Cow > Demander une Fat Cow > un chargement ; le CH-47F IA rejoint la patrouille, et Atterris ici le fait se poser à côté de vous."
+      en:
+        - "Take the CH-47F slot at Kutaisi and land inside the airfield's green circle (CTLD logistic zone, 1.6 km north-north-east of the CH-47F's spot)."
+        - "F10 > Other > CTLD > Fat Cow > Load > 40 Hellfires (25 laser, 15 radar), 2400 rounds: two fuel tanks and the ammunition crates go into the hold."
+        - "Land away from any base, where the FARP is needed, then F10 > Other > CTLD > Fat Cow > Deploy the Fat Cow FARP."
+        - "In an AH-64D (Kutaisi slot), land next to the CH-47F and ask the ground crew for fuel and weapons (radio menu, F8)."
+        - "Alone in an AH-64D: F10 > Other > CTLD > Fat Cow > Request a Fat Cow > a loadout; the AI CH-47F joins the flight, and Land here sets it down next to you."
+    see:
+      fr: "Le message « FARP Fat Cow ouverte » donne le stock ; des caisses et quelques soldats apparaissent autour du CH-47F ; l'AH-64D fait le plein et reçoit ses Hellfire, et Menu F10 > Autre > CTLD > Fat Cow > Stock de la Fat Cow montre le stock qui a baissé."
+      en: "The \"Fat Cow FARP open\" message gives the stock; crates and a few soldiers appear around the CH-47F; the AH-64D refuels and gets its Hellfires, and F10 > Other > CTLD > Fat Cow > Fat Cow stock shows the stock gone down."
+    check: "CH-47F de Kutaisi posé dans le cercle vert : Fat Cow > Charger met le chargement en soute ; posé loin de toute base, Déployer la FARP Fat Cow l'ouvre avec son stock, et elle reste ouverte quand le pilote change de slot ; un AH-64D posé à côté fait le plein et se réarme ; le stock baisse d'autant, et une prise de slot ne le remet pas à plein (GRASS laisse les FARP CTLD_)."
+    probe:
+    - name: "Un CH-47F IA posé près de Kutaisi"
+      act: |
+        local ab = Airbase.getByName("Kutaisi"):getPoint()
+        local x, z = ab.x + 700, ab.z
+        coalition.addGroup(country.id.USA, Group.Category.HELICOPTER, {
+          name = "Recette Fat Cow", task = "Transport",
+          route = { points = { { x = x, y = z, alt = land.getHeight({ x = x, y = z }), alt_type = "BARO",
+                                 type = "TakeOffGround", action = "From Ground Area", speed = 0 } } },
+          units = { { name = "Recette Fat Cow", type = "CH-47Fbl1", x = x, y = z, heading = 0, skill = "High",
+                      payload = { fuel = 3000, flare = 0, chaff = 0, gun = 100, pylons = {} } } },
+        })
+      check: |
+        local u = Unit.getByName("Recette Fat Cow")
+        return u ~= nil and u:isExist() and not u:inAir(), "CH-47F au sol : " .. tostring(u ~= nil)
+      wait: 3
+      timeout: 15
+    - name: "Fat Cow : le CH-47F ouvre sa FARP, avec son stock et rien de plus"
+      act: |
+        local m = CTLDFatCowManager.getInstance()
+        local u = Unit.getByName("Recette Fat Cow")
+        m:addCow(u, { fuelKg = 2400, items = { ["weapons.missiles.AGM_114K"] = 20 } })
+        R.mem.fatcowDeploy = { m:deploy(u) }
+      check: |
+        local cow = CTLDFatCowManager.getInstance():getCow("Recette Fat Cow")
+        local ab = cow and cow.farpName and Airbase.getByName(cow.farpName)
+        if not ab then return false, "déploiement : " .. tostring(R.mem.fatcowDeploy and R.mem.fatcowDeploy[2] or "en cours") end
+        local w = ab:getWarehouse()
+        local fuel, hellfires = w:getLiquidAmount(0), w:getItemCount("weapons.missiles.AGM_114K")
+        R.mem.fatcowFarp = cow.farpName
+        return cow.state == "deployed" and math.abs(fuel - 2400) < 1 and hellfires == 20,
+          cow.farpName .. " : " .. tostring(cow.state) .. ", " .. math.floor(fuel) .. " kg, " .. hellfires .. " Hellfire"
+      wait: 5
+      timeout: 90
+    - name: "GRASS ne remplit pas la FARP de la Fat Cow"
+      act: |
+        veafGrass.fillAllFarpWarehouses()
+      check: |
+        local w = Airbase.getByName(R.mem.fatcowFarp):getWarehouse()
+        local fuel = w:getLiquidAmount(0)
+        CTLDFatCowManager.getInstance():removeCow("Recette Fat Cow")
+        local g = Group.getByName("Recette Fat Cow")
+        if g then g:destroy() end
+        return math.abs(fuel - 2400) < 1, R.mem.fatcowFarp .. " après remplissage GRASS : " .. math.floor(fuel) .. " kg"
+      wait: 2
+    doc: "mission-maker/GUIDE/"
 
   - id: carrier
     chapter: support
