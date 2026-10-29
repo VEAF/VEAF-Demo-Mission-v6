@@ -6,8 +6,7 @@ Le CH-47F n'avait qu'un template de slot dynamique, qui ne marche qu'en multijou
 chaud, rend l'étape jouable en solo, comme les autres slots classiques de Kutaisi (lot 01).
 Kutaisi est une zone logistique CTLD (étape « Aérodromes »), mais son cercle de 250 m n'atteint pas le parking :
 DCS pose le CH-47F sur une place hélicoptère (la 58, mesurée le 2026-10-29), à 1,6 km du centre, quelle que soit
-la place demandée (43, au centre, essayée et refusée). Le joueur saute donc dans le cercle avant de charger ; la
-recette sans pilotage passe par la mission de test Fat Cow (tools/make_test_mission.py).
+la place demandée (43, au centre, essayée et refusée). Le joueur saute donc dans le cercle avant de charger.
 """
 import sys
 from pathlib import Path
