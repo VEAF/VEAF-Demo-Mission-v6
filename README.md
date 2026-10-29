@@ -479,10 +479,10 @@ Seul, un pilote d'AH-64D ou de Ka-50 peut aussi faire venir une Fat Cow pilotée
 
 **À faire** :
 
-- Prenez le slot CH-47F de Kutaisi : il est garé au centre du cercle vert de l'aérodrome, une zone logistique CTLD.
+- Prenez le slot CH-47F de Kutaisi et posez-vous dans le cercle vert de l'aérodrome (zone logistique CTLD, 1,6 km au nord-nord-est de la place du CH-47F).
 - Menu F10 > Autre > CTLD > Fat Cow > Charger > 40 Hellfire (25 laser, 15 radar), 2400 obus : deux réservoirs et les caisses de munitions passent en soute.
-- Menu F10 > Autre > CTLD > Fat Cow > Déployer la FARP Fat Cow : sur place, ou après vous être posé où la FARP doit servir.
-- Prenez le slot AH-64D de Kutaisi, garé à 120 m du CH-47F (ou posez-vous à côté de lui), et demandez le plein et le réarmement à l'équipe au sol (menu radio, F8).
+- Posez-vous loin de toute base, là où la FARP doit servir, puis Menu F10 > Autre > CTLD > Fat Cow > Déployer la FARP Fat Cow.
+- En AH-64D (slot de Kutaisi), posez-vous à côté du CH-47F et demandez le plein et le réarmement à l'équipe au sol (menu radio, F8).
 - Seul en AH-64D : Menu F10 > Autre > CTLD > Fat Cow > Demander une Fat Cow > un chargement ; le CH-47F IA rejoint la patrouille, et Atterris ici le fait se poser à côté de vous.
 
 **Ce qu'on doit voir** : Le message « FARP Fat Cow ouverte » donne le stock ; des caisses et quelques soldats apparaissent autour du CH-47F ; l'AH-64D fait le plein et reçoit ses Hellfire, et Menu F10 > Autre > CTLD > Fat Cow > Stock de la Fat Cow montre le stock qui a baissé.

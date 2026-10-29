@@ -10,6 +10,8 @@ missions-test/VEAF_Demo_TEST_<FR|EN>.miz (ignoré par git) avec :
     posés par le build lui-même (`mission.ground_control` des profils LOCAL_TEST, tools/gen_i18n.py) ;
   - le déclencheur du pont dcs-bridge (`veaf-tools dcs inject-bridge`), pour sonder la mission en cours
     depuis l'extérieur avec dcs-serve.
+Puis, à côté, missions-test/VEAF_Demo_TEST_FATCOW_<FR|EN>.miz : la même, avec le CH-47F et l'AH-64D de Kutaisi
+au sol dans un champ, pour la recette de l'étape Fat Cow sans piloter (fatcow_mission).
 Les slots `Client` moteur chaud de Kutaisi sont déjà dans la démo : les slots dynamiques ne marchent
 qu'en multijoueur. Le build garde sa sortie dans un fichier : vers /dev/null, son auto-pause le ferait
 sortir en erreur (docs/retours-vmct.md, n° 1).
@@ -22,13 +24,49 @@ import sys
 from pathlib import Path
 
 from paths import VMCT  # noqa: F401
-from mission_tools.miz_tools import list_members, read_member, read_miz, rewrite_miz_members  # noqa: E402
+from mission_tools.miz_tools import list_members, read_member, read_miz, rewrite_miz_members, write_miz  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = {"fr": "LOCAL_TEST", "en": "LOCAL_TEST_EN"}
 # veaf-tools du dossier, ou un autre (VEAF_TOOLS) : celui du venv de VMCT pour essayer les outils de develop
 TOOL = os.environ.get("VEAF_TOOLS", str(ROOT / "veaf-tools.exe"))
 BRIEFING_PAGE = re.compile(r"KNEEBOARD/IMAGES/\d{2}-briefing-[a-z0-9-]+\.jpg")
+# Champ plat (0,6 m de dénivelé sur 300 m), à 7,2 km de toute base et de toute FARP, au sud-ouest de Kutaisi :
+# mesuré par le pont le 2026-10-29. La sonde de l'étape fatcow y pose une zone logistique CTLD de 3 km.
+FATCOW_FIELD = (-287583.0, 676030.0, 32.5)
+FATCOW_SLOTS = {"Kutaisi CH-47F": 0.0, "Kutaisi AH-64D": 60.0}   # groupe -> décalage vers l'est (m)
+
+
+def fatcow_mission(test_miz):
+    """missions-test/VEAF_Demo_TEST_FATCOW_<LANG>.miz : la recette de l'étape Fat Cow sans piloter.
+
+    À Kutaisi, DCS gare le CH-47F à 1,6 km du cercle logistique et l'aéroport réarme l'AH-64D : le test ne dirait
+    rien de la FARP Fat Cow. Ici les deux slots démarrent au sol, moteur chaud, dans un champ à 60 m l'un de
+    l'autre, loin de tout ce qui réarme (David, 2026-10-29 : « une mission dédiée avec une giga zone log »).
+    """
+    mission = read_miz(test_miz)
+    x, y, alt = FATCOW_FIELD
+    moved = []
+    for country in mission.mission_content["coalition"]["blue"]["country"]:
+        for group in (country.get("helicopter") or {}).get("group", []):
+            dy = FATCOW_SLOTS.get(group["name"])
+            if dy is None:
+                continue
+            group["x"], group["y"] = x, y + dy
+            for unit in group["units"]:
+                unit.update(x=x, y=y + dy, alt=alt)
+                unit.pop("parking", None)
+                unit.pop("parking_id", None)
+            point = group["route"]["points"][0]
+            point.update(x=x, y=y + dy, alt=alt, type="TakeOffGroundHot", action="From Ground Area Hot")
+            point.pop("airdromeId", None)
+            moved.append(group["name"])
+    if sorted(moved) != sorted(FATCOW_SLOTS):
+        sys.exit(f"{test_miz.name} : slots Fat Cow introuvables ({moved})")
+    out = test_miz.with_name(test_miz.name.replace("_TEST_", "_TEST_FATCOW_"))
+    shutil.copy2(test_miz, out)
+    write_miz(mission, out)
+    print(f"{out.relative_to(ROOT)} : {', '.join(moved)} au sol, dans un champ loin de toute base")
 
 
 def english_briefing_pages(test_miz):
@@ -71,3 +109,4 @@ for lang in langs:
         subprocess.run([TOOL, "dcs", "inject-bridge", str(out)], check=True,
                        stdout=f, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL)
     print(f"{out.relative_to(ROOT)} : profil {PROFILES[lang]}, game masters bleu et rouge, pont dcs-bridge")
+    fatcow_mission(out)

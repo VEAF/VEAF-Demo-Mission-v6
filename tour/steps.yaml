@@ -933,26 +933,31 @@ steps:
       en: "A CH-47F loads fuel tanks and ammunition in a CTLD logistic zone, lands wherever it wants and opens a FARP where helicopters refuel and rearm. The FARP's stock is what the CH-47F carries, no more; it goes down with every refuel. Flying alone, an AH-64D or Ka-50 pilot can also call in an AI-flown Fat Cow."
     how:
       fr:
-        - "Prenez le slot CH-47F de Kutaisi : il est garé au centre du cercle vert de l'aérodrome, une zone logistique CTLD."
+        - "Prenez le slot CH-47F de Kutaisi et posez-vous dans le cercle vert de l'aérodrome (zone logistique CTLD, 1,6 km au nord-nord-est de la place du CH-47F)."
         - "Menu F10 > Autre > CTLD > Fat Cow > Charger > 40 Hellfire (25 laser, 15 radar), 2400 obus : deux réservoirs et les caisses de munitions passent en soute."
-        - "Menu F10 > Autre > CTLD > Fat Cow > Déployer la FARP Fat Cow : sur place, ou après vous être posé où la FARP doit servir."
-        - "Prenez le slot AH-64D de Kutaisi, garé à 120 m du CH-47F (ou posez-vous à côté de lui), et demandez le plein et le réarmement à l'équipe au sol (menu radio, F8)."
+        - "Posez-vous loin de toute base, là où la FARP doit servir, puis Menu F10 > Autre > CTLD > Fat Cow > Déployer la FARP Fat Cow."
+        - "En AH-64D (slot de Kutaisi), posez-vous à côté du CH-47F et demandez le plein et le réarmement à l'équipe au sol (menu radio, F8)."
         - "Seul en AH-64D : Menu F10 > Autre > CTLD > Fat Cow > Demander une Fat Cow > un chargement ; le CH-47F IA rejoint la patrouille, et Atterris ici le fait se poser à côté de vous."
       en:
-        - "Take the CH-47F slot at Kutaisi: it is parked at the centre of the airfield's green circle, a CTLD logistic zone."
+        - "Take the CH-47F slot at Kutaisi and land inside the airfield's green circle (CTLD logistic zone, 1.6 km north-north-east of the CH-47F's spot)."
         - "F10 > Other > CTLD > Fat Cow > Load > 40 Hellfires (25 laser, 15 radar), 2400 rounds: two fuel tanks and the ammunition crates go into the hold."
-        - "F10 > Other > CTLD > Fat Cow > Deploy the Fat Cow FARP: right there, or after landing where the FARP is needed."
-        - "Take the Kutaisi AH-64D slot, parked 120 m from the CH-47F (or land next to it), and ask the ground crew for fuel and weapons (radio menu, F8)."
+        - "Land away from any base, where the FARP is needed, then F10 > Other > CTLD > Fat Cow > Deploy the Fat Cow FARP."
+        - "In an AH-64D (Kutaisi slot), land next to the CH-47F and ask the ground crew for fuel and weapons (radio menu, F8)."
         - "Alone in an AH-64D: F10 > Other > CTLD > Fat Cow > Request a Fat Cow > a loadout; the AI CH-47F joins the flight, and Land here sets it down next to you."
     see:
       fr: "Le message « FARP Fat Cow ouverte » donne le stock ; des caisses et quelques soldats apparaissent autour du CH-47F ; l'AH-64D fait le plein et reçoit ses Hellfire, et Menu F10 > Autre > CTLD > Fat Cow > Stock de la Fat Cow montre le stock qui a baissé."
       en: "The \"Fat Cow FARP open\" message gives the stock; crates and a few soldiers appear around the CH-47F; the AH-64D refuels and gets its Hellfires, and F10 > Other > CTLD > Fat Cow > Fat Cow stock shows the stock gone down."
-    check: "Sans décoller : le CH-47F de Kutaisi, Fat Cow > Charger met le chargement en soute, Déployer la FARP Fat Cow l'ouvre avec son stock ; l'AH-64D de Kutaisi, à 120 m, fait le plein et se réarme ; le stock baisse d'autant, et une prise de slot ne le remet pas à plein (GRASS laisse les FARP CTLD_)."
+    check: "Sans piloter, sur missions-test/VEAF_Demo_TEST_FATCOW_FR.miz (CH-47F et AH-64D au sol dans un champ, sondes lancées d'abord : elles y posent la zone logistique) : dans le CH-47F, Fat Cow > Charger met le chargement en soute, Déployer la FARP Fat Cow l'ouvre avec son stock ; dans l'AH-64D, à 60 m, le plein et le réarmement viennent de la FARP ; le stock baisse d'autant, et une prise de slot ne le remet pas à plein (GRASS laisse les FARP CTLD_)."
     probe:
-    - name: "Un CH-47F IA posé près de Kutaisi"
+    - name: "Zone logistique CTLD de 3 km sur le champ de la mission de test Fat Cow"
       act: |
-        local ab = Airbase.getByName("Kutaisi"):getPoint()
-        local x, z = ab.x + 700, ab.z
+        CTLDZoneManager.getInstance():registerFOBAsLogistic("Recette Fat Cow", { x = -287583, y = 32.5, z = 676030 }, 3000, coalition.side.BLUE)
+      check: |
+        local n = #CTLDZoneManager.getInstance():getLogisticZonesAtPoint({ x = -287583, y = 32.5, z = 676090 }, coalition.side.BLUE)
+        return n > 0, n .. " zone(s) logistique(s) sur le champ"
+    - name: "Un CH-47F IA posé dans le champ"
+      act: |
+        local x, z = -287583 + 150, 676030
         coalition.addGroup(country.id.USA, Group.Category.HELICOPTER, {
           name = "Recette Fat Cow", task = "Transport",
           route = { points = { { x = x, y = z, alt = land.getHeight({ x = x, y = z }), alt_type = "BARO",

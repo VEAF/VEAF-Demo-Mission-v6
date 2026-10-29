@@ -484,10 +484,10 @@ What you should see : The troops board and the crate appears near the helicopter
 Un CH-47F charge des réservoirs de carburant et des munitions dans une zone logistique CTLD, se pose où il veut et ouvre une FARP : les hélicoptères s'y ravitaillent et s'y réarment. Le stock de la FARP est ce que le CH-47F transporte, ni plus ni moins ; il baisse à chaque plein. Seul, un pilote d'AH-64D ou de Ka-50 peut aussi faire venir une Fat Cow pilotée par l'IA.
 
 À faire :
-- Prenez le slot CH-47F de Kutaisi : il est garé au centre du cercle vert de l'aérodrome, une zone logistique CTLD.
+- Prenez le slot CH-47F de Kutaisi et posez-vous dans le cercle vert de l'aérodrome (zone logistique CTLD, 1,6 km au nord-nord-est de la place du CH-47F).
 - Menu F10 > Autre > CTLD > Fat Cow > Charger > 40 Hellfire (25 laser, 15 radar), 2400 obus : deux réservoirs et les caisses de munitions passent en soute.
-- Menu F10 > Autre > CTLD > Fat Cow > Déployer la FARP Fat Cow : sur place, ou après vous être posé où la FARP doit servir.
-- Prenez le slot AH-64D de Kutaisi, garé à 120 m du CH-47F (ou posez-vous à côté de lui), et demandez le plein et le réarmement à l'équipe au sol (menu radio, F8).
+- Posez-vous loin de toute base, là où la FARP doit servir, puis Menu F10 > Autre > CTLD > Fat Cow > Déployer la FARP Fat Cow.
+- En AH-64D (slot de Kutaisi), posez-vous à côté du CH-47F et demandez le plein et le réarmement à l'équipe au sol (menu radio, F8).
 - Seul en AH-64D : Menu F10 > Autre > CTLD > Fat Cow > Demander une Fat Cow > un chargement ; le CH-47F IA rejoint la patrouille, et Atterris ici le fait se poser à côté de vous.
 
 Ce qu'on doit voir : Le message « FARP Fat Cow ouverte » donne le stock ; des caisses et quelques soldats apparaissent autour du CH-47F ; l'AH-64D fait le plein et reçoit ses Hellfire, et Menu F10 > Autre > CTLD > Fat Cow > Stock de la Fat Cow montre le stock qui a baissé.]=],
@@ -496,10 +496,10 @@ Ce qu'on doit voir : Le message « FARP Fat Cow ouverte » donne le stock ; des 
 A CH-47F loads fuel tanks and ammunition in a CTLD logistic zone, lands wherever it wants and opens a FARP where helicopters refuel and rearm. The FARP's stock is what the CH-47F carries, no more; it goes down with every refuel. Flying alone, an AH-64D or Ka-50 pilot can also call in an AI-flown Fat Cow.
 
 What to do :
-- Take the CH-47F slot at Kutaisi: it is parked at the centre of the airfield's green circle, a CTLD logistic zone.
+- Take the CH-47F slot at Kutaisi and land inside the airfield's green circle (CTLD logistic zone, 1.6 km north-north-east of the CH-47F's spot).
 - F10 > Other > CTLD > Fat Cow > Load > 40 Hellfires (25 laser, 15 radar), 2400 rounds: two fuel tanks and the ammunition crates go into the hold.
-- F10 > Other > CTLD > Fat Cow > Deploy the Fat Cow FARP: right there, or after landing where the FARP is needed.
-- Take the Kutaisi AH-64D slot, parked 120 m from the CH-47F (or land next to it), and ask the ground crew for fuel and weapons (radio menu, F8).
+- Land away from any base, where the FARP is needed, then F10 > Other > CTLD > Fat Cow > Deploy the Fat Cow FARP.
+- In an AH-64D (Kutaisi slot), land next to the CH-47F and ask the ground crew for fuel and weapons (radio menu, F8).
 - Alone in an AH-64D: F10 > Other > CTLD > Fat Cow > Request a Fat Cow > a loadout; the AI CH-47F joins the flight, and Land here sets it down next to you.
 
 What you should see : The "Fat Cow FARP open" message gives the stock; crates and a few soldiers appear around the CH-47F; the AH-64D refuels and gets its Hellfires, and F10 > Other > CTLD > Fat Cow > Fat Cow stock shows the stock gone down.]=] } },
