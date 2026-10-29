@@ -11,8 +11,37 @@
    "count": 1,
    "start": "parking-hot",
    "airfield": "Kutaisi",
+   "parking": [
+    "43"
+   ],
    "skill": "Client",
    "task": "Transport"
+  }
+ },
+ {
+  "name": "remove_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "group_name": "Kutaisi AH-64D"
+  }
+ },
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Kutaisi AH-64D",
+   "unit_type": "AH-64D_BLK_II",
+   "count": 1,
+   "start": "parking-hot",
+   "airfield": "Kutaisi",
+   "parking": [
+    "42"
+   ],
+   "skill": "Client",
+   "task": "CAS"
   }
  }
 ]
