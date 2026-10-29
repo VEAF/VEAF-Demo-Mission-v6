@@ -947,22 +947,22 @@ steps:
     see:
       fr: "Le message « FARP Fat Cow ouverte » donne le stock ; des caisses et quelques soldats apparaissent autour du CH-47F ; l'AH-64D fait le plein et reçoit ses Hellfire, et Menu F10 > Autre > CTLD > Fat Cow > Stock de la Fat Cow montre le stock qui a baissé."
       en: "The \"Fat Cow FARP open\" message gives the stock; crates and a few soldiers appear around the CH-47F; the AH-64D refuels and gets its Hellfires, and F10 > Other > CTLD > Fat Cow > Fat Cow stock shows the stock gone down."
-    check: "Sans piloter, sur missions-test/VEAF_Demo_TEST_FATCOW_FR.miz (CH-47F et AH-64D au sol dans un champ, sondes lancées d'abord : elles y posent la zone logistique) : dans le CH-47F, Fat Cow > Charger met le chargement en soute, Déployer la FARP Fat Cow l'ouvre avec son stock ; dans l'AH-64D, à 60 m, le plein et le réarmement viennent de la FARP ; le stock baisse d'autant, et une prise de slot ne le remet pas à plein (GRASS laisse les FARP CTLD_)."
+    check: "Sans piloter, sur missions-test/VEAF_Demo_TEST_FATCOW_FR.miz (CH-47F et AH-64D au sol sur une route, sondes lancées d'abord : elles y posent la zone logistique) : dans le CH-47F, Fat Cow > Charger met le chargement en soute, Déployer la FARP Fat Cow l'ouvre avec son stock ; dans l'AH-64D, à 60 m, le plein et le réarmement viennent de la FARP ; le stock baisse d'autant, et une prise de slot ne le remet pas à plein (GRASS laisse les FARP CTLD_)."
     probe:
-    - name: "Zone logistique CTLD de 3 km sur le champ de la mission de test Fat Cow"
+    - name: "Zone logistique CTLD de 3 km sur la route de la mission de test Fat Cow"
       act: |
-        CTLDZoneManager.getInstance():registerFOBAsLogistic("Recette Fat Cow", { x = -287583, y = 32.5, z = 676030 }, 3000, coalition.side.BLUE)
+        CTLDZoneManager.getInstance():registerFOBAsLogistic("Recette Fat Cow", { x = -290581, y = 24.3, z = 672368 }, 3000, coalition.side.BLUE)
       check: |
-        local n = #CTLDZoneManager.getInstance():getLogisticZonesAtPoint({ x = -287583, y = 32.5, z = 676090 }, coalition.side.BLUE)
-        return n > 0, n .. " zone(s) logistique(s) sur le champ"
-    - name: "Un CH-47F IA posé dans le champ"
+        local n = #CTLDZoneManager.getInstance():getLogisticZonesAtPoint({ x = -290640, y = 24.5, z = 672376 }, coalition.side.BLUE)
+        return n > 0, n .. " zone(s) logistique(s) sur la route"
+    - name: "Un CH-47F IA posé sur la route"
       act: |
-        local x, z = -287583 + 150, 676030
+        local x, z = -290730, 672389
         coalition.addGroup(country.id.USA, Group.Category.HELICOPTER, {
           name = "Recette Fat Cow", task = "Transport",
           route = { points = { { x = x, y = z, alt = land.getHeight({ x = x, y = z }), alt_type = "BARO",
                                  type = "TakeOffGround", action = "From Ground Area", speed = 0 } } },
-          units = { { name = "Recette Fat Cow", type = "CH-47Fbl1", x = x, y = z, heading = 0, skill = "High",
+          units = { { name = "Recette Fat Cow", type = "CH-47Fbl1", x = x, y = z, heading = math.rad(172), skill = "High",
                       payload = { fuel = 3000, flare = 0, chaff = 0, gun = 100, pylons = {} } } },
         })
       check: |
