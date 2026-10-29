@@ -1,0 +1,18 @@
+[
+ {
+  "name": "add_air_group",
+  "params": {
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "coalition": "blue",
+   "country_id": 2,
+   "country_name": "USA",
+   "name": "Kutaisi CH-47F",
+   "unit_type": "CH-47Fbl1",
+   "count": 1,
+   "start": "parking-hot",
+   "airfield": "Kutaisi",
+   "skill": "Client",
+   "task": "Transport"
+  }
+ }
+]
