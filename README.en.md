@@ -86,8 +86,9 @@ Every Russian and Abkhazian airfield is red, without slots. Dynamic slots only w
 | 19 | [Escort on demand](#19-escort-on-demand) | Anywhere (no particular place) | `SPAWN` |
 | 20 | [Helicopters: FARP, CTLD, CSAR](#20-helicopters-farp-ctld-csar) | BULLSEYE 112/26 — 9 nm from Kutaisi | `CTLD`, `CSAR`, `GRASS` |
 | 21 | [Airfields: CTLD crates and troops](#21-airfields-ctld-crates-and-troops) | BULLSEYE 119/34 — 0 nm from Kutaisi | `CTLD` |
-| 22 | [Stennis and Roosevelt carriers](#22-stennis-and-roosevelt-carriers) | BULLSEYE 203/48 — 17 nm from Batumi (at mission start) | `CARRIER` |
-| 23 | [Weather, ATC and cockpit assistance](#23-weather-atc-and-cockpit-assistance) | BULLSEYE 119/34 — 0 nm from Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
+| 22 | [Fat Cow: the CH-47F's FARP](#22-fat-cow-the-ch-47fs-farp) | BULLSEYE 119/34 — 0 nm from Kutaisi | `CTLD`, `GRASS` |
+| 23 | [Stennis and Roosevelt carriers](#23-stennis-and-roosevelt-carriers) | BULLSEYE 203/48 — 17 nm from Batumi (at mission start) | `CARRIER` |
+| 24 | [Weather, ATC and cockpit assistance](#24-weather-atc-and-cockpit-assistance) | BULLSEYE 119/34 — 0 nm from Kutaisi | `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` |
 
 ### 1. Getting started
 
@@ -103,7 +104,7 @@ A mark is placed on your F10 map when you open a step.
 
 - VEAF menus are under F10 > Other > VEAF; that menu has several pages ("Next page" at the bottom). The guided tour and the "Demo: commands" menu are separate, directly under F10 > Other.
 - Many commands are typed into an F10 map marker: "Add mark" button in the top bar, click on the map, type the text, then click elsewhere to validate.
-- Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers.
+- Slots: classic hot-start slots at Kutaisi (A-10C II, F-16C, F/A-18C, UH-1H, Mi-8, AH-64D, CH-47F), dynamic slots on the four blue bases in multiplayer; F/A-18C and F-14B on the carriers.
 
 **What you should see**: The VEAF menu and its submenus, and in every aircraft the radio presets and waypoints injected by the build.
 
@@ -443,9 +444,9 @@ A downed pilot can be created on demand, to be rescued by helicopter (CSAR).
 
 **What to do**:
 
-- Take off from Kutaisi in a UH-1H or Mi-8 and land at FARP Khoni (127.5 AM).
+- Take off from Kutaisi in a UH-1H, Mi-8 or CH-47F and land at FARP Khoni (127.5 AM).
 - F10 > Other > CTLD: load troops, request a crate, then drop them elsewhere.
-- F10 > Other > Demo: commands > Create a downed pilot near Khoni, then the CSAR menu for its beacon and position.
+- F10 > Other > Demo: commands > Create a downed pilot near Khoni, then F10 > Other > CSAR > List Active CSAR for its beacon and position; the CH-47F has this CSAR menu, like the UH-1H and the Mi-8.
 
 **What you should see**: The FARP refuels and rearms; CTLD loads the troops; the downed pilot transmits a beacon and boards.
 
@@ -468,7 +469,27 @@ The circle follows the field's owner: it goes dark when the field is taken and c
 
 **Features**: `CTLD` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/GUIDE/#ctld-airbase-logistics)
 
-#### 22 Stennis and Roosevelt carriers
+#### 22 Fat Cow: the CH-47F's FARP
+
+A CH-47F loads fuel tanks and ammunition in a CTLD logistic zone, lands wherever it wants and opens a FARP where helicopters refuel and rearm.
+The FARP's stock is what the CH-47F carries, no more; it goes down with every refuel.
+Flying alone, an AH-64D or Ka-50 pilot can also call in an AI-flown Fat Cow.
+
+**Where**: BULLSEYE 119/34 — 0 nm from Kutaisi
+
+**What to do**:
+
+- Take the CH-47F slot at Kutaisi: it sits inside the airfield's green circle, a CTLD logistic zone.
+- F10 > Other > CTLD > Fat Cow > Load > 40 Hellfires (25 laser, 15 radar), 2400 rounds: two fuel tanks and the ammunition crates go into the hold.
+- Land on flat ground outside the green circle, then F10 > Other > CTLD > Fat Cow > Deploy the Fat Cow FARP.
+- In an AH-64D (Kutaisi slot), land next to the CH-47F and ask the ground crew for fuel and weapons (radio menu, F8).
+- Alone in an AH-64D: F10 > Other > CTLD > Fat Cow > Request a Fat Cow > a loadout; the AI CH-47F joins the flight, and Land here sets it down next to you.
+
+**What you should see**: The "Fat Cow FARP open" message gives the stock; crates and a few soldiers appear around the CH-47F; the AH-64D refuels and gets its Hellfires, and F10 > Other > CTLD > Fat Cow > Fat Cow stock shows the stock gone down.
+
+**Features**: `CTLD`, `GRASS` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/GUIDE/)
+
+#### 23 Stennis and Roosevelt carriers
 
 Two carriers off Batumi, each with its S-3B tanker and rescue helicopter.
 The CARRIER OPS menu turns the ship into the wind for air operations.
@@ -485,7 +506,7 @@ The CARRIER OPS menu turns the ship into the wind for air operations.
 
 **Features**: `CARRIER` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafCarrierOperations/)
 
-#### 23 Weather, ATC and cockpit assistance
+#### 24 Weather, ATC and cockpit assistance
 
 A welcome message when you take a slot (base, runway in use, weather), a weather and ATC menu, and for the F-16C a step-by-step start-up checklist.
 On a VEAF server, the weather follows Kutaisi's real METAR (UGKO).

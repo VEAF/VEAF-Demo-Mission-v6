@@ -58,10 +58,14 @@ Il vérifie que chaque chemin « VEAF > … » cité par la visite existe dans l
 - 19 Escorte à la demande : Escorte de Texaco 1 par le modèle fox3
 - 19 Escorte à la demande : Escorte refusée, sans modèle à ce nom
 - 20 Hélicoptères : FARP, CTLD, CSAR : FARP Khoni présent
+- 20 Hélicoptères : FARP, CTLD, CSAR : CSAR connaît le CH-47F (menu CSAR dans le Chinook)
 - 20 Hélicoptères : FARP, CTLD, CSAR : Pilote abattu créé par la fonction du menu Démo : commandes
 - 21 Aérodromes : caisses et troupes CTLD : Kutaisi : zone logistique et zone de troupes bleues
-- 22 Porte-avions Stennis et Roosevelt : Opérations aériennes du Stennis : il accélère face au vent
-- 22 Porte-avions Stennis et Roosevelt : S-3B et Pedro du Stennis présents avec les opérations
+- 22 Fat Cow : la FARP du CH-47F : Un CH-47F IA posé près de Kutaisi
+- 22 Fat Cow : la FARP du CH-47F : Fat Cow : le CH-47F ouvre sa FARP, avec son stock et rien de plus
+- 22 Fat Cow : la FARP du CH-47F : GRASS ne remplit pas la FARP de la Fat Cow
+- 23 Porte-avions Stennis et Roosevelt : Opérations aériennes du Stennis : il accélère face au vent
+- 23 Porte-avions Stennis et Roosevelt : S-3B et Pedro du Stennis présents avec les opérations
 
 - [ ] FR : `0 en échec`.
 - [ ] EN : `0 en échec`.
@@ -93,10 +97,11 @@ Version des outils : `______`  —  Date : `______`  —  Testeur : `______`
 | 17 | Sanctuaire rouge de Gudauta | Joueur bleu dans le cercle : avertissement à 10 s, défense à 60 s, destruction à 120 s ; un missile tiré sur une unité rouge du sanctuaire est détruit. | ☐ | |
 | 18 | Ravitailleurs, AWACS et escorte | Ravitaillement possible sur Texaco 1 (perche) et Arco 1 (panier), TACAN reçus ; réapparition d'Overlord 1 avec son escorte ; `_move tanker` déplace l'orbite de Texaco 1. | ☐ | |
 | 19 | Escorte à la demande | En A-10C ou F-16C en vol, +Escorte-moi (fox3) fait apparaître un F-15C qui suit l'avion ; `-escort introuvable` affiche « Aucun modèle d'escorte « introuvable » pour votre camp : pas d'escorte » ; en UH-1H, « Seul un avion peut être escorté ». | ☐ | |
-| 20 | Hélicoptères : FARP, CTLD, CSAR | Ravitaillement et réarmement au FARP Khoni ; chargement CTLD de troupes et d'une caisse au FARP ; pilote abattu créé par le menu, balise ADF audible, récupérable et ramené. | ☐ | |
+| 20 | Hélicoptères : FARP, CTLD, CSAR | Ravitaillement et réarmement au FARP Khoni ; chargement CTLD de troupes et d'une caisse au FARP ; pilote abattu créé par le menu, balise ADF audible, récupérable et ramené ; menu F10 > Autre > CSAR présent dans le CH-47F. | ☐ | |
 | 21 | Aérodromes : caisses et troupes CTLD | Cercle vert visible autour de Kutaisi pour le camp bleu ; en UH-1H posé dans le cercle, embarquement de troupes et caisse CTLD possibles ; troupes débarquées dans le cercle renvoyées à la base, hors du cercle déployées. | ☐ | |
-| 22 | Porte-avions Stennis et Roosevelt | Démarrage des opérations : virage face au vent et vitesse ; TACAN / ICLS / Link 4 reçus ; S-3B et Pedro présents pour chaque navire. | ☐ | |
-| 23 | Météo, ATC et assistance cockpit | Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent). | ☐ | |
+| 22 | Fat Cow : la FARP du CH-47F | CH-47F à Kutaisi : Fat Cow > Charger met le chargement en soute ; posé hors du cercle, Déployer la FARP Fat Cow l'ouvre avec son stock ; un AH-64D posé à côté fait le plein et se réarme ; le stock baisse d'autant, et une prise de slot ne le remet pas à plein (GRASS laisse les FARP CTLD_). | ☐ | |
+| 23 | Porte-avions Stennis et Roosevelt | Démarrage des opérations : virage face au vent et vitesse ; TACAN / ICLS / Link 4 reçus ; S-3B et Pedro présents pour chaque navire. | ☐ | |
+| 24 | Météo, ATC et assistance cockpit | Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent). | ☐ | |
 
 ## Hors étapes
 
