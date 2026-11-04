@@ -1050,12 +1050,14 @@ steps:
         - "Prenez un slot à Kutaisi : lisez le message d'accueil."
         - "Menu F10 > Autre > VEAF > MÉTÉO ET ATC > Météo sur le point le plus proche ; dans le même menu, ATC de la base la plus proche."
         - "En F-16C à Kutaisi : F10 > Autre > VEAF > ASSISTANCE > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE."
+        - "Dans la variante soir-pluie : MÉTÉO ET ATC > ATC de la base la plus proche, à Kutaisi ; lisez le vent, puis la ligne « Vent max 0-2000 ft »."
       en:
         - "Take a slot at Kutaisi: read the welcome message."
         - "F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point; in the same menu, ATC on closest airbase."
         - "In the F-16C at Kutaisi: F10 > Other > VEAF > ASSISTANCE > Cold start; then, at the root of the VEAF menu: ASSISTANCE: CONFIRM THE STEP / ASSISTANCE: SKIP THE STEP."
+        - "In the evening-rain variant: WEATHER AND ATC > ATC on closest airbase, at Kutaisi; read the wind, then the line 'Max wind 0-2000 ft'."
     see:
-      fr: "Le message d'accueil donne la piste en service ; la checklist coche les étapes déjà faites."
-      en: "The welcome message gives the runway in use; the checklist ticks the steps already done."
-    check: "Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent)."
+      fr: "Le message d'accueil donne la piste en service ; la checklist coche les étapes déjà faites. Dans la variante soir-pluie, l'ATIS de Kutaisi annonce le vent du METAR (14 kt, en magnétique), arrondi au nœud, puis le vent le plus fort sous 2 000 ft et sa hauteur : ce qu'un hélico rencontre en montant, bien plus que le vent au sol."
+      en: "The welcome message gives the runway in use; the checklist ticks the steps already done. In the evening-rain variant, Kutaisi's ATIS gives the METAR's wind (14 kt, magnetic), rounded to the knot, then the strongest wind under 2,000 ft and its height: what a helicopter meets as it climbs, far more than the surface wind."
+    check: "Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent) ; variante soir-pluie : l'ATIS de Kutaisi donne 14 kt à 1 kt près (le vent du METAR, réglé pour Kutaisi), puis une ligne « Vent max 0-2000 ft » plus forte d'au moins 5 kt, avec sa hauteur."
     doc: "mission-maker/scripts/veafWeather/"

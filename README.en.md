@@ -518,8 +518,10 @@ On a VEAF server, the weather follows Kutaisi's real METAR (UGKO).
 - Take a slot at Kutaisi: read the welcome message.
 - F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point; in the same menu, ATC on closest airbase.
 - In the F-16C at Kutaisi: F10 > Other > VEAF > ASSISTANCE > Cold start; then, at the root of the VEAF menu: ASSISTANCE: CONFIRM THE STEP / ASSISTANCE: SKIP THE STEP.
+- In the evening-rain variant: WEATHER AND ATC > ATC on closest airbase, at Kutaisi; read the wind, then the line 'Max wind 0-2000 ft'.
 
 **What you should see**: The welcome message gives the runway in use; the checklist ticks the steps already done.
+In the evening-rain variant, Kutaisi's ATIS gives the METAR's wind (14 kt, magnetic), rounded to the knot, then the strongest wind under 2,000 ft and its height: what a helicopter meets as it climbs, far more than the surface wind.
 
 **Features**: `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` — [Documentation](https://veaf.github.io/documentation/latest/en/mission-maker/scripts/veafWeather/)
 

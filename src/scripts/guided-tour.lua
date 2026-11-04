@@ -535,8 +535,9 @@ Un message d'accueil à la prise de slot (base, piste en service, météo), un m
 - Prenez un slot à Kutaisi : lisez le message d'accueil.
 - Menu F10 > Autre > VEAF > MÉTÉO ET ATC > Météo sur le point le plus proche ; dans le même menu, ATC de la base la plus proche.
 - En F-16C à Kutaisi : F10 > Autre > VEAF > ASSISTANCE > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE.
+- Dans la variante soir-pluie : MÉTÉO ET ATC > ATC de la base la plus proche, à Kutaisi ; lisez le vent, puis la ligne « Vent max 0-2000 ft ».
 
-Ce qu'on doit voir : Le message d'accueil donne la piste en service ; la checklist coche les étapes déjà faites.]=],
+Ce qu'on doit voir : Le message d'accueil donne la piste en service ; la checklist coche les étapes déjà faites. Dans la variante soir-pluie, l'ATIS de Kutaisi annonce le vent du METAR (14 kt, en magnétique), arrondi au nœud, puis le vent le plus fort sous 2 000 ft et sa hauteur : ce qu'un hélico rencontre en montant, bien plus que le vent au sol.]=],
              en = [=[WEATHER, ATC AND COCKPIT ASSISTANCE
 
 A welcome message when you take a slot (base, runway in use, weather), a weather and ATC menu, and for the F-16C a step-by-step start-up checklist. On a VEAF server, the weather follows Kutaisi's real METAR (UGKO).
@@ -545,8 +546,9 @@ What to do :
 - Take a slot at Kutaisi: read the welcome message.
 - F10 > Other > VEAF > WEATHER AND ATC > Weather on closest point; in the same menu, ATC on closest airbase.
 - In the F-16C at Kutaisi: F10 > Other > VEAF > ASSISTANCE > Cold start; then, at the root of the VEAF menu: ASSISTANCE: CONFIRM THE STEP / ASSISTANCE: SKIP THE STEP.
+- In the evening-rain variant: WEATHER AND ATC > ATC on closest airbase, at Kutaisi; read the wind, then the line 'Max wind 0-2000 ft'.
 
-What you should see : The welcome message gives the runway in use; the checklist ticks the steps already done.]=] } },
+What you should see : The welcome message gives the runway in use; the checklist ticks the steps already done. In the evening-rain variant, Kutaisi's ATIS gives the METAR's wind (14 kt, magnetic), rounded to the knot, then the strongest wind under 2,000 ft and its height: what a helicopter meets as it climbs, far more than the surface wind.]=] } },
 }
 
 -- ── Code de la visite (tools/guided-tour-runtime.lua, recopié tel quel par gen_tour.py) ───────────
