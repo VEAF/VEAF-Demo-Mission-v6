@@ -518,8 +518,10 @@ Sur un serveur VEAF, la météo suit la METAR réelle de Kutaisi (UGKO).
 - Prenez un slot à Kutaisi : lisez le message d'accueil.
 - Menu F10 > Autre > VEAF > MÉTÉO ET ATC > Météo sur le point le plus proche ; dans le même menu, ATC de la base la plus proche.
 - En F-16C à Kutaisi : F10 > Autre > VEAF > ASSISTANCE > Démarrage à froid ; ensuite, à la racine du menu VEAF : ASSISTANCE : VALIDER L'ÉTAPE / PASSER L'ÉTAPE.
+- Dans la variante soir-pluie : MÉTÉO ET ATC > ATC de la base la plus proche, à Kutaisi ; lisez le vent, puis la ligne « Vent max 0-2000 ft ».
 
 **Ce qu'on doit voir** : Le message d'accueil donne la piste en service ; la checklist coche les étapes déjà faites.
+Dans la variante soir-pluie, l'ATIS de Kutaisi annonce le vent du METAR (14 kt, en magnétique), arrondi au nœud, puis le vent le plus fort sous 2 000 ft et sa hauteur : ce qu'un hélico rencontre en montant, bien plus que le vent au sol.
 
 **Fonctionnalités** : `WEATHER`, `AIRBASES`, `ASSIST`, `STTS`, `build:weather` — [Documentation](https://veaf.github.io/documentation/latest/mission-maker/scripts/veafWeather/)
 

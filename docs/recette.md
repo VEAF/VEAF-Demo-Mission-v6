@@ -101,7 +101,7 @@ Version des outils : `______`  —  Date : `______`  —  Testeur : `______`
 | 21 | Aérodromes : caisses et troupes CTLD | Cercle vert visible autour de Kutaisi pour le camp bleu ; en UH-1H posé dans le cercle, embarquement de troupes et caisse CTLD possibles ; troupes débarquées dans le cercle renvoyées à la base, hors du cercle déployées. | ☐ | |
 | 22 | Fat Cow : la FARP du CH-47F | CH-47F de Kutaisi posé dans le cercle vert : Fat Cow > Charger met le chargement en soute ; posé loin de toute base, Déployer la FARP Fat Cow l'ouvre avec son stock, et elle reste ouverte quand le pilote change de slot ; un AH-64D posé à côté fait le plein et se réarme ; le stock baisse d'autant, et une prise de slot ne le remet pas à plein (GRASS laisse les FARP CTLD_). | ☐ | |
 | 23 | Porte-avions Stennis et Roosevelt | Démarrage des opérations : virage face au vent et vitesse ; TACAN / ICLS / Link 4 reçus ; S-3B et Pedro présents pour chaque navire. | ☐ | |
-| 24 | Météo, ATC et assistance cockpit | Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent). | ☐ | |
+| 24 | Météo, ATC et assistance cockpit | Message d'accueil à la prise de slot ; menu MÉTÉO ET ATC répond ; checklist F-16C proposée au seul F-16C ; chaque variante météo du build diffère (nuages, température, vent) ; variante soir-pluie : l'ATIS de Kutaisi donne 14 kt à 1 kt près (le vent du METAR, réglé pour Kutaisi), puis une ligne « Vent max 0-2000 ft » plus forte d'au moins 5 kt, avec sa hauteur. | ☐ | |
 
 ## Hors étapes
 
