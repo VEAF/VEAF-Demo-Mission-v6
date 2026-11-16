@@ -135,6 +135,7 @@ steps:
         - "`-point BRAVO` : crée votre propre point nommé (alias de `_name point BRAVO`), réutilisable dans `-convoy, dest BRAVO`."
         - "`-smoke` : une fumée blanche (`-smoke, color red` pour du rouge) ; `-farp` : un FARP complet avec son décor."
         - "`-boum` : une explosion de 500 kg ; `-menage` : détruit tout dans un rayon de 2 km (deux raccourcis propres à cette mission)."
+        - "F10 › VEAF › APPARITION › Page suivante › Mes spawns › [votre nom] : retire ce que VOS marqueurs ont fait apparaître, tout d'un coup (« Tout retirer ») ou marqueur par marqueur (`-sa8 14:32`)."
       en:
         - "`-sa8`: an SA-8 battery (shipped alias; every alias is listed on the 'Aliases' page of the documentation)."
         - "`-armor`: a random armour group; `-armor, size 4, defense 0` to tune it."
@@ -143,10 +144,11 @@ steps:
         - "`-point BRAVO`: creates your own named point (alias of `_name point BRAVO`), usable in `-convoy, dest BRAVO`."
         - "`-smoke`: white smoke (`-smoke, color red` for red); `-farp`: a complete FARP with its props."
         - "`-boum`: a 500 kg explosion; `-menage`: destroys everything within 2 km (two shortcuts defined by this mission)."
+        - "F10 › VEAF › SPAWN › Next page › My spawns › [your name]: removes what YOUR markers spawned, all at once (\"Remove all\") or one marker at a time (`-sa8 14:32`)."
     see:
       fr: "Chaque commande répond par un message et fait apparaître ce qu'elle annonce à l'emplacement du marqueur ; le marqueur disparaît une fois la commande exécutée."
       en: "Each command answers with a message and spawns what it announces at the marker; the marker disappears once the command has run."
-    check: "`-sa8`, `-armor`, `-convoy, dest ALPHA`, `-point`, `-smoke`, `-farp`, `-boum`, `-menage` : chacune produit son effet au marqueur, sans erreur dans dcs.log."
+    check: "`-sa8`, `-armor`, `-convoy, dest ALPHA`, `-point`, `-smoke`, `-farp`, `-boum`, `-menage` : chacune produit son effet au marqueur, sans erreur dans dcs.log. Après un `-sa8` posé soi-même, APPARITION › Page suivante › Mes spawns › [son nom] liste `-sa8 HH:MM`, et cette entrée retire la batterie."
     probe:
     - name: "`-sa8` : une batterie SA-8 au marqueur"
       act: |
@@ -185,6 +187,10 @@ steps:
         local _, s = R.inZone("Bac a sable")
         return s > R.mem.farpBefore, R.mem.farpBefore .. " -> " .. s .. " statiques"
       timeout: 20
+    - name: "Mes spawns : les marqueurs des pilotes sont suivis"
+      check: |
+        return veafSpawn.ownershipMenu ~= nil and veafCommands.markerSpawnListener == veafSpawn.recordMarkerSpawns, ""
+      timeout: 5
     - name: "`-menage` : tout est détruit autour du marqueur"
       act: |
         R.marker("-menage", "Bac a sable")

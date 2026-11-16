@@ -91,6 +91,7 @@ Le bac à sable, au sud de Kutaisi (point nommé ALPHA), sert à essayer les com
 - -point BRAVO : crée votre propre point nommé (alias de _name point BRAVO), réutilisable dans -convoy, dest BRAVO.
 - -smoke : une fumée blanche (-smoke, color red pour du rouge) ; -farp : un FARP complet avec son décor.
 - -boum : une explosion de 500 kg ; -menage : détruit tout dans un rayon de 2 km (deux raccourcis propres à cette mission).
+- F10 › VEAF › APPARITION › Page suivante › Mes spawns › [votre nom] : retire ce que VOS marqueurs ont fait apparaître, tout d'un coup (« Tout retirer ») ou marqueur par marqueur (-sa8 14:32).
 
 Ce qu'on doit voir : Chaque commande répond par un message et fait apparaître ce qu'elle annonce à l'emplacement du marqueur ; le marqueur disparaît une fois la commande exécutée.]=],
              en = [=[SANDBOX: MARKER COMMANDS
@@ -105,6 +106,7 @@ What to do :
 - -point BRAVO: creates your own named point (alias of _name point BRAVO), usable in -convoy, dest BRAVO.
 - -smoke: white smoke (-smoke, color red for red); -farp: a complete FARP with its props.
 - -boum: a 500 kg explosion; -menage: destroys everything within 2 km (two shortcuts defined by this mission).
+- F10 › VEAF › SPAWN › Next page › My spawns › [your name]: removes what YOUR markers spawned, all at once ("Remove all") or one marker at a time (-sa8 14:32).
 
 What you should see : Each command answers with a message and spawns what it announces at the marker; the marker disappears once the command has run.]=] } },
   { n = 5, id = "generated", chapter = "start", anchorKind = "zone", anchorName = [=[Bac a sable]=],

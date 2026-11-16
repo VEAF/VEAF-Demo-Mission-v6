@@ -162,6 +162,7 @@ Le bac à sable, au sud de Kutaisi (point nommé ALPHA), sert à essayer les com
 - `-point BRAVO` : crée votre propre point nommé (alias de `_name point BRAVO`), réutilisable dans `-convoy, dest BRAVO`.
 - `-smoke` : une fumée blanche (`-smoke, color red` pour du rouge) ; `-farp` : un FARP complet avec son décor.
 - `-boum` : une explosion de 500 kg ; `-menage` : détruit tout dans un rayon de 2 km (deux raccourcis propres à cette mission).
+- F10 › VEAF › APPARITION › Page suivante › Mes spawns › [votre nom] : retire ce que VOS marqueurs ont fait apparaître, tout d'un coup (« Tout retirer ») ou marqueur par marqueur (`-sa8 14:32`).
 
 **Ce qu'on doit voir** : Chaque commande répond par un message et fait apparaître ce qu'elle annonce à l'emplacement du marqueur ; le marqueur disparaît une fois la commande exécutée.
 
