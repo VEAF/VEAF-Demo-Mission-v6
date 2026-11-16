@@ -23,6 +23,7 @@ Il vérifie que chaque chemin « VEAF > … » cité par la visite existe dans l
 - 04 Bac à sable : les commandes de marqueur : `-armor` : un groupe blindé
 - 04 Bac à sable : les commandes de marqueur : `-point BRAVO` : un point nommé
 - 04 Bac à sable : les commandes de marqueur : `-farp` : un FARP et son décor
+- 04 Bac à sable : les commandes de marqueur : Mes spawns : les marqueurs des pilotes sont suivis
 - 04 Bac à sable : les commandes de marqueur : `-menage` : tout est détruit autour du marqueur
 - 05 Missions générées : CAS et transport : `_cas` : un groupe ennemi et le menu MISSION CAS
 - 05 Missions générées : CAS et transport : `_transport, from ALPHA` : mission créée, menu MISSION DE TRANSPORT peuplé
@@ -81,7 +82,7 @@ Version des outils : `______`  —  Date : `______`  —  Testeur : `______`
 | 01 | Bienvenue | Menu F10 > Autre > VEAF présent ; canal 1 de la radio d'un F-16C = un canal du plan VEAF ; points de navigation présents dans l'avion ; slots dynamiques sur Kutaisi, Senaki, Kobuleti, Batumi (multijoueur). | ☐ | |
 | 02 | La planchette : presets radio et mire | Planchette d'un A-10C II : page des presets avec trois blocs titrés par le poste du cockpit, sous-titre et numéro de page non masqués par les onglets ni par les boutons UP/DN ; page « Réglage de la planchette » présente, cercles ronds dans la fenêtre par défaut. | ☐ | |
 | 03 | Le briefing dans la planchette | Planchette d'un A-10C II et d'un autre type (F-16C) : après « Réglage de la planchette », carte de situation, un zoom par objectif, carte de vol, coordonnées cibles, dans cet ordre, lisibles et non étirées (cercles de la mire ronds). En AJS-37 (slot dynamique), les canaux de la carte de vol sont des slots DCS, pas les groupes du cockpit : limitation connue, pas un défaut. | ☐ | |
-| 04 | Bac à sable : les commandes de marqueur | `-sa8`, `-armor`, `-convoy, dest ALPHA`, `-point`, `-smoke`, `-farp`, `-boum`, `-menage` : chacune produit son effet au marqueur, sans erreur dans dcs.log. | ☐ | |
+| 04 | Bac à sable : les commandes de marqueur | `-sa8`, `-armor`, `-convoy, dest ALPHA`, `-point`, `-smoke`, `-farp`, `-boum`, `-menage` : chacune produit son effet au marqueur, sans erreur dans dcs.log. Après un `-sa8` posé soi-même, APPARITION › Mes spawns › [son nom] liste `-sa8 HH:MM`, et cette entrée retire la batterie. | ☐ | |
 | 05 | Missions générées : CAS et transport | `_cas` : groupe ennemi créé, menu MISSION CAS peuplé, fumée sur cible. `_transport, from ALPHA` : menu MISSION DE TRANSPORT peuplé, zone de livraison fumée. | ☐ | |
 | 06 | Entraînement de Khoni : trois niveaux | Chaque niveau fait apparaître plus que celui qu'il inclut ; le tirage #spawngroup donne 2 pièces de DCA sur 4 au moyen, différentes d'une activation à l'autre ; la zone se termine quand tout est détruit ; les infos de la zone donnent une ligne ÉLÉVATION (ELEVATION en anglais) en ft et en m, sous le bullseye. | ☐ | |
 | 07 | Front de Gali, et le drone JTAC | Un seul groupe blindé sur deux ; artillerie Msta présente ; Reaper 1 déclaré JTAC par CTLD sur le code 1511 et 35.55 FM, et il désigne un véhicule. | ☐ | |

@@ -162,6 +162,7 @@ The sandbox, south of Kutaisi (named point ALPHA), is where you try the commands
 - `-point BRAVO`: creates your own named point (alias of `_name point BRAVO`), usable in `-convoy, dest BRAVO`.
 - `-smoke`: white smoke (`-smoke, color red` for red); `-farp`: a complete FARP with its props.
 - `-boum`: a 500 kg explosion; `-menage`: destroys everything within 2 km (two shortcuts defined by this mission).
+- F10 › VEAF › SPAWN › My spawns › [your name]: removes what YOUR markers spawned, all at once ("Remove all") or one marker at a time (`-sa8 14:32`).
 
 **What you should see**: Each command answers with a message and spawns what it announces at the marker; the marker disappears once the command has run.
 
