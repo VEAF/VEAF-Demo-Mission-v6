@@ -2,7 +2,7 @@
  {
   "name": "build_mission_briefing",
   "params": {
-   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
    "language": "fr",
    "side": "blue",
    "basemap": "osm",
@@ -71,7 +71,7 @@
  {
   "name": "build_mission_briefing",
   "params": {
-   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6/.claude/worktrees/alias-documentation-missing-2df93d",
+   "mission_path": "D:/dev/_VEAF/VEAF-Demo-Mission-v6",
    "language": "en",
    "side": "blue",
    "basemap": "osm",
