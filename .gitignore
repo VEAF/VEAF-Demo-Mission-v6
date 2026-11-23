@@ -36,3 +36,10 @@ src/scripts/veafDynamicConfig.lua
 __pycache__/
 *.pyc
 /dcs-serve.yaml
+
+# Briefing (lot 11, build_mission_briefing) : régénéré après chaque build par build_candidate.py et release.py
+/docs/maps/
+/docs/*_briefing*.pptx
+/docs/*_briefing*.pdf
+/src/mission/KNEEBOARD/IMAGES/*-briefing-*.jpg
+/src/mission/l10n/DEFAULT/briefing-*.jpg
