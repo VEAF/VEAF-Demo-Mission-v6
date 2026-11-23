@@ -80,7 +80,8 @@ def main():
     run([str(ROOT / "veaf-tools.exe"), "build"], log=MISSIONS / "build.log")
     run([sys.executable, "tools/localize_miz.py"])
     if briefing_batch.supported():  # le briefing lit les .miz construits, dans chaque langue
-        run([sys.executable, *briefing_batch.BATCH], log=MISSIONS / "briefing.log")
+        with briefing_batch.mission_kept():  # sans laisser ses pages dans src/mission/
+            run([sys.executable, *briefing_batch.BATCH], log=MISSIONS / "briefing.log")
     run([sys.executable, "tools/verify.py"], log=MISSIONS / "verify.log")
     mizs = sorted(MISSIONS.glob("*.miz"))
     if len(mizs) != EXPECTED:
