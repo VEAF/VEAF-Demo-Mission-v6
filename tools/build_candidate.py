@@ -88,11 +88,14 @@ def main():
     subprocess.run([sys.executable, "tools/localize_miz.py"], cwd=ROOT, check=True)
     # le briefing lit les .miz construits : après le build et la traduction, avant les missions de test
     # qui reprennent ses pages ; sans le paramètre `language`, il mettrait du français dans les _EN
-    if briefing_batch.supported():
-        run([sys.executable, *briefing_batch.BATCH], ROOT, LOGS / "candidate-briefing.log")
-    if "--no-test" not in sys.argv:
-        subprocess.run([sys.executable, "tools/make_test_mission.py"], cwd=ROOT, check=True,
-                       env={**os.environ, "VEAF_TOOLS": str(tool)})
+    # l'appel en français écrit aussi ses pages dans src/mission/ : les missions de test, construites depuis
+    # src/mission/, les y prennent ; src/mission/ est remis comme avant ensuite (tools/briefing_batch.py)
+    with briefing_batch.mission_kept():
+        if briefing_batch.supported():
+            run([sys.executable, *briefing_batch.BATCH], ROOT, LOGS / "candidate-briefing.log")
+        if "--no-test" not in sys.argv:
+            subprocess.run([sys.executable, "tools/make_test_mission.py"], cwd=ROOT, check=True,
+                           env={**os.environ, "VEAF_TOOLS": str(tool)})
     # après les missions de test : verify.py contrôle aussi missions-test/
     r = subprocess.run([sys.executable, "tools/verify.py"], cwd=ROOT)
     if r.returncode:

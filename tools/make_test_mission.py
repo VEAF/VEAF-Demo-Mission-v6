@@ -34,8 +34,9 @@ BRIEFING_PAGE = re.compile(r"KNEEBOARD/IMAGES/\d{2}-briefing-[a-z0-9-]+\.jpg")
 def english_briefing_pages(test_miz):
     """Les pages de planchette du briefing (lot 11) en anglais, reprises d'un .miz _EN de missions/.
 
-    src/mission/ porte les pages françaises : le build de test les met aussi dans le .miz anglais, et
-    build_mission_briefing n'écrit que dans missions/. Mêmes noms dans les deux langues (tirés des zones).
+    Lancé par tools/build_candidate.py juste après le lot 11, src/mission/ porte encore les pages françaises
+    (tools/briefing_batch.py le remet comme avant ensuite) : le build de test les met aussi dans le .miz
+    anglais, et build_mission_briefing n'écrit les anglaises que dans missions/. Mêmes noms dans les deux langues (tirés des zones).
     """
     source = next(iter(sorted((ROOT / "missions").glob("*_EN_*.miz"))), None)
     if source is None:
